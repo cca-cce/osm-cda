@@ -1,16 +1,114 @@
 [
   {
+    "objectID": "part01-getting-started/materials.html",
+    "href": "part01-getting-started/materials.html",
+    "title": "quarto notebook",
+    "section": "",
+    "text": "\"this is a string\"\n'so is this:-1*!@&04\"(*&^}\":&gt;?'\n\"\"\"and\n    this is\n        too!!11!\"\"\"\n\"we can even \" + \"add strings together\"\n# we can't add strings to other data types (BTW this is how you write comments in Python)\n\"I am \" + 29\n# so we have to write 29 as a string\n\"I am \" + \"29\"\n\n\n\n# a list of strings\n[\"a\", \"b\", \"c\"]\n# a list of ints\n[1, 2, 3]\n# list with a string, int, and float\n[\"a\", 2, 3.14]\n# a list of lists with mixed types\n[[\"a\", \"b\"], [1, 2], [1.0, 2.0]]\n# a dictionary\n{\"Name\":\"Shaw\"}\n# a dictionary with multiple key-value pairs\n{\"Name\":\"Shaw\", \"Age\":29, \"Interests\":[\"AI\", \"Music\", \"Bread\"]}\n# a list of dictionaries\n[{\"Name\":\"Shaw\", \"Age\":29, \"Interests\":[\"AI\", \"Music\", \"Bread\"]}, {\"Name\":\"Ify\", \"Age\":27, \"Interests\":[\"Marketing\", \"YouTube\", \"Shopping\"]}]\n# a nested dictionary\n{\"User\":{\"Name\":\"Shaw\", \"Age\":29, \"Interests\":[\"AI\", \"Music\", \"Bread\"]}, \"Last_login\":\"2024-09-06\", \"Membership_Tier\":\"Free\"}",
+    "crumbs": [
+      "workshop",
+      "part 1: getting started",
+      "quarto notebook"
+    ]
+  },
+  {
+    "objectID": "part01-getting-started/materials.html#data-types",
+    "href": "part01-getting-started/materials.html#data-types",
+    "title": "quarto notebook",
+    "section": "",
+    "text": "\"this is a string\"\n'so is this:-1*!@&04\"(*&^}\":&gt;?'\n\"\"\"and\n    this is\n        too!!11!\"\"\"\n\"we can even \" + \"add strings together\"\n# we can't add strings to other data types (BTW this is how you write comments in Python)\n\"I am \" + 29\n# so we have to write 29 as a string\n\"I am \" + \"29\"\n\n\n\n# a list of strings\n[\"a\", \"b\", \"c\"]\n# a list of ints\n[1, 2, 3]\n# list with a string, int, and float\n[\"a\", 2, 3.14]\n# a list of lists with mixed types\n[[\"a\", \"b\"], [1, 2], [1.0, 2.0]]\n# a dictionary\n{\"Name\":\"Shaw\"}\n# a dictionary with multiple key-value pairs\n{\"Name\":\"Shaw\", \"Age\":29, \"Interests\":[\"AI\", \"Music\", \"Bread\"]}\n# a list of dictionaries\n[{\"Name\":\"Shaw\", \"Age\":29, \"Interests\":[\"AI\", \"Music\", \"Bread\"]}, {\"Name\":\"Ify\", \"Age\":27, \"Interests\":[\"Marketing\", \"YouTube\", \"Shopping\"]}]\n# a nested dictionary\n{\"User\":{\"Name\":\"Shaw\", \"Age\":29, \"Interests\":[\"AI\", \"Music\", \"Bread\"]}, \"Last_login\":\"2024-09-06\", \"Membership_Tier\":\"Free\"}",
+    "crumbs": [
+      "workshop",
+      "part 1: getting started",
+      "quarto notebook"
+    ]
+  },
+  {
+    "objectID": "part01-getting-started/materials.html#variables",
+    "href": "part01-getting-started/materials.html#variables",
+    "title": "quarto notebook",
+    "section": "Variables",
+    "text": "Variables\n# creating a variable and printing it\nuser_name = \"Shaw\"\nprint(user_name)\n# defining more variables and printing them as a formatted string. Notice, this automatically converts each variable to a string before printing!\nuser_age = 29\nuser_interests = [\"AI\", \"Music\", \"Bread\"]\n\nprint(f\"{user_name} is {user_age} years old. His interests include {user_interests}.\")\n# storing variables in a dictionary and printing them as a formatted string \nuser_dict = {\"Name\":user_name, \"Age\":user_age, \"Interests\":user_interests}\n\nprint(f'{user_dict[\"Name\"]} is {user_dict[\"Age\"]} years old. His interests include {user_dict[\"Interests\"]}.')\n# or we can print just one interest\nf'{user_dict[\"Name\"]} is {user_dict[\"Age\"]} years old and is interested in {user_dict[\"Interests\"][0]}.'",
+    "crumbs": [
+      "workshop",
+      "part 1: getting started",
+      "quarto notebook"
+    ]
+  },
+  {
+    "objectID": "part01-getting-started/materials.html#loops-conditionals",
+    "href": "part01-getting-started/materials.html#loops-conditionals",
+    "title": "quarto notebook",
+    "section": "Loops & Conditionals",
+    "text": "Loops & Conditionals\n\nfor loop\n# a simple for loop iterating over a sequence of numbers\nfor i in range(5):\n    # print ith element\n    print(i)\n# for loop iterating over a list\nuser_interests = [\"AI\", \"Music\", \"Bread\"]\n\nfor interest in user_interests:\n    # print each item in list\n    print(interest)\n# for loop iterating over items in a dictionary\nuser_dict = {\"Name\":\"Shaw\", \"Age\":29, \"Interests\":[\"AI\", \"Music\", \"Bread\"]}\n\nfor key in user_dict.keys():\n    # print each key and corresponding value\n    print(key, \"=\", user_dict[key])\n\n\nif-else\n# check if user is 18 or older\nif user_dict[\"Age\"] &gt;= 18:\n    print(\"User is an adult\")\n# check if user is 1000 or older, if not print they have much to learn\nif user_dict[\"Age\"] &gt;= 1000:\n    print(\"User is wise\")\nelse:\n    print(\"User has much to learn\")\n# count the number of users interested in bread\nuser_list = [{\"Name\":\"Shaw\", \"Age\":29, \"Interests\":[\"AI\", \"Music\", \"Bread\"]}, {\"Name\":\"Ify\", \"Age\":27, \"Interests\":[\"Marketing\", \"YouTube\", \"Shopping\"]}]\ncount = 0\n\nfor user in user_list:\n    if \"Bread\" in user[\"Interests\"]:\n        count = count + 1\n\nprint(count, \"user(s) interested in Bread\")\n# count the number of users interested in an arbritrary topic\ncount = 0\ntopic = \"Antiquing\"\n\nfor user in user_list:\n    if topic in user[\"Interests\"]:\n        count = count + 1\n\nprint(f\"{count} user(s) interested in {topic}\")",
+    "crumbs": [
+      "workshop",
+      "part 1: getting started",
+      "quarto notebook"
+    ]
+  },
+  {
+    "objectID": "part01-getting-started/materials.html#functions",
+    "href": "part01-getting-started/materials.html#functions",
+    "title": "quarto notebook",
+    "section": "Functions",
+    "text": "Functions\n\nbasic functions\n# print(), a function we've used several times already\n\nfor key in user_dict.keys():\n    print(key, \":\", user_dict[key])\n# type(), getting the data type of a variable\n\nfor key in user_dict.keys():\n    print(key, \":\", type(user_dict[key]))\n# len(), getting the length of a variable\n\nfor key in user_dict.keys():\n    print(key, \":\", len(user_dict[key]))\n# since len() is not defined for ints we can skip it\n\nfor key in user_dict.keys():\n    # skips ints\n    if type(user_dict[key]) is int:\n        continue\n    \n    print(key, \"length :\", len(user_dict[key]))\n\n\nstring methods\n# make string all lowercase\nprint(user_dict[\"Name\"].lower())\n# make string all uppercase\nprint(user_dict[\"Name\"].upper())\n# split string into list based on a specific character sequence\nprint(user_dict[\"Name\"].split(\"ha\"))\n# replace a character sequence with another\nprint(user_dict[\"Name\"].replace(\"w\", \"whin\"))\n\n\nlist methods\n# add an element to the end of a list\nuser_dict[\"Interests\"].append(\"Entrepreneurship\")\nprint(user_dict[\"Interests\"])\n# remove a specific element from a list\nuser_dict[\"Interests\"].pop(0)\nprint(user_dict[\"Interests\"])\n# insert an element into a specific place in a list\nuser_dict[\"Interests\"].insert(1, \"AI\")\nprint(user_dict[\"Interests\"])\n\n\ndict methods\n# accessing dict keys\nprint(user_dict.keys())\n# accessing dict values\nprint(user_dict.values())\n# accessing dict items\nprint(user_dict.items())\n# removing a key\nuser_dict.pop(\"Name\")\nprint(user_dict.items())\n# adding a key\nuser_dict[\"Name\"] = \"Shaw\"\nprint(user_dict.items())\n\n\nuser-defined functions\ndef user_description(user_dict):\n    \"\"\"\n        Function to return a sentence (string) describing input user\n    \"\"\"\n    return f'{user_dict[\"Name\"]} is {user_dict[\"Age\"]} years old and is interested in {user_dict[\"Interests\"][0]}.'\n# print user description\ndescription = user_description(user_dict)\nprint(description)\n\n# print description for a new user!\nnew_user_dict = {\"Name\":\"Ify\", \"Age\":27, \"Interests\":[\"Marketing\", \"YouTube\", \"Shopping\"]}\nprint(user_description(new_user_dict))\ndef interested_user_count(user_list, topic):\n    \"\"\"\n        Function to count number of users interested in an arbitrary topic\n    \"\"\"\n    count = 0\n\n    for user in user_list:\n        if topic in user[\"Interests\"]:\n            count = count + 1\n    \n    return count\n# define user list and topic\nuser_list = [user_dict, new_user_dict]\ntopic = \"Shopping\"\n\n# compute interested user count and print it\ncount = interested_user_count(user_list, topic)\nprint(f\"{count} user(s) interested in {topic}\")",
+    "crumbs": [
+      "workshop",
+      "part 1: getting started",
+      "quarto notebook"
+    ]
+  },
+  {
+    "objectID": "part01-getting-started/materials.html#libraries",
+    "href": "part01-getting-started/materials.html#libraries",
+    "title": "quarto notebook",
+    "section": "Libraries",
+    "text": "Libraries\nimport numpy as np\n# create a \"vector\"\nv = np.array([1, 3, 6])\nprint(v)\n# multiply a \"vector\"\nprint(2*v)\n# create a matrix\nX = np.array([v, 2*v, v/2])\nprint(X)\n# matrix multiplication\nprint(X*v)\n# create a 1D array with 3 equally spaced values between 1 and 9\nz = np.linspace(1, 9, 3)\nprint(z)\n# adding and substracting arrays\nprint(v + z)\nprint(v - z)\n# reshaping arrays\nprint(X.reshape((9,)))\nprint(X.flatten())\n# dot product\nprint(np.dot(v, z))\n# cross product\nprint(np.cross(v, z))\n# mean\nprint(np.mean(v))\n# min\nprint(np.min(v))\n# max\nprint(np.max(v))\n# array of random numbers between 0 and 1\nprint(np.random.rand(2,2))\n# array of random ints between 0 and 10\nprint(np.random.randint(0, 10, size=5))",
+    "crumbs": [
+      "workshop",
+      "part 1: getting started",
+      "quarto notebook"
+    ]
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "About this site"
+    "text": "About this site",
+    "crumbs": [
+      "about"
+    ]
+  },
+  {
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "Schedule",
+    "section": "",
+    "text": "The following info is fetched from timeedit:",
+    "crumbs": [
+      "schedule"
+    ]
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "osm-pyws",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "In this part, we will cover the basics of Python, ensuring participants are comfortable with the foundational concepts needed to work effectively in social science. You’ll learn how to install Python, set up your environment, and run your first Python programs. We’ll also introduce essential concepts like variables, data types, and control structures. By the end of this section, you’ll have a solid understanding of Python’s syntax and be ready to dive into more advanced applications relevant to social science.\n\n\n\nThis section focuses on data analysis using Python’s powerful libraries like Pandas and NumPy. You will learn how to load, clean, and manipulate datasets commonly used in social science research. We’ll walk through operations such as filtering, grouping, and summarizing data, helping you uncover patterns and insights. Visualizing data with Matplotlib and Seaborn will also be covered, giving you the tools to present your findings effectively.\n\n\n\nIn social sciences, analyzing textual data is crucial for understanding trends, sentiments, and narratives. This part will introduce Python tools like spaCy and NLTK to help you process and analyze text data. You’ll learn how to clean, tokenize, and extract meaningful information from unstructured text. Techniques such as sentiment analysis, keyword extraction, and topic modeling will be explored to give you the skills to analyze text-based research materials, such as interviews, articles, and social media posts.\n\n\n\nImage analysis is becoming increasingly relevant in social science research, especially with the rise of social media and visual data. In this section, you’ll learn how to process and analyze images using Python libraries like OpenCV and Pillow. We’ll cover techniques for loading images, performing basic manipulations, and extracting useful data such as colors, patterns, and objects. You’ll also explore more advanced applications like face detection and image classification, enabling you to work with visual data in your research.\n\n\n\nIn the final part, we’ll focus on collecting data using Python, an essential skill for any social science researcher. You’ll be introduced to web scraping techniques using BeautifulSoup and Scrapy, allowing you to gather data from websites. We’ll also cover working with APIs to retrieve structured data from online sources such as social media platforms, government databases, or research repositories. By the end of this section, you’ll be equipped with the tools to gather the data you need for your projects.\n\nThis is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.",
+    "crumbs": [
+      "start"
+    ]
+  },
+  {
+    "objectID": "index.html#introduction-to-python-for-social-science",
+    "href": "index.html#introduction-to-python-for-social-science",
+    "title": "osm-pyws",
+    "section": "",
+    "text": "In this part, we will cover the basics of Python, ensuring participants are comfortable with the foundational concepts needed to work effectively in social science. You’ll learn how to install Python, set up your environment, and run your first Python programs. We’ll also introduce essential concepts like variables, data types, and control structures. By the end of this section, you’ll have a solid understanding of Python’s syntax and be ready to dive into more advanced applications relevant to social science.\n\n\n\nThis section focuses on data analysis using Python’s powerful libraries like Pandas and NumPy. You will learn how to load, clean, and manipulate datasets commonly used in social science research. We’ll walk through operations such as filtering, grouping, and summarizing data, helping you uncover patterns and insights. Visualizing data with Matplotlib and Seaborn will also be covered, giving you the tools to present your findings effectively.\n\n\n\nIn social sciences, analyzing textual data is crucial for understanding trends, sentiments, and narratives. This part will introduce Python tools like spaCy and NLTK to help you process and analyze text data. You’ll learn how to clean, tokenize, and extract meaningful information from unstructured text. Techniques such as sentiment analysis, keyword extraction, and topic modeling will be explored to give you the skills to analyze text-based research materials, such as interviews, articles, and social media posts.\n\n\n\nImage analysis is becoming increasingly relevant in social science research, especially with the rise of social media and visual data. In this section, you’ll learn how to process and analyze images using Python libraries like OpenCV and Pillow. We’ll cover techniques for loading images, performing basic manipulations, and extracting useful data such as colors, patterns, and objects. You’ll also explore more advanced applications like face detection and image classification, enabling you to work with visual data in your research.\n\n\n\nIn the final part, we’ll focus on collecting data using Python, an essential skill for any social science researcher. You’ll be introduced to web scraping techniques using BeautifulSoup and Scrapy, allowing you to gather data from websites. We’ll also cover working with APIs to retrieve structured data from online sources such as social media platforms, government databases, or research repositories. By the end of this section, you’ll be equipped with the tools to gather the data you need for your projects.\n\nThis is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.",
+    "crumbs": [
+      "start"
+    ]
   }
 ]

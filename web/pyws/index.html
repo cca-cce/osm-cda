@@ -40,11 +40,11 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
+  "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
+  "panel-placement": "start",
+  "type": "textbox",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -71,44 +71,142 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">osm-pyws</span>
-    </a>
-  </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
-<span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
-<span class="menu-text">About</span></a>
-  </li>  
-</ul>
-          </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
-</div>
-      </div> <!-- /container-fluid -->
-    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">start</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">osm-pyws</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">start</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">about</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">workshop</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part01-getting-started/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">part 1: getting started</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./part01-getting-started/materials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">quarto notebook</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./part01-getting-started/materials.ipynb" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">jupyter notebook</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./part02-data-analysis/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">part 2: data analysis</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./part03-text-analysis/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">part 3: text analysis</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./part04-image-analysis/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">part 4: image analysis</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./part05-data-collection/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">part 5: data collection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./schedule.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">schedule</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resources.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">resources</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction-to-python-for-social-science" id="toc-introduction-to-python-for-social-science" class="nav-link active" data-scroll-target="#introduction-to-python-for-social-science">Introduction to python for social science</a>
+  <ul class="collapse">
+  <li><a href="#part-1-getting-started" id="toc-part-1-getting-started" class="nav-link" data-scroll-target="#part-1-getting-started">Part 1: Getting Started</a></li>
+  <li><a href="#part-2-data-analysis" id="toc-part-2-data-analysis" class="nav-link" data-scroll-target="#part-2-data-analysis">Part 2: Data Analysis</a></li>
+  <li><a href="#part-3-text-analysis" id="toc-part-3-text-analysis" class="nav-link" data-scroll-target="#part-3-text-analysis">Part 3: Text Analysis</a></li>
+  <li><a href="#part-4-image-analysis" id="toc-part-4-image-analysis" class="nav-link" data-scroll-target="#part-4-image-analysis">Part 4: Image Analysis</a></li>
+  <li><a href="#part-5-data-collection" id="toc-part-5-data-collection" class="nav-link" data-scroll-target="#part-5-data-collection">Part 5: Data Collection</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -132,10 +230,34 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="introduction-to-python-for-social-science" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-python-for-social-science">Introduction to python for social science</h2>
+<section id="part-1-getting-started" class="level3">
+<h3 class="anchored" data-anchor-id="part-1-getting-started">Part 1: Getting Started</h3>
+<p>In this part, we will cover the basics of Python, ensuring participants are comfortable with the foundational concepts needed to work effectively in social science. You’ll learn how to install Python, set up your environment, and run your first Python programs. We’ll also introduce essential concepts like variables, data types, and control structures. By the end of this section, you’ll have a solid understanding of Python’s syntax and be ready to dive into more advanced applications relevant to social science.</p>
+</section>
+<section id="part-2-data-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="part-2-data-analysis">Part 2: Data Analysis</h3>
+<p>This section focuses on data analysis using Python’s powerful libraries like <strong>Pandas</strong> and <strong>NumPy</strong>. You will learn how to load, clean, and manipulate datasets commonly used in social science research. We’ll walk through operations such as filtering, grouping, and summarizing data, helping you uncover patterns and insights. Visualizing data with <strong>Matplotlib</strong> and <strong>Seaborn</strong> will also be covered, giving you the tools to present your findings effectively.</p>
+</section>
+<section id="part-3-text-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="part-3-text-analysis">Part 3: Text Analysis</h3>
+<p>In social sciences, analyzing textual data is crucial for understanding trends, sentiments, and narratives. This part will introduce Python tools like <strong>spaCy</strong> and <strong>NLTK</strong> to help you process and analyze text data. You’ll learn how to clean, tokenize, and extract meaningful information from unstructured text. Techniques such as sentiment analysis, keyword extraction, and topic modeling will be explored to give you the skills to analyze text-based research materials, such as interviews, articles, and social media posts.</p>
+</section>
+<section id="part-4-image-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="part-4-image-analysis">Part 4: Image Analysis</h3>
+<p>Image analysis is becoming increasingly relevant in social science research, especially with the rise of social media and visual data. In this section, you’ll learn how to process and analyze images using Python libraries like <strong>OpenCV</strong> and <strong>Pillow</strong>. We’ll cover techniques for loading images, performing basic manipulations, and extracting useful data such as colors, patterns, and objects. You’ll also explore more advanced applications like face detection and image classification, enabling you to work with visual data in your research.</p>
+</section>
+<section id="part-5-data-collection" class="level3">
+<h3 class="anchored" data-anchor-id="part-5-data-collection">Part 5: Data Collection</h3>
+<p>In the final part, we’ll focus on collecting data using Python, an essential skill for any social science researcher. You’ll be introduced to web scraping techniques using <strong>BeautifulSoup</strong> and <strong>Scrapy</strong>, allowing you to gather data from websites. We’ll also cover working with APIs to retrieve structured data from online sources such as social media platforms, government databases, or research repositories. By the end of this section, you’ll be equipped with the tools to gather the data you need for your projects.</p>
+<hr>
 <p>This is a Quarto website.</p>
 <p>To learn more about Quarto websites visit <a href="https://quarto.org/docs/websites" class="uri">https://quarto.org/docs/websites</a>.</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
