@@ -254,8 +254,15 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#reading-text-content" id="toc-reading-text-content" class="nav-link active" data-scroll-target="#reading-text-content">reading text content</a></li>
+  <li><a href="#text-tokenization" id="toc-text-tokenization" class="nav-link" data-scroll-target="#text-tokenization">text tokenization</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -279,8 +286,16 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="reading-text-content" class="level2">
+<h2 class="anchored" data-anchor-id="reading-text-content">reading text content</h2>
+<p><strong>Reading and analyzing unstructured text</strong> presents a variety of challenges, particularly when dealing with different types of content such as articles, social media posts, or even longer documents like reports. Unstructured text, unlike tabular data, lacks a predefined format, which means it may contain irregularities such as spelling errors, slang, or varied sentence structures. For example, reading <strong>short texts</strong> like social media posts requires handling informal language, abbreviations, and emojis, whereas <strong>longer texts</strong> such as research papers or survey responses involve the challenge of organizing and summarizing large amounts of information. Rendered texts, such as those from PDFs or HTML files, often come with additional complexities like layout formatting, metadata, or embedded images, which may need to be stripped out or interpreted correctly before the actual text can be processed. Handling such varied lengths and formats requires careful preprocessing, including cleaning and standardizing the text data to make it suitable for analysis.</p>
+</section>
+<section id="text-tokenization" class="level2">
+<h2 class="anchored" data-anchor-id="text-tokenization">text tokenization</h2>
+<p><strong>Text tokenization</strong> is the foundational step in processing unstructured text, where the text is broken down into smaller units like words or phrases. This allows for basic analysis, such as word frequency counts or simple keyword extraction. However, more advanced techniques go beyond tokenization to capture deeper insights from text. <strong>Topic modeling</strong>, for instance, identifies latent themes within large text corpora by analyzing patterns in word co-occurrences. It helps uncover hidden structures in the data, which can be particularly useful when working with large datasets of documents, like survey responses or news articles. <strong>Sentiment analysis</strong> is another advanced technique that goes beyond simple tokenization by determining the emotional tone behind the text, whether it is positive, negative, or neutral. This is especially useful for analyzing customer feedback or social media sentiment. Finally, <strong>word vectorization</strong> techniques such as Word2Vec or GloVe transform words into numerical vectors based on their context, enabling more sophisticated tasks like measuring semantic similarity between words or phrases, clustering similar documents, or feeding text data into machine learning models. While tokenization provides a starting point, these more advanced techniques enable richer and more meaningful interpretations of textual data.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

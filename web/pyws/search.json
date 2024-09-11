@@ -1,5 +1,176 @@
 [
   {
+    "objectID": "pyws01-0-getting-started.html",
+    "href": "pyws01-0-getting-started.html",
+    "title": "part 1: getting started",
+    "section": "",
+    "text": "Google Colab Notebooks offer a unique, cloud-based Python environment, making it particularly convenient for data science and research applications. Since Colab runs entirely in the cloud, participants don’t need to worry about local installations or hardware limitations. With Colab, you can access a fully functioning Python environment directly through your browser, complete with popular libraries like NumPy, Pandas, and Matplotlib pre-installed. This makes it ideal for users who may have limited access to high-performance hardware, as Google’s servers handle the heavy lifting. Additionally, Colab supports collaboration, allowing multiple users to work on the same notebook in real-time, much like Google Docs. This contrasts with traditional local Python environments such as Anaconda or PyCharm, where you must install Python and manage dependencies on your own machine. While local environments offer greater control and customization, they can also be more challenging to configure for beginners, particularly when it comes to managing different Python packages and versions.",
+    "crumbs": [
+      "workshop",
+      "part 1: getting started"
+    ]
+  },
+  {
+    "objectID": "pyws01-0-getting-started.html#python-environments",
+    "href": "pyws01-0-getting-started.html#python-environments",
+    "title": "part 1: getting started",
+    "section": "",
+    "text": "Google Colab Notebooks offer a unique, cloud-based Python environment, making it particularly convenient for data science and research applications. Since Colab runs entirely in the cloud, participants don’t need to worry about local installations or hardware limitations. With Colab, you can access a fully functioning Python environment directly through your browser, complete with popular libraries like NumPy, Pandas, and Matplotlib pre-installed. This makes it ideal for users who may have limited access to high-performance hardware, as Google’s servers handle the heavy lifting. Additionally, Colab supports collaboration, allowing multiple users to work on the same notebook in real-time, much like Google Docs. This contrasts with traditional local Python environments such as Anaconda or PyCharm, where you must install Python and manage dependencies on your own machine. While local environments offer greater control and customization, they can also be more challenging to configure for beginners, particularly when it comes to managing different Python packages and versions.",
+    "crumbs": [
+      "workshop",
+      "part 1: getting started"
+    ]
+  },
+  {
+    "objectID": "pyws01-0-getting-started.html#basic-python-syntax",
+    "href": "pyws01-0-getting-started.html#basic-python-syntax",
+    "title": "part 1: getting started",
+    "section": "basic python syntax",
+    "text": "basic python syntax\nWhen comparing Python syntax to other popular data science platforms such as Excel or SPSS, Python provides much more flexibility and scalability. Excel is widely used for smaller datasets and offers an intuitive, visual interface for users without coding experience. However, it can become cumbersome for handling large datasets or performing more complex operations, like advanced statistical analysis or machine learning. In contrast, Python’s syntax is relatively simple but powerful, allowing users to write reusable scripts for tasks like data manipulation, cleaning, and analysis. Control structures in Python, such as loops and conditionals, provide much greater control over data operations compared to the rigid, formula-based system of Excel. Moreover, Python can handle more diverse data types and larger datasets more efficiently than Excel, which tends to slow down or crash with extensive data. Compared to SPSS, a statistical software package, Python offers greater flexibility with open-source libraries like SciPy and StatsModels, though SPSS remains easier for non-programmers due to its point-and-click interface. Ultimately, Python is an excellent choice for users looking to scale their work, automate processes, or engage in more complex data science tasks.",
+    "crumbs": [
+      "workshop",
+      "part 1: getting started"
+    ]
+  },
+  {
+    "objectID": "pyws05-0-data-collection.html",
+    "href": "pyws05-0-data-collection.html",
+    "title": "part 5: data collection",
+    "section": "",
+    "text": "Web scraping is an essential technique for gathering data from websites, and it can be approached differently depending on whether the target is static or dynamic content. Static web content is straightforward to scrape because the content is directly embedded in the HTML of the webpage, and tools like BeautifulSoup can easily parse this HTML to extract useful information, such as financial data, text, or images. For instance, scraping static content from a financial news site could involve fetching stock prices, headlines, and metadata, all available in the page’s source code. However, dynamic web content presents additional challenges. This type of content is often rendered via JavaScript after the initial page load, making traditional HTML scraping tools ineffective. To handle dynamic content, you need tools like Selenium or Playwright, which can simulate a browser environment, interact with the page, and extract data after it has been dynamically loaded. For example, scraping a site with real-time financial data, such as stock trading platforms or cryptocurrency exchanges, requires navigating dynamic elements like charts and live updates, all of which are powered by JavaScript.",
+    "crumbs": [
+      "workshop",
+      "part 5: data collection"
+    ]
+  },
+  {
+    "objectID": "pyws05-0-data-collection.html#web-scraping",
+    "href": "pyws05-0-data-collection.html#web-scraping",
+    "title": "part 5: data collection",
+    "section": "",
+    "text": "Web scraping is an essential technique for gathering data from websites, and it can be approached differently depending on whether the target is static or dynamic content. Static web content is straightforward to scrape because the content is directly embedded in the HTML of the webpage, and tools like BeautifulSoup can easily parse this HTML to extract useful information, such as financial data, text, or images. For instance, scraping static content from a financial news site could involve fetching stock prices, headlines, and metadata, all available in the page’s source code. However, dynamic web content presents additional challenges. This type of content is often rendered via JavaScript after the initial page load, making traditional HTML scraping tools ineffective. To handle dynamic content, you need tools like Selenium or Playwright, which can simulate a browser environment, interact with the page, and extract data after it has been dynamically loaded. For example, scraping a site with real-time financial data, such as stock trading platforms or cryptocurrency exchanges, requires navigating dynamic elements like charts and live updates, all of which are powered by JavaScript.",
+    "crumbs": [
+      "workshop",
+      "part 5: data collection"
+    ]
+  },
+  {
+    "objectID": "pyws05-0-data-collection.html#web-experiments",
+    "href": "pyws05-0-data-collection.html#web-experiments",
+    "title": "part 5: data collection",
+    "section": "web experiments",
+    "text": "web experiments\nBeyond scraping, the rise of platforms like Streamlit and GitHub Codespaces offers powerful possibilities for hosting web experiments that collect user interaction and behavioral data. Streamlit is a Python-based framework that simplifies the creation of interactive web applications, making it easy for researchers to design experiments that capture user input in real-time. For example, researchers in social science could build a survey that adjusts dynamically based on user responses or a task-based experiment where user behavior is logged and analyzed. Streamlit’s simplicity allows for fast deployment of experiments that run directly in the browser, eliminating the need for complex backend infrastructure. On the other hand, GitHub Codespaces provides a full development environment in the cloud, enabling researchers to collaborate on and host interactive experiments. By setting up a Codespace, researchers can deploy real-time applications with persistent storage, making it possible to record user behaviors such as clicks, navigation patterns, and text input during the experiment. The ability to run experiments in the cloud with either platform means data collection can scale easily, and researchers can access a broader pool of participants without requiring them to install software or participate in person. Both platforms offer streamlined ways to collect, store, and analyze behavioral data, which can be particularly useful for conducting social science research in a modern, online setting.",
+    "crumbs": [
+      "workshop",
+      "part 5: data collection"
+    ]
+  },
+  {
+    "objectID": "pyws04-0-image-analysis.html",
+    "href": "pyws04-0-image-analysis.html",
+    "title": "part 4: image analysis",
+    "section": "",
+    "text": "Handling images in Python involves a variety of intricacies, especially when processing raw visual data to extract meaningful information. Unlike text, which is inherently unstructured, images contain pixel-based data that needs to be interpreted and organized. When reading and processing image content using libraries like OpenCV and Pillow, common challenges include handling different image formats (such as JPEG, PNG, or TIFF), varying image resolutions, and potential distortions like noise or compression artifacts. Additionally, images can come in different color spaces (RGB, grayscale, etc.), and choosing the right one for analysis is crucial depending on the task at hand. For instance, converting an image to grayscale simplifies it by removing color information, making it easier to focus on structural aspects of the image like edges or shapes. Another complexity arises in how to break down the image into meaningful units—whether it’s identifying objects, segmenting regions, or extracting pixel values for quantitative analysis. This process requires a deep understanding of how visual information is encoded and how it can be transformed for different analytical purposes.",
+    "crumbs": [
+      "workshop",
+      "part 4: image analysis"
+    ]
+  },
+  {
+    "objectID": "pyws04-0-image-analysis.html#reading-image-content",
+    "href": "pyws04-0-image-analysis.html#reading-image-content",
+    "title": "part 4: image analysis",
+    "section": "",
+    "text": "Handling images in Python involves a variety of intricacies, especially when processing raw visual data to extract meaningful information. Unlike text, which is inherently unstructured, images contain pixel-based data that needs to be interpreted and organized. When reading and processing image content using libraries like OpenCV and Pillow, common challenges include handling different image formats (such as JPEG, PNG, or TIFF), varying image resolutions, and potential distortions like noise or compression artifacts. Additionally, images can come in different color spaces (RGB, grayscale, etc.), and choosing the right one for analysis is crucial depending on the task at hand. For instance, converting an image to grayscale simplifies it by removing color information, making it easier to focus on structural aspects of the image like edges or shapes. Another complexity arises in how to break down the image into meaningful units—whether it’s identifying objects, segmenting regions, or extracting pixel values for quantitative analysis. This process requires a deep understanding of how visual information is encoded and how it can be transformed for different analytical purposes.",
+    "crumbs": [
+      "workshop",
+      "part 4: image analysis"
+    ]
+  },
+  {
+    "objectID": "pyws04-0-image-analysis.html#object-recognition",
+    "href": "pyws04-0-image-analysis.html#object-recognition",
+    "title": "part 4: image analysis",
+    "section": "object recognition",
+    "text": "object recognition\nObject recognition, a more advanced image analysis technique, involves detecting and classifying objects within an image, often using machine learning models. This contrasts with more basic types of image analysis, such as finding contours or corners, which are simpler geometric features. Contour detection in an image focuses on identifying the boundaries or edges of objects, which can be useful for shape analysis, but it doesn’t provide any understanding of the object’s identity or function. Corner detection, on the other hand, finds points in the image where there is a sharp change in direction, such as the corners of a rectangle, which can be helpful in tasks like motion tracking or object detection based on feature points. While both contour and corner detection are essential for breaking down images into simpler shapes or features, they do not attempt to interpret or classify the objects in the scene. Object recognition takes this further by using algorithms or trained models to not only detect an object but also to classify it—whether it’s identifying a car, a person, or another object in the image. This step is critical in fields like behavioral analysis or media studies, where understanding what is in the image, rather than just its shape or structure, is essential for deriving insights from visual data.",
+    "crumbs": [
+      "workshop",
+      "part 4: image analysis"
+    ]
+  },
+  {
+    "objectID": "pyws01-2-getting-started.html",
+    "href": "pyws01-2-getting-started.html",
+    "title": "basic python syntax",
+    "section": "",
+    "text": "download jupyter notebook",
+    "crumbs": [
+      "workshop",
+      "part 1: getting started",
+      "basic python syntax"
+    ]
+  },
+  {
+    "objectID": "pyws01-2-getting-started.html#strings-and-numbers",
+    "href": "pyws01-2-getting-started.html#strings-and-numbers",
+    "title": "basic python syntax",
+    "section": "strings and numbers",
+    "text": "strings and numbers\nHere are 10 Python code lines with different types of strings and numbers, each followed by an explanation:\n\nCode:\n\n# This is a comment explaining the next line\n\nExplanation:\nThis line starts with a #, making it a comment. Python ignores this line during execution. It’s used to explain code or leave notes for other programmers.\nCode:\n\nprint('Hello, World!')\n\nHello, World!\n\n\nExplanation:\nThis prints the string 'Hello, World!' to the console. Single quotes enclose the string. In Python, single and double quotes are interchangeable for defining strings.\nCode:\nprint(\"Python is fun\")\nExplanation:\nHere, double quotes are used to define the string \"Python is fun\". Python treats strings defined with single or double quotes the same way.\nCode:\nprint(\"He said, \\\"Python is cool\\\"\")\nExplanation:\nThis line prints He said, \"Python is cool\". The backslash \\ before the double quotes escapes them, telling Python to treat them as part of the string instead of ending it.\nCode:\nprint(\"Line one\\nLine two\")\nExplanation:\nThe \\n is a newline escape character, so this will output:\nLine one\nLine two\nThe \\n tells Python to move to a new line.\nCode:\nprint(\"Hello\" + \" \" + \"World\")\nExplanation:\nThis line concatenates three strings: \"Hello\", a space (\" \"), and \"World\", resulting in Hello World. The + operator combines strings.\nCode:\nprint(5 + 3)\nExplanation:\nThis performs an arithmetic operation, adding two integers 5 and 3, resulting in the output 8. Python interprets + as an addition operator when used with numbers.\nCode:\nprint(5.0 + 3)\nExplanation:\nThis adds a floating-point number 5.0 and an integer 3. Python automatically converts the integer to a float and outputs 8.0, demonstrating Python’s support for mixed-type arithmetic.\nCode:\nprint(7 / 2)\nExplanation:\nThis division operation between two integers results in 3.5. In Python 3, division with / always results in a float, even when dividing two integers.\nCode:\nprint(type(3.14))\nExplanation:\nThis uses the type() function, which returns the data type of the value passed to it. Here, 3.14 is a floating-point number, so the output will be &lt;class 'float'&gt;, indicating the value is of type float.\n\nThese examples cover key features of Python strings, numbers, and the type() function, along with how comments and escape characters work.",
+    "crumbs": [
+      "workshop",
+      "part 1: getting started",
+      "basic python syntax"
+    ]
+  },
+  {
+    "objectID": "pyws01-2-getting-started.html#lists-and-dictionaries",
+    "href": "pyws01-2-getting-started.html#lists-and-dictionaries",
+    "title": "basic python syntax",
+    "section": "lists and dictionaries",
+    "text": "lists and dictionaries\nHere are 10 Python code lines illustrating different types of lists and dictionaries, with explanations:\n\nCode:\nmy_list = [1, 2, 3, 4]\nExplanation:\nThis creates a list called my_list containing four integer elements: [1, 2, 3, 4]. Lists are ordered and mutable collections in Python, allowing for element addition, removal, and modification. Each element can be accessed by its index, starting from 0.\nCode:\nmy_dict = {'name': 'Alice', 'age': 30}\nExplanation:\nThis creates a dictionary my_dict with two key-value pairs: 'name': 'Alice' and 'age': 30. Dictionaries are unordered collections that map keys to values, and values can be accessed using the keys.\nCode:\nnested_list = [[1, 2], [3, 4], [5, 6]]\nExplanation:\nThis creates a 2D list nested_list, where each element is another list. Accessing elements can be done using two indices, such as nested_list[0][1] to get the value 2.\nCode:\nnested_dict = {'person1': {'name': 'Alice', 'age': 30}, 'person2': {'name': 'Bob', 'age': 25}}\nExplanation:\nThis is a 2D dictionary, where each key ('person1', 'person2') maps to another dictionary. For example, you can access Alice’s age by using nested_dict['person1']['age'], which returns 30.\nCode:\nmy_list.append(5)\nExplanation:\nThis appends the value 5 to the end of my_list. The append() method is a built-in function for adding elements to a list, modifying it in place.\nCode:\nlast_item = my_list.pop()\nExplanation:\nThis removes and returns the last element from my_list using the pop() method. If my_list = [1, 2, 3, 4, 5], after popping, my_list becomes [1, 2, 3, 4] and last_item is assigned the value 5.\nCode:\nsecond_item = my_list[1]\nExplanation:\nThis accesses the second element of my_list using the index 1 (Python uses 0-based indexing). For example, if my_list = [1, 2, 3, 4], second_item will be 2.\nCode:\nmy_dict['city'] = 'New York'\nExplanation:\nThis adds a new key-value pair 'city': 'New York' to my_dict. Dictionaries allow dynamic insertion of key-value pairs. If my_dict already contains 'city', this will update its value.\nCode:\nremoved_value = my_dict.pop('age')\nExplanation:\nThis removes the key 'age' from my_dict and returns its value (30 in this case). The pop() method removes the specified key-value pair and modifies the dictionary.\nCode:\nprint(type(my_list))\nExplanation:\nThis uses the type() function to check the data type of my_list. The output will be &lt;class 'list'&gt;, indicating that my_list is a list. Similarly, calling type(my_dict) would return &lt;class 'dict'&gt;, showing that my_dict is a dictionary.\n\nThese examples illustrate key operations with lists and dictionaries, including element access, appending, popping, and the use of the type() function to check data types.",
+    "crumbs": [
+      "workshop",
+      "part 1: getting started",
+      "basic python syntax"
+    ]
+  },
+  {
+    "objectID": "pyws01-2-getting-started.html#loops-and-conditionals",
+    "href": "pyws01-2-getting-started.html#loops-and-conditionals",
+    "title": "basic python syntax",
+    "section": "loops and conditionals",
+    "text": "loops and conditionals\nHere are 10 Python code chunks demonstrating different types of loops and conditionals, with explanations:\n\nCode:\nfor i in range(5):\n    print(i)\nExplanation:\nThis is a basic for loop that iterates over the range 0 to 4 (Python ranges are zero-indexed and exclusive of the stop value). It prints each value of i in the loop: 0, 1, 2, 3, 4.\nCode:\nwhile True:\n    print(\"Looping...\")\n    break\nExplanation:\nThis is a while loop with a True condition, which would normally create an infinite loop. However, the break statement exits the loop after the first iteration. Without break, it would continuously print \"Looping...\".\nCode:\nif 10 &gt; 5:\n    print(\"10 is greater than 5\")\nelse:\n    print(\"5 is greater than or equal to 10\")\nExplanation:\nThis is an if-else statement. The condition 10 &gt; 5 evaluates to True, so the first block is executed, printing \"10 is greater than 5\". The else block would run if the condition were False.\nCode:\nnumber = 7\nif number % 2 == 0:\n    print(\"Even\")\nelse:\n    print(\"Odd\")\nExplanation:\nThis checks if the variable number is even or odd using the modulo operator (%). If number % 2 == 0, it prints \"Even\", otherwise, it prints \"Odd\". In this case, it prints \"Odd\" because 7 is not divisible by 2.\nCode:\nfor x in range(10):\n    if x % 2 == 0:\n        continue\n    print(x)\nExplanation:\nThis for loop prints all odd numbers from 0 to 9. The continue statement skips the rest of the loop when x is even, so only odd values (1, 3, 5, 7, 9) are printed.\nCode:\nfruits = [\"apple\", \"banana\", \"cherry\"]\nfor index, fruit in enumerate(fruits):\n    print(f\"Fruit {index}: {fruit}\")\nExplanation:\nThe enumerate() function provides both the index and value of each element in the fruits list. The loop iterates over the list, printing each fruit along with its index:\nFruit 0: apple\nFruit 1: banana\nFruit 2: cherry\nCode:\nis_raining = True\nis_sunny = False\nif is_raining and not is_sunny:\n    print(\"It's raining but not sunny\")\nelif is_sunny and not is_raining:\n    print(\"It's sunny but not raining\")\nelse:\n    print(\"It's either both raining and sunny or neither\")\nExplanation:\nThis demonstrates a compound conditional using Boolean variables. Since is_raining is True and is_sunny is False, the first block is executed, printing \"It's raining but not sunny\".\nCode:\neven_numbers = [x for x in range(10) if x % 2 == 0]\nprint(even_numbers)\nExplanation:\nThis is a list comprehension that creates a list of even numbers from 0 to 9. It iterates over the range of numbers and only includes those where x % 2 == 0. The output is [0, 2, 4, 6, 8].\nCode:\ntry:\n    result = 10 / 0\nexcept ZeroDivisionError:\n    print(\"Cannot divide by zero\")\nExplanation:\nThis is an example of a try-except block for exception handling. The try block contains code that could raise an exception (division by zero), and the except block catches the ZeroDivisionError and prints \"Cannot divide by zero\". Without the exception handling, the program would crash.\nCode:\n\nfor i in range(5):\n    try:\n        print(10 / i)\n    except ZeroDivisionError:\n        print(\"Division by zero is not allowed\")\nExplanation:\nThis loop attempts to divide 10 by i for values from 0 to 4. When i is 0, a ZeroDivisionError occurs, which is caught by the except block, printing \"Division by zero is not allowed\". For other values of i, the result of the division is printed.\nThese examples cover various types of loops, conditionals, list comprehensions, Boolean logic, and exception handling in Python.",
+    "crumbs": [
+      "workshop",
+      "part 1: getting started",
+      "basic python syntax"
+    ]
+  },
+  {
+    "objectID": "pyws01-2-getting-started.html#user-defined-functions",
+    "href": "pyws01-2-getting-started.html#user-defined-functions",
+    "title": "basic python syntax",
+    "section": "user defined functions",
+    "text": "user defined functions\nHere are 10 Python code chunks demonstrating different types of user-defined functions, with explanations:\n\nCode:\ndef greet():\n    \"\"\"This function prints a simple greeting message.\"\"\"\n    print(\"Hello, welcome!\")\ngreet()\nExplanation:\nThis is a simple function greet() that takes no arguments and prints a greeting message. It is called using greet(). The triple quotes \"\"\" define a docstring, which serves as the function’s documentation. When called, it prints \"Hello, welcome!\".\nCode:\ndef greet_person(name):\n    \"\"\"This function greets a person by name.\"\"\"\n    print(f\"Hello, {name}!\")\ngreet_person(\"Alice\")\nExplanation:\nThis function greet_person(name) accepts a single argument, name, and prints a personalized greeting. When you call greet_person(\"Alice\"), it prints \"Hello, Alice!\". The docstring explains what the function does.\nCode:\ndef add_numbers(a, b):\n    \"\"\"Returns the sum of two numbers.\"\"\"\n    return a + b\nresult = add_numbers(5, 3)\nprint(result)\nExplanation:\nadd_numbers(a, b) is a function that takes two arguments, a and b, and returns their sum. In this case, add_numbers(5, 3) returns 8, which is printed. The return keyword is used to send the result back to the calling code.\nCode:\ndef multiply(a, b=2):\n    \"\"\"Multiplies two numbers, with the second number having a default value of 2.\"\"\"\n    return a * b\nprint(multiply(4))  # uses default value for b\nprint(multiply(4, 3))  # overrides default value for b\nExplanation:\nThis function multiply(a, b=2) takes two arguments but assigns a default value of 2 to b. If only one argument is passed, the function uses the default value. Calling multiply(4) returns 8, while multiply(4, 3) returns 12.\nCode:\ndef divide(a, b):\n    \"\"\"Divides a by b and handles division by zero.\"\"\"\n    if b == 0:\n        return \"Cannot divide by zero!\"\n    return a / b\nprint(divide(10, 2))\nprint(divide(10, 0))\nExplanation:\ndivide(a, b) takes two arguments and returns the result of dividing a by b. It includes a conditional to check for division by zero. If b is 0, it returns an error message. Calling divide(10, 2) returns 5.0, while divide(10, 0) returns \"Cannot divide by zero!\".\nCode:\ndef square_elements(numbers):\n    \"\"\"Takes a list of numbers and returns a list of their squares.\"\"\"\n    return [x ** 2 for x in numbers]\nprint(square_elements([1, 2, 3, 4]))\nExplanation:\nThis function square_elements(numbers) takes a list of numbers and returns a new list containing the squares of those numbers. The function uses list comprehension. Calling square_elements([1, 2, 3, 4]) returns [1, 4, 9, 16].\nCode:\ndef factorial(n):\n    \"\"\"Recursively calculates the factorial of n.\"\"\"\n    if n == 0:\n        return 1\n    else:\n        return n * factorial(n - 1)\nprint(factorial(5))\nExplanation:\nThis function factorial(n) uses recursion to calculate the factorial of a number. If n is 0, it returns 1 (base case). Otherwise, it multiplies n by factorial(n - 1). Calling factorial(5) returns 120.\nCode:\ndef is_even(number):\n    \"\"\"Checks if a number is even.\"\"\"\n    return number % 2 == 0\nprint(is_even(4))  # True\nprint(is_even(7))  # False\nExplanation:\nThe function is_even(number) checks if a number is even by using the modulo operator (%). If the remainder is 0, it returns True, otherwise False. Calling is_even(4) returns True, and is_even(7) returns False.\nCode:\ndef describe_person(name, age, *hobbies):\n    \"\"\"Takes a name, age, and any number of hobbies, and prints a description.\"\"\"\n    print(f\"{name} is {age} years old and enjoys {', '.join(hobbies)}.\")\ndescribe_person(\"Alice\", 30, \"reading\", \"hiking\", \"cooking\")\nExplanation:\nThis function describe_person(name, age, *hobbies) accepts a variable number of hobby arguments using the * syntax, which collects extra arguments into a tuple. The join() method creates a string from the hobbies. Calling describe_person(\"Alice\", 30, \"reading\", \"hiking\", \"cooking\") prints \"Alice is 30 years old and enjoys reading, hiking, cooking.\"\nCode:\ndef calculate_average(*numbers):\n    \"\"\"Calculates the average of any number of values.\"\"\"\n    if len(numbers) == 0:\n        return 0\n    return sum(numbers) / len(numbers)\nprint(calculate_average(5, 10, 15))\nprint(calculate_average())\nExplanation:\nThe calculate_average(*numbers) function calculates the average of any number of arguments. It first checks if any numbers were provided (if the length of numbers is 0, it returns 0), then calculates the average by dividing the sum by the length. Calling calculate_average(5, 10, 15) returns 10.0, and calculate_average() returns 0.\n\nThese examples show different ways to define functions with varying arguments, handling edge cases, using recursion, and incorporating function documentation.",
+    "crumbs": [
+      "workshop",
+      "part 1: getting started",
+      "basic python syntax"
+    ]
+  },
+  {
+    "objectID": "pyws01-2-getting-started.html#some-test",
+    "href": "pyws01-2-getting-started.html#some-test",
+    "title": "basic python syntax",
+    "section": "some test",
+    "text": "some test",
+    "crumbs": [
+      "workshop",
+      "part 1: getting started",
+      "basic python syntax"
+    ]
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
@@ -20,6 +191,39 @@
     ]
   },
   {
+    "objectID": "pyws03-0-text-analysis.html",
+    "href": "pyws03-0-text-analysis.html",
+    "title": "part 3: text analysis",
+    "section": "",
+    "text": "Reading and analyzing unstructured text presents a variety of challenges, particularly when dealing with different types of content such as articles, social media posts, or even longer documents like reports. Unstructured text, unlike tabular data, lacks a predefined format, which means it may contain irregularities such as spelling errors, slang, or varied sentence structures. For example, reading short texts like social media posts requires handling informal language, abbreviations, and emojis, whereas longer texts such as research papers or survey responses involve the challenge of organizing and summarizing large amounts of information. Rendered texts, such as those from PDFs or HTML files, often come with additional complexities like layout formatting, metadata, or embedded images, which may need to be stripped out or interpreted correctly before the actual text can be processed. Handling such varied lengths and formats requires careful preprocessing, including cleaning and standardizing the text data to make it suitable for analysis.",
+    "crumbs": [
+      "workshop",
+      "part 3: text analysis"
+    ]
+  },
+  {
+    "objectID": "pyws03-0-text-analysis.html#reading-text-content",
+    "href": "pyws03-0-text-analysis.html#reading-text-content",
+    "title": "part 3: text analysis",
+    "section": "",
+    "text": "Reading and analyzing unstructured text presents a variety of challenges, particularly when dealing with different types of content such as articles, social media posts, or even longer documents like reports. Unstructured text, unlike tabular data, lacks a predefined format, which means it may contain irregularities such as spelling errors, slang, or varied sentence structures. For example, reading short texts like social media posts requires handling informal language, abbreviations, and emojis, whereas longer texts such as research papers or survey responses involve the challenge of organizing and summarizing large amounts of information. Rendered texts, such as those from PDFs or HTML files, often come with additional complexities like layout formatting, metadata, or embedded images, which may need to be stripped out or interpreted correctly before the actual text can be processed. Handling such varied lengths and formats requires careful preprocessing, including cleaning and standardizing the text data to make it suitable for analysis.",
+    "crumbs": [
+      "workshop",
+      "part 3: text analysis"
+    ]
+  },
+  {
+    "objectID": "pyws03-0-text-analysis.html#text-tokenization",
+    "href": "pyws03-0-text-analysis.html#text-tokenization",
+    "title": "part 3: text analysis",
+    "section": "text tokenization",
+    "text": "text tokenization\nText tokenization is the foundational step in processing unstructured text, where the text is broken down into smaller units like words or phrases. This allows for basic analysis, such as word frequency counts or simple keyword extraction. However, more advanced techniques go beyond tokenization to capture deeper insights from text. Topic modeling, for instance, identifies latent themes within large text corpora by analyzing patterns in word co-occurrences. It helps uncover hidden structures in the data, which can be particularly useful when working with large datasets of documents, like survey responses or news articles. Sentiment analysis is another advanced technique that goes beyond simple tokenization by determining the emotional tone behind the text, whether it is positive, negative, or neutral. This is especially useful for analyzing customer feedback or social media sentiment. Finally, word vectorization techniques such as Word2Vec or GloVe transform words into numerical vectors based on their context, enabling more sophisticated tasks like measuring semantic similarity between words or phrases, clustering similar documents, or feeding text data into machine learning models. While tokenization provides a starting point, these more advanced techniques enable richer and more meaningful interpretations of textual data.",
+    "crumbs": [
+      "workshop",
+      "part 3: text analysis"
+    ]
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Introduction to Python",
@@ -35,5 +239,122 @@
     "title": "Schedule",
     "section": "",
     "text": "The following info is fetched from timeedit:"
+  },
+  {
+    "objectID": "pyws02-1-data-analysis.html",
+    "href": "pyws02-1-data-analysis.html",
+    "title": "dataframe manipulation",
+    "section": "",
+    "text": "Here’s the Python code to perform the requested data analysis steps without execution:\n\n# Import necessary libraries\nimport seaborn as sns\nimport pandas as pd\n\n# Step 1: Load data into a DataFrame called df\ndf = sns.load_dataset(\"penguins\")\n\n# Selecting a dependent variable (e.g., body_mass_g) and a few independent variables\n# Renaming them as per the requirement\ndf_selected = df[['body_mass_g', 'bill_length_mm', 'bill_depth_mm', 'flipper_length_mm', 'island']]\n\n# Renaming columns for easier reference\ndf_renamed = df_selected.rename(columns={\n    'body_mass_g': 'dep_var', \n    'bill_length_mm': 'indep_var_1', \n    'bill_depth_mm': 'indep_var_2', \n    'flipper_length_mm': 'indep_var_3', \n    'island': 'indep_var_4'\n})\n\n# Step 2: Save the DataFrame as a TSV file\noutput_file_path = '/home/sol-nhl/rnd/d/quarto/osm-cda/csv/data.tsv'\ndf_renamed.to_csv(output_file_path, sep='\\t', index=False)\n\n# Step 3: Summary statistics of the DataFrame\nsummary_stats = df_renamed.describe()\n\n# Step 4: Retrieving the first five records\nfirst_five_records = df_renamed.head()\n\n# Step 5: Changing column types (for example, converting 'indep_var_4' to a categorical variable)\ndf_renamed['indep_var_4'] = df_renamed['indep_var_4'].astype('category')\n\n# Step 6: Filling missing values (filling numeric columns with their mean values)\ndf_filled = df_renamed.fillna(df_renamed.mean(numeric_only=True))\n\n# Step 7: Removing missing values (dropping rows with any remaining missing values)\ndf_no_missing = df_filled.dropna()\n\n# Step 8: Removing duplicate records\ndf_no_duplicates = df_no_missing.drop_duplicates()\n\n# Output result to verify (summary statistics and first five records)\nprint(summary_stats)\nprint(first_five_records)\n\n           dep_var  indep_var_1  indep_var_2  indep_var_3\ncount   342.000000   342.000000   342.000000   342.000000\nmean   4201.754386    43.921930    17.151170   200.915205\nstd     801.954536     5.459584     1.974793    14.061714\nmin    2700.000000    32.100000    13.100000   172.000000\n25%    3550.000000    39.225000    15.600000   190.000000\n50%    4050.000000    44.450000    17.300000   197.000000\n75%    4750.000000    48.500000    18.700000   213.000000\nmax    6300.000000    59.600000    21.500000   231.000000\n   dep_var  indep_var_1  indep_var_2  indep_var_3 indep_var_4\n0   3750.0         39.1         18.7        181.0   Torgersen\n1   3800.0         39.5         17.4        186.0   Torgersen\n2   3250.0         40.3         18.0        195.0   Torgersen\n3      NaN          NaN          NaN          NaN   Torgersen\n4   3450.0         36.7         19.3        193.0   Torgersen\n\n\n\n\n\nLoading Data: The penguins dataset from seaborn is loaded into a DataFrame called df.\nSaving Data as TSV: The cleaned DataFrame (df_renamed) is saved as a TSV file to the specified path.\nSummary Statistics: The describe() method is used to calculate summary statistics for the DataFrame.\nFirst Five Records: The first five records are retrieved using the head() method.\nRenaming Columns: Columns are renamed for easier reference, changing variable names like body_mass_g to dep_var and others to indep_var_1, indep_var_2, and so on.\nChanging Column Types: The indep_var_4 column (originally island) is converted to a categorical data type.\nFilling Missing Values: Missing values in numeric columns are filled using the mean of each column.\nRemoving Missing Values: Rows with any remaining missing values are dropped.\nRemoving Duplicates: Duplicate records in the DataFrame are removed.\n\nThis code prepares and cleans the dataset for further analysis, ensuring that missing and duplicate values are handled and the DataFrame is saved as a .tsv file.",
+    "crumbs": [
+      "workshop",
+      "part 2: data analysis",
+      "dataframe manipulation"
+    ]
+  },
+  {
+    "objectID": "pyws02-1-data-analysis.html#load-and-clean-data",
+    "href": "pyws02-1-data-analysis.html#load-and-clean-data",
+    "title": "dataframe manipulation",
+    "section": "",
+    "text": "Here’s the Python code to perform the requested data analysis steps without execution:\n\n# Import necessary libraries\nimport seaborn as sns\nimport pandas as pd\n\n# Step 1: Load data into a DataFrame called df\ndf = sns.load_dataset(\"penguins\")\n\n# Selecting a dependent variable (e.g., body_mass_g) and a few independent variables\n# Renaming them as per the requirement\ndf_selected = df[['body_mass_g', 'bill_length_mm', 'bill_depth_mm', 'flipper_length_mm', 'island']]\n\n# Renaming columns for easier reference\ndf_renamed = df_selected.rename(columns={\n    'body_mass_g': 'dep_var', \n    'bill_length_mm': 'indep_var_1', \n    'bill_depth_mm': 'indep_var_2', \n    'flipper_length_mm': 'indep_var_3', \n    'island': 'indep_var_4'\n})\n\n# Step 2: Save the DataFrame as a TSV file\noutput_file_path = '/home/sol-nhl/rnd/d/quarto/osm-cda/csv/data.tsv'\ndf_renamed.to_csv(output_file_path, sep='\\t', index=False)\n\n# Step 3: Summary statistics of the DataFrame\nsummary_stats = df_renamed.describe()\n\n# Step 4: Retrieving the first five records\nfirst_five_records = df_renamed.head()\n\n# Step 5: Changing column types (for example, converting 'indep_var_4' to a categorical variable)\ndf_renamed['indep_var_4'] = df_renamed['indep_var_4'].astype('category')\n\n# Step 6: Filling missing values (filling numeric columns with their mean values)\ndf_filled = df_renamed.fillna(df_renamed.mean(numeric_only=True))\n\n# Step 7: Removing missing values (dropping rows with any remaining missing values)\ndf_no_missing = df_filled.dropna()\n\n# Step 8: Removing duplicate records\ndf_no_duplicates = df_no_missing.drop_duplicates()\n\n# Output result to verify (summary statistics and first five records)\nprint(summary_stats)\nprint(first_five_records)\n\n           dep_var  indep_var_1  indep_var_2  indep_var_3\ncount   342.000000   342.000000   342.000000   342.000000\nmean   4201.754386    43.921930    17.151170   200.915205\nstd     801.954536     5.459584     1.974793    14.061714\nmin    2700.000000    32.100000    13.100000   172.000000\n25%    3550.000000    39.225000    15.600000   190.000000\n50%    4050.000000    44.450000    17.300000   197.000000\n75%    4750.000000    48.500000    18.700000   213.000000\nmax    6300.000000    59.600000    21.500000   231.000000\n   dep_var  indep_var_1  indep_var_2  indep_var_3 indep_var_4\n0   3750.0         39.1         18.7        181.0   Torgersen\n1   3800.0         39.5         17.4        186.0   Torgersen\n2   3250.0         40.3         18.0        195.0   Torgersen\n3      NaN          NaN          NaN          NaN   Torgersen\n4   3450.0         36.7         19.3        193.0   Torgersen\n\n\n\n\n\nLoading Data: The penguins dataset from seaborn is loaded into a DataFrame called df.\nSaving Data as TSV: The cleaned DataFrame (df_renamed) is saved as a TSV file to the specified path.\nSummary Statistics: The describe() method is used to calculate summary statistics for the DataFrame.\nFirst Five Records: The first five records are retrieved using the head() method.\nRenaming Columns: Columns are renamed for easier reference, changing variable names like body_mass_g to dep_var and others to indep_var_1, indep_var_2, and so on.\nChanging Column Types: The indep_var_4 column (originally island) is converted to a categorical data type.\nFilling Missing Values: Missing values in numeric columns are filled using the mean of each column.\nRemoving Missing Values: Rows with any remaining missing values are dropped.\nRemoving Duplicates: Duplicate records in the DataFrame are removed.\n\nThis code prepares and cleans the dataset for further analysis, ensuring that missing and duplicate values are handled and the DataFrame is saved as a .tsv file.",
+    "crumbs": [
+      "workshop",
+      "part 2: data analysis",
+      "dataframe manipulation"
+    ]
+  },
+  {
+    "objectID": "pyws02-1-data-analysis.html#select-and-group-data",
+    "href": "pyws02-1-data-analysis.html#select-and-group-data",
+    "title": "dataframe manipulation",
+    "section": "select and group data",
+    "text": "select and group data\n\n# Import necessary libraries\nimport pandas as pd\n\n# Step 1: Load df from the TSV file (input_file_path)\ninput_file_path = '/home/sol-nhl/rnd/d/quarto/osm-cda/csv/data.tsv'\ndf = pd.read_csv(input_file_path, sep='\\t')\n\n# Step 2: Filtering data (example: filter rows where dep_var &gt; 3500)\nfiltered_df = df[df['dep_var'] &gt; 3500]\n\n# Step 3: Selecting the required columns (example: selecting dep_var and indep_var_1)\nselected_columns = filtered_df[['dep_var', 'indep_var_1', 'indep_var_4']]\n\n# Step 4: Grouping data example (example: group by indep_var_4 and calculate mean dep_var)\ngrouped_data = df.groupby('indep_var_4')['dep_var'].mean().reset_index()\n\n# Step 5: Merging data with another DataFrame (example: merging original df with grouped_data on indep_var_4)\nmerged_df = pd.merge(df, grouped_data, on='indep_var_4', suffixes=('', '_mean'))\n\n# Step 6: Calculating a new column (example: calculate the difference between dep_var and dep_var_mean)\nmerged_df['dep_var_diff'] = merged_df['dep_var'] - merged_df['dep_var_mean']\n\n# Step 7: Creating a Pivot table (example: pivot table with indep_var_4 as index and dep_var as values, mean of dep_var)\npivot_table = merged_df.pivot_table(values='dep_var', index='indep_var_4', aggfunc='mean')\n\n# Step 8: Save the Pivot table as a TSV file\noutput_file_path = '/home/sol-nhl/rnd/d/quarto/osm-cda/csv/data_pivot.tsv'\npivot_table.to_csv(output_file_path, sep='\\t')\n\n# Output result to verify (filtered data, selected columns, grouped data, merged data, and pivot table)\nprint(filtered_df.head())\nprint(selected_columns.head())\nprint(grouped_data.head())\nprint(merged_df.head())\nprint(pivot_table)\n\n   dep_var  indep_var_1  indep_var_2  indep_var_3 indep_var_4\n0   3750.0         39.1         18.7        181.0   Torgersen\n1   3800.0         39.5         17.4        186.0   Torgersen\n5   3650.0         39.3         20.6        190.0   Torgersen\n6   3625.0         38.9         17.8        181.0   Torgersen\n7   4675.0         39.2         19.6        195.0   Torgersen\n   dep_var  indep_var_1 indep_var_4\n0   3750.0         39.1   Torgersen\n1   3800.0         39.5   Torgersen\n5   3650.0         39.3   Torgersen\n6   3625.0         38.9   Torgersen\n7   4675.0         39.2   Torgersen\n  indep_var_4      dep_var\n0      Biscoe  4716.017964\n1       Dream  3712.903226\n2   Torgersen  3706.372549\n   dep_var  indep_var_1  indep_var_2  indep_var_3 indep_var_4  dep_var_mean  \\\n0   3750.0         39.1         18.7        181.0   Torgersen   3706.372549   \n1   3800.0         39.5         17.4        186.0   Torgersen   3706.372549   \n2   3250.0         40.3         18.0        195.0   Torgersen   3706.372549   \n3      NaN          NaN          NaN          NaN   Torgersen   3706.372549   \n4   3450.0         36.7         19.3        193.0   Torgersen   3706.372549   \n\n   dep_var_diff  \n0     43.627451  \n1     93.627451  \n2   -456.372549  \n3           NaN  \n4   -256.372549  \n                 dep_var\nindep_var_4             \nBiscoe       4716.017964\nDream        3712.903226\nTorgersen    3706.372549\n\n\n\nselect and group, summary\n\nLoading Data: The TSV file located at /home/sol-nhl/rnd/d/quarto/osm-cda/csv/data.tsv is loaded into a DataFrame called df using pd.read_csv() with tab-separated values.\nFiltering Data: An example filter is applied to select rows where the dependent variable (dep_var) is greater than 3500.\nSelecting Columns: The relevant columns are selected, including the dependent variable (dep_var), one of the independent variables (indep_var_1), and the grouping variable (indep_var_4).\nGrouping Data: The data is grouped by the independent variable (indep_var_4) and the mean of dep_var is calculated for each group.\nMerging Data: The original DataFrame (df) is merged with the grouped data (mean dep_var for each indep_var_4) on the indep_var_4 column.\nCalculating a New Column: A new column (dep_var_diff) is calculated as the difference between each penguin’s dep_var and the group mean dep_var.\nCreating a Pivot Table: A pivot table is generated, showing the mean dep_var for each category in indep_var_4.\nSaving the Data: The resulting pivot table is saved to a new TSV file at /home/sol-nhl/rnd/d/quarto/osm-cda/csv/data_pivot.tsv.\n\nThis code accomplishes the task of analyzing the penguins dataset by filtering, selecting, grouping, merging, calculating a new column, creating a pivot table, and saving the final output to a TSV file.",
+    "crumbs": [
+      "workshop",
+      "part 2: data analysis",
+      "dataframe manipulation"
+    ]
+  },
+  {
+    "objectID": "pyws01-1-getting-started.html",
+    "href": "pyws01-1-getting-started.html",
+    "title": "python environments",
+    "section": "",
+    "text": "sign in to goole account to connect colab app\n\n\n\nhttps://colab.research.google.com/",
+    "crumbs": [
+      "workshop",
+      "part 1: getting started",
+      "python environments"
+    ]
+  },
+  {
+    "objectID": "pyws01-1-getting-started.html#google-colab",
+    "href": "pyws01-1-getting-started.html#google-colab",
+    "title": "python environments",
+    "section": "",
+    "text": "sign in to goole account to connect colab app\n\n\n\nhttps://colab.research.google.com/",
+    "crumbs": [
+      "workshop",
+      "part 1: getting started",
+      "python environments"
+    ]
+  },
+  {
+    "objectID": "pyws01-1-getting-started.html#visual-studio-code",
+    "href": "pyws01-1-getting-started.html#visual-studio-code",
+    "title": "python environments",
+    "section": "visual studio code",
+    "text": "visual studio code\n\n\n\ndownload and install vscode app on local computer\n\n\n\nhttps://code.visualstudio.com/download\nhttps://www.python.org/downloads/",
+    "crumbs": [
+      "workshop",
+      "part 1: getting started",
+      "python environments"
+    ]
+  },
+  {
+    "objectID": "pyws01-1-getting-started.html#anaconda",
+    "href": "pyws01-1-getting-started.html#anaconda",
+    "title": "python environments",
+    "section": "anaconda",
+    "text": "anaconda\n\nhttps://www.anaconda.com/download",
+    "crumbs": [
+      "workshop",
+      "part 1: getting started",
+      "python environments"
+    ]
+  },
+  {
+    "objectID": "pyws02-0-data-analysis.html",
+    "href": "pyws02-0-data-analysis.html",
+    "title": "part 2: data analysis",
+    "section": "",
+    "text": "Dataframe operations in Python, particularly with the Pandas library, allow for highly flexible and efficient data manipulation, making it a cornerstone of data analysis in fields like social science. One of the most common operations involves loading data from various sources such as CSV files, databases, or APIs, transforming it into a structured dataframe for analysis. From there, you can perform cleaning operations, such as handling missing values, filtering rows or columns, and converting data types. These cleaning steps are essential in real-world data analysis, where datasets are rarely perfect. Once the data is clean, more advanced dataframe operations come into play, such as grouping and aggregating data by specific columns, which allows users to extract insights like means, counts, or sums based on key categories. Pandas also supports joining and merging data from multiple sources, enabling researchers to combine different datasets for more comprehensive analyses. These operations contrast with the more manual approaches used in tools like Excel, where data manipulation might involve repetitive tasks like copy-pasting or formula adjustments, which can be error-prone and less scalable.",
+    "crumbs": [
+      "workshop",
+      "part 2: data analysis"
+    ]
+  },
+  {
+    "objectID": "pyws02-0-data-analysis.html#dataframe-manipulation",
+    "href": "pyws02-0-data-analysis.html#dataframe-manipulation",
+    "title": "part 2: data analysis",
+    "section": "",
+    "text": "Dataframe operations in Python, particularly with the Pandas library, allow for highly flexible and efficient data manipulation, making it a cornerstone of data analysis in fields like social science. One of the most common operations involves loading data from various sources such as CSV files, databases, or APIs, transforming it into a structured dataframe for analysis. From there, you can perform cleaning operations, such as handling missing values, filtering rows or columns, and converting data types. These cleaning steps are essential in real-world data analysis, where datasets are rarely perfect. Once the data is clean, more advanced dataframe operations come into play, such as grouping and aggregating data by specific columns, which allows users to extract insights like means, counts, or sums based on key categories. Pandas also supports joining and merging data from multiple sources, enabling researchers to combine different datasets for more comprehensive analyses. These operations contrast with the more manual approaches used in tools like Excel, where data manipulation might involve repetitive tasks like copy-pasting or formula adjustments, which can be error-prone and less scalable.",
+    "crumbs": [
+      "workshop",
+      "part 2: data analysis"
+    ]
+  },
+  {
+    "objectID": "pyws02-0-data-analysis.html#result-visualizations",
+    "href": "pyws02-0-data-analysis.html#result-visualizations",
+    "title": "part 2: data analysis",
+    "section": "result visualizations",
+    "text": "result visualizations\nWhen it comes to data visualization, it’s important to distinguish between descriptive and inferential visualizations, both of which play a key role in data analysis. Descriptive visualizations, often created using libraries like Matplotlib and Seaborn, are used to summarize data in a visually intuitive way. Examples include bar charts, histograms, and scatter plots, which help the analyst understand the distribution, trends, or relationships within a dataset. These types of visualizations are valuable for exploratory data analysis, where the goal is to make sense of the data’s underlying patterns and features. On the other hand, inferential visualizations take things a step further by incorporating statistical models to make predictions or generalizations about a population based on sample data. Examples include confidence intervals, regression lines, or p-value plots, which are often layered on top of standard visualizations to highlight the uncertainty or significance of findings. While descriptive visualizations provide an overview of the data at hand, inferential visualizations are essential for drawing conclusions that extend beyond the immediate dataset, particularly in social science research, where researchers often need to infer trends across larger populations.",
+    "crumbs": [
+      "workshop",
+      "part 2: data analysis"
+    ]
   }
 ]

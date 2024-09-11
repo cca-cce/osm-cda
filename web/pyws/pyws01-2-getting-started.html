@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -254,8 +288,18 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#strings-and-numbers" id="toc-strings-and-numbers" class="nav-link active" data-scroll-target="#strings-and-numbers">strings and numbers</a></li>
+  <li><a href="#lists-and-dictionaries" id="toc-lists-and-dictionaries" class="nav-link" data-scroll-target="#lists-and-dictionaries">lists and dictionaries</a></li>
+  <li><a href="#loops-and-conditionals" id="toc-loops-and-conditionals" class="nav-link" data-scroll-target="#loops-and-conditionals">loops and conditionals</a></li>
+  <li><a href="#user-defined-functions" id="toc-user-defined-functions" class="nav-link" data-scroll-target="#user-defined-functions">user defined functions</a></li>
+  <li><a href="#some-test" id="toc-some-test" class="nav-link" data-scroll-target="#some-test">some test</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -279,8 +323,287 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<ul>
+<li>download <a href="pyws01-2-getting-started.ipynb">jupyter notebook</a></li>
+</ul>
+<section id="strings-and-numbers" class="level2">
+<h2 class="anchored" data-anchor-id="strings-and-numbers">strings and numbers</h2>
+<p>Here are 10 Python code lines with different types of strings and numbers, each followed by an explanation:</p>
+<ol type="1">
+<li><p><strong>Code:</strong></p>
+<div id="c32b2ed4" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is a comment explaining the next line</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Explanation:</strong><br>
+This line starts with a <code>#</code>, making it a comment. Python ignores this line during execution. It’s used to explain code or leave notes for other programmers.</p></li>
+<li><p><strong>Code:</strong></p>
+<div id="9774e531" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Hello, World!'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hello, World!</code></pre>
+</div>
+</div>
+<p><strong>Explanation:</strong><br>
+This prints the string <code>'Hello, World!'</code> to the console. Single quotes enclose the string. In Python, single and double quotes are interchangeable for defining strings.</p></li>
+<li><p><strong>Code:</strong></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Python is fun"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong><br>
+Here, double quotes are used to define the string <code>"Python is fun"</code>. Python treats strings defined with single or double quotes the same way.</p></li>
+<li><p><strong>Code:</strong></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"He said, </span><span class="ch">\"</span><span class="st">Python is cool</span><span class="ch">\"</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong><br>
+This line prints <code>He said, "Python is cool"</code>. The backslash <code>\</code> before the double quotes escapes them, telling Python to treat them as part of the string instead of ending it.</p></li>
+<li><p><strong>Code:</strong></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Line one</span><span class="ch">\n</span><span class="st">Line two"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong><br>
+The <code>\n</code> is a newline escape character, so this will output:</p>
+<pre><code>Line one
+Line two</code></pre>
+<p>The <code>\n</code> tells Python to move to a new line.</p></li>
+<li><p><strong>Code:</strong></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello"</span> <span class="op">+</span> <span class="st">" "</span> <span class="op">+</span> <span class="st">"World"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong><br>
+This line concatenates three strings: <code>"Hello"</code>, a space (<code>" "</code>), and <code>"World"</code>, resulting in <code>Hello World</code>. The <code>+</code> operator combines strings.</p></li>
+<li><p><strong>Code:</strong></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">5</span> <span class="op">+</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong><br>
+This performs an arithmetic operation, adding two integers <code>5</code> and <code>3</code>, resulting in the output <code>8</code>. Python interprets <code>+</code> as an addition operator when used with numbers.</p></li>
+<li><p><strong>Code:</strong></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">5.0</span> <span class="op">+</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong><br>
+This adds a floating-point number <code>5.0</code> and an integer <code>3</code>. Python automatically converts the integer to a float and outputs <code>8.0</code>, demonstrating Python’s support for mixed-type arithmetic.</p></li>
+<li><p><strong>Code:</strong></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">7</span> <span class="op">/</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong><br>
+This division operation between two integers results in <code>3.5</code>. In Python 3, division with <code>/</code> always results in a float, even when dividing two integers.</p></li>
+<li><p><strong>Code:</strong></p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="fl">3.14</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong><br>
+This uses the <code>type()</code> function, which returns the data type of the value passed to it. Here, <code>3.14</code> is a floating-point number, so the output will be <code>&lt;class 'float'&gt;</code>, indicating the value is of type <code>float</code>.</p></li>
+</ol>
+<p>These examples cover key features of Python strings, numbers, and the <code>type()</code> function, along with how comments and escape characters work.</p>
+</section>
+<section id="lists-and-dictionaries" class="level2">
+<h2 class="anchored" data-anchor-id="lists-and-dictionaries">lists and dictionaries</h2>
+<p>Here are 10 Python code lines illustrating different types of lists and dictionaries, with explanations:</p>
+<ol type="1">
+<li><p><strong>Code:</strong></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong><br>
+This creates a list called <code>my_list</code> containing four integer elements: <code>[1, 2, 3, 4]</code>. Lists are ordered and mutable collections in Python, allowing for element addition, removal, and modification. Each element can be accessed by its index, starting from 0.</p></li>
+<li><p><strong>Code:</strong></p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>my_dict <span class="op">=</span> {<span class="st">'name'</span>: <span class="st">'Alice'</span>, <span class="st">'age'</span>: <span class="dv">30</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong><br>
+This creates a dictionary <code>my_dict</code> with two key-value pairs: <code>'name': 'Alice'</code> and <code>'age': 30</code>. Dictionaries are unordered collections that map keys to values, and values can be accessed using the keys.</p></li>
+<li><p><strong>Code:</strong></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>nested_list <span class="op">=</span> [[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>], [<span class="dv">5</span>, <span class="dv">6</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong><br>
+This creates a 2D list <code>nested_list</code>, where each element is another list. Accessing elements can be done using two indices, such as <code>nested_list[0][1]</code> to get the value <code>2</code>.</p></li>
+<li><p><strong>Code:</strong></p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>nested_dict <span class="op">=</span> {<span class="st">'person1'</span>: {<span class="st">'name'</span>: <span class="st">'Alice'</span>, <span class="st">'age'</span>: <span class="dv">30</span>}, <span class="st">'person2'</span>: {<span class="st">'name'</span>: <span class="st">'Bob'</span>, <span class="st">'age'</span>: <span class="dv">25</span>}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong><br>
+This is a 2D dictionary, where each key (<code>'person1'</code>, <code>'person2'</code>) maps to another dictionary. For example, you can access <code>Alice</code>’s age by using <code>nested_dict['person1']['age']</code>, which returns <code>30</code>.</p></li>
+<li><p><strong>Code:</strong></p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>my_list.append(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong><br>
+This appends the value <code>5</code> to the end of <code>my_list</code>. The <code>append()</code> method is a built-in function for adding elements to a list, modifying it in place.</p></li>
+<li><p><strong>Code:</strong></p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>last_item <span class="op">=</span> my_list.pop()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong><br>
+This removes and returns the last element from <code>my_list</code> using the <code>pop()</code> method. If <code>my_list = [1, 2, 3, 4, 5]</code>, after popping, <code>my_list</code> becomes <code>[1, 2, 3, 4]</code> and <code>last_item</code> is assigned the value <code>5</code>.</p></li>
+<li><p><strong>Code:</strong></p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>second_item <span class="op">=</span> my_list[<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong><br>
+This accesses the second element of <code>my_list</code> using the index <code>1</code> (Python uses 0-based indexing). For example, if <code>my_list = [1, 2, 3, 4]</code>, <code>second_item</code> will be <code>2</code>.</p></li>
+<li><p><strong>Code:</strong></p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>my_dict[<span class="st">'city'</span>] <span class="op">=</span> <span class="st">'New York'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong><br>
+This adds a new key-value pair <code>'city': 'New York'</code> to <code>my_dict</code>. Dictionaries allow dynamic insertion of key-value pairs. If <code>my_dict</code> already contains <code>'city'</code>, this will update its value.</p></li>
+<li><p><strong>Code:</strong></p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>removed_value <span class="op">=</span> my_dict.pop(<span class="st">'age'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong><br>
+This removes the key <code>'age'</code> from <code>my_dict</code> and returns its value (<code>30</code> in this case). The <code>pop()</code> method removes the specified key-value pair and modifies the dictionary.</p></li>
+<li><p><strong>Code:</strong></p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(my_list))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong><br>
+This uses the <code>type()</code> function to check the data type of <code>my_list</code>. The output will be <code>&lt;class 'list'&gt;</code>, indicating that <code>my_list</code> is a list. Similarly, calling <code>type(my_dict)</code> would return <code>&lt;class 'dict'&gt;</code>, showing that <code>my_dict</code> is a dictionary.</p></li>
+</ol>
+<p>These examples illustrate key operations with lists and dictionaries, including element access, appending, popping, and the use of the <code>type()</code> function to check data types.</p>
+</section>
+<section id="loops-and-conditionals" class="level2">
+<h2 class="anchored" data-anchor-id="loops-and-conditionals">loops and conditionals</h2>
+<p>Here are 10 Python code chunks demonstrating different types of loops and conditionals, with explanations:</p>
+<ol type="1">
+<li><p><strong>Code:</strong></p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong><br>
+This is a basic <code>for</code> loop that iterates over the range <code>0</code> to <code>4</code> (Python ranges are zero-indexed and exclusive of the stop value). It prints each value of <code>i</code> in the loop: <code>0, 1, 2, 3, 4</code>.</p></li>
+<li><p><strong>Code:</strong></p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Looping..."</span>)</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">break</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong><br>
+This is a <code>while</code> loop with a <code>True</code> condition, which would normally create an infinite loop. However, the <code>break</code> statement exits the loop after the first iteration. Without <code>break</code>, it would continuously print <code>"Looping..."</code>.</p></li>
+<li><p><strong>Code:</strong></p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="dv">10</span> <span class="op">&gt;</span> <span class="dv">5</span>:</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"10 is greater than 5"</span>)</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"5 is greater than or equal to 10"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong><br>
+This is an <code>if-else</code> statement. The condition <code>10 &gt; 5</code> evaluates to <code>True</code>, so the first block is executed, printing <code>"10 is greater than 5"</code>. The <code>else</code> block would run if the condition were <code>False</code>.</p></li>
+<li><p><strong>Code:</strong></p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>number <span class="op">=</span> <span class="dv">7</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> number <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Even"</span>)</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Odd"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong><br>
+This checks if the variable <code>number</code> is even or odd using the modulo operator (<code>%</code>). If <code>number % 2 == 0</code>, it prints <code>"Even"</code>, otherwise, it prints <code>"Odd"</code>. In this case, it prints <code>"Odd"</code> because <code>7</code> is not divisible by <code>2</code>.</p></li>
+<li><p><strong>Code:</strong></p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> x <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong><br>
+This <code>for</code> loop prints all odd numbers from <code>0</code> to <code>9</code>. The <code>continue</code> statement skips the rest of the loop when <code>x</code> is even, so only odd values (<code>1, 3, 5, 7, 9</code>) are printed.</p></li>
+<li><p><strong>Code:</strong></p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>fruits <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>]</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index, fruit <span class="kw">in</span> <span class="bu">enumerate</span>(fruits):</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Fruit </span><span class="sc">{</span>index<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>fruit<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong><br>
+The <code>enumerate()</code> function provides both the index and value of each element in the <code>fruits</code> list. The loop iterates over the list, printing each fruit along with its index:</p>
+<pre><code>Fruit 0: apple
+Fruit 1: banana
+Fruit 2: cherry</code></pre></li>
+<li><p><strong>Code:</strong></p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>is_raining <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>is_sunny <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> is_raining <span class="kw">and</span> <span class="kw">not</span> is_sunny:</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"It's raining but not sunny"</span>)</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> is_sunny <span class="kw">and</span> <span class="kw">not</span> is_raining:</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"It's sunny but not raining"</span>)</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"It's either both raining and sunny or neither"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong><br>
+This demonstrates a compound conditional using Boolean variables. Since <code>is_raining</code> is <code>True</code> and <code>is_sunny</code> is <code>False</code>, the first block is executed, printing <code>"It's raining but not sunny"</code>.</p></li>
+<li><p><strong>Code:</strong></p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>even_numbers <span class="op">=</span> [x <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>) <span class="cf">if</span> x <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>]</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(even_numbers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong><br>
+This is a list comprehension that creates a list of even numbers from <code>0</code> to <code>9</code>. It iterates over the range of numbers and only includes those where <code>x % 2 == 0</code>. The output is <code>[0, 2, 4, 6, 8]</code>.</p></li>
+<li><p><strong>Code:</strong></p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> <span class="dv">10</span> <span class="op">/</span> <span class="dv">0</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">ZeroDivisionError</span>:</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Cannot divide by zero"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong><br>
+This is an example of a <code>try-except</code> block for exception handling. The <code>try</code> block contains code that could raise an exception (division by zero), and the <code>except</code> block catches the <code>ZeroDivisionError</code> and prints <code>"Cannot divide by zero"</code>. Without the exception handling, the program would crash.</p></li>
+<li><p><strong>Code:</strong></p></li>
+</ol>
+<div class="sourceCode" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="dv">10</span> <span class="op">/</span> i)</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">ZeroDivisionError</span>:</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Division by zero is not allowed"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong><br>
+This loop attempts to divide <code>10</code> by <code>i</code> for values from <code>0</code> to <code>4</code>. When <code>i</code> is <code>0</code>, a <code>ZeroDivisionError</code> occurs, which is caught by the <code>except</code> block, printing <code>"Division by zero is not allowed"</code>. For other values of <code>i</code>, the result of the division is printed.</p>
+<p>These examples cover various types of loops, conditionals, list comprehensions, Boolean logic, and exception handling in Python.</p>
+</section>
+<section id="user-defined-functions" class="level2">
+<h2 class="anchored" data-anchor-id="user-defined-functions">user defined functions</h2>
+<p>Here are 10 Python code chunks demonstrating different types of user-defined functions, with explanations:</p>
+<ol type="1">
+<li><p><strong>Code:</strong></p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greet():</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""This function prints a simple greeting message."""</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Hello, welcome!"</span>)</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>greet()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong><br>
+This is a simple function <code>greet()</code> that takes no arguments and prints a greeting message. It is called using <code>greet()</code>. The triple quotes <code>"""</code> define a docstring, which serves as the function’s documentation. When called, it prints <code>"Hello, welcome!"</code>.</p></li>
+<li><p><strong>Code:</strong></p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greet_person(name):</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""This function greets a person by name."""</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Hello, </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">!"</span>)</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>greet_person(<span class="st">"Alice"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong><br>
+This function <code>greet_person(name)</code> accepts a single argument, <code>name</code>, and prints a personalized greeting. When you call <code>greet_person("Alice")</code>, it prints <code>"Hello, Alice!"</code>. The docstring explains what the function does.</p></li>
+<li><p><strong>Code:</strong></p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add_numbers(a, b):</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Returns the sum of two numbers."""</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> add_numbers(<span class="dv">5</span>, <span class="dv">3</span>)</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong><br>
+<code>add_numbers(a, b)</code> is a function that takes two arguments, <code>a</code> and <code>b</code>, and returns their sum. In this case, <code>add_numbers(5, 3)</code> returns <code>8</code>, which is printed. The <code>return</code> keyword is used to send the result back to the calling code.</p></li>
+<li><p><strong>Code:</strong></p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> multiply(a, b<span class="op">=</span><span class="dv">2</span>):</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Multiplies two numbers, with the second number having a default value of 2."""</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">*</span> b</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(multiply(<span class="dv">4</span>))  <span class="co"># uses default value for b</span></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(multiply(<span class="dv">4</span>, <span class="dv">3</span>))  <span class="co"># overrides default value for b</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong><br>
+This function <code>multiply(a, b=2)</code> takes two arguments but assigns a default value of <code>2</code> to <code>b</code>. If only one argument is passed, the function uses the default value. Calling <code>multiply(4)</code> returns <code>8</code>, while <code>multiply(4, 3)</code> returns <code>12</code>.</p></li>
+<li><p><strong>Code:</strong></p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> divide(a, b):</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Divides a by b and handles division by zero."""</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> b <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"Cannot divide by zero!"</span></span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">/</span> b</span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(divide(<span class="dv">10</span>, <span class="dv">2</span>))</span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(divide(<span class="dv">10</span>, <span class="dv">0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong><br>
+<code>divide(a, b)</code> takes two arguments and returns the result of dividing <code>a</code> by <code>b</code>. It includes a conditional to check for division by zero. If <code>b</code> is <code>0</code>, it returns an error message. Calling <code>divide(10, 2)</code> returns <code>5.0</code>, while <code>divide(10, 0)</code> returns <code>"Cannot divide by zero!"</code>.</p></li>
+<li><p><strong>Code:</strong></p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> square_elements(numbers):</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Takes a list of numbers and returns a list of their squares."""</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [x <span class="op">**</span> <span class="dv">2</span> <span class="cf">for</span> x <span class="kw">in</span> numbers]</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(square_elements([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong><br>
+This function <code>square_elements(numbers)</code> takes a list of numbers and returns a new list containing the squares of those numbers. The function uses list comprehension. Calling <code>square_elements([1, 2, 3, 4])</code> returns <code>[1, 4, 9, 16]</code>.</p></li>
+<li><p><strong>Code:</strong></p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> factorial(n):</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Recursively calculates the factorial of n."""</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">1</span></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> n <span class="op">*</span> factorial(n <span class="op">-</span> <span class="dv">1</span>)</span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(factorial(<span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong><br>
+This function <code>factorial(n)</code> uses recursion to calculate the factorial of a number. If <code>n</code> is <code>0</code>, it returns <code>1</code> (base case). Otherwise, it multiplies <code>n</code> by <code>factorial(n - 1)</code>. Calling <code>factorial(5)</code> returns <code>120</code>.</p></li>
+<li><p><strong>Code:</strong></p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> is_even(number):</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Checks if a number is even."""</span></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> number <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(is_even(<span class="dv">4</span>))  <span class="co"># True</span></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(is_even(<span class="dv">7</span>))  <span class="co"># False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong><br>
+The function <code>is_even(number)</code> checks if a number is even by using the modulo operator (<code>%</code>). If the remainder is <code>0</code>, it returns <code>True</code>, otherwise <code>False</code>. Calling <code>is_even(4)</code> returns <code>True</code>, and <code>is_even(7)</code> returns <code>False</code>.</p></li>
+<li><p><strong>Code:</strong></p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> describe_person(name, age, <span class="op">*</span>hobbies):</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Takes a name, age, and any number of hobbies, and prints a description."""</span></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>name<span class="sc">}</span><span class="ss"> is </span><span class="sc">{</span>age<span class="sc">}</span><span class="ss"> years old and enjoys </span><span class="sc">{</span><span class="st">', '</span><span class="sc">.</span>join(hobbies)<span class="sc">}</span><span class="ss">."</span>)</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>describe_person(<span class="st">"Alice"</span>, <span class="dv">30</span>, <span class="st">"reading"</span>, <span class="st">"hiking"</span>, <span class="st">"cooking"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong><br>
+This function <code>describe_person(name, age, *hobbies)</code> accepts a variable number of hobby arguments using the <code>*</code> syntax, which collects extra arguments into a tuple. The <code>join()</code> method creates a string from the hobbies. Calling <code>describe_person("Alice", 30, "reading", "hiking", "cooking")</code> prints <code>"Alice is 30 years old and enjoys reading, hiking, cooking."</code></p></li>
+<li><p><strong>Code:</strong></p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_average(<span class="op">*</span>numbers):</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Calculates the average of any number of values."""</span></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(numbers) <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">sum</span>(numbers) <span class="op">/</span> <span class="bu">len</span>(numbers)</span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(calculate_average(<span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">15</span>))</span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(calculate_average())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong><br>
+The <code>calculate_average(*numbers)</code> function calculates the average of any number of arguments. It first checks if any numbers were provided (if the length of <code>numbers</code> is <code>0</code>, it returns <code>0</code>), then calculates the average by dividing the sum by the length. Calling <code>calculate_average(5, 10, 15)</code> returns <code>10.0</code>, and <code>calculate_average()</code> returns <code>0</code>.</p></li>
+</ol>
+<p>These examples show different ways to define functions with varying arguments, handling edge cases, using recursion, and incorporating function documentation.</p>
+</section>
+<section id="some-test" class="level2">
+<h2 class="anchored" data-anchor-id="some-test">some test</h2>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
