@@ -1,0 +1,132 @@
+---
+title: "dataframe manipulation"
+---
+
+## load and clean data
+
+Here's the Python code to perform the requested data analysis steps without execution:
+
+```{python}
+# Import necessary libraries
+import seaborn as sns
+import pandas as pd
+
+# Step 1: Load data into a DataFrame called df
+df = sns.load_dataset("penguins")
+
+# Selecting a dependent variable (e.g., body_mass_g) and a few independent variables
+# Renaming them as per the requirement
+df_selected = df[['body_mass_g', 'bill_length_mm', 'bill_depth_mm', 'flipper_length_mm', 'island']]
+
+# Renaming columns for easier reference
+df_renamed = df_selected.rename(columns={
+  'body_mass_g': 'dep_var', 
+  'bill_length_mm': 'indep_var_1', 
+  'bill_depth_mm': 'indep_var_2', 
+  'flipper_length_mm': 'indep_var_3', 
+  'island': 'indep_var_4'
+})
+
+# Step 2: Save the DataFrame as a TSV file
+output_file_path = '/home/sol-nhl/rnd/d/quarto/osm-cda/csv/data.tsv'
+df_renamed.to_csv(output_file_path, sep='\t', index=False)
+
+# Step 3: Summary statistics of the DataFrame
+summary_stats = df_renamed.describe()
+
+# Step 4: Retrieving the first five records
+first_five_records = df_renamed.head()
+
+# Step 5: Changing column types (for example, converting 'indep_var_4' to a categorical variable)
+df_renamed['indep_var_4'] = df_renamed['indep_var_4'].astype('category')
+
+# Step 6: Filling missing values (filling numeric columns with their mean values)
+df_filled = df_renamed.fillna(df_renamed.mean(numeric_only=True))
+
+# Step 7: Removing missing values (dropping rows with any remaining missing values)
+df_no_missing = df_filled.dropna()
+
+# Step 8: Removing duplicate records
+df_no_duplicates = df_no_missing.drop_duplicates()
+
+# Output result to verify (summary statistics and first five records)
+print(summary_stats)
+print(first_five_records)
+```
+
+### load and clean, summary
+1. **Loading Data**: The `penguins` dataset from seaborn is loaded into a DataFrame called `df`.
+2. **Saving Data as TSV**: The cleaned DataFrame (`df_renamed`) is saved as a TSV file to the specified path.
+3. **Summary Statistics**: The `describe()` method is used to calculate summary statistics for the DataFrame.
+4. **First Five Records**: The first five records are retrieved using the `head()` method.
+5. **Renaming Columns**: Columns are renamed for easier reference, changing variable names like `body_mass_g` to `dep_var` and others to `indep_var_1`, `indep_var_2`, and so on.
+6. **Changing Column Types**: The `indep_var_4` column (originally `island`) is converted to a categorical data type.
+7. **Filling Missing Values**: Missing values in numeric columns are filled using the mean of each column.
+8. **Removing Missing Values**: Rows with any remaining missing values are dropped.
+9. **Removing Duplicates**: Duplicate records in the DataFrame are removed.
+
+This code prepares and cleans the dataset for further analysis, ensuring that missing and duplicate values are handled and the DataFrame is saved as a `.tsv` file.
+
+## select and group data
+
+```{python}
+# Import necessary libraries
+import pandas as pd
+
+# Step 1: Load df from the TSV file (input_file_path)
+input_file_path = '/home/sol-nhl/rnd/d/quarto/osm-cda/csv/data.tsv'
+df = pd.read_csv(input_file_path, sep='\t')
+
+# Step 2: Filtering data (example: filter rows where dep_var > 3500)
+filtered_df = df[df['dep_var'] > 3500]
+
+# Step 3: Selecting the required columns (example: selecting dep_var and indep_var_1)
+selected_columns = filtered_df[['dep_var', 'indep_var_1', 'indep_var_4']]
+
+# Step 4: Grouping data example (example: group by indep_var_4 and calculate mean dep_var)
+grouped_data = df.groupby('indep_var_4')['dep_var'].mean().reset_index()
+
+# Step 5: Merging data with another DataFrame (example: merging original df with grouped_data on indep_var_4)
+merged_df = pd.merge(df, grouped_data, on='indep_var_4', suffixes=('', '_mean'))
+
+# Step 6: Calculating a new column (example: calculate the difference between dep_var and dep_var_mean)
+merged_df['dep_var_diff'] = merged_df['dep_var'] - merged_df['dep_var_mean']
+
+# Step 7: Creating a Pivot table (example: pivot table with indep_var_4 as index and dep_var as values, mean of dep_var)
+pivot_table = merged_df.pivot_table(values='dep_var', index='indep_var_4', aggfunc='mean')
+
+# Step 8: Save the Pivot table as a TSV file
+output_file_path = '/home/sol-nhl/rnd/d/quarto/osm-cda/csv/data_pivot.tsv'
+pivot_table.to_csv(output_file_path, sep='\t')
+
+# Output result to verify (filtered data, selected columns, grouped data, merged data, and pivot table)
+print(filtered_df.head())
+print(selected_columns.head())
+print(grouped_data.head())
+print(merged_df.head())
+print(pivot_table)
+```
+
+### select and group, summary
+1. **Loading Data**: The TSV file located at `/home/sol-nhl/rnd/d/quarto/osm-cda/csv/data.tsv` is loaded into a DataFrame called `df` using `pd.read_csv()` with tab-separated values.
+
+2. **Filtering Data**: An example filter is applied to select rows where the dependent variable (`dep_var`) is greater than 3500.
+
+3. **Selecting Columns**: The relevant columns are selected, including the dependent variable (`dep_var`), one of the independent variables (`indep_var_1`), and the grouping variable (`indep_var_4`).
+
+4. **Grouping Data**: The data is grouped by the independent variable (`indep_var_4`) and the mean of `dep_var` is calculated for each group.
+
+5. **Merging Data**: The original DataFrame (`df`) is merged with the grouped data (mean `dep_var` for each `indep_var_4`) on the `indep_var_4` column.
+
+6. **Calculating a New Column**: A new column (`dep_var_diff`) is calculated as the difference between each penguin's `dep_var` and the group mean `dep_var`.
+
+7. **Creating a Pivot Table**: A pivot table is generated, showing the mean `dep_var` for each category in `indep_var_4`.
+
+8. **Saving the Data**: The resulting pivot table is saved to a new TSV file at `/home/sol-nhl/rnd/d/quarto/osm-cda/csv/data_pivot.tsv`.
+
+This code accomplishes the task of analyzing the **penguins** dataset by filtering, selecting, grouping, merging, calculating a new column, creating a pivot table, and saving the final output to a TSV file.
+
+
+
+
+

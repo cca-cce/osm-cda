@@ -1,0 +1,20 @@
+---
+title: "python environments"
+---
+
+## google colab 
+
+[![sign in to google account to connect colab cloud app](https://img.youtube.com/vi/inN8seMm7UI/0.jpg)](https://www.youtube.com/watch?v=inN8seMm7UI)
+
+- [https://colab.research.google.com/](https://colab.research.google.com/)
+
+## visual studio code
+
+[![download and install vscode app on local computer](https://img.youtube.com/vi/D2cwvpJSBX4/0.jpg)](https://www.youtube.com/watch?v=D2cwvpJSBX4)
+
+- https://code.visualstudio.com/download
+- https://www.python.org/downloads/
+
+## anaconda
+
+- https://www.anaconda.com/download

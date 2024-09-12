@@ -1,0 +1,393 @@
+---
+title: "basic python syntax"
+---
+
+- download [jupyter notebook](pyws01-2-getting-started.ipynb)
+
+## strings and numbers
+
+Here are 10 Python code lines with different types of strings and numbers, each followed by an explanation:
+
+1. **Code:**
+   ```{python}
+   # This is a comment explaining the next line
+   ```
+   **Explanation:**  
+   This line starts with a `#`, making it a comment. Python ignores this line during execution. It's used to explain code or leave notes for other programmers. 
+
+2. **Code:**
+   ```{python}
+   print('Hello, World!')
+   ```
+   **Explanation:**  
+   This prints the string `'Hello, World!'` to the console. Single quotes enclose the string. In Python, single and double quotes are interchangeable for defining strings.
+
+3. **Code:**
+   ```{python}
+   print("Python is fun")
+   ```
+   **Explanation:**  
+   Here, double quotes are used to define the string `"Python is fun"`. Python treats strings defined with single or double quotes the same way. 
+
+4. **Code:**
+   ```{python}
+   print("He said, \"Python is cool\"")
+   ```
+   **Explanation:**  
+   This line prints `He said, "Python is cool"`. The backslash `\` before the double quotes escapes them, telling Python to treat them as part of the string instead of ending it.
+
+5. **Code:**
+   ```{python}
+   print("Line one\nLine two")
+   ```
+   **Explanation:**  
+   The `\n` is a newline escape character, so this will output:
+   ```
+   Line one
+   Line two
+   ```
+   The `\n` tells Python to move to a new line.
+
+6. **Code:**
+   ```{python}
+   print("Hello" + " " + "World")
+   ```
+   **Explanation:**  
+   This line concatenates three strings: `"Hello"`, a space (`" "`), and `"World"`, resulting in `Hello World`. The `+` operator combines strings.
+
+7. **Code:**
+   ```{python}
+   print(5 + 3)
+   ```
+   **Explanation:**  
+   This performs an arithmetic operation, adding two integers `5` and `3`, resulting in the output `8`. Python interprets `+` as an addition operator when used with numbers.
+
+8. **Code:**
+   ```{python}
+   print(5.0 + 3)
+   ```
+   **Explanation:**  
+   This adds a floating-point number `5.0` and an integer `3`. Python automatically converts the integer to a float and outputs `8.0`, demonstrating Python’s support for mixed-type arithmetic.
+
+9. **Code:**
+   ```{python}
+   print(7 / 2)
+   ```
+   **Explanation:**  
+   This division operation between two integers results in `3.5`. In Python 3, division with `/` always results in a float, even when dividing two integers.
+
+10. **Code:**
+   ```{python}
+   print(type(3.14))
+   ```
+   **Explanation:**  
+   This uses the `type()` function, which returns the data type of the value passed to it. Here, `3.14` is a floating-point number, so the output will be `<class 'float'>`, indicating the value is of type `float`. 
+
+These examples cover key features of Python strings, numbers, and the `type()` function, along with how comments and escape characters work.
+
+## lists and dictionaries
+
+Here are 10 Python code lines illustrating different types of lists and dictionaries, with explanations:
+
+1. **Code:**
+   ```{python}
+   my_list = [1, 2, 3, 4]
+   ```
+   **Explanation:**  
+   This creates a list called `my_list` containing four integer elements: `[1, 2, 3, 4]`. Lists are ordered and mutable collections in Python, allowing for element addition, removal, and modification. Each element can be accessed by its index, starting from 0.
+
+2. **Code:**
+   ```{python}
+   my_dict = {'name': 'Alice', 'age': 30}
+   ```
+   **Explanation:**  
+   This creates a dictionary `my_dict` with two key-value pairs: `'name': 'Alice'` and `'age': 30`. Dictionaries are unordered collections that map keys to values, and values can be accessed using the keys.
+
+3. **Code:**
+   ```{python}
+   nested_list = [[1, 2], [3, 4], [5, 6]]
+   ```
+   **Explanation:**  
+   This creates a 2D list `nested_list`, where each element is another list. Accessing elements can be done using two indices, such as `nested_list[0][1]` to get the value `2`.
+
+4. **Code:**
+   ```{python}
+   nested_dict = {'person1': {'name': 'Alice', 'age': 30}, 'person2': {'name': 'Bob', 'age': 25}}
+   ```
+   **Explanation:**  
+   This is a 2D dictionary, where each key (`'person1'`, `'person2'`) maps to another dictionary. For example, you can access `Alice`'s age by using `nested_dict['person1']['age']`, which returns `30`.
+
+5. **Code:**
+   ```{python}
+   my_list.append(5)
+   ```
+   **Explanation:**  
+   This appends the value `5` to the end of `my_list`. The `append()` method is a built-in function for adding elements to a list, modifying it in place.
+
+6. **Code:**
+   ```{python}
+   last_item = my_list.pop()
+   ```
+   **Explanation:**  
+   This removes and returns the last element from `my_list` using the `pop()` method. If `my_list = [1, 2, 3, 4, 5]`, after popping, `my_list` becomes `[1, 2, 3, 4]` and `last_item` is assigned the value `5`.
+
+7. **Code:**
+   ```{python}
+   second_item = my_list[1]
+   ```
+   **Explanation:**  
+   This accesses the second element of `my_list` using the index `1` (Python uses 0-based indexing). For example, if `my_list = [1, 2, 3, 4]`, `second_item` will be `2`.
+
+8. **Code:**
+   ```{python}
+   my_dict['city'] = 'New York'
+   ```
+   **Explanation:**  
+   This adds a new key-value pair `'city': 'New York'` to `my_dict`. Dictionaries allow dynamic insertion of key-value pairs. If `my_dict` already contains `'city'`, this will update its value.
+
+9. **Code:**
+   ```{python}
+   removed_value = my_dict.pop('age')
+   ```
+   **Explanation:**  
+   This removes the key `'age'` from `my_dict` and returns its value (`30` in this case). The `pop()` method removes the specified key-value pair and modifies the dictionary.
+
+10. **Code:**
+   ```{python}
+   print(type(my_list))
+   ```
+   **Explanation:**  
+   This uses the `type()` function to check the data type of `my_list`. The output will be `<class 'list'>`, indicating that `my_list` is a list. Similarly, calling `type(my_dict)` would return `<class 'dict'>`, showing that `my_dict` is a dictionary.
+
+These examples illustrate key operations with lists and dictionaries, including element access, appending, popping, and the use of the `type()` function to check data types.
+
+## loops and conditionals
+
+Here are 10 Python code chunks demonstrating different types of loops and conditionals, with explanations:
+
+1. **Code:**
+   ```{python}
+   for i in range(5):
+      print(i)
+   ```
+   **Explanation:**  
+   This is a basic `for` loop that iterates over the range `0` to `4` (Python ranges are zero-indexed and exclusive of the stop value). It prints each value of `i` in the loop: `0, 1, 2, 3, 4`.
+
+2. **Code:**
+   ```{python}
+   while True:
+      print("Looping...")
+      break
+   ```
+   **Explanation:**  
+   This is a `while` loop with a `True` condition, which would normally create an infinite loop. However, the `break` statement exits the loop after the first iteration. Without `break`, it would continuously print `"Looping..."`.
+
+3. **Code:**
+   ```{python}
+   if 10 > 5:
+      print("10 is greater than 5")
+   else:
+      print("5 is greater than or equal to 10")
+   ```
+   **Explanation:**  
+   This is an `if-else` statement. The condition `10 > 5` evaluates to `True`, so the first block is executed, printing `"10 is greater than 5"`. The `else` block would run if the condition were `False`.
+
+4. **Code:**
+   ```{python}
+   number = 7
+   if number % 2 == 0:
+      print("Even")
+   else:
+      print("Odd")
+   ```
+   **Explanation:**  
+   This checks if the variable `number` is even or odd using the modulo operator (`%`). If `number % 2 == 0`, it prints `"Even"`, otherwise, it prints `"Odd"`. In this case, it prints `"Odd"` because `7` is not divisible by `2`.
+
+5. **Code:**
+   ```{python}
+   for x in range(10):
+      if x % 2 == 0:
+          continue
+      print(x)
+   ```
+   **Explanation:**  
+   This `for` loop prints all odd numbers from `0` to `9`. The `continue` statement skips the rest of the loop when `x` is even, so only odd values (`1, 3, 5, 7, 9`) are printed.
+
+6. **Code:**
+   ```{python}
+   fruits = ["apple", "banana", "cherry"]
+   for index, fruit in enumerate(fruits):
+      print(f"Fruit {index}: {fruit}")
+   ```
+   **Explanation:**  
+   The `enumerate()` function provides both the index and value of each element in the `fruits` list. The loop iterates over the list, printing each fruit along with its index:  
+   ```
+   Fruit 0: apple
+   Fruit 1: banana
+   Fruit 2: cherry
+   ```
+
+7. **Code:**
+   ```{python}
+   is_raining = True
+   is_sunny = False
+   if is_raining and not is_sunny:
+      print("It's raining but not sunny")
+   elif is_sunny and not is_raining:
+      print("It's sunny but not raining")
+   else:
+      print("It's either both raining and sunny or neither")
+   ```
+   **Explanation:**  
+   This demonstrates a compound conditional using Boolean variables. Since `is_raining` is `True` and `is_sunny` is `False`, the first block is executed, printing `"It's raining but not sunny"`.
+
+8. **Code:**
+   ```{python}
+   even_numbers = [x for x in range(10) if x % 2 == 0]
+   print(even_numbers)
+   ```
+   **Explanation:**  
+   This is a list comprehension that creates a list of even numbers from `0` to `9`. It iterates over the range of numbers and only includes those where `x % 2 == 0`. The output is `[0, 2, 4, 6, 8]`.
+
+9. **Code:**
+   ```{python}
+   try:
+      result = 10 / 0
+   except ZeroDivisionError:
+      print("Cannot divide by zero")
+   ```
+   **Explanation:**  
+   This is an example of a `try-except` block for exception handling. The `try` block contains code that could raise an exception (division by zero), and the `except` block catches the `ZeroDivisionError` and prints `"Cannot divide by zero"`. Without the exception handling, the program would crash.
+
+10. **Code:**
+   ```{python}
+   for i in range(5):
+      try:
+          print(10 / i)
+      except ZeroDivisionError:
+          print("Division by zero is not allowed")
+   ```
+   **Explanation:**  
+   This loop attempts to divide `10` by `i` for values from `0` to `4`. When `i` is `0`, a `ZeroDivisionError` occurs, which is caught by the `except` block, printing `"Division by zero is not allowed"`. For other values of `i`, the result of the division is printed.
+
+These examples cover various types of loops, conditionals, list comprehensions, Boolean logic, and exception handling in Python.
+
+## user defined functions
+
+Here are 10 Python code chunks demonstrating different types of user-defined functions, with explanations:
+
+1. **Code:**
+   ```{python}
+   def greet():
+      """This function prints a simple greeting message."""
+      print("Hello, welcome!")
+   greet()
+   ```
+   **Explanation:**  
+   This is a simple function `greet()` that takes no arguments and prints a greeting message. It is called using `greet()`. The triple quotes `"""` define a docstring, which serves as the function’s documentation. When called, it prints `"Hello, welcome!"`.
+
+2. **Code:**
+   ```{python}
+   def greet_person(name):
+      """This function greets a person by name."""
+      print(f"Hello, {name}!")
+   greet_person("Alice")
+   ```
+   **Explanation:**  
+   This function `greet_person(name)` accepts a single argument, `name`, and prints a personalized greeting. When you call `greet_person("Alice")`, it prints `"Hello, Alice!"`. The docstring explains what the function does.
+
+3. **Code:**
+   ```{python}
+   def add_numbers(a, b):
+      """Returns the sum of two numbers."""
+      return a + b
+   result = add_numbers(5, 3)
+   print(result)
+   ```
+   **Explanation:**  
+   `add_numbers(a, b)` is a function that takes two arguments, `a` and `b`, and returns their sum. In this case, `add_numbers(5, 3)` returns `8`, which is printed. The `return` keyword is used to send the result back to the calling code.
+
+4. **Code:**
+   ```{python}
+   def multiply(a, b=2):
+      """Multiplies two numbers, with the second number having a default value of 2."""
+      return a * b
+   print(multiply(4))  # uses default value for b
+   print(multiply(4, 3))  # overrides default value for b
+   ```
+   **Explanation:**  
+   This function `multiply(a, b=2)` takes two arguments but assigns a default value of `2` to `b`. If only one argument is passed, the function uses the default value. Calling `multiply(4)` returns `8`, while `multiply(4, 3)` returns `12`.
+
+5. **Code:**
+   ```{python}
+   def divide(a, b):
+      """Divides a by b and handles division by zero."""
+      if b == 0:
+          return "Cannot divide by zero!"
+      return a / b
+   print(divide(10, 2))
+   print(divide(10, 0))
+   ```
+   **Explanation:**  
+   `divide(a, b)` takes two arguments and returns the result of dividing `a` by `b`. It includes a conditional to check for division by zero. If `b` is `0`, it returns an error message. Calling `divide(10, 2)` returns `5.0`, while `divide(10, 0)` returns `"Cannot divide by zero!"`.
+
+6. **Code:**
+   ```{python}
+   def square_elements(numbers):
+      """Takes a list of numbers and returns a list of their squares."""
+      return [x ** 2 for x in numbers]
+   print(square_elements([1, 2, 3, 4]))
+   ```
+   **Explanation:**  
+   This function `square_elements(numbers)` takes a list of numbers and returns a new list containing the squares of those numbers. The function uses list comprehension. Calling `square_elements([1, 2, 3, 4])` returns `[1, 4, 9, 16]`.
+
+7. **Code:**
+   ```{python}
+   def factorial(n):
+      """Recursively calculates the factorial of n."""
+      if n == 0:
+          return 1
+      else:
+          return n * factorial(n - 1)
+   print(factorial(5))
+   ```
+   **Explanation:**  
+   This function `factorial(n)` uses recursion to calculate the factorial of a number. If `n` is `0`, it returns `1` (base case). Otherwise, it multiplies `n` by `factorial(n - 1)`. Calling `factorial(5)` returns `120`.
+
+8. **Code:**
+   ```{python}
+   def is_even(number):
+      """Checks if a number is even."""
+      return number % 2 == 0
+   print(is_even(4))  # True
+   print(is_even(7))  # False
+   ```
+   **Explanation:**  
+   The function `is_even(number)` checks if a number is even by using the modulo operator (`%`). If the remainder is `0`, it returns `True`, otherwise `False`. Calling `is_even(4)` returns `True`, and `is_even(7)` returns `False`.
+
+9. **Code:**
+   ```{python}
+   def describe_person(name, age, *hobbies):
+      """Takes a name, age, and any number of hobbies, and prints a description."""
+      print(f"{name} is {age} years old and enjoys {', '.join(hobbies)}.")
+   describe_person("Alice", 30, "reading", "hiking", "cooking")
+   ```
+   **Explanation:**  
+   This function `describe_person(name, age, *hobbies)` accepts a variable number of hobby arguments using the `*` syntax, which collects extra arguments into a tuple. The `join()` method creates a string from the hobbies. Calling `describe_person("Alice", 30, "reading", "hiking", "cooking")` prints `"Alice is 30 years old and enjoys reading, hiking, cooking."`
+
+10. **Code:**
+   ```{python}
+   def calculate_average(*numbers):
+       """Calculates the average of any number of values."""
+       if len(numbers) == 0:
+           return 0
+       return sum(numbers) / len(numbers)
+   print(calculate_average(5, 10, 15))
+   print(calculate_average())
+   ```
+   **Explanation:**  
+   The `calculate_average(*numbers)` function calculates the average of any number of arguments. It first checks if any numbers were provided (if the length of `numbers` is `0`, it returns `0`), then calculates the average by dividing the sum by the length. Calling `calculate_average(5, 10, 15)` returns `10.0`, and `calculate_average()` returns `0`.
+
+These examples show different ways to define functions with varying arguments, handling edge cases, using recursion, and incorporating function documentation.
+
+

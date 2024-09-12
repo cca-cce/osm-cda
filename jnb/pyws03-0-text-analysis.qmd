@@ -1,0 +1,12 @@
+---
+title: "part 3: text analysis"
+---
+
+## reading text content
+
+**Reading and analyzing unstructured text** presents a variety of challenges, particularly when dealing with different types of content such as articles, social media posts, or even longer documents like reports. Unstructured text, unlike tabular data, lacks a predefined format, which means it may contain irregularities such as spelling errors, slang, or varied sentence structures. For example, reading **short texts** like social media posts requires handling informal language, abbreviations, and emojis, whereas **longer texts** such as research papers or survey responses involve the challenge of organizing and summarizing large amounts of information. Rendered texts, such as those from PDFs or HTML files, often come with additional complexities like layout formatting, metadata, or embedded images, which may need to be stripped out or interpreted correctly before the actual text can be processed. Handling such varied lengths and formats requires careful preprocessing, including cleaning and standardizing the text data to make it suitable for analysis.
+
+## text tokenization
+
+**Text tokenization** is the foundational step in processing unstructured text, where the text is broken down into smaller units like words or phrases. This allows for basic analysis, such as word frequency counts or simple keyword extraction. However, more advanced techniques go beyond tokenization to capture deeper insights from text. **Topic modeling**, for instance, identifies latent themes within large text corpora by analyzing patterns in word co-occurrences. It helps uncover hidden structures in the data, which can be particularly useful when working with large datasets of documents, like survey responses or news articles. **Sentiment analysis** is another advanced technique that goes beyond simple tokenization by determining the emotional tone behind the text, whether it is positive, negative, or neutral. This is especially useful for analyzing customer feedback or social media sentiment. Finally, **word vectorization** techniques such as Word2Vec or GloVe transform words into numerical vectors based on their context, enabling more sophisticated tasks like measuring semantic similarity between words or phrases, clustering similar documents, or feeding text data into machine learning models. While tokenization provides a starting point, these more advanced techniques enable richer and more meaningful interpretations of textual data.
+
