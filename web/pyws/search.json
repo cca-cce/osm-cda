@@ -189,6 +189,54 @@
     ]
   },
   {
+    "objectID": "pyws02-2-data-analysis.html",
+    "href": "pyws02-2-data-analysis.html",
+    "title": "results visualizations",
+    "section": "",
+    "text": "example gallery matplotlib\nexample gallery seaborn\nexample gallery plotnine\nexample gallery plotly\nexample gallery altair\ndownload jupyter notebook",
+    "crumbs": [
+      "workshop",
+      "part 2: data analysis",
+      "result visualizations"
+    ]
+  },
+  {
+    "objectID": "pyws02-2-data-analysis.html#descriptive-visualizations",
+    "href": "pyws02-2-data-analysis.html#descriptive-visualizations",
+    "title": "results visualizations",
+    "section": "descriptive visualizations",
+    "text": "descriptive visualizations",
+    "crumbs": [
+      "workshop",
+      "part 2: data analysis",
+      "result visualizations"
+    ]
+  },
+  {
+    "objectID": "pyws02-2-data-analysis.html#inferential-visualizations",
+    "href": "pyws02-2-data-analysis.html#inferential-visualizations",
+    "title": "results visualizations",
+    "section": "inferential visualizations",
+    "text": "inferential visualizations\n\nimport seaborn as sns\nsns.set_theme(style=\"ticks\", palette=\"pastel\")\n\n# Load the example tips dataset\ntips = sns.load_dataset(\"tips\")\n\n# Draw a nested boxplot to show bills by day and time\nsns.boxplot(x=\"day\", y=\"total_bill\",\n            hue=\"smoker\", palette=[\"m\", \"g\"],\n            data=tips)\nsns.despine(offset=10, trim=True)",
+    "crumbs": [
+      "workshop",
+      "part 2: data analysis",
+      "result visualizations"
+    ]
+  },
+  {
+    "objectID": "pyws02-2-data-analysis.html#testing",
+    "href": "pyws02-2-data-analysis.html#testing",
+    "title": "results visualizations",
+    "section": "testing",
+    "text": "testing\n\n# prompt: acquire dataset penguins from seaborn package, read it into a polars dataframe, generate a data analysis pipeline where bill_length is aggregated by species, pipe the aggregated data out to a plotnine bar chart with error bars\n\n#!pip install polars plotnine\n\nimport seaborn as sns\nimport polars as pl\nfrom plotnine import *\n\n# Load the penguins dataset\npenguins = sns.load_dataset('penguins')\n\n# Convert to a Polars DataFrame\ndf = pl.from_pandas(penguins)\n\n# Define the data analysis pipeline\n(\n    df\n    .group_by('species')\n    .agg([\n        pl.col('bill_length_mm').mean().alias('mean_bill_length'),\n        pl.col('bill_length_mm').std().alias('std_bill_length')\n    ])\n    .pipe(lambda df: (\n        ggplot(df, aes(x='species', y='mean_bill_length', fill='species'))\n        + geom_bar(stat='identity', position='dodge')\n        + geom_errorbar(aes(ymin='mean_bill_length - std_bill_length', ymax='mean_bill_length + std_bill_length'), width=0.2)\n        + theme_bw()\n        + labs(x='Species', y='Mean Bill Length (mm)', title='Mean Bill Length by Species')\n    ))\n    .draw()\n)",
+    "crumbs": [
+      "workshop",
+      "part 2: data analysis",
+      "result visualizations"
+    ]
+  },
+  {
     "objectID": "pyws03-0-text-analysis.html",
     "href": "pyws03-0-text-analysis.html",
     "title": "part 3: text analysis",
@@ -222,6 +270,18 @@
     ]
   },
   {
+    "objectID": "pyws03-2-text-analysis.html",
+    "href": "pyws03-2-text-analysis.html",
+    "title": "text tokenization",
+    "section": "",
+    "text": "code examples nltk\ncode examples spacy\ndownload jupyter notebook",
+    "crumbs": [
+      "workshop",
+      "part 3: text analysis",
+      "text tokenization"
+    ]
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Introduction to Python",
@@ -243,7 +303,7 @@
     "href": "pyws02-1-data-analysis.html",
     "title": "dataframe manipulation",
     "section": "",
-    "text": "download jupyter notebook",
+    "text": "dataframe examples pandas\ndataframe examples polars\ndownload jupyter notebook",
     "crumbs": [
       "workshop",
       "part 2: data analysis",
@@ -251,11 +311,11 @@
     ]
   },
   {
-    "objectID": "pyws02-1-data-analysis.html#load-and-explore-data",
-    "href": "pyws02-1-data-analysis.html#load-and-explore-data",
+    "objectID": "pyws02-1-data-analysis.html#read-and-explore-data",
+    "href": "pyws02-1-data-analysis.html#read-and-explore-data",
     "title": "dataframe manipulation",
-    "section": "load and explore data",
-    "text": "load and explore data\nHere is an analysis of your code, separated into logical steps with each step in its own code chunk, followed by explanations:\n\n1. Import necessary libraries\nimport seaborn as sns\nimport pandas as pd\nExplanation:\nThis step imports the required libraries for the script. seaborn is a data visualization library that provides built-in datasets, and pandas is used for data manipulation and analysis. Importing these libraries allows the script to use their functions, such as loading a dataset and manipulating DataFrames.\n\n\n\n2. Load the dataset and select specific columns\ndf = sns.load_dataset(\"penguins\")\ndf_selected = df[['body_mass_g', 'bill_length_mm', 'bill_depth_mm', 'flipper_length_mm', 'island']]\nExplanation:\nHere, the penguins dataset from Seaborn is loaded into a Pandas DataFrame (df). The next step selects specific columns of interest (body_mass_g, bill_length_mm, bill_depth_mm, flipper_length_mm, and island) and stores them in df_selected. These columns represent both the dependent and independent variables used for further analysis.\n\n\n\n3. Rename selected columns for easier reference\ndf_renamed = df_selected.rename(columns={\n    'body_mass_g': 'dep_var', \n    'bill_length_mm': 'indep_var_1', \n    'bill_depth_mm': 'indep_var_2', \n    'flipper_length_mm': 'indep_var_3', \n    'island': 'indep_var_4'\n})\nExplanation:\nThis step renames the columns of df_selected to more generic names for easier reference. The dependent variable (body_mass_g) is renamed to dep_var, and the independent variables are renamed to indep_var_1, indep_var_2, indep_var_3, and indep_var_4 (for island). This renamed DataFrame (df_renamed) is used for subsequent analysis.\n\n\n\n4. Save the renamed DataFrame as a TSV file\noutput_file_path = '/home/sol-nhl/rnd/d/quarto/osm-cda/csv/data.tsv'\ndf_renamed.to_csv(output_file_path, sep='\\t', index=False)\nExplanation:\nThe renamed DataFrame is saved to a TSV (tab-separated values) file at the specified path. The to_csv() method is used with the sep='\\t' argument to ensure that the file is saved in TSV format. The index=False option prevents the DataFrame index from being written to the file.\n\n\n\n5. Generate summary statistics of the DataFrame\nsummary_stats = df_renamed.describe()\nExplanation:\nThis step generates summary statistics for all numeric columns in the DataFrame using the describe() function. The resulting DataFrame (summary_stats) contains descriptive statistics such as count, mean, standard deviation, minimum, and maximum values, as well as the quartile ranges for the selected variables.\n\n\n\n6. Retrieve the first five records of the DataFrame\nfirst_five_records = df_renamed.head()\nExplanation:\nThe head() function retrieves the first five rows of the DataFrame. This is useful for a quick inspection of the dataset to verify that the data was loaded and renamed correctly. The first_five_records DataFrame contains the first five records of the renamed DataFrame.\n\n\n\n7. Convert a column to a categorical data type\ndf_renamed['indep_var_4'] = df_renamed['indep_var_4'].astype('category')\nExplanation:\nThis step converts the indep_var_4 column (formerly island) to a categorical data type using astype('category'). Categorical data types are more memory efficient and appropriate when dealing with a limited number of distinct values, such as categorical variables in a dataset.\n\n\n\n8. Fill missing values in numeric columns with their mean\ndf_filled = df_renamed.fillna(df_renamed.mean(numeric_only=True))\nExplanation:\nIn this step, any missing values in the numeric columns of df_renamed are filled with the mean value of each column using fillna(). The mean(numeric_only=True) calculates the mean for only numeric columns, and fillna() replaces the missing values with these means. The modified DataFrame is stored as df_filled.\n\n\n\n9. Remove rows with any remaining missing values\ndf_no_missing = df_filled.dropna()\nExplanation:\nHere, the dropna() function is used to remove any rows that still contain missing values in the DataFrame after filling the numeric columns. Rows with missing values in non-numeric columns will be dropped. The cleaned DataFrame is stored as df_no_missing.\n\n\n\n10. Remove duplicate records\ndf_no_duplicates = df_no_missing.drop_duplicates()\nExplanation:\nThis step removes any duplicate rows from the DataFrame using the drop_duplicates() method. Duplicate rows are those where all column values are identical. The resulting DataFrame (df_no_duplicates) contains only unique rows, ensuring there are no duplicate records in the dataset.\n\n\n\n11. Output summary statistics and first five records\nprint(summary_stats)\nprint(first_five_records)\nExplanation:\nThe final step prints the summary statistics generated earlier (summary_stats) and the first five records (first_five_records) of the renamed DataFrame. This provides an overview of the dataset and allows verification that the data processing steps were applied correctly.\nHere’s the Python code to perform the requested data analysis steps without execution:\n\n# Import necessary libraries\nimport seaborn as sns\nimport pandas as pd\n\n# Step 1: Load data into a DataFrame called df\ndf = sns.load_dataset(\"penguins\")\n\n# Selecting a dependent variable (e.g., body_mass_g) and a few independent variables\n# Renaming them as per the requirement\ndf_selected = df[['body_mass_g', 'bill_length_mm', 'bill_depth_mm', 'flipper_length_mm', 'island']]\n\n# Renaming columns for easier reference\ndf_renamed = df_selected.rename(columns={\n  'body_mass_g': 'dep_var', \n  'bill_length_mm': 'indep_var_1', \n  'bill_depth_mm': 'indep_var_2', \n  'flipper_length_mm': 'indep_var_3', \n  'island': 'indep_var_4'\n})\n\n# Step 2: Save the DataFrame as a TSV file\noutput_file_path = '/home/sol-nhl/rnd/d/quarto/osm-cda/csv/data.tsv'\ndf_renamed.to_csv(output_file_path, sep='\\t', index=False)\n\n# Step 3: Summary statistics of the DataFrame\nsummary_stats = df_renamed.describe()\n\n# Step 4: Retrieving the first five records\nfirst_five_records = df_renamed.head()\n\n# Step 5: Changing column types (for example, converting 'indep_var_4' to a categorical variable)\ndf_renamed['indep_var_4'] = df_renamed['indep_var_4'].astype('category')\n\n# Step 6: Filling missing values (filling numeric columns with their mean values)\ndf_filled = df_renamed.fillna(df_renamed.mean(numeric_only=True))\n\n# Step 7: Removing missing values (dropping rows with any remaining missing values)\ndf_no_missing = df_filled.dropna()\n\n# Step 8: Removing duplicate records\ndf_no_duplicates = df_no_missing.drop_duplicates()\n\n# Output result to verify (summary statistics and first five records)\nprint(summary_stats)\nprint(first_five_records)\n\n\n\nload and clean, summary\n\nLoading Data: The penguins dataset from seaborn is loaded into a DataFrame called df.\nSaving Data as TSV: The cleaned DataFrame (df_renamed) is saved as a TSV file to the specified path.\nSummary Statistics: The describe() method is used to calculate summary statistics for the DataFrame.\nFirst Five Records: The first five records are retrieved using the head() method.\nRenaming Columns: Columns are renamed for easier reference, changing variable names like body_mass_g to dep_var and others to indep_var_1, indep_var_2, and so on.\nChanging Column Types: The indep_var_4 column (originally island) is converted to a categorical data type.\nFilling Missing Values: Missing values in numeric columns are filled using the mean of each column.\nRemoving Missing Values: Rows with any remaining missing values are dropped.\nRemoving Duplicates: Duplicate records in the DataFrame are removed.\n\nThis code prepares and cleans the dataset for further analysis, ensuring that missing and duplicate values are handled and the DataFrame is saved as a .tsv file.",
+    "section": "read and explore data",
+    "text": "read and explore data\nHere is an analysis of your code, separated into logical steps with each step in its own code chunk, followed by explanations:\n\n1. Import necessary libraries\nimport seaborn as sns\nimport pandas as pd\nExplanation:\nThis step imports the required libraries for the script. seaborn is a data visualization library that provides built-in datasets, and pandas is used for data manipulation and analysis. Importing these libraries allows the script to use their functions, such as loading a dataset and manipulating DataFrames.\n\n\n\n2. Load the dataset and select specific columns\ndf = sns.load_dataset(\"penguins\")\ndf_selected = df[['body_mass_g', 'bill_length_mm', 'bill_depth_mm', 'flipper_length_mm', 'island']]\nExplanation:\nHere, the penguins dataset from Seaborn is loaded into a Pandas DataFrame (df). The next step selects specific columns of interest (body_mass_g, bill_length_mm, bill_depth_mm, flipper_length_mm, and island) and stores them in df_selected. These columns represent both the dependent and independent variables used for further analysis.\n\n\n\n3. Rename selected columns for easier reference\ndf_renamed = df_selected.rename(columns={\n    'body_mass_g': 'dep_var', \n    'bill_length_mm': 'indep_var_1', \n    'bill_depth_mm': 'indep_var_2', \n    'flipper_length_mm': 'indep_var_3', \n    'island': 'indep_var_4'\n})\nExplanation:\nThis step renames the columns of df_selected to more generic names for easier reference. The dependent variable (body_mass_g) is renamed to dep_var, and the independent variables are renamed to indep_var_1, indep_var_2, indep_var_3, and indep_var_4 (for island). This renamed DataFrame (df_renamed) is used for subsequent analysis.\n\n\n\n4. Save the renamed DataFrame as a TSV file\noutput_file_path = '/home/sol-nhl/rnd/d/quarto/osm-cda/csv/data.tsv'\ndf_renamed.to_csv(output_file_path, sep='\\t', index=False)\nExplanation:\nThe renamed DataFrame is saved to a TSV (tab-separated values) file at the specified path. The to_csv() method is used with the sep='\\t' argument to ensure that the file is saved in TSV format. The index=False option prevents the DataFrame index from being written to the file.\n\n\n\n5. Generate summary statistics of the DataFrame\nsummary_stats = df_renamed.describe()\nExplanation:\nThis step generates summary statistics for all numeric columns in the DataFrame using the describe() function. The resulting DataFrame (summary_stats) contains descriptive statistics such as count, mean, standard deviation, minimum, and maximum values, as well as the quartile ranges for the selected variables.\n\n\n\n6. Retrieve the first five records of the DataFrame\nfirst_five_records = df_renamed.head()\nExplanation:\nThe head() function retrieves the first five rows of the DataFrame. This is useful for a quick inspection of the dataset to verify that the data was loaded and renamed correctly. The first_five_records DataFrame contains the first five records of the renamed DataFrame.\n\n\n\n7. Convert a column to a categorical data type\ndf_renamed['indep_var_4'] = df_renamed['indep_var_4'].astype('category')\nExplanation:\nThis step converts the indep_var_4 column (formerly island) to a categorical data type using astype('category'). Categorical data types are more memory efficient and appropriate when dealing with a limited number of distinct values, such as categorical variables in a dataset.\n\n\n\n8. Fill missing values in numeric columns with their mean\ndf_filled = df_renamed.fillna(df_renamed.mean(numeric_only=True))\nExplanation:\nIn this step, any missing values in the numeric columns of df_renamed are filled with the mean value of each column using fillna(). The mean(numeric_only=True) calculates the mean for only numeric columns, and fillna() replaces the missing values with these means. The modified DataFrame is stored as df_filled.\n\n\n\n9. Remove rows with any remaining missing values\ndf_no_missing = df_filled.dropna()\nExplanation:\nHere, the dropna() function is used to remove any rows that still contain missing values in the DataFrame after filling the numeric columns. Rows with missing values in non-numeric columns will be dropped. The cleaned DataFrame is stored as df_no_missing.\n\n\n\n10. Remove duplicate records\ndf_no_duplicates = df_no_missing.drop_duplicates()\nExplanation:\nThis step removes any duplicate rows from the DataFrame using the drop_duplicates() method. Duplicate rows are those where all column values are identical. The resulting DataFrame (df_no_duplicates) contains only unique rows, ensuring there are no duplicate records in the dataset.\n\n\n\n11. Output summary statistics and first five records\nprint(summary_stats)\nprint(first_five_records)\nExplanation:\nThe final step prints the summary statistics generated earlier (summary_stats) and the first five records (first_five_records) of the renamed DataFrame. This provides an overview of the dataset and allows verification that the data processing steps were applied correctly.\nHere’s the Python code to perform the requested data analysis steps without execution:\n\n# Import necessary libraries\nimport seaborn as sns\nimport pandas as pd\n\n# Step 1: Load data into a DataFrame called df\ndf = sns.load_dataset(\"penguins\")\n\n# Selecting a dependent variable (e.g., body_mass_g) and a few independent variables\n# Renaming them as per the requirement\ndf_selected = df[['body_mass_g', 'bill_length_mm', 'bill_depth_mm', 'flipper_length_mm', 'island']]\n\n# Renaming columns for easier reference\ndf_renamed = df_selected.rename(columns={\n  'body_mass_g': 'dep_var', \n  'bill_length_mm': 'indep_var_1', \n  'bill_depth_mm': 'indep_var_2', \n  'flipper_length_mm': 'indep_var_3', \n  'island': 'indep_var_4'\n})\n\n# Step 2: Save the DataFrame as a TSV file\noutput_file_path = '/home/sol-nhl/rnd/d/quarto/osm-cda/csv/data.tsv'\ndf_renamed.to_csv(output_file_path, sep='\\t', index=False)\n\n# Step 3: Summary statistics of the DataFrame\nsummary_stats = df_renamed.describe()\n\n# Step 4: Retrieving the first five records\nfirst_five_records = df_renamed.head()\n\n# Step 5: Changing column types (for example, converting 'indep_var_4' to a categorical variable)\ndf_renamed['indep_var_4'] = df_renamed['indep_var_4'].astype('category')\n\n# Step 6: Filling missing values (filling numeric columns with their mean values)\ndf_filled = df_renamed.fillna(df_renamed.mean(numeric_only=True))\n\n# Step 7: Removing missing values (dropping rows with any remaining missing values)\ndf_no_missing = df_filled.dropna()\n\n# Step 8: Removing duplicate records\ndf_no_duplicates = df_no_missing.drop_duplicates()\n\n# Output result to verify (summary statistics and first five records)\nprint(summary_stats)\nprint(first_five_records)\n\n\n\nload and clean, summary\n\nLoading Data: The penguins dataset from seaborn is loaded into a DataFrame called df.\nSaving Data as TSV: The cleaned DataFrame (df_renamed) is saved as a TSV file to the specified path.\nSummary Statistics: The describe() method is used to calculate summary statistics for the DataFrame.\nFirst Five Records: The first five records are retrieved using the head() method.\nRenaming Columns: Columns are renamed for easier reference, changing variable names like body_mass_g to dep_var and others to indep_var_1, indep_var_2, and so on.\nChanging Column Types: The indep_var_4 column (originally island) is converted to a categorical data type.\nFilling Missing Values: Missing values in numeric columns are filled using the mean of each column.\nRemoving Missing Values: Rows with any remaining missing values are dropped.\nRemoving Duplicates: Duplicate records in the DataFrame are removed.\n\nThis code prepares and cleans the dataset for further analysis, ensuring that missing and duplicate values are handled and the DataFrame is saved as a .tsv file.",
     "crumbs": [
       "workshop",
       "part 2: data analysis",
@@ -353,6 +413,18 @@
     "crumbs": [
       "workshop",
       "part 2: data analysis"
+    ]
+  },
+  {
+    "objectID": "pyws04-1-image-analysis.html",
+    "href": "pyws04-1-image-analysis.html",
+    "title": "reading image content",
+    "section": "",
+    "text": "code examples pil, pillow\ncode examples opencv\ndownload jupyter notebook",
+    "crumbs": [
+      "workshop",
+      "part 4: image analysis",
+      "reading image content"
     ]
   }
 ]

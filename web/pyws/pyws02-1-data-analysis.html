@@ -293,7 +293,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#load-and-explore-data" id="toc-load-and-explore-data" class="nav-link active" data-scroll-target="#load-and-explore-data">load and explore data</a>
+  <li><a href="#read-and-explore-data" id="toc-read-and-explore-data" class="nav-link active" data-scroll-target="#read-and-explore-data">read and explore data</a>
   <ul class="collapse">
   <li><a href="#import-necessary-libraries" id="toc-import-necessary-libraries" class="nav-link" data-scroll-target="#import-necessary-libraries">1. Import necessary libraries</a></li>
   <li><a href="#load-the-dataset-and-select-specific-columns" id="toc-load-the-dataset-and-select-specific-columns" class="nav-link" data-scroll-target="#load-the-dataset-and-select-specific-columns">2. Load the dataset and select specific columns</a></li>
@@ -338,10 +338,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <ul>
+<li>dataframe examples <a href="https://pandas.pydata.org/docs/user_guide/index.html" target="_blank">pandas</a></li>
+<li>dataframe examples <a href="https://docs.pola.rs/" target="_blank">polars</a></li>
 <li>download <a href="pyws02-1-data-analysis.ipynb">jupyter notebook</a></li>
 </ul>
-<section id="load-and-explore-data" class="level2">
-<h2 class="anchored" data-anchor-id="load-and-explore-data">load and explore data</h2>
+<section id="read-and-explore-data" class="level2">
+<h2 class="anchored" data-anchor-id="read-and-explore-data">read and explore data</h2>
 <p>Here is an analysis of your code, separated into logical steps with each step in its own code chunk, followed by explanations:</p>
 <section id="import-necessary-libraries" class="level3">
 <h3 class="anchored" data-anchor-id="import-necessary-libraries">1. Import necessary libraries</h3>
@@ -429,7 +431,7 @@ This step removes any duplicate rows from the DataFrame using the <code>drop_dup
 <p><strong>Explanation:</strong><br>
 The final step prints the summary statistics generated earlier (<code>summary_stats</code>) and the first five records (<code>first_five_records</code>) of the renamed DataFrame. This provides an overview of the dataset and allows verification that the data processing steps were applied correctly.</p>
 <p>Here’s the Python code to perform the requested data analysis steps without execution:</p>
-<div id="573e5cbe" class="cell" data-execution_count="1">
+<div id="e11a01b9" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import necessary libraries</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -495,7 +497,7 @@ The final step prints the summary statistics generated earlier (<code>summary_st
 </section>
 <section id="select-and-group-data" class="level2">
 <h2 class="anchored" data-anchor-id="select-and-group-data">select and group data</h2>
-<div id="edba7d8c" class="cell" data-execution_count="2">
+<div id="793411e8" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import necessary libraries</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
