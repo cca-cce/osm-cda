@@ -306,11 +306,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#remove-rows-with-any-remaining-missing-values" id="toc-remove-rows-with-any-remaining-missing-values" class="nav-link" data-scroll-target="#remove-rows-with-any-remaining-missing-values">9. Remove rows with any remaining missing values</a></li>
   <li><a href="#remove-duplicate-records" id="toc-remove-duplicate-records" class="nav-link" data-scroll-target="#remove-duplicate-records">10. Remove duplicate records</a></li>
   <li><a href="#output-summary-statistics-and-first-five-records" id="toc-output-summary-statistics-and-first-five-records" class="nav-link" data-scroll-target="#output-summary-statistics-and-first-five-records">11. Output summary statistics and first five records</a></li>
-  <li><a href="#load-and-clean-summary" id="toc-load-and-clean-summary" class="nav-link" data-scroll-target="#load-and-clean-summary">load and clean, summary</a></li>
   </ul></li>
   <li><a href="#select-and-group-data" id="toc-select-and-group-data" class="nav-link" data-scroll-target="#select-and-group-data">select and group data</a>
   <ul class="collapse">
-  <li><a href="#select-and-group-summary" id="toc-select-and-group-summary" class="nav-link" data-scroll-target="#select-and-group-summary">select and group, summary</a></li>
+  <li><a href="#import-the-necessary-library" id="toc-import-the-necessary-library" class="nav-link" data-scroll-target="#import-the-necessary-library">1. Import the necessary library</a></li>
+  <li><a href="#load-dataframe-from-tsv-file" id="toc-load-dataframe-from-tsv-file" class="nav-link" data-scroll-target="#load-dataframe-from-tsv-file">2. Load DataFrame from TSV File</a></li>
+  <li><a href="#filter-the-data" id="toc-filter-the-data" class="nav-link" data-scroll-target="#filter-the-data">3. Filter the Data</a></li>
+  <li><a href="#select-specific-columns" id="toc-select-specific-columns" class="nav-link" data-scroll-target="#select-specific-columns">4. Select Specific Columns</a></li>
+  <li><a href="#group-data-and-calculate-the-mean" id="toc-group-data-and-calculate-the-mean" class="nav-link" data-scroll-target="#group-data-and-calculate-the-mean">5. Group Data and Calculate the Mean</a></li>
+  <li><a href="#merge-dataframes" id="toc-merge-dataframes" class="nav-link" data-scroll-target="#merge-dataframes">6. Merge DataFrames</a></li>
+  <li><a href="#calculate-a-new-column" id="toc-calculate-a-new-column" class="nav-link" data-scroll-target="#calculate-a-new-column">7. Calculate a New Column</a></li>
+  <li><a href="#create-a-pivot-table" id="toc-create-a-pivot-table" class="nav-link" data-scroll-target="#create-a-pivot-table">8. Create a Pivot Table</a></li>
+  <li><a href="#save-the-pivot-table-as-a-tsv-file" id="toc-save-the-pivot-table-as-a-tsv-file" class="nav-link" data-scroll-target="#save-the-pivot-table-as-a-tsv-file">9. Save the Pivot Table as a TSV File</a></li>
+  <li><a href="#output-results-to-verify" id="toc-output-results-to-verify" class="nav-link" data-scroll-target="#output-results-to-verify">10. Output Results to Verify</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -347,206 +355,210 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Here is an analysis of your code, separated into logical steps with each step in its own code chunk, followed by explanations:</p>
 <section id="import-necessary-libraries" class="level3">
 <h3 class="anchored" data-anchor-id="import-necessary-libraries">1. Import necessary libraries</h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<div id="05859352" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p><strong>Explanation:</strong><br>
 This step imports the required libraries for the script. <code>seaborn</code> is a data visualization library that provides built-in datasets, and <code>pandas</code> is used for data manipulation and analysis. Importing these libraries allows the script to use their functions, such as loading a dataset and manipulating DataFrames.</p>
 <hr>
 </section>
 <section id="load-the-dataset-and-select-specific-columns" class="level3">
 <h3 class="anchored" data-anchor-id="load-the-dataset-and-select-specific-columns">2. Load the dataset and select specific columns</h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> sns.load_dataset(<span class="st">"penguins"</span>)</span>
+<div id="e6a13407" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> sns.load_dataset(<span class="st">"penguins"</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df_selected <span class="op">=</span> df[[<span class="st">'body_mass_g'</span>, <span class="st">'bill_length_mm'</span>, <span class="st">'bill_depth_mm'</span>, <span class="st">'flipper_length_mm'</span>, <span class="st">'island'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p><strong>Explanation:</strong><br>
 Here, the <code>penguins</code> dataset from Seaborn is loaded into a Pandas DataFrame (<code>df</code>). The next step selects specific columns of interest (<code>body_mass_g</code>, <code>bill_length_mm</code>, <code>bill_depth_mm</code>, <code>flipper_length_mm</code>, and <code>island</code>) and stores them in <code>df_selected</code>. These columns represent both the dependent and independent variables used for further analysis.</p>
 <hr>
 </section>
 <section id="rename-selected-columns-for-easier-reference" class="level3">
 <h3 class="anchored" data-anchor-id="rename-selected-columns-for-easier-reference">3. Rename selected columns for easier reference</h3>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df_renamed <span class="op">=</span> df_selected.rename(columns<span class="op">=</span>{</span>
+<div id="e1486137" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df_renamed <span class="op">=</span> df_selected.rename(columns<span class="op">=</span>{</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'body_mass_g'</span>: <span class="st">'dep_var'</span>, </span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'bill_length_mm'</span>: <span class="st">'indep_var_1'</span>, </span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'bill_depth_mm'</span>: <span class="st">'indep_var_2'</span>, </span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'flipper_length_mm'</span>: <span class="st">'indep_var_3'</span>, </span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'island'</span>: <span class="st">'indep_var_4'</span></span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p><strong>Explanation:</strong><br>
 This step renames the columns of <code>df_selected</code> to more generic names for easier reference. The dependent variable (<code>body_mass_g</code>) is renamed to <code>dep_var</code>, and the independent variables are renamed to <code>indep_var_1</code>, <code>indep_var_2</code>, <code>indep_var_3</code>, and <code>indep_var_4</code> (for <code>island</code>). This renamed DataFrame (<code>df_renamed</code>) is used for subsequent analysis.</p>
 <hr>
 </section>
 <section id="save-the-renamed-dataframe-as-a-tsv-file" class="level3">
 <h3 class="anchored" data-anchor-id="save-the-renamed-dataframe-as-a-tsv-file">4. Save the renamed DataFrame as a TSV file</h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>output_file_path <span class="op">=</span> <span class="st">'/home/sol-nhl/rnd/d/quarto/osm-cda/csv/data.tsv'</span></span>
+<div id="179c6e00" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>output_file_path <span class="op">=</span> <span class="st">'/home/sol-nhl/rnd/d/quarto/osm-cda/csv/data.tsv'</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df_renamed.to_csv(output_file_path, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p><strong>Explanation:</strong><br>
 The renamed DataFrame is saved to a TSV (tab-separated values) file at the specified path. The <code>to_csv()</code> method is used with the <code>sep='\t'</code> argument to ensure that the file is saved in TSV format. The <code>index=False</code> option prevents the DataFrame index from being written to the file.</p>
 <hr>
 </section>
 <section id="generate-summary-statistics-of-the-dataframe" class="level3">
 <h3 class="anchored" data-anchor-id="generate-summary-statistics-of-the-dataframe">5. Generate summary statistics of the DataFrame</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>summary_stats <span class="op">=</span> df_renamed.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="c62345e6" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>summary_stats <span class="op">=</span> df_renamed.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p><strong>Explanation:</strong><br>
 This step generates summary statistics for all numeric columns in the DataFrame using the <code>describe()</code> function. The resulting DataFrame (<code>summary_stats</code>) contains descriptive statistics such as count, mean, standard deviation, minimum, and maximum values, as well as the quartile ranges for the selected variables.</p>
 <hr>
 </section>
 <section id="retrieve-the-first-five-records-of-the-dataframe" class="level3">
 <h3 class="anchored" data-anchor-id="retrieve-the-first-five-records-of-the-dataframe">6. Retrieve the first five records of the DataFrame</h3>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>first_five_records <span class="op">=</span> df_renamed.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="535fbaa6" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>first_five_records <span class="op">=</span> df_renamed.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p><strong>Explanation:</strong><br>
 The <code>head()</code> function retrieves the first five rows of the DataFrame. This is useful for a quick inspection of the dataset to verify that the data was loaded and renamed correctly. The <code>first_five_records</code> DataFrame contains the first five records of the renamed DataFrame.</p>
 <hr>
 </section>
 <section id="convert-a-column-to-a-categorical-data-type" class="level3">
 <h3 class="anchored" data-anchor-id="convert-a-column-to-a-categorical-data-type">7. Convert a column to a categorical data type</h3>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df_renamed[<span class="st">'indep_var_4'</span>] <span class="op">=</span> df_renamed[<span class="st">'indep_var_4'</span>].astype(<span class="st">'category'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="081058a1" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df_renamed[<span class="st">'indep_var_4'</span>] <span class="op">=</span> df_renamed[<span class="st">'indep_var_4'</span>].astype(<span class="st">'category'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p><strong>Explanation:</strong><br>
 This step converts the <code>indep_var_4</code> column (formerly <code>island</code>) to a categorical data type using <code>astype('category')</code>. Categorical data types are more memory efficient and appropriate when dealing with a limited number of distinct values, such as categorical variables in a dataset.</p>
 <hr>
 </section>
 <section id="fill-missing-values-in-numeric-columns-with-their-mean" class="level3">
 <h3 class="anchored" data-anchor-id="fill-missing-values-in-numeric-columns-with-their-mean">8. Fill missing values in numeric columns with their mean</h3>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df_filled <span class="op">=</span> df_renamed.fillna(df_renamed.mean(numeric_only<span class="op">=</span><span class="va">True</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="01815744" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df_filled <span class="op">=</span> df_renamed.fillna(df_renamed.mean(numeric_only<span class="op">=</span><span class="va">True</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p><strong>Explanation:</strong><br>
 In this step, any missing values in the numeric columns of <code>df_renamed</code> are filled with the mean value of each column using <code>fillna()</code>. The <code>mean(numeric_only=True)</code> calculates the mean for only numeric columns, and <code>fillna()</code> replaces the missing values with these means. The modified DataFrame is stored as <code>df_filled</code>.</p>
 <hr>
 </section>
 <section id="remove-rows-with-any-remaining-missing-values" class="level3">
 <h3 class="anchored" data-anchor-id="remove-rows-with-any-remaining-missing-values">9. Remove rows with any remaining missing values</h3>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df_no_missing <span class="op">=</span> df_filled.dropna()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="8300ef4e" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df_no_missing <span class="op">=</span> df_filled.dropna()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p><strong>Explanation:</strong><br>
 Here, the <code>dropna()</code> function is used to remove any rows that still contain missing values in the DataFrame after filling the numeric columns. Rows with missing values in non-numeric columns will be dropped. The cleaned DataFrame is stored as <code>df_no_missing</code>.</p>
 <hr>
 </section>
 <section id="remove-duplicate-records" class="level3">
 <h3 class="anchored" data-anchor-id="remove-duplicate-records">10. Remove duplicate records</h3>
-<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df_no_duplicates <span class="op">=</span> df_no_missing.drop_duplicates()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="73b1daa7" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df_no_duplicates <span class="op">=</span> df_no_missing.drop_duplicates()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p><strong>Explanation:</strong><br>
 This step removes any duplicate rows from the DataFrame using the <code>drop_duplicates()</code> method. Duplicate rows are those where all column values are identical. The resulting DataFrame (<code>df_no_duplicates</code>) contains only unique rows, ensuring there are no duplicate records in the dataset.</p>
 <hr>
 </section>
 <section id="output-summary-statistics-and-first-five-records" class="level3">
 <h3 class="anchored" data-anchor-id="output-summary-statistics-and-first-five-records">11. Output summary statistics and first five records</h3>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(summary_stats)</span>
+<div id="1c32dcd6" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(summary_stats)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(first_five_records)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p><strong>Explanation:</strong><br>
 The final step prints the summary statistics generated earlier (<code>summary_stats</code>) and the first five records (<code>first_five_records</code>) of the renamed DataFrame. This provides an overview of the dataset and allows verification that the data processing steps were applied correctly.</p>
-<p>Here’s the Python code to perform the requested data analysis steps without execution:</p>
-<div id="e11a01b9" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import necessary libraries</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1: Load data into a DataFrame called df</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> sns.load_dataset(<span class="st">"penguins"</span>)</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Selecting a dependent variable (e.g., body_mass_g) and a few independent variables</span></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Renaming them as per the requirement</span></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>df_selected <span class="op">=</span> df[[<span class="st">'body_mass_g'</span>, <span class="st">'bill_length_mm'</span>, <span class="st">'bill_depth_mm'</span>, <span class="st">'flipper_length_mm'</span>, <span class="st">'island'</span>]]</span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Renaming columns for easier reference</span></span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>df_renamed <span class="op">=</span> df_selected.rename(columns<span class="op">=</span>{</span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>  <span class="st">'body_mass_g'</span>: <span class="st">'dep_var'</span>, </span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>  <span class="st">'bill_length_mm'</span>: <span class="st">'indep_var_1'</span>, </span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>  <span class="st">'bill_depth_mm'</span>: <span class="st">'indep_var_2'</span>, </span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>  <span class="st">'flipper_length_mm'</span>: <span class="st">'indep_var_3'</span>, </span>
-<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>  <span class="st">'island'</span>: <span class="st">'indep_var_4'</span></span>
-<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2: Save the DataFrame as a TSV file</span></span>
-<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>output_file_path <span class="op">=</span> <span class="st">'/home/sol-nhl/rnd/d/quarto/osm-cda/csv/data.tsv'</span></span>
-<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>df_renamed.to_csv(output_file_path, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>, index<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 3: Summary statistics of the DataFrame</span></span>
-<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>summary_stats <span class="op">=</span> df_renamed.describe()</span>
-<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 4: Retrieving the first five records</span></span>
-<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>first_five_records <span class="op">=</span> df_renamed.head()</span>
-<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 5: Changing column types (for example, converting 'indep_var_4' to a categorical variable)</span></span>
-<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a>df_renamed[<span class="st">'indep_var_4'</span>] <span class="op">=</span> df_renamed[<span class="st">'indep_var_4'</span>].astype(<span class="st">'category'</span>)</span>
-<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 6: Filling missing values (filling numeric columns with their mean values)</span></span>
-<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a>df_filled <span class="op">=</span> df_renamed.fillna(df_renamed.mean(numeric_only<span class="op">=</span><span class="va">True</span>))</span>
-<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 7: Removing missing values (dropping rows with any remaining missing values)</span></span>
-<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a>df_no_missing <span class="op">=</span> df_filled.dropna()</span>
-<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 8: Removing duplicate records</span></span>
-<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a>df_no_duplicates <span class="op">=</span> df_no_missing.drop_duplicates()</span>
-<span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a><span class="co"># Output result to verify (summary statistics and first five records)</span></span>
-<span id="cb12-44"><a href="#cb12-44" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(summary_stats)</span>
-<span id="cb12-45"><a href="#cb12-45" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(first_five_records)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="load-and-clean-summary" class="level3">
-<h3 class="anchored" data-anchor-id="load-and-clean-summary">load and clean, summary</h3>
-<ol type="1">
-<li><strong>Loading Data</strong>: The <code>penguins</code> dataset from seaborn is loaded into a DataFrame called <code>df</code>.</li>
-<li><strong>Saving Data as TSV</strong>: The cleaned DataFrame (<code>df_renamed</code>) is saved as a TSV file to the specified path.</li>
-<li><strong>Summary Statistics</strong>: The <code>describe()</code> method is used to calculate summary statistics for the DataFrame.</li>
-<li><strong>First Five Records</strong>: The first five records are retrieved using the <code>head()</code> method.</li>
-<li><strong>Renaming Columns</strong>: Columns are renamed for easier reference, changing variable names like <code>body_mass_g</code> to <code>dep_var</code> and others to <code>indep_var_1</code>, <code>indep_var_2</code>, and so on.</li>
-<li><strong>Changing Column Types</strong>: The <code>indep_var_4</code> column (originally <code>island</code>) is converted to a categorical data type.</li>
-<li><strong>Filling Missing Values</strong>: Missing values in numeric columns are filled using the mean of each column.</li>
-<li><strong>Removing Missing Values</strong>: Rows with any remaining missing values are dropped.</li>
-<li><strong>Removing Duplicates</strong>: Duplicate records in the DataFrame are removed.</li>
-</ol>
-<p>This code prepares and cleans the dataset for further analysis, ensuring that missing and duplicate values are handled and the DataFrame is saved as a <code>.tsv</code> file.</p>
 </section>
 </section>
 <section id="select-and-group-data" class="level2">
 <h2 class="anchored" data-anchor-id="select-and-group-data">select and group data</h2>
-<div id="793411e8" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import necessary libraries</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1: Load df from the TSV file (input_file_path)</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>input_file_path <span class="op">=</span> <span class="st">'/home/sol-nhl/rnd/d/quarto/osm-cda/csv/data.tsv'</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(input_file_path, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>)</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2: Filtering data (example: filter rows where dep_var &gt; 3500)</span></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>filtered_df <span class="op">=</span> df[df[<span class="st">'dep_var'</span>] <span class="op">&gt;</span> <span class="dv">3500</span>]</span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 3: Selecting the required columns (example: selecting dep_var and indep_var_1)</span></span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>selected_columns <span class="op">=</span> filtered_df[[<span class="st">'dep_var'</span>, <span class="st">'indep_var_1'</span>, <span class="st">'indep_var_4'</span>]]</span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 4: Grouping data example (example: group by indep_var_4 and calculate mean dep_var)</span></span>
-<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>grouped_data <span class="op">=</span> df.groupby(<span class="st">'indep_var_4'</span>)[<span class="st">'dep_var'</span>].mean().reset_index()</span>
-<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 5: Merging data with another DataFrame (example: merging original df with grouped_data on indep_var_4)</span></span>
-<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>merged_df <span class="op">=</span> pd.merge(df, grouped_data, on<span class="op">=</span><span class="st">'indep_var_4'</span>, suffixes<span class="op">=</span>(<span class="st">''</span>, <span class="st">'_mean'</span>))</span>
-<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 6: Calculating a new column (example: calculate the difference between dep_var and dep_var_mean)</span></span>
-<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>merged_df[<span class="st">'dep_var_diff'</span>] <span class="op">=</span> merged_df[<span class="st">'dep_var'</span>] <span class="op">-</span> merged_df[<span class="st">'dep_var_mean'</span>]</span>
-<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 7: Creating a Pivot table (example: pivot table with indep_var_4 as index and dep_var as values, mean of dep_var)</span></span>
-<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>pivot_table <span class="op">=</span> merged_df.pivot_table(values<span class="op">=</span><span class="st">'dep_var'</span>, index<span class="op">=</span><span class="st">'indep_var_4'</span>, aggfunc<span class="op">=</span><span class="st">'mean'</span>)</span>
-<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 8: Save the Pivot table as a TSV file</span></span>
-<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>output_file_path <span class="op">=</span> <span class="st">'/home/sol-nhl/rnd/d/quarto/osm-cda/csv/data_pivot.tsv'</span></span>
-<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a>pivot_table.to_csv(output_file_path, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>)</span>
-<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Output result to verify (filtered data, selected columns, grouped data, merged data, and pivot table)</span></span>
-<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(filtered_df.head())</span>
-<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(selected_columns.head())</span>
-<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(grouped_data.head())</span>
-<span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(merged_df.head())</span>
-<span id="cb13-35"><a href="#cb13-35" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pivot_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Here is an analysis of your Python code, separated into logical steps with each step in its own code chunk, followed by explanations:</p>
+<section id="import-the-necessary-library" class="level3">
+<h3 class="anchored" data-anchor-id="import-the-necessary-library">1. Import the necessary library</h3>
+<div id="4d55b8f2" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="select-and-group-summary" class="level3">
-<h3 class="anchored" data-anchor-id="select-and-group-summary">select and group, summary</h3>
-<ol type="1">
-<li><p><strong>Loading Data</strong>: The TSV file located at <code>/home/sol-nhl/rnd/d/quarto/osm-cda/csv/data.tsv</code> is loaded into a DataFrame called <code>df</code> using <code>pd.read_csv()</code> with tab-separated values.</p></li>
-<li><p><strong>Filtering Data</strong>: An example filter is applied to select rows where the dependent variable (<code>dep_var</code>) is greater than 3500.</p></li>
-<li><p><strong>Selecting Columns</strong>: The relevant columns are selected, including the dependent variable (<code>dep_var</code>), one of the independent variables (<code>indep_var_1</code>), and the grouping variable (<code>indep_var_4</code>).</p></li>
-<li><p><strong>Grouping Data</strong>: The data is grouped by the independent variable (<code>indep_var_4</code>) and the mean of <code>dep_var</code> is calculated for each group.</p></li>
-<li><p><strong>Merging Data</strong>: The original DataFrame (<code>df</code>) is merged with the grouped data (mean <code>dep_var</code> for each <code>indep_var_4</code>) on the <code>indep_var_4</code> column.</p></li>
-<li><p><strong>Calculating a New Column</strong>: A new column (<code>dep_var_diff</code>) is calculated as the difference between each penguin’s <code>dep_var</code> and the group mean <code>dep_var</code>.</p></li>
-<li><p><strong>Creating a Pivot Table</strong>: A pivot table is generated, showing the mean <code>dep_var</code> for each category in <code>indep_var_4</code>.</p></li>
-<li><p><strong>Saving the Data</strong>: The resulting pivot table is saved to a new TSV file at <code>/home/sol-nhl/rnd/d/quarto/osm-cda/csv/data_pivot.tsv</code>.</p></li>
-</ol>
-<p>This code accomplishes the task of analyzing the <strong>penguins</strong> dataset by filtering, selecting, grouping, merging, calculating a new column, creating a pivot table, and saving the final output to a TSV file.</p>
+<p><strong>Explanation:</strong><br>
+This line imports the Pandas library, a powerful Python tool for data manipulation and analysis. By importing Pandas, the script gains access to functions like reading data, filtering, grouping, and saving results.</p>
+<hr>
+</section>
+<section id="load-dataframe-from-tsv-file" class="level3">
+<h3 class="anchored" data-anchor-id="load-dataframe-from-tsv-file">2. Load DataFrame from TSV File</h3>
+<div id="103bbba8" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>input_file_path <span class="op">=</span> <span class="st">'/home/sol-nhl/rnd/d/quarto/osm-cda/csv/data.tsv'</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(input_file_path, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Explanation:</strong><br>
+This block reads a TSV (tab-separated values) file from the specified file path (<code>input_file_path</code>) into a Pandas DataFrame (<code>df</code>). The <code>sep='\t'</code> argument specifies that the file uses tabs as delimiters. The result is a DataFrame containing the data from the TSV file, with columns and rows ready for further manipulation.</p>
+<hr>
+</section>
+<section id="filter-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="filter-the-data">3. Filter the Data</h3>
+<div id="9bb1ebb9" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>filtered_df <span class="op">=</span> df[df[<span class="st">'dep_var'</span>] <span class="op">&gt;</span> <span class="dv">3500</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Explanation:</strong><br>
+Here, the DataFrame is filtered to include only rows where the value in the <code>dep_var</code> column is greater than <code>3500</code>. The resulting filtered DataFrame (<code>filtered_df</code>) contains a subset of the original data that meets this condition.</p>
+<hr>
+</section>
+<section id="select-specific-columns" class="level3">
+<h3 class="anchored" data-anchor-id="select-specific-columns">4. Select Specific Columns</h3>
+<div id="c21ac8ed" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>selected_columns <span class="op">=</span> filtered_df[[<span class="st">'dep_var'</span>, <span class="st">'indep_var_1'</span>, <span class="st">'indep_var_4'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Explanation:</strong><br>
+In this step, a new DataFrame (<code>selected_columns</code>) is created by selecting only the specified columns (<code>dep_var</code>, <code>indep_var_1</code>, and <code>indep_var_4</code>) from the previously filtered DataFrame. This reduces the dataset to just the relevant columns needed for further analysis.</p>
+<hr>
+</section>
+<section id="group-data-and-calculate-the-mean" class="level3">
+<h3 class="anchored" data-anchor-id="group-data-and-calculate-the-mean">5. Group Data and Calculate the Mean</h3>
+<div id="b3a3e638" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>grouped_data <span class="op">=</span> df.groupby(<span class="st">'indep_var_4'</span>)[<span class="st">'dep_var'</span>].mean().reset_index()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Explanation:</strong><br>
+This block groups the data by the <code>indep_var_4</code> column and calculates the mean of the <code>dep_var</code> column for each group. The result is stored in <code>grouped_data</code>, a DataFrame containing the unique values of <code>indep_var_4</code> and their corresponding mean <code>dep_var</code> values. The <code>reset_index()</code> function ensures the grouped values are converted back into a DataFrame format.</p>
+<hr>
+</section>
+<section id="merge-dataframes" class="level3">
+<h3 class="anchored" data-anchor-id="merge-dataframes">6. Merge DataFrames</h3>
+<div id="fe443426" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>merged_df <span class="op">=</span> pd.merge(df, grouped_data, on<span class="op">=</span><span class="st">'indep_var_4'</span>, suffixes<span class="op">=</span>(<span class="st">''</span>, <span class="st">'_mean'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Explanation:</strong><br>
+This step merges the original DataFrame (<code>df</code>) with the <code>grouped_data</code> DataFrame on the <code>indep_var_4</code> column. The result (<code>merged_df</code>) contains all original columns from <code>df</code> along with the mean <code>dep_var</code> for each group. The <code>suffixes=('', '_mean')</code> ensures that the new <code>dep_var_mean</code> column has a distinct name.</p>
+<hr>
+</section>
+<section id="calculate-a-new-column" class="level3">
+<h3 class="anchored" data-anchor-id="calculate-a-new-column">7. Calculate a New Column</h3>
+<div id="31840a72" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>merged_df[<span class="st">'dep_var_diff'</span>] <span class="op">=</span> merged_df[<span class="st">'dep_var'</span>] <span class="op">-</span> merged_df[<span class="st">'dep_var_mean'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Explanation:</strong><br>
+A new column (<code>dep_var_diff</code>) is added to the <code>merged_df</code> DataFrame. This column represents the difference between the original <code>dep_var</code> values and the mean <code>dep_var</code> values for each group (from the merged <code>dep_var_mean</code> column). The result provides insight into how each <code>dep_var</code> deviates from the group mean.</p>
+<hr>
+</section>
+<section id="create-a-pivot-table" class="level3">
+<h3 class="anchored" data-anchor-id="create-a-pivot-table">8. Create a Pivot Table</h3>
+<div id="2514ea4c" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>pivot_table <span class="op">=</span> merged_df.pivot_table(values<span class="op">=</span><span class="st">'dep_var'</span>, index<span class="op">=</span><span class="st">'indep_var_4'</span>, aggfunc<span class="op">=</span><span class="st">'mean'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Explanation:</strong><br>
+This block creates a pivot table from <code>merged_df</code>, where <code>indep_var_4</code> becomes the index, and the mean of <code>dep_var</code> is calculated for each value of <code>indep_var_4</code>. The result is stored in the <code>pivot_table</code> DataFrame, which aggregates the data by <code>indep_var_4</code> and provides a summary of the mean <code>dep_var</code>.</p>
+<hr>
+</section>
+<section id="save-the-pivot-table-as-a-tsv-file" class="level3">
+<h3 class="anchored" data-anchor-id="save-the-pivot-table-as-a-tsv-file">9. Save the Pivot Table as a TSV File</h3>
+<div id="c25974b4" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>output_file_path <span class="op">=</span> <span class="st">'/home/sol-nhl/rnd/d/quarto/osm-cda/csv/data_pivot.tsv'</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>pivot_table.to_csv(output_file_path, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Explanation:</strong><br>
+In this step, the <code>pivot_table</code> DataFrame is saved as a TSV file to the specified path (<code>output_file_path</code>). The <code>sep='\t'</code> argument ensures that the data is saved in tab-separated format. This allows the pivot table to be stored and used for further analysis or reporting.</p>
+<hr>
+</section>
+<section id="output-results-to-verify" class="level3">
+<h3 class="anchored" data-anchor-id="output-results-to-verify">10. Output Results to Verify</h3>
+<div id="7a01358f" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(filtered_df.head())</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(selected_columns.head())</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(grouped_data.head())</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(merged_df.head())</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pivot_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Explanation:</strong><br>
+This final block prints the first few rows (<code>head()</code>) of various DataFrames, including the filtered data, selected columns, grouped data, merged data, and the pivot table. These print statements allow you to verify the results of each step in the analysis.</p>
 
 
 </section>
