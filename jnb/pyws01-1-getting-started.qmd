@@ -17,4 +17,12 @@ title: "python environments"
 
 ## anaconda
 
+[![download and install anaconda on local computer](https://img.youtube.com/vi/MUZtVEDKXsk/0.jpg)](https://www.youtube.com/watch?v=MUZtVEDKXsk)
+
 - https://www.anaconda.com/download
+
+
+
+
+
+

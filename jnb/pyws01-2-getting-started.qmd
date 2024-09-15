@@ -2,6 +2,7 @@
 title: "basic python syntax"
 ---
 
+- interactive [learnpython](https://www.learnpython.org/)
 - download [jupyter notebook](pyws01-2-getting-started.ipynb)
 
 ## strings and numbers
@@ -389,5 +390,45 @@ Here are 10 Python code chunks demonstrating different types of user-defined fun
    The `calculate_average(*numbers)` function calculates the average of any number of arguments. It first checks if any numbers were provided (if the length of `numbers` is `0`, it returns `0`), then calculates the average by dividing the sum by the length. Calling `calculate_average(5, 10, 15)` returns `10.0`, and `calculate_average()` returns `0`.
 
 These examples show different ways to define functions with varying arguments, handling edge cases, using recursion, and incorporating function documentation.
+
+## main statement
+
+Here is a sample Python script that defines two simple functions and includes a `main` statement to call them:
+
+```{python}
+# Function to add two numbers
+def add_numbers(a, b):
+   return a + b
+
+# Function to subtract two numbers
+def subtract_numbers(a, b):
+   return a - b
+
+# Main statement
+if __name__ == "__main__":
+   num1 = 10
+   num2 = 5
+
+   # Calling the functions
+   sum_result = add_numbers(num1, num2)
+   diff_result = subtract_numbers(num1, num2)
+
+   # Printing the results
+   print(f"The sum of {num1} and {num2} is: {sum_result}")
+   print(f"The difference between {num1} and {num2} is: {diff_result}")
+```
+
+### Explanation:
+1. **`add_numbers(a, b)`**: A simple function that takes two arguments and returns their sum.
+2. **`subtract_numbers(a, b)`**: A simple function that takes two arguments and returns their difference.
+3. **Main statement (`if __name__ == "__main__":`)**: This block ensures that the code inside it runs only when the script is executed directly, not when it's imported as a module.
+4. **Calling the functions**: Inside the `main` block, it calls the `add_numbers` and `subtract_numbers` functions with `num1` and `num2` as arguments.
+5. **Print results**: Displays the results of the addition and subtraction operations.
+
+
+
+
+
+
 
 
