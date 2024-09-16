@@ -293,9 +293,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#descriptive-visualizations" id="toc-descriptive-visualizations" class="nav-link active" data-scroll-target="#descriptive-visualizations">descriptive visualizations</a></li>
-  <li><a href="#inferential-visualizations" id="toc-inferential-visualizations" class="nav-link" data-scroll-target="#inferential-visualizations">inferential visualizations</a></li>
-  <li><a href="#testing" id="toc-testing" class="nav-link" data-scroll-target="#testing">testing</a></li>
+  <li><a href="#seaborn-descriptive" id="toc-seaborn-descriptive" class="nav-link active" data-scroll-target="#seaborn-descriptive">seaborn, descriptive</a>
+  <ul class="collapse">
+  <li><a href="#import-libraries" id="toc-import-libraries" class="nav-link" data-scroll-target="#import-libraries">1. Import Libraries</a></li>
+  <li><a href="#load-the-dataset" id="toc-load-the-dataset" class="nav-link" data-scroll-target="#load-the-dataset">2. Load the Dataset</a></li>
+  <li><a href="#create-the-plot-figure-and-axes" id="toc-create-the-plot-figure-and-axes" class="nav-link" data-scroll-target="#create-the-plot-figure-and-axes">3. Create the Plot Figure and Axes</a></li>
+  <li><a href="#create-the-left-subplot" id="toc-create-the-left-subplot" class="nav-link" data-scroll-target="#create-the-left-subplot">4. Create the Left Subplot</a></li>
+  <li><a href="#create-the-middle-subplot" id="toc-create-the-middle-subplot" class="nav-link" data-scroll-target="#create-the-middle-subplot">5. Create the Middle Subplot</a></li>
+  <li><a href="#create-the-right-subplot" id="toc-create-the-right-subplot" class="nav-link" data-scroll-target="#create-the-right-subplot">6. Create the Right Subplot</a></li>
+  <li><a href="#adjust-the-layout" id="toc-adjust-the-layout" class="nav-link" data-scroll-target="#adjust-the-layout">7. Adjust the Layout</a></li>
+  <li><a href="#define-the-output-directory-and-save-the-figure" id="toc-define-the-output-directory-and-save-the-figure" class="nav-link" data-scroll-target="#define-the-output-directory-and-save-the-figure">8. Define the Output Directory and Save the Figure</a></li>
+  <li><a href="#display-the-plot" id="toc-display-the-plot" class="nav-link" data-scroll-target="#display-the-plot">9. Display the Plot</a></li>
+  </ul></li>
+  <li><a href="#seaborn-inferential" id="toc-seaborn-inferential" class="nav-link" data-scroll-target="#seaborn-inferential">seaborn, inferential</a>
+  <ul class="collapse">
+  <li><a href="#import-libraries-1" id="toc-import-libraries-1" class="nav-link" data-scroll-target="#import-libraries-1">1. Import Libraries</a></li>
+  <li><a href="#load-the-penguins-dataset" id="toc-load-the-penguins-dataset" class="nav-link" data-scroll-target="#load-the-penguins-dataset">2. Load the Penguins Dataset</a></li>
+  <li><a href="#create-a-color-palette-for-species" id="toc-create-a-color-palette-for-species" class="nav-link" data-scroll-target="#create-a-color-palette-for-species">3. Create a Color Palette for Species</a></li>
+  <li><a href="#create-a-1x3-plot-grid" id="toc-create-a-1x3-plot-grid" class="nav-link" data-scroll-target="#create-a-1x3-plot-grid">4. Create a 1x3 Plot Grid</a></li>
+  <li><a href="#create-the-bar-plot-left-subplot" id="toc-create-the-bar-plot-left-subplot" class="nav-link" data-scroll-target="#create-the-bar-plot-left-subplot">5. Create the Bar Plot (Left Subplot)</a></li>
+  <li><a href="#create-the-box-plot-middle-subplot" id="toc-create-the-box-plot-middle-subplot" class="nav-link" data-scroll-target="#create-the-box-plot-middle-subplot">6. Create the Box Plot (Middle Subplot)</a></li>
+  <li><a href="#create-the-scatter-plot-with-regression-lines-right-subplot" id="toc-create-the-scatter-plot-with-regression-lines-right-subplot" class="nav-link" data-scroll-target="#create-the-scatter-plot-with-regression-lines-right-subplot">7. Create the Scatter Plot with Regression Lines (Right Subplot)</a></li>
+  <li><a href="#add-linear-regression-lines-for-each-species" id="toc-add-linear-regression-lines-for-each-species" class="nav-link" data-scroll-target="#add-linear-regression-lines-for-each-species">8. Add Linear Regression Lines for Each Species</a></li>
+  <li><a href="#add-legend-and-title-for-the-right-subplot" id="toc-add-legend-and-title-for-the-right-subplot" class="nav-link" data-scroll-target="#add-legend-and-title-for-the-right-subplot">9. Add Legend and Title for the Right Subplot</a></li>
+  <li><a href="#adjust-layout" id="toc-adjust-layout" class="nav-link" data-scroll-target="#adjust-layout">10. Adjust Layout</a></li>
+  <li><a href="#save-the-figure" id="toc-save-the-figure" class="nav-link" data-scroll-target="#save-the-figure">11. Save the Figure</a></li>
+  <li><a href="#display-the-plot-1" id="toc-display-the-plot-1" class="nav-link" data-scroll-target="#display-the-plot-1">12. Display the Plot</a></li>
+  </ul></li>
+  <li><a href="#plotnine-testing" id="toc-plotnine-testing" class="nav-link" data-scroll-target="#plotnine-testing">plotnine, testing</a></li>
   </ul>
 </nav>
     </div>
@@ -329,70 +354,397 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>example gallery <a href="https://altair-viz.github.io/altair-viz-v4/gallery/index.html" target="_blank">altair</a></li>
 <li>download <a href="pyws02-2-data-analysis.ipynb">jupyter notebook</a></li>
 </ul>
-<section id="descriptive-visualizations" class="level2">
-<h2 class="anchored" data-anchor-id="descriptive-visualizations">descriptive visualizations</h2>
-</section>
-<section id="inferential-visualizations" class="level2">
-<h2 class="anchored" data-anchor-id="inferential-visualizations">inferential visualizations</h2>
-<div id="b3cc6ad7" class="cell" data-execution_count="1">
+<section id="seaborn-descriptive" class="level2">
+<h2 class="anchored" data-anchor-id="seaborn-descriptive">seaborn, descriptive</h2>
+<div id="eaeb967e" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>sns.set_theme(style<span class="op">=</span><span class="st">"ticks"</span>, palette<span class="op">=</span><span class="st">"pastel"</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the example tips dataset</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>tips <span class="op">=</span> sns.load_dataset(<span class="st">"tips"</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Draw a nested boxplot to show bills by day and time</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>sns.boxplot(x<span class="op">=</span><span class="st">"day"</span>, y<span class="op">=</span><span class="st">"total_bill"</span>,</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>            hue<span class="op">=</span><span class="st">"smoker"</span>, palette<span class="op">=</span>[<span class="st">"m"</span>, <span class="st">"g"</span>],</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>            data<span class="op">=</span>tips)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>sns.despine(offset<span class="op">=</span><span class="dv">10</span>, trim<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the penguins dataset into a DataFrame</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> sns.load_dataset(<span class="st">'penguins'</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a 1 row by 3 columns plot</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">18</span>, <span class="dv">5</span>))</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Left subplot: Graph two categorical variables (species and island) using a countplot</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>sns.countplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">'species'</span>, hue<span class="op">=</span><span class="st">'island'</span>, ax<span class="op">=</span>axes[<span class="dv">0</span>])</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_title(<span class="st">'Count of Species by Island'</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Middle subplot: Graph one continuous variable by one categorical using a barplot (without error bars)</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>sns.barplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">'species'</span>, y<span class="op">=</span><span class="st">'body_mass_g'</span>, errorbar<span class="op">=</span><span class="va">None</span>, ax<span class="op">=</span>axes[<span class="dv">1</span>])</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_title(<span class="st">'Average Body Mass by Species'</span>)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Right subplot: Graph two continuous variables (flipper_length_mm vs. body_mass_g) using a scatterplot</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">'flipper_length_mm'</span>, y<span class="op">=</span><span class="st">'body_mass_g'</span>, ax<span class="op">=</span>axes[<span class="dv">2</span>])</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>].set_title(<span class="st">'Flipper Length vs. Body Mass'</span>)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Adjust layout</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Output directory</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>output_file_path <span class="op">=</span> <span class="st">'/home/sol-nhl/rnd/d/quarto/osm-cda/fig/'</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the figure as PNG and PDF</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>fig.savefig(<span class="ss">f"</span><span class="sc">{</span>output_file_path<span class="sc">}</span><span class="ss">seaborn_descriptive.png"</span>)</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>fig.savefig(<span class="ss">f"</span><span class="sc">{</span>output_file_path<span class="sc">}</span><span class="ss">seaborn_descriptive.pdf"</span>)</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the plot</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="pyws02-2-data-analysis_files/figure-html/cell-2-output-1.png" width="602" height="449" class="figure-img"></p>
+<p><img src="pyws02-2-data-analysis_files/figure-html/cell-2-output-1.png" width="1718" height="470" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
+<p>Here is the analysis of the Python code, broken down into separate chunks, with explanations for each step:</p>
+<section id="import-libraries" class="level3">
+<h3 class="anchored" data-anchor-id="import-libraries">1. Import Libraries</h3>
+<div id="ed960a28" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Explanation:</strong><br>
+This step imports the necessary libraries. <code>seaborn</code> is used for data visualization, <code>matplotlib.pyplot</code> for creating plots, and <code>pandas</code> for data manipulation. These libraries provide powerful tools for analyzing and visualizing data in a variety of formats.</p>
+<hr>
 </section>
-<section id="testing" class="level2">
-<h2 class="anchored" data-anchor-id="testing">testing</h2>
-<div id="d5933f72" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># prompt: acquire dataset penguins from seaborn package, read it into a polars dataframe, generate a data analysis pipeline where bill_length is aggregated by species, pipe the aggregated data out to a plotnine bar chart with error bars</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#!pip install polars plotnine</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> plotnine <span class="im">import</span> <span class="op">*</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the penguins dataset</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>penguins <span class="op">=</span> sns.load_dataset(<span class="st">'penguins'</span>)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert to a Polars DataFrame</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pl.from_pandas(penguins)</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the data analysis pipeline</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>(</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    df</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    .group_by(<span class="st">'species'</span>)</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    .agg([</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>        pl.col(<span class="st">'bill_length_mm'</span>).mean().alias(<span class="st">'mean_bill_length'</span>),</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>        pl.col(<span class="st">'bill_length_mm'</span>).std().alias(<span class="st">'std_bill_length'</span>)</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    ])</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    .pipe(<span class="kw">lambda</span> df: (</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>        ggplot(df, aes(x<span class="op">=</span><span class="st">'species'</span>, y<span class="op">=</span><span class="st">'mean_bill_length'</span>, fill<span class="op">=</span><span class="st">'species'</span>))</span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>        <span class="op">+</span> geom_bar(stat<span class="op">=</span><span class="st">'identity'</span>, position<span class="op">=</span><span class="st">'dodge'</span>)</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>        <span class="op">+</span> geom_errorbar(aes(ymin<span class="op">=</span><span class="st">'mean_bill_length - std_bill_length'</span>, ymax<span class="op">=</span><span class="st">'mean_bill_length + std_bill_length'</span>), width<span class="op">=</span><span class="fl">0.2</span>)</span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>        <span class="op">+</span> theme_bw()</span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>        <span class="op">+</span> labs(x<span class="op">=</span><span class="st">'Species'</span>, y<span class="op">=</span><span class="st">'Mean Bill Length (mm)'</span>, title<span class="op">=</span><span class="st">'Mean Bill Length by Species'</span>)</span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    ))</span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    .draw()</span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
+<section id="load-the-dataset" class="level3">
+<h3 class="anchored" data-anchor-id="load-the-dataset">2. Load the Dataset</h3>
+<div id="1cffaa82" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> sns.load_dataset(<span class="st">'penguins'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Explanation:</strong><br>
+This line loads the “penguins” dataset into a Pandas DataFrame (<code>df</code>) using Seaborn’s <code>load_dataset</code> function. The dataset contains information about penguin species, measurements, and other attributes. By loading it into a DataFrame, you make it easier to perform data analysis and visualizations.</p>
+<hr>
+</section>
+<section id="create-the-plot-figure-and-axes" class="level3">
+<h3 class="anchored" data-anchor-id="create-the-plot-figure-and-axes">3. Create the Plot Figure and Axes</h3>
+<div id="eea9aaa1" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">18</span>, <span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Explanation:</strong><br>
+This step creates a figure (<code>fig</code>) with three subplots (<code>axes</code>) arranged in a single row using <code>plt.subplots()</code>. The <code>figsize=(18, 5)</code> argument specifies the size of the entire plot in inches. This layout allows for multiple visualizations to be displayed side-by-side in one figure.</p>
+<hr>
+</section>
+<section id="create-the-left-subplot" class="level3">
+<h3 class="anchored" data-anchor-id="create-the-left-subplot">4. Create the Left Subplot</h3>
+<div id="29581e90" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>sns.countplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">'species'</span>, hue<span class="op">=</span><span class="st">'island'</span>, ax<span class="op">=</span>axes[<span class="dv">0</span>])</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_title(<span class="st">'Count of Species by Island'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>Text(0.5, 1.0, 'Count of Species by Island')</code></pre>
+</div>
+</div>
+<p><strong>Explanation:</strong><br>
+This block creates a count plot using Seaborn’s <code>countplot()</code> function, displaying the number of penguins by species with a hue for the <code>island</code> column. The plot is assigned to the first subplot (<code>axes[0]</code>). The <code>set_title()</code> method adds a title to this subplot, making it easier to interpret.</p>
+<hr>
+</section>
+<section id="create-the-middle-subplot" class="level3">
+<h3 class="anchored" data-anchor-id="create-the-middle-subplot">5. Create the Middle Subplot</h3>
+<div id="c96acdf1" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>sns.barplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">'species'</span>, y<span class="op">=</span><span class="st">'body_mass_g'</span>, errorbar<span class="op">=</span><span class="va">None</span>, ax<span class="op">=</span>axes[<span class="dv">1</span>])</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_title(<span class="st">'Average Body Mass by Species'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>Text(0.5, 1.0, 'Average Body Mass by Species')</code></pre>
+</div>
+</div>
+<p><strong>Explanation:</strong><br>
+This block generates a bar plot that shows the average body mass (<code>body_mass_g</code>) for each penguin species using <code>sns.barplot()</code>. The <code>errorbar=None</code> argument ensures that no error bars are displayed. The plot is assigned to the second subplot (<code>axes[1]</code>), and a title is set for clarity.</p>
+<hr>
+</section>
+<section id="create-the-right-subplot" class="level3">
+<h3 class="anchored" data-anchor-id="create-the-right-subplot">6. Create the Right Subplot</h3>
+<div id="46a40bef" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">'flipper_length_mm'</span>, y<span class="op">=</span><span class="st">'body_mass_g'</span>, ax<span class="op">=</span>axes[<span class="dv">2</span>])</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>].set_title(<span class="st">'Flipper Length vs. Body Mass'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>Text(0.5, 1.0, 'Flipper Length vs. Body Mass')</code></pre>
+</div>
+</div>
+<p><strong>Explanation:</strong><br>
+Here, a scatter plot is created using <code>sns.scatterplot()</code> to show the relationship between <code>flipper_length_mm</code> (x-axis) and <code>body_mass_g</code> (y-axis). This plot is added to the third subplot (<code>axes[2]</code>). The title provides context for what the plot represents.</p>
+<hr>
+</section>
+<section id="adjust-the-layout" class="level3">
+<h3 class="anchored" data-anchor-id="adjust-the-layout">7. Adjust the Layout</h3>
+<div id="045e788b" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>&lt;Figure size 672x480 with 0 Axes&gt;</code></pre>
+</div>
+</div>
+<p><strong>Explanation:</strong><br>
+This line adjusts the layout of the subplots to ensure they do not overlap. <code>plt.tight_layout()</code> automatically adjusts the spacing between subplots to make the figure look cleaner and more readable.</p>
+<hr>
+</section>
+<section id="define-the-output-directory-and-save-the-figure" class="level3">
+<h3 class="anchored" data-anchor-id="define-the-output-directory-and-save-the-figure">8. Define the Output Directory and Save the Figure</h3>
+<div id="600a9e6d" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>output_file_path <span class="op">=</span> <span class="st">'/home/sol-nhl/rnd/d/quarto/osm-cda/fig/'</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>fig.savefig(<span class="ss">f"</span><span class="sc">{</span>output_file_path<span class="sc">}</span><span class="ss">seaborn_descriptive.png"</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>fig.savefig(<span class="ss">f"</span><span class="sc">{</span>output_file_path<span class="sc">}</span><span class="ss">seaborn_descriptive.pdf"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Explanation:</strong><br>
+The <code>output_file_path</code> variable defines the directory where the plots will be saved. The <code>fig.savefig()</code> method saves the entire figure in both PNG and PDF formats to the specified directory. This allows you to keep a copy of the visualizations for future reference or inclusion in reports.</p>
+<hr>
+</section>
+<section id="display-the-plot" class="level3">
+<h3 class="anchored" data-anchor-id="display-the-plot">9. Display the Plot</h3>
+<div id="9b631ce8" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Explanation:</strong><br>
+This line displays the figure with all three subplots in an interactive window (or inline if using a Jupyter notebook). This command is necessary to visualize the plots when running the script in an environment that supports graphical output.</p>
+</section>
+</section>
+<section id="seaborn-inferential" class="level2">
+<h2 class="anchored" data-anchor-id="seaborn-inferential">seaborn, inferential</h2>
+<div id="04da6a81" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the penguins dataset into a pandas DataFrame</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> sns.load_dataset(<span class="st">'penguins'</span>)</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a color palette for species</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>species_list <span class="op">=</span> df[<span class="st">'species'</span>].dropna().unique()</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>palette <span class="op">=</span> sns.color_palette(<span class="st">'Set1'</span>, n_colors<span class="op">=</span><span class="bu">len</span>(species_list))</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>species_palette <span class="op">=</span> <span class="bu">dict</span>(<span class="bu">zip</span>(species_list, palette))</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a 1 row by 3 columns plot</span></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">18</span>, <span class="dv">5</span>))</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Left subplot: Barplot of two categorical variables with error bars (species by island)</span></span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>sns.barplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">'species'</span>, y<span class="op">=</span><span class="st">'body_mass_g'</span>, hue<span class="op">=</span><span class="st">'island'</span>, errorbar<span class="op">=</span><span class="st">'sd'</span>, palette<span class="op">=</span>palette, ax<span class="op">=</span>axes[<span class="dv">0</span>])</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_title(<span class="st">'Body Mass by Species and Island'</span>)</span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Middle subplot: Boxplot of one continuous variable by one categorical (body_mass_g by species)</span></span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">'species'</span>, y<span class="op">=</span><span class="st">'body_mass_g'</span>, hue<span class="op">=</span><span class="st">'species'</span>, palette<span class="op">=</span>palette, ax<span class="op">=</span>axes[<span class="dv">1</span>], legend<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_title(<span class="st">'Body Mass Distribution by Species'</span>)</span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Right subplot: Scatterplot with linear regression lines and confidence intervals differentiated by species</span></span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">'flipper_length_mm'</span>, y<span class="op">=</span><span class="st">'body_mass_g'</span>, hue<span class="op">=</span><span class="st">'species'</span>, palette<span class="op">=</span>species_palette, ax<span class="op">=</span>axes[<span class="dv">2</span>])</span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Add linear regression lines for each species</span></span>
+<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> species, color <span class="kw">in</span> species_palette.items():</span>
+<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a>    sns.regplot(</span>
+<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a>        data<span class="op">=</span>df[df[<span class="st">'species'</span>] <span class="op">==</span> species],</span>
+<span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a>        x<span class="op">=</span><span class="st">'flipper_length_mm'</span>,</span>
+<span id="cb15-32"><a href="#cb15-32" aria-hidden="true" tabindex="-1"></a>        y<span class="op">=</span><span class="st">'body_mass_g'</span>,</span>
+<span id="cb15-33"><a href="#cb15-33" aria-hidden="true" tabindex="-1"></a>        ax<span class="op">=</span>axes[<span class="dv">2</span>],</span>
+<span id="cb15-34"><a href="#cb15-34" aria-hidden="true" tabindex="-1"></a>        scatter<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb15-35"><a href="#cb15-35" aria-hidden="true" tabindex="-1"></a>        label<span class="op">=</span>species,</span>
+<span id="cb15-36"><a href="#cb15-36" aria-hidden="true" tabindex="-1"></a>        ci<span class="op">=</span><span class="dv">95</span>,</span>
+<span id="cb15-37"><a href="#cb15-37" aria-hidden="true" tabindex="-1"></a>        line_kws<span class="op">=</span>{<span class="st">'color'</span>: color},</span>
+<span id="cb15-38"><a href="#cb15-38" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb15-39"><a href="#cb15-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-40"><a href="#cb15-40" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>].legend()</span>
+<span id="cb15-41"><a href="#cb15-41" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>].set_title(<span class="st">'Flipper Length vs. Body Mass by Species (Linear Regression)'</span>)</span>
+<span id="cb15-42"><a href="#cb15-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-43"><a href="#cb15-43" aria-hidden="true" tabindex="-1"></a><span class="co"># Adjust layout</span></span>
+<span id="cb15-44"><a href="#cb15-44" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb15-45"><a href="#cb15-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-46"><a href="#cb15-46" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the figure as PNG and PDF</span></span>
+<span id="cb15-47"><a href="#cb15-47" aria-hidden="true" tabindex="-1"></a>output_file_path <span class="op">=</span> <span class="st">'/home/sol-nhl/rnd/d/quarto/osm-cda/fig/'</span></span>
+<span id="cb15-48"><a href="#cb15-48" aria-hidden="true" tabindex="-1"></a>fig.savefig(<span class="ss">f"</span><span class="sc">{</span>output_file_path<span class="sc">}</span><span class="ss">seaborn_inferential.png"</span>)</span>
+<span id="cb15-49"><a href="#cb15-49" aria-hidden="true" tabindex="-1"></a>fig.savefig(<span class="ss">f"</span><span class="sc">{</span>output_file_path<span class="sc">}</span><span class="ss">seaborn_inferential.pdf"</span>)</span>
+<span id="cb15-50"><a href="#cb15-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-51"><a href="#cb15-51" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the plot</span></span>
+<span id="cb15-52"><a href="#cb15-52" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="pyws02-2-data-analysis_files/figure-html/cell-3-output-1.png" width="647" height="487" class="figure-img"></p>
+<p><img src="pyws02-2-data-analysis_files/figure-html/cell-12-output-1.png" width="1718" height="470" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Here is an analysis of the Python code, broken down into separate chunks, followed by explanations for each step:</p>
+<section id="import-libraries-1" class="level3">
+<h3 class="anchored" data-anchor-id="import-libraries-1">1. Import Libraries</h3>
+<div id="5620156c" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Explanation:</strong><br>
+This step imports the necessary libraries: <code>seaborn</code> for statistical data visualization, <code>matplotlib.pyplot</code> for plotting, and <code>pandas</code> for data manipulation. Importing these libraries allows access to their functions, which are used for loading datasets, creating plots, and saving figures.</p>
+<hr>
+</section>
+<section id="load-the-penguins-dataset" class="level3">
+<h3 class="anchored" data-anchor-id="load-the-penguins-dataset">2. Load the Penguins Dataset</h3>
+<div id="0c94dbe7" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> sns.load_dataset(<span class="st">'penguins'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Explanation:</strong><br>
+This line loads the “penguins” dataset into a Pandas DataFrame (<code>df</code>) using the Seaborn library’s <code>load_dataset</code> function. The dataset contains information on penguin species, measurements (e.g., body mass, flipper length), and habitat. Loading the data into a DataFrame enables easier manipulation and visualization of the dataset.</p>
+<hr>
+</section>
+<section id="create-a-color-palette-for-species" class="level3">
+<h3 class="anchored" data-anchor-id="create-a-color-palette-for-species">3. Create a Color Palette for Species</h3>
+<div id="5c877f4f" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>species_list <span class="op">=</span> df[<span class="st">'species'</span>].dropna().unique()</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>palette <span class="op">=</span> sns.color_palette(<span class="st">'Set1'</span>, n_colors<span class="op">=</span><span class="bu">len</span>(species_list))</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>species_palette <span class="op">=</span> <span class="bu">dict</span>(<span class="bu">zip</span>(species_list, palette))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Explanation:</strong><br>
+This chunk creates a color palette to differentiate penguin species in the plots: 1. <strong><code>species_list</code></strong> extracts unique species names from the <code>species</code> column, excluding any missing values. 2. <strong><code>palette</code></strong> generates a color palette using Seaborn’s <code>Set1</code> palette with a number of colors equal to the number of species. 3. <strong><code>species_palette</code></strong> creates a dictionary mapping each species to a specific color, enabling consistent coloring across multiple plots.</p>
+<hr>
+</section>
+<section id="create-a-1x3-plot-grid" class="level3">
+<h3 class="anchored" data-anchor-id="create-a-1x3-plot-grid">4. Create a 1x3 Plot Grid</h3>
+<div id="0f896152" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">18</span>, <span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Explanation:</strong><br>
+This line creates a figure with a grid of subplots arranged in one row and three columns using <code>matplotlib</code>. The <code>figsize</code> parameter sets the overall dimensions of the figure to 18 inches in width and 5 inches in height. The returned <code>axes</code> array will be used to plot the individual subplots.</p>
+<hr>
+</section>
+<section id="create-the-bar-plot-left-subplot" class="level3">
+<h3 class="anchored" data-anchor-id="create-the-bar-plot-left-subplot">5. Create the Bar Plot (Left Subplot)</h3>
+<div id="015da559" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>sns.barplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">'species'</span>, y<span class="op">=</span><span class="st">'body_mass_g'</span>, hue<span class="op">=</span><span class="st">'island'</span>, errorbar<span class="op">=</span><span class="st">'sd'</span>, palette<span class="op">=</span>palette, ax<span class="op">=</span>axes[<span class="dv">0</span>])</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_title(<span class="st">'Body Mass by Species and Island'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<pre><code>Text(0.5, 1.0, 'Body Mass by Species and Island')</code></pre>
+</div>
+</div>
+<p><strong>Explanation:</strong><br>
+This block creates a bar plot in the leftmost subplot (<code>axes[0]</code>): - Uses <code>sns.barplot()</code> to plot <code>body_mass_g</code> (y-axis) for each <code>species</code> (x-axis), separated by <code>island</code> (hue). - The <code>errorbar='sd'</code> parameter adds standard deviation error bars to each bar. - <code>palette</code> specifies the color scheme, while <code>ax=axes[0]</code> assigns the plot to the first subplot. - The <code>set_title()</code> method sets the title of the subplot.</p>
+<hr>
+</section>
+<section id="create-the-box-plot-middle-subplot" class="level3">
+<h3 class="anchored" data-anchor-id="create-the-box-plot-middle-subplot">6. Create the Box Plot (Middle Subplot)</h3>
+<div id="b96c3774" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">'species'</span>, y<span class="op">=</span><span class="st">'body_mass_g'</span>, hue<span class="op">=</span><span class="st">'species'</span>, palette<span class="op">=</span>palette, ax<span class="op">=</span>axes[<span class="dv">1</span>], legend<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_title(<span class="st">'Body Mass Distribution by Species'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="15">
+<pre><code>Text(0.5, 1.0, 'Body Mass Distribution by Species')</code></pre>
+</div>
+</div>
+<p><strong>Explanation:</strong><br>
+This block creates a box plot in the middle subplot (<code>axes[1]</code>): - <code>sns.boxplot()</code> displays the distribution of <code>body_mass_g</code> for each <code>species</code>. - The <code>hue='species'</code> parameter assigns different colors to each species, using the same <code>palette</code>. - <code>legend=False</code> suppresses the legend for this plot to avoid redundancy. - The plot is assigned to the second subplot (<code>ax=axes[1]</code>), and <code>set_title()</code> adds a title to the plot.</p>
+<hr>
+</section>
+<section id="create-the-scatter-plot-with-regression-lines-right-subplot" class="level3">
+<h3 class="anchored" data-anchor-id="create-the-scatter-plot-with-regression-lines-right-subplot">7. Create the Scatter Plot with Regression Lines (Right Subplot)</h3>
+<div id="349b89ca" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">'flipper_length_mm'</span>, y<span class="op">=</span><span class="st">'body_mass_g'</span>, hue<span class="op">=</span><span class="st">'species'</span>, palette<span class="op">=</span>species_palette, ax<span class="op">=</span>axes[<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="16">
+<pre><code>&lt;Axes: title={'center': 'Flipper Length vs. Body Mass by Species (Linear Regression)'}, xlabel='flipper_length_mm', ylabel='body_mass_g'&gt;</code></pre>
+</div>
+</div>
+<p><strong>Explanation:</strong><br>
+This line creates a scatter plot in the rightmost subplot (<code>axes[2]</code>): - <code>sns.scatterplot()</code> plots <code>flipper_length_mm</code> (x-axis) against <code>body_mass_g</code> (y-axis) for each species. - The <code>hue='species'</code> parameter color-codes the scatter points according to species using the previously defined <code>species_palette</code>. - <code>ax=axes[2]</code> places this plot in the third subplot.</p>
+<hr>
+</section>
+<section id="add-linear-regression-lines-for-each-species" class="level3">
+<h3 class="anchored" data-anchor-id="add-linear-regression-lines-for-each-species">8. Add Linear Regression Lines for Each Species</h3>
+<div id="cef0bc5e" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> species, color <span class="kw">in</span> species_palette.items():</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    sns.regplot(</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>        data<span class="op">=</span>df[df[<span class="st">'species'</span>] <span class="op">==</span> species],</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>        x<span class="op">=</span><span class="st">'flipper_length_mm'</span>,</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>        y<span class="op">=</span><span class="st">'body_mass_g'</span>,</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>        ax<span class="op">=</span>axes[<span class="dv">2</span>],</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>        scatter<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>        label<span class="op">=</span>species,</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>        ci<span class="op">=</span><span class="dv">95</span>,</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>        line_kws<span class="op">=</span>{<span class="st">'color'</span>: color},</span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Explanation:</strong><br>
+This block adds linear regression lines to the scatter plot for each species: - Iterates through the <code>species_palette</code> dictionary to plot a separate regression line for each species. - <code>sns.regplot()</code> fits a linear regression line with confidence intervals (<code>ci=95</code>), using <code>scatter=False</code> to suppress additional scatter points. - <code>line_kws={'color': color}</code> sets the color of the line to match the scatter plot dots. - Each line is labeled with the species name for legend purposes.</p>
+<hr>
+</section>
+<section id="add-legend-and-title-for-the-right-subplot" class="level3">
+<h3 class="anchored" data-anchor-id="add-legend-and-title-for-the-right-subplot">9. Add Legend and Title for the Right Subplot</h3>
+<div id="09e536e4" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>].legend()</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>].set_title(<span class="st">'Flipper Length vs. Body Mass by Species (Linear Regression)'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="18">
+<pre><code>Text(0.5, 1.0, 'Flipper Length vs. Body Mass by Species (Linear Regression)')</code></pre>
+</div>
+</div>
+<p><strong>Explanation:</strong><br>
+This block adds a legend to the rightmost subplot (<code>axes[2]</code>) to indicate which color corresponds to each species. It also sets the title of the subplot for better context.</p>
+<hr>
+</section>
+<section id="adjust-layout" class="level3">
+<h3 class="anchored" data-anchor-id="adjust-layout">10. Adjust Layout</h3>
+<div id="10355141" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>&lt;Figure size 672x480 with 0 Axes&gt;</code></pre>
+</div>
+</div>
+<p><strong>Explanation:</strong><br>
+This line adjusts the spacing between subplots to prevent overlap and ensure a clean, organized layout. <code>plt.tight_layout()</code> automatically manages the subplot parameters for a visually appealing output.</p>
+<hr>
+</section>
+<section id="save-the-figure" class="level3">
+<h3 class="anchored" data-anchor-id="save-the-figure">11. Save the Figure</h3>
+<div id="80bc91b2" class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>output_file_path <span class="op">=</span> <span class="st">'/home/sol-nhl/rnd/d/quarto/osm-cda/fig/'</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>fig.savefig(<span class="ss">f"</span><span class="sc">{</span>output_file_path<span class="sc">}</span><span class="ss">penguins_inferential_statistics_linear.png"</span>)</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>fig.savefig(<span class="ss">f"</span><span class="sc">{</span>output_file_path<span class="sc">}</span><span class="ss">penguins_inferential_statistics_linear.pdf"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Explanation:</strong><br>
+This block saves the figure in both PNG and PDF formats to the specified directory (<code>output_file_path</code>). The <code>fig.savefig()</code> method captures the entire figure, including all subplots, and writes it to the desired file format.</p>
+<hr>
+</section>
+<section id="display-the-plot-1" class="level3">
+<h3 class="anchored" data-anchor-id="display-the-plot-1">12. Display the Plot</h3>
+<div id="ff114f9b" class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Explanation:</strong><br>
+This line displays the generated figure with all three subplots. It is especially useful when running the script in an interactive environment (e.g., Jupyter notebooks) to visualize the plot output.</p>
+</section>
+</section>
+<section id="plotnine-testing" class="level2">
+<h2 class="anchored" data-anchor-id="plotnine-testing">plotnine, testing</h2>
+<div id="e331db11" class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># prompt: acquire dataset penguins from seaborn package, read it into a polars dataframe, generate a data analysis pipeline where bill_length is aggregated by species, pipe the aggregated data out to a plotnine bar chart with error bars</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="co">#!pip install polars plotnine</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> plotnine <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the penguins dataset</span></span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>penguins <span class="op">=</span> sns.load_dataset(<span class="st">'penguins'</span>)</span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert to a Polars DataFrame</span></span>
+<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pl.from_pandas(penguins)</span>
+<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the data analysis pipeline</span></span>
+<span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a>(</span>
+<span id="cb33-17"><a href="#cb33-17" aria-hidden="true" tabindex="-1"></a>    df</span>
+<span id="cb33-18"><a href="#cb33-18" aria-hidden="true" tabindex="-1"></a>    .group_by(<span class="st">'species'</span>)</span>
+<span id="cb33-19"><a href="#cb33-19" aria-hidden="true" tabindex="-1"></a>    .agg([</span>
+<span id="cb33-20"><a href="#cb33-20" aria-hidden="true" tabindex="-1"></a>        pl.col(<span class="st">'bill_length_mm'</span>).mean().alias(<span class="st">'mean_bill_length'</span>),</span>
+<span id="cb33-21"><a href="#cb33-21" aria-hidden="true" tabindex="-1"></a>        pl.col(<span class="st">'bill_length_mm'</span>).std().alias(<span class="st">'std_bill_length'</span>)</span>
+<span id="cb33-22"><a href="#cb33-22" aria-hidden="true" tabindex="-1"></a>    ])</span>
+<span id="cb33-23"><a href="#cb33-23" aria-hidden="true" tabindex="-1"></a>    .pipe(<span class="kw">lambda</span> df: (</span>
+<span id="cb33-24"><a href="#cb33-24" aria-hidden="true" tabindex="-1"></a>        ggplot(df, aes(x<span class="op">=</span><span class="st">'species'</span>, y<span class="op">=</span><span class="st">'mean_bill_length'</span>, fill<span class="op">=</span><span class="st">'species'</span>))</span>
+<span id="cb33-25"><a href="#cb33-25" aria-hidden="true" tabindex="-1"></a>        <span class="op">+</span> geom_bar(stat<span class="op">=</span><span class="st">'identity'</span>, position<span class="op">=</span><span class="st">'dodge'</span>)</span>
+<span id="cb33-26"><a href="#cb33-26" aria-hidden="true" tabindex="-1"></a>        <span class="op">+</span> geom_errorbar(aes(ymin<span class="op">=</span><span class="st">'mean_bill_length - std_bill_length'</span>, ymax<span class="op">=</span><span class="st">'mean_bill_length + std_bill_length'</span>), width<span class="op">=</span><span class="fl">0.2</span>)</span>
+<span id="cb33-27"><a href="#cb33-27" aria-hidden="true" tabindex="-1"></a>        <span class="op">+</span> theme_bw()</span>
+<span id="cb33-28"><a href="#cb33-28" aria-hidden="true" tabindex="-1"></a>        <span class="op">+</span> labs(x<span class="op">=</span><span class="st">'Species'</span>, y<span class="op">=</span><span class="st">'Mean Bill Length (mm)'</span>, title<span class="op">=</span><span class="st">'Mean Bill Length by Species'</span>)</span>
+<span id="cb33-29"><a href="#cb33-29" aria-hidden="true" tabindex="-1"></a>    ))</span>
+<span id="cb33-30"><a href="#cb33-30" aria-hidden="true" tabindex="-1"></a>    .draw()</span>
+<span id="cb33-31"><a href="#cb33-31" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="22">
+<div>
+<figure class="figure">
+<p><img src="pyws02-2-data-analysis_files/figure-html/cell-25-output-1.png" width="647" height="487" class="figure-img"></p>
 </figure>
 </div>
 </div>
