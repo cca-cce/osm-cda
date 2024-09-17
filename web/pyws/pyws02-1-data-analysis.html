@@ -351,14 +351,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>dataframe examples <a href="https://docs.pola.rs/" target="_blank">polars</a></li>
 <li>download <a href="pyws02-1-data-analysis.ipynb">jupyter notebook</a></li>
 </ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># run inside google colab</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>git clone https:<span class="op">//</span>github.com<span class="op">/</span>cca<span class="op">-</span>cce<span class="op">/</span>osm<span class="op">-</span>cda.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <section id="read-and-explore-data" class="level2">
 <h2 class="anchored" data-anchor-id="read-and-explore-data">read and explore data</h2>
 <p>Here is an analysis of your code, separated into logical steps with each step in its own code chunk, followed by explanations:</p>
 <section id="import-necessary-libraries" class="level3">
 <h3 class="anchored" data-anchor-id="import-necessary-libraries">1. Import necessary libraries</h3>
-<div id="1354cd19" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="697ebc61" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Explanation:</strong><br>
 This step imports the required libraries for the script. <code>seaborn</code> is a data visualization library that provides built-in datasets, and <code>pandas</code> is used for data manipulation and analysis. Importing these libraries allows the script to use their functions, such as loading a dataset and manipulating DataFrames.</p>
@@ -366,9 +368,9 @@ This step imports the required libraries for the script. <code>seaborn</code> is
 </section>
 <section id="load-the-dataset-and-select-specific-columns" class="level3">
 <h3 class="anchored" data-anchor-id="load-the-dataset-and-select-specific-columns">2. Load the dataset and select specific columns</h3>
-<div id="39cdf34a" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> sns.load_dataset(<span class="st">"penguins"</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df_selected <span class="op">=</span> df[[<span class="st">'body_mass_g'</span>, <span class="st">'bill_length_mm'</span>, <span class="st">'bill_depth_mm'</span>, <span class="st">'flipper_length_mm'</span>, <span class="st">'island'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="5d3cd334" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> sns.load_dataset(<span class="st">"penguins"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df_selected <span class="op">=</span> df[[<span class="st">'body_mass_g'</span>, <span class="st">'bill_length_mm'</span>, <span class="st">'bill_depth_mm'</span>, <span class="st">'flipper_length_mm'</span>, <span class="st">'island'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Explanation:</strong><br>
 Here, the <code>penguins</code> dataset from Seaborn is loaded into a Pandas DataFrame (<code>df</code>). The next step selects specific columns of interest (<code>body_mass_g</code>, <code>bill_length_mm</code>, <code>bill_depth_mm</code>, <code>flipper_length_mm</code>, and <code>island</code>) and stores them in <code>df_selected</code>. These columns represent both the dependent and independent variables used for further analysis.</p>
@@ -376,14 +378,14 @@ Here, the <code>penguins</code> dataset from Seaborn is loaded into a Pandas Dat
 </section>
 <section id="rename-selected-columns-for-easier-reference" class="level3">
 <h3 class="anchored" data-anchor-id="rename-selected-columns-for-easier-reference">3. Rename selected columns for easier reference</h3>
-<div id="15d4147a" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df_renamed <span class="op">=</span> df_selected.rename(columns<span class="op">=</span>{</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'body_mass_g'</span>: <span class="st">'dep_var'</span>, </span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'bill_length_mm'</span>: <span class="st">'indep_var_1'</span>, </span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'bill_depth_mm'</span>: <span class="st">'indep_var_2'</span>, </span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'flipper_length_mm'</span>: <span class="st">'indep_var_3'</span>, </span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'island'</span>: <span class="st">'indep_var_4'</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="7a44eeca" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df_renamed <span class="op">=</span> df_selected.rename(columns<span class="op">=</span>{</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'body_mass_g'</span>: <span class="st">'dep_var'</span>, </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'bill_length_mm'</span>: <span class="st">'indep_var_1'</span>, </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'bill_depth_mm'</span>: <span class="st">'indep_var_2'</span>, </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'flipper_length_mm'</span>: <span class="st">'indep_var_3'</span>, </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'island'</span>: <span class="st">'indep_var_4'</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Explanation:</strong><br>
 This step renames the columns of <code>df_selected</code> to more generic names for easier reference. The dependent variable (<code>body_mass_g</code>) is renamed to <code>dep_var</code>, and the independent variables are renamed to <code>indep_var_1</code>, <code>indep_var_2</code>, <code>indep_var_3</code>, and <code>indep_var_4</code> (for <code>island</code>). This renamed DataFrame (<code>df_renamed</code>) is used for subsequent analysis.</p>
@@ -391,9 +393,9 @@ This step renames the columns of <code>df_selected</code> to more generic names 
 </section>
 <section id="save-the-renamed-dataframe-as-a-tsv-file" class="level3">
 <h3 class="anchored" data-anchor-id="save-the-renamed-dataframe-as-a-tsv-file">4. Save the renamed DataFrame as a TSV file</h3>
-<div id="ef90f850" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>output_file_path <span class="op">=</span> <span class="st">'/home/sol-nhl/rnd/d/quarto/osm-cda/csv/data.tsv'</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df_renamed.to_csv(output_file_path, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="c2b2d07e" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>output_file_path <span class="op">=</span> <span class="st">'/home/sol-nhl/rnd/d/quarto/osm-cda/csv/data.tsv'</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>df_renamed.to_csv(output_file_path, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Explanation:</strong><br>
 The renamed DataFrame is saved to a TSV (tab-separated values) file at the specified path. The <code>to_csv()</code> method is used with the <code>sep='\t'</code> argument to ensure that the file is saved in TSV format. The <code>index=False</code> option prevents the DataFrame index from being written to the file.</p>
@@ -401,8 +403,8 @@ The renamed DataFrame is saved to a TSV (tab-separated values) file at the speci
 </section>
 <section id="generate-summary-statistics-of-the-dataframe" class="level3">
 <h3 class="anchored" data-anchor-id="generate-summary-statistics-of-the-dataframe">5. Generate summary statistics of the DataFrame</h3>
-<div id="ebd68c7d" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>summary_stats <span class="op">=</span> df_renamed.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="6163e97f" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>summary_stats <span class="op">=</span> df_renamed.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Explanation:</strong><br>
 This step generates summary statistics for all numeric columns in the DataFrame using the <code>describe()</code> function. The resulting DataFrame (<code>summary_stats</code>) contains descriptive statistics such as count, mean, standard deviation, minimum, and maximum values, as well as the quartile ranges for the selected variables.</p>
@@ -410,8 +412,8 @@ This step generates summary statistics for all numeric columns in the DataFrame 
 </section>
 <section id="retrieve-the-first-five-records-of-the-dataframe" class="level3">
 <h3 class="anchored" data-anchor-id="retrieve-the-first-five-records-of-the-dataframe">6. Retrieve the first five records of the DataFrame</h3>
-<div id="995ac064" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>first_five_records <span class="op">=</span> df_renamed.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="41040422" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>first_five_records <span class="op">=</span> df_renamed.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Explanation:</strong><br>
 The <code>head()</code> function retrieves the first five rows of the DataFrame. This is useful for a quick inspection of the dataset to verify that the data was loaded and renamed correctly. The <code>first_five_records</code> DataFrame contains the first five records of the renamed DataFrame.</p>
@@ -419,8 +421,8 @@ The <code>head()</code> function retrieves the first five rows of the DataFrame.
 </section>
 <section id="convert-a-column-to-a-categorical-data-type" class="level3">
 <h3 class="anchored" data-anchor-id="convert-a-column-to-a-categorical-data-type">7. Convert a column to a categorical data type</h3>
-<div id="02ac2fe4" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df_renamed[<span class="st">'indep_var_4'</span>] <span class="op">=</span> df_renamed[<span class="st">'indep_var_4'</span>].astype(<span class="st">'category'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="97cf0566" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df_renamed[<span class="st">'indep_var_4'</span>] <span class="op">=</span> df_renamed[<span class="st">'indep_var_4'</span>].astype(<span class="st">'category'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Explanation:</strong><br>
 This step converts the <code>indep_var_4</code> column (formerly <code>island</code>) to a categorical data type using <code>astype('category')</code>. Categorical data types are more memory efficient and appropriate when dealing with a limited number of distinct values, such as categorical variables in a dataset.</p>
@@ -428,8 +430,8 @@ This step converts the <code>indep_var_4</code> column (formerly <code>island</c
 </section>
 <section id="fill-missing-values-in-numeric-columns-with-their-mean" class="level3">
 <h3 class="anchored" data-anchor-id="fill-missing-values-in-numeric-columns-with-their-mean">8. Fill missing values in numeric columns with their mean</h3>
-<div id="97f776f1" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df_filled <span class="op">=</span> df_renamed.fillna(df_renamed.mean(numeric_only<span class="op">=</span><span class="va">True</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="0a22393f" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df_filled <span class="op">=</span> df_renamed.fillna(df_renamed.mean(numeric_only<span class="op">=</span><span class="va">True</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Explanation:</strong><br>
 In this step, any missing values in the numeric columns of <code>df_renamed</code> are filled with the mean value of each column using <code>fillna()</code>. The <code>mean(numeric_only=True)</code> calculates the mean for only numeric columns, and <code>fillna()</code> replaces the missing values with these means. The modified DataFrame is stored as <code>df_filled</code>.</p>
@@ -437,8 +439,8 @@ In this step, any missing values in the numeric columns of <code>df_renamed</cod
 </section>
 <section id="remove-rows-with-any-remaining-missing-values" class="level3">
 <h3 class="anchored" data-anchor-id="remove-rows-with-any-remaining-missing-values">9. Remove rows with any remaining missing values</h3>
-<div id="4ad25794" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df_no_missing <span class="op">=</span> df_filled.dropna()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="8fc57db4" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df_no_missing <span class="op">=</span> df_filled.dropna()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Explanation:</strong><br>
 Here, the <code>dropna()</code> function is used to remove any rows that still contain missing values in the DataFrame after filling the numeric columns. Rows with missing values in non-numeric columns will be dropped. The cleaned DataFrame is stored as <code>df_no_missing</code>.</p>
@@ -446,8 +448,8 @@ Here, the <code>dropna()</code> function is used to remove any rows that still c
 </section>
 <section id="remove-duplicate-records" class="level3">
 <h3 class="anchored" data-anchor-id="remove-duplicate-records">10. Remove duplicate records</h3>
-<div id="5b8009c2" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df_no_duplicates <span class="op">=</span> df_no_missing.drop_duplicates()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="b2cfcde4" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df_no_duplicates <span class="op">=</span> df_no_missing.drop_duplicates()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Explanation:</strong><br>
 This step removes any duplicate rows from the DataFrame using the <code>drop_duplicates()</code> method. Duplicate rows are those where all column values are identical. The resulting DataFrame (<code>df_no_duplicates</code>) contains only unique rows, ensuring there are no duplicate records in the dataset.</p>
@@ -455,9 +457,26 @@ This step removes any duplicate rows from the DataFrame using the <code>drop_dup
 </section>
 <section id="output-summary-statistics-and-first-five-records" class="level3">
 <h3 class="anchored" data-anchor-id="output-summary-statistics-and-first-five-records">11. Output summary statistics and first five records</h3>
-<div id="074e978d" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(summary_stats)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(first_five_records)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="d79252b3" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(summary_stats)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(first_five_records)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>           dep_var  indep_var_1  indep_var_2  indep_var_3
+count   342.000000   342.000000   342.000000   342.000000
+mean   4201.754386    43.921930    17.151170   200.915205
+std     801.954536     5.459584     1.974793    14.061714
+min    2700.000000    32.100000    13.100000   172.000000
+25%    3550.000000    39.225000    15.600000   190.000000
+50%    4050.000000    44.450000    17.300000   197.000000
+75%    4750.000000    48.500000    18.700000   213.000000
+max    6300.000000    59.600000    21.500000   231.000000
+   dep_var  indep_var_1  indep_var_2  indep_var_3 indep_var_4
+0   3750.0         39.1         18.7        181.0   Torgersen
+1   3800.0         39.5         17.4        186.0   Torgersen
+2   3250.0         40.3         18.0        195.0   Torgersen
+3      NaN          NaN          NaN          NaN   Torgersen
+4   3450.0         36.7         19.3        193.0   Torgersen</code></pre>
+</div>
 </div>
 <p><strong>Explanation:</strong><br>
 The final step prints the summary statistics generated earlier (<code>summary_stats</code>) and the first five records (<code>first_five_records</code>) of the renamed DataFrame. This provides an overview of the dataset and allows verification that the data processing steps were applied correctly.</p>
@@ -468,8 +487,8 @@ The final step prints the summary statistics generated earlier (<code>summary_st
 <p>Here is an analysis of your Python code, separated into logical steps with each step in its own code chunk, followed by explanations:</p>
 <section id="import-the-necessary-library" class="level3">
 <h3 class="anchored" data-anchor-id="import-the-necessary-library">1. Import the necessary library</h3>
-<div id="6309b0fe" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="93ec8a03" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Explanation:</strong><br>
 This line imports the Pandas library, a powerful Python tool for data manipulation and analysis. By importing Pandas, the script gains access to functions like reading data, filtering, grouping, and saving results.</p>
@@ -477,9 +496,9 @@ This line imports the Pandas library, a powerful Python tool for data manipulati
 </section>
 <section id="load-dataframe-from-tsv-file" class="level3">
 <h3 class="anchored" data-anchor-id="load-dataframe-from-tsv-file">2. Load DataFrame from TSV File</h3>
-<div id="04d8c7f1" class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>input_file_path <span class="op">=</span> <span class="st">'/home/sol-nhl/rnd/d/quarto/osm-cda/csv/data.tsv'</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(input_file_path, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="9f0e1598" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>input_file_path <span class="op">=</span> <span class="st">'/home/sol-nhl/rnd/d/quarto/osm-cda/csv/data.tsv'</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(input_file_path, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Explanation:</strong><br>
 This block reads a TSV (tab-separated values) file from the specified file path (<code>input_file_path</code>) into a Pandas DataFrame (<code>df</code>). The <code>sep='\t'</code> argument specifies that the file uses tabs as delimiters. The result is a DataFrame containing the data from the TSV file, with columns and rows ready for further manipulation.</p>
@@ -487,8 +506,8 @@ This block reads a TSV (tab-separated values) file from the specified file path 
 </section>
 <section id="filter-the-data" class="level3">
 <h3 class="anchored" data-anchor-id="filter-the-data">3. Filter the Data</h3>
-<div id="4bcd3c44" class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>filtered_df <span class="op">=</span> df[df[<span class="st">'dep_var'</span>] <span class="op">&gt;</span> <span class="dv">3500</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="4ca0a192" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>filtered_df <span class="op">=</span> df[df[<span class="st">'dep_var'</span>] <span class="op">&gt;</span> <span class="dv">3500</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Explanation:</strong><br>
 Here, the DataFrame is filtered to include only rows where the value in the <code>dep_var</code> column is greater than <code>3500</code>. The resulting filtered DataFrame (<code>filtered_df</code>) contains a subset of the original data that meets this condition.</p>
@@ -496,8 +515,8 @@ Here, the DataFrame is filtered to include only rows where the value in the <cod
 </section>
 <section id="select-specific-columns" class="level3">
 <h3 class="anchored" data-anchor-id="select-specific-columns">4. Select Specific Columns</h3>
-<div id="77895fb5" class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>selected_columns <span class="op">=</span> filtered_df[[<span class="st">'dep_var'</span>, <span class="st">'indep_var_1'</span>, <span class="st">'indep_var_4'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="51d9483d" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>selected_columns <span class="op">=</span> filtered_df[[<span class="st">'dep_var'</span>, <span class="st">'indep_var_1'</span>, <span class="st">'indep_var_4'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Explanation:</strong><br>
 In this step, a new DataFrame (<code>selected_columns</code>) is created by selecting only the specified columns (<code>dep_var</code>, <code>indep_var_1</code>, and <code>indep_var_4</code>) from the previously filtered DataFrame. This reduces the dataset to just the relevant columns needed for further analysis.</p>
@@ -505,8 +524,8 @@ In this step, a new DataFrame (<code>selected_columns</code>) is created by sele
 </section>
 <section id="group-data-and-calculate-the-mean" class="level3">
 <h3 class="anchored" data-anchor-id="group-data-and-calculate-the-mean">5. Group Data and Calculate the Mean</h3>
-<div id="71e1a383" class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>grouped_data <span class="op">=</span> df.groupby(<span class="st">'indep_var_4'</span>)[<span class="st">'dep_var'</span>].mean().reset_index()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="65f43399" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>grouped_data <span class="op">=</span> df.groupby(<span class="st">'indep_var_4'</span>)[<span class="st">'dep_var'</span>].mean().reset_index()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Explanation:</strong><br>
 This block groups the data by the <code>indep_var_4</code> column and calculates the mean of the <code>dep_var</code> column for each group. The result is stored in <code>grouped_data</code>, a DataFrame containing the unique values of <code>indep_var_4</code> and their corresponding mean <code>dep_var</code> values. The <code>reset_index()</code> function ensures the grouped values are converted back into a DataFrame format.</p>
@@ -514,8 +533,8 @@ This block groups the data by the <code>indep_var_4</code> column and calculates
 </section>
 <section id="merge-dataframes" class="level3">
 <h3 class="anchored" data-anchor-id="merge-dataframes">6. Merge DataFrames</h3>
-<div id="796119fa" class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>merged_df <span class="op">=</span> pd.merge(df, grouped_data, on<span class="op">=</span><span class="st">'indep_var_4'</span>, suffixes<span class="op">=</span>(<span class="st">''</span>, <span class="st">'_mean'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="6ae77e88" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>merged_df <span class="op">=</span> pd.merge(df, grouped_data, on<span class="op">=</span><span class="st">'indep_var_4'</span>, suffixes<span class="op">=</span>(<span class="st">''</span>, <span class="st">'_mean'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Explanation:</strong><br>
 This step merges the original DataFrame (<code>df</code>) with the <code>grouped_data</code> DataFrame on the <code>indep_var_4</code> column. The result (<code>merged_df</code>) contains all original columns from <code>df</code> along with the mean <code>dep_var</code> for each group. The <code>suffixes=('', '_mean')</code> ensures that the new <code>dep_var_mean</code> column has a distinct name.</p>
@@ -523,8 +542,8 @@ This step merges the original DataFrame (<code>df</code>) with the <code>grouped
 </section>
 <section id="calculate-a-new-column" class="level3">
 <h3 class="anchored" data-anchor-id="calculate-a-new-column">7. Calculate a New Column</h3>
-<div id="c5cb49f8" class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>merged_df[<span class="st">'dep_var_diff'</span>] <span class="op">=</span> merged_df[<span class="st">'dep_var'</span>] <span class="op">-</span> merged_df[<span class="st">'dep_var_mean'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="d93a6a66" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>merged_df[<span class="st">'dep_var_diff'</span>] <span class="op">=</span> merged_df[<span class="st">'dep_var'</span>] <span class="op">-</span> merged_df[<span class="st">'dep_var_mean'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Explanation:</strong><br>
 A new column (<code>dep_var_diff</code>) is added to the <code>merged_df</code> DataFrame. This column represents the difference between the original <code>dep_var</code> values and the mean <code>dep_var</code> values for each group (from the merged <code>dep_var_mean</code> column). The result provides insight into how each <code>dep_var</code> deviates from the group mean.</p>
@@ -532,8 +551,8 @@ A new column (<code>dep_var_diff</code>) is added to the <code>merged_df</code> 
 </section>
 <section id="create-a-pivot-table" class="level3">
 <h3 class="anchored" data-anchor-id="create-a-pivot-table">8. Create a Pivot Table</h3>
-<div id="4060394f" class="cell" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>pivot_table <span class="op">=</span> merged_df.pivot_table(values<span class="op">=</span><span class="st">'dep_var'</span>, index<span class="op">=</span><span class="st">'indep_var_4'</span>, aggfunc<span class="op">=</span><span class="st">'mean'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="caaa6af1" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>pivot_table <span class="op">=</span> merged_df.pivot_table(values<span class="op">=</span><span class="st">'dep_var'</span>, index<span class="op">=</span><span class="st">'indep_var_4'</span>, aggfunc<span class="op">=</span><span class="st">'mean'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Explanation:</strong><br>
 This block creates a pivot table from <code>merged_df</code>, where <code>indep_var_4</code> becomes the index, and the mean of <code>dep_var</code> is calculated for each value of <code>indep_var_4</code>. The result is stored in the <code>pivot_table</code> DataFrame, which aggregates the data by <code>indep_var_4</code> and provides a summary of the mean <code>dep_var</code>.</p>
@@ -541,9 +560,9 @@ This block creates a pivot table from <code>merged_df</code>, where <code>indep_
 </section>
 <section id="save-the-pivot-table-as-a-tsv-file" class="level3">
 <h3 class="anchored" data-anchor-id="save-the-pivot-table-as-a-tsv-file">9. Save the Pivot Table as a TSV File</h3>
-<div id="ba3978dd" class="cell" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>output_file_path <span class="op">=</span> <span class="st">'/home/sol-nhl/rnd/d/quarto/osm-cda/csv/data_pivot.tsv'</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>pivot_table.to_csv(output_file_path, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="a8907c42" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>output_file_path <span class="op">=</span> <span class="st">'/home/sol-nhl/rnd/d/quarto/osm-cda/csv/data_pivot.tsv'</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>pivot_table.to_csv(output_file_path, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Explanation:</strong><br>
 In this step, the <code>pivot_table</code> DataFrame is saved as a TSV file to the specified path (<code>output_file_path</code>). The <code>sep='\t'</code> argument ensures that the data is saved in tab-separated format. This allows the pivot table to be stored and used for further analysis or reporting.</p>
@@ -551,12 +570,48 @@ In this step, the <code>pivot_table</code> DataFrame is saved as a TSV file to t
 </section>
 <section id="output-results-to-verify" class="level3">
 <h3 class="anchored" data-anchor-id="output-results-to-verify">10. Output Results to Verify</h3>
-<div id="0a25533a" class="cell" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(filtered_df.head())</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(selected_columns.head())</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(grouped_data.head())</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(merged_df.head())</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pivot_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="7c49e30b" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(filtered_df.head())</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(selected_columns.head())</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(grouped_data.head())</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(merged_df.head())</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pivot_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   dep_var  indep_var_1  indep_var_2  indep_var_3 indep_var_4
+0   3750.0         39.1         18.7        181.0   Torgersen
+1   3800.0         39.5         17.4        186.0   Torgersen
+5   3650.0         39.3         20.6        190.0   Torgersen
+6   3625.0         38.9         17.8        181.0   Torgersen
+7   4675.0         39.2         19.6        195.0   Torgersen
+   dep_var  indep_var_1 indep_var_4
+0   3750.0         39.1   Torgersen
+1   3800.0         39.5   Torgersen
+5   3650.0         39.3   Torgersen
+6   3625.0         38.9   Torgersen
+7   4675.0         39.2   Torgersen
+  indep_var_4      dep_var
+0      Biscoe  4716.017964
+1       Dream  3712.903226
+2   Torgersen  3706.372549
+   dep_var  indep_var_1  indep_var_2  indep_var_3 indep_var_4  dep_var_mean  \
+0   3750.0         39.1         18.7        181.0   Torgersen   3706.372549   
+1   3800.0         39.5         17.4        186.0   Torgersen   3706.372549   
+2   3250.0         40.3         18.0        195.0   Torgersen   3706.372549   
+3      NaN          NaN          NaN          NaN   Torgersen   3706.372549   
+4   3450.0         36.7         19.3        193.0   Torgersen   3706.372549   
+
+   dep_var_diff  
+0     43.627451  
+1     93.627451  
+2   -456.372549  
+3           NaN  
+4   -256.372549  
+                 dep_var
+indep_var_4             
+Biscoe       4716.017964
+Dream        3712.903226
+Torgersen    3706.372549</code></pre>
+</div>
 </div>
 <p><strong>Explanation:</strong><br>
 This final block prints the first few rows (<code>head()</code>) of various DataFrames, including the filtered data, selected columns, grouped data, merged data, and the pivot table. These print statements allow you to verify the results of each step in the analysis.</p>
@@ -564,178 +619,328 @@ This final block prints the first few rows (<code>head()</code>) of various Data
 </section>
 <section id="inferential-data-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="inferential-data-analysis">inferential data analysis</h2>
-<div id="f728f7f8" class="cell" data-execution_count="22">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import necessary libraries</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.formula.api <span class="im">as</span> smf</span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the penguins dataset</span></span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>penguins <span class="op">=</span> sns.load_dataset(<span class="st">'penguins'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="e58b667d" class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import necessary libraries</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.formula.api <span class="im">as</span> smf</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the penguins dataset</span></span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>penguins <span class="op">=</span> sns.load_dataset(<span class="st">'penguins'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>In this step, we import the required libraries for data manipulation and visualization. We use <code>seaborn</code> to load the built-in ‘penguins’ dataset into a pandas DataFrame called <code>penguins</code>.</p>
 <hr>
-<div id="4dd061b4" class="cell" data-execution_count="23">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the first few rows to inspect the dataset</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(penguins.head())</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Check for missing values</span></span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Missing values in each column:"</span>)</span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(penguins.isnull().<span class="bu">sum</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="22ef7db9" class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the first few rows to inspect the dataset</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(penguins.head())</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Check for missing values</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Missing values in each column:"</span>)</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(penguins.isnull().<span class="bu">sum</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  species     island  bill_length_mm  bill_depth_mm  flipper_length_mm  \
+0  Adelie  Torgersen            39.1           18.7              181.0   
+1  Adelie  Torgersen            39.5           17.4              186.0   
+2  Adelie  Torgersen            40.3           18.0              195.0   
+3  Adelie  Torgersen             NaN            NaN                NaN   
+4  Adelie  Torgersen            36.7           19.3              193.0   
+
+   body_mass_g     sex  
+0       3750.0    Male  
+1       3800.0  Female  
+2       3250.0  Female  
+3          NaN     NaN  
+4       3450.0  Female  
+
+Missing values in each column:
+species               0
+island                0
+bill_length_mm        2
+bill_depth_mm         2
+flipper_length_mm     2
+body_mass_g           2
+sex                  11
+dtype: int64</code></pre>
+</div>
 </div>
 <p>We use <code>penguins.head()</code> to preview the first few rows of the DataFrame, allowing us to understand the structure and contents of the data. The <code>penguins.isnull().sum()</code> operation checks each column for missing values by summing up the number of <code>NaN</code> entries, providing insight into data completeness.</p>
 <hr>
-<div id="bf49bb61" class="cell" data-execution_count="24">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Drop rows with missing values</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>penguins_clean <span class="op">=</span> penguins.dropna()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="bfd3d455" class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Drop rows with missing values</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>penguins_clean <span class="op">=</span> penguins.dropna()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>To handle missing data, we use <code>dropna()</code> to remove any rows that contain <code>NaN</code> values. This operation results in a new DataFrame <code>penguins_clean</code> that contains only complete cases, ensuring the integrity of subsequent analyses.</p>
 <hr>
-<div id="62ba490b" class="cell" data-execution_count="25">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Descriptive statistics for numerical variables</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Descriptive statistics:"</span>)</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(penguins_clean.describe())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="3c87cdc7" class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Descriptive statistics for numerical variables</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Descriptive statistics:"</span>)</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(penguins_clean.describe())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Descriptive statistics:
+       bill_length_mm  bill_depth_mm  flipper_length_mm  body_mass_g
+count      333.000000     333.000000         333.000000   333.000000
+mean        43.992793      17.164865         200.966967  4207.057057
+std          5.468668       1.969235          14.015765   805.215802
+min         32.100000      13.100000         172.000000  2700.000000
+25%         39.500000      15.600000         190.000000  3550.000000
+50%         44.500000      17.300000         197.000000  4050.000000
+75%         48.600000      18.700000         213.000000  4775.000000
+max         59.600000      21.500000         231.000000  6300.000000</code></pre>
+</div>
 </div>
 <p>We generate descriptive statistics using <code>penguins_clean.describe()</code>, which calculates summary metrics like mean, standard deviation, and quartiles for each numerical column. This helps in understanding the distribution and central tendencies of the data.</p>
 <hr>
-<div id="b37e21ba" class="cell" data-execution_count="26">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Histograms for numerical variables</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>numerical_vars <span class="op">=</span> [<span class="st">'bill_length_mm'</span>, <span class="st">'bill_depth_mm'</span>, <span class="st">'flipper_length_mm'</span>, <span class="st">'body_mass_g'</span>]</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>penguins_clean[numerical_vars].hist(bins<span class="op">=</span><span class="dv">15</span>, figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>plt.suptitle(<span class="st">'Histograms of Numerical Variables'</span>)</span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="97ec2ebf" class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Histograms for numerical variables</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>numerical_vars <span class="op">=</span> [<span class="st">'bill_length_mm'</span>, <span class="st">'bill_depth_mm'</span>, <span class="st">'flipper_length_mm'</span>, <span class="st">'body_mass_g'</span>]</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>penguins_clean[numerical_vars].hist(bins<span class="op">=</span><span class="dv">15</span>, figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>plt.suptitle(<span class="st">'Histograms of Numerical Variables'</span>)</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="pyws02-1-data-analysis_files/figure-html/cell-27-output-1.png" width="950" height="569" class="figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 <p>We create histograms for numerical variables using <code>DataFrame.hist()</code>, which plots the frequency distribution of each variable in <code>numerical_vars</code>. The histograms help visualize the distribution shape, skewness, and potential outliers in the data.</p>
 <hr>
-<div id="80ed01ff" class="cell" data-execution_count="27">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Boxplots to detect outliers</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">8</span>))</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, var <span class="kw">in</span> <span class="bu">enumerate</span>(numerical_vars, <span class="dv">1</span>):</span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    plt.subplot(<span class="dv">2</span>, <span class="dv">2</span>, i)</span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    sns.boxplot(y<span class="op">=</span>penguins_clean[var])</span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    plt.title(<span class="ss">f'Boxplot of </span><span class="sc">{</span>var<span class="sc">}</span><span class="ss">'</span>)</span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="b6773596" class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Boxplots to detect outliers</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">8</span>))</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, var <span class="kw">in</span> <span class="bu">enumerate</span>(numerical_vars, <span class="dv">1</span>):</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>    plt.subplot(<span class="dv">2</span>, <span class="dv">2</span>, i)</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>    sns.boxplot(y<span class="op">=</span>penguins_clean[var])</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>    plt.title(<span class="ss">f'Boxplot of </span><span class="sc">{</span>var<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="pyws02-1-data-analysis_files/figure-html/cell-28-output-1.png" width="1142" height="758" class="figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 <p>To detect outliers, we use <code>sns.boxplot()</code> for each numerical variable, plotting them in a grid layout. Boxplots display the median, quartiles, and potential outliers as individual points, making it easier to identify anomalies in the data.</p>
 <hr>
-<div id="91efffcf" class="cell" data-execution_count="28">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Identify outliers using the IQR method</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>Q1 <span class="op">=</span> penguins_clean[numerical_vars].quantile(<span class="fl">0.25</span>)</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>Q3 <span class="op">=</span> penguins_clean[numerical_vars].quantile(<span class="fl">0.75</span>)</span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>IQR <span class="op">=</span> Q3 <span class="op">-</span> Q1</span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>outlier_condition <span class="op">=</span> ((penguins_clean[numerical_vars] <span class="op">&lt;</span> (Q1 <span class="op">-</span> <span class="fl">1.5</span> <span class="op">*</span> IQR)) <span class="op">|</span> (penguins_clean[numerical_vars] <span class="op">&gt;</span> (Q3 <span class="op">+</span> <span class="fl">1.5</span> <span class="op">*</span> IQR))).<span class="bu">any</span>(axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove outliers</span></span>
-<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>penguins_no_outliers <span class="op">=</span> penguins_clean[<span class="op">~</span>outlier_condition]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="94c940d7" class="cell" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Identify outliers using the IQR method</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>Q1 <span class="op">=</span> penguins_clean[numerical_vars].quantile(<span class="fl">0.25</span>)</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>Q3 <span class="op">=</span> penguins_clean[numerical_vars].quantile(<span class="fl">0.75</span>)</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>IQR <span class="op">=</span> Q3 <span class="op">-</span> Q1</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>outlier_condition <span class="op">=</span> ((penguins_clean[numerical_vars] <span class="op">&lt;</span> (Q1 <span class="op">-</span> <span class="fl">1.5</span> <span class="op">*</span> IQR)) <span class="op">|</span> (penguins_clean[numerical_vars] <span class="op">&gt;</span> (Q3 <span class="op">+</span> <span class="fl">1.5</span> <span class="op">*</span> IQR))).<span class="bu">any</span>(axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove outliers</span></span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>penguins_no_outliers <span class="op">=</span> penguins_clean[<span class="op">~</span>outlier_condition]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We calculate the Interquartile Range (IQR) for each numerical variable to identify outliers using the 1.5 * IQR rule. The condition <code>outlier_condition</code> flags rows with outliers, and we create a new DataFrame <code>penguins_no_outliers</code> by excluding these rows, thus cleaning the dataset.</p>
 <hr>
-<div id="f4c84c08" class="cell" data-execution_count="29">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compare dataset sizes before and after removing outliers</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Dataset size before removing outliers:"</span>, penguins_clean.shape)</span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Dataset size after removing outliers:"</span>, penguins_no_outliers.shape)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="61a23bed" class="cell" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compare dataset sizes before and after removing outliers</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Dataset size before removing outliers:"</span>, penguins_clean.shape)</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Dataset size after removing outliers:"</span>, penguins_no_outliers.shape)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Dataset size before removing outliers: (333, 7)
+Dataset size after removing outliers: (333, 7)</code></pre>
+</div>
 </div>
 <p>We use <code>DataFrame.shape</code> to compare the number of rows and columns before and after outlier removal. This helps assess the impact of outlier elimination on the dataset size.</p>
 <hr>
-<div id="010cd5f4" class="cell" data-execution_count="30">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Correlation matrix</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>numerical_cols <span class="op">=</span> penguins_no_outliers.select_dtypes(include<span class="op">=</span>[np.number]).columns</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>corr_matrix <span class="op">=</span> penguins_no_outliers[numerical_cols].corr()</span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Correlation matrix:"</span>)</span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(corr_matrix)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="91e14078" class="cell" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Correlation matrix</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>numerical_cols <span class="op">=</span> penguins_no_outliers.select_dtypes(include<span class="op">=</span>[np.number]).columns</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>corr_matrix <span class="op">=</span> penguins_no_outliers[numerical_cols].corr()</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Correlation matrix:"</span>)</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(corr_matrix)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Correlation matrix:
+                   bill_length_mm  bill_depth_mm  flipper_length_mm  \
+bill_length_mm           1.000000      -0.228626           0.653096   
+bill_depth_mm           -0.228626       1.000000          -0.577792   
+flipper_length_mm        0.653096      -0.577792           1.000000   
+body_mass_g              0.589451      -0.472016           0.872979   
+
+                   body_mass_g  
+bill_length_mm        0.589451  
+bill_depth_mm        -0.472016  
+flipper_length_mm     0.872979  
+body_mass_g           1.000000  </code></pre>
+</div>
 </div>
 <p>We compute the correlation matrix using <code>DataFrame.corr()</code>, which calculates pairwise correlation coefficients between numerical variables. This identifies the strength and direction of linear relationships between variables.</p>
 <hr>
-<div id="6c5592c0" class="cell" data-execution_count="31">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize the correlation matrix</span></span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>sns.heatmap(corr_matrix, annot<span class="op">=</span><span class="va">True</span>, cmap<span class="op">=</span><span class="st">'coolwarm'</span>)</span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Correlation Matrix'</span>)</span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="e4597cc2" class="cell" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize the correlation matrix</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>sns.heatmap(corr_matrix, annot<span class="op">=</span><span class="va">True</span>, cmap<span class="op">=</span><span class="st">'coolwarm'</span>)</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Correlation Matrix'</span>)</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="pyws02-1-data-analysis_files/figure-html/cell-32-output-1.png" width="723" height="505" class="figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 <p>We visualize the correlation matrix using <code>sns.heatmap()</code>, which creates a color-coded matrix where each cell represents the correlation coefficient between variables. The <code>annot=True</code> parameter displays the numerical values within the cells for precise interpretation.</p>
 <hr>
-<div id="821b42c6" class="cell" data-execution_count="32">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select variables with the highest correlation to body_mass_g</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Correlation with body_mass_g:"</span>)</span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(corr_matrix[<span class="st">'body_mass_g'</span>].sort_values(ascending<span class="op">=</span><span class="va">False</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="2ccd56ae" class="cell" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select variables with the highest correlation to body_mass_g</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Correlation with body_mass_g:"</span>)</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(corr_matrix[<span class="st">'body_mass_g'</span>].sort_values(ascending<span class="op">=</span><span class="va">False</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Correlation with body_mass_g:
+body_mass_g          1.000000
+flipper_length_mm    0.872979
+bill_length_mm       0.589451
+bill_depth_mm       -0.472016
+Name: body_mass_g, dtype: float64</code></pre>
+</div>
 </div>
 <p>We extract the correlation coefficients of all variables with <code>body_mass_g</code> by accessing the corresponding column in the correlation matrix. Sorting these values helps identify which variables have the strongest linear relationship with body mass.</p>
 <hr>
-<div id="6e98ee59" class="cell" data-execution_count="33">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Prepare data for regression</span></span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Encode categorical variables</span></span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>penguins_encoded <span class="op">=</span> pd.get_dummies(penguins_no_outliers, drop_first<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="b83cdf26" class="cell" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Prepare data for regression</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Encode categorical variables</span></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>penguins_encoded <span class="op">=</span> pd.get_dummies(penguins_no_outliers, drop_first<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We use <code>pd.get_dummies()</code> to encode categorical variables into numerical format suitable for regression analysis. The <code>drop_first=True</code> parameter avoids multicollinearity by removing the first category in each encoded variable.</p>
 <hr>
-<div id="1008a98a" class="cell" data-execution_count="34">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Prepare data for regression</span></span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Encode categorical variables</span></span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>penguins_encoded <span class="op">=</span> pd.get_dummies(penguins_no_outliers, drop_first<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Define dependent and independent variables</span></span>
-<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> penguins_encoded.drop([<span class="st">'body_mass_g'</span>], axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> penguins_encoded[<span class="st">'body_mass_g'</span>]</span>
-<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a constant to the independent variables</span></span>
-<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> sm.add_constant(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="59277719" class="cell" data-execution_count="34">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Prepare data for regression</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Encode categorical variables</span></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>penguins_encoded <span class="op">=</span> pd.get_dummies(penguins_no_outliers, drop_first<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Define dependent and independent variables</span></span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> penguins_encoded.drop([<span class="st">'body_mass_g'</span>], axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> penguins_encoded[<span class="st">'body_mass_g'</span>]</span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a constant to the independent variables</span></span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> sm.add_constant(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We define the independent variables <code>X</code> by dropping the target variable <code>body_mass_g</code> and the <code>year</code> column from the encoded DataFrame. The dependent variable <code>y</code> is set as <code>body_mass_g</code>. We add a constant term to <code>X</code> using <code>sm.add_constant()</code> to include the intercept in the regression model.</p>
 <hr>
-<div id="e43511d0" class="cell" data-execution_count="35">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Prepare data for regression</span></span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Encode categorical variables</span></span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>penguins_encoded <span class="op">=</span> pd.get_dummies(penguins_no_outliers, drop_first<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Define dependent and independent variables</span></span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> penguins_encoded.drop([<span class="st">'body_mass_g'</span>], axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> penguins_encoded[<span class="st">'body_mass_g'</span>]</span>
-<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert boolean columns to int64</span></span>
-<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>bool_cols <span class="op">=</span> X.select_dtypes(include<span class="op">=</span>[<span class="st">'bool'</span>]).columns</span>
-<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>X[bool_cols] <span class="op">=</span> X[bool_cols].astype(<span class="bu">int</span>)</span>
-<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Now check data types</span></span>
-<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Data types of X after converting bools to int:"</span>)</span>
-<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(X.dtypes)</span>
-<span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-17"><a href="#cb35-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a constant to the independent variables</span></span>
-<span id="cb35-18"><a href="#cb35-18" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> sm.add_constant(X)</span>
-<span id="cb35-19"><a href="#cb35-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-20"><a href="#cb35-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit the multiple linear regression model</span></span>
-<span id="cb35-21"><a href="#cb35-21" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> sm.OLS(y, X).fit()</span>
-<span id="cb35-22"><a href="#cb35-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-23"><a href="#cb35-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the model summary</span></span>
-<span id="cb35-24"><a href="#cb35-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Regression Model Summary:"</span>)</span>
-<span id="cb35-25"><a href="#cb35-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(model.summary())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="84169783" class="cell" data-execution_count="35">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Prepare data for regression</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Encode categorical variables</span></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>penguins_encoded <span class="op">=</span> pd.get_dummies(penguins_no_outliers, drop_first<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Define dependent and independent variables</span></span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> penguins_encoded.drop([<span class="st">'body_mass_g'</span>], axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> penguins_encoded[<span class="st">'body_mass_g'</span>]</span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert boolean columns to int64</span></span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a>bool_cols <span class="op">=</span> X.select_dtypes(include<span class="op">=</span>[<span class="st">'bool'</span>]).columns</span>
+<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a>X[bool_cols] <span class="op">=</span> X[bool_cols].astype(<span class="bu">int</span>)</span>
+<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-13"><a href="#cb43-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Now check data types</span></span>
+<span id="cb43-14"><a href="#cb43-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Data types of X after converting bools to int:"</span>)</span>
+<span id="cb43-15"><a href="#cb43-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(X.dtypes)</span>
+<span id="cb43-16"><a href="#cb43-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-17"><a href="#cb43-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a constant to the independent variables</span></span>
+<span id="cb43-18"><a href="#cb43-18" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> sm.add_constant(X)</span>
+<span id="cb43-19"><a href="#cb43-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-20"><a href="#cb43-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit the multiple linear regression model</span></span>
+<span id="cb43-21"><a href="#cb43-21" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> sm.OLS(y, X).fit()</span>
+<span id="cb43-22"><a href="#cb43-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-23"><a href="#cb43-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the model summary</span></span>
+<span id="cb43-24"><a href="#cb43-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Regression Model Summary:"</span>)</span>
+<span id="cb43-25"><a href="#cb43-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(model.summary())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Data types of X after converting bools to int:
+bill_length_mm       float64
+bill_depth_mm        float64
+flipper_length_mm    float64
+species_Chinstrap      int64
+species_Gentoo         int64
+island_Dream           int64
+island_Torgersen       int64
+sex_Male               int64
+dtype: object
+
+Regression Model Summary:
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:            body_mass_g   R-squared:                       0.875
+Model:                            OLS   Adj. R-squared:                  0.872
+Method:                 Least Squares   F-statistic:                     284.1
+Date:                Tue, 17 Sep 2024   Prob (F-statistic):          1.85e-141
+Time:                        08:42:22   Log-Likelihood:                -2353.6
+No. Observations:                 333   AIC:                             4725.
+Df Residuals:                     324   BIC:                             4760.
+Df Model:                           8                                         
+Covariance Type:            nonrobust                                         
+=====================================================================================
+                        coef    std err          t      P&gt;|t|      [0.025      0.975]
+-------------------------------------------------------------------------------------
+const             -1500.0291    575.822     -2.605      0.010   -2632.852    -367.207
+bill_length_mm       18.1893      7.136      2.549      0.011       4.150      32.229
+bill_depth_mm        67.5754     19.821      3.409      0.001      28.581     106.570
+flipper_length_mm    16.2385      2.939      5.524      0.000      10.456      22.021
+species_Chinstrap  -260.3063     88.551     -2.940      0.004    -434.513     -86.100
+species_Gentoo      987.7614    137.238      7.197      0.000     717.771    1257.752
+island_Dream        -13.1031     58.541     -0.224      0.823    -128.271     102.065
+island_Torgersen    -48.0636     60.922     -0.789      0.431    -167.915      71.788
+sex_Male            387.2243     48.138      8.044      0.000     292.521     481.927
+==============================================================================
+Omnibus:                        1.114   Durbin-Watson:                   2.167
+Prob(Omnibus):                  0.573   Jarque-Bera (JB):                1.101
+Skew:                           0.139   Prob(JB):                        0.577
+Kurtosis:                       2.958   Cond. No.                     7.59e+03
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 7.59e+03. This might indicate that there are
+strong multicollinearity or other numerical problems.</code></pre>
+</div>
 </div>
 <p>We fit a multiple linear regression model using <code>sm.OLS()</code> from the <code>statsmodels</code> library and call <code>.fit()</code> to train the model. The <code>model.summary()</code> function provides a comprehensive summary of the regression results, including coefficients, p-values, and goodness-of-fit metrics.</p>
 <hr>
-<div id="551435d6" class="cell" data-execution_count="36">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot actual vs. predicted body mass</span></span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>plt.scatter(y, model.predict(X), alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Actual Body Mass (g)'</span>)</span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Predicted Body Mass (g)'</span>)</span>
-<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Actual vs. Predicted Body Mass'</span>)</span>
-<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="4dba3e2a" class="cell" data-execution_count="36">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot actual vs. predicted body mass</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>plt.scatter(y, model.predict(X), alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Actual Body Mass (g)'</span>)</span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Predicted Body Mass (g)'</span>)</span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Actual vs. Predicted Body Mass'</span>)</span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="pyws02-1-data-analysis_files/figure-html/cell-37-output-1.png" width="676" height="523" class="figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 <p>We create a scatter plot to compare the actual and predicted body mass values using <code>plt.scatter()</code>. This visualization helps assess how well the model predictions align with the actual data, indicating the model’s predictive performance.</p>
 <hr>
-<div id="c6ad1aa2" class="cell" data-execution_count="37">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Residual plot to check for homoscedasticity</span></span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>sns.residplot(x<span class="op">=</span>model.predict(X), y<span class="op">=</span>model.resid, lowess<span class="op">=</span><span class="va">True</span>, line_kws<span class="op">=</span>{<span class="st">'color'</span>: <span class="st">'red'</span>})</span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Predicted Body Mass (g)'</span>)</span>
-<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Residuals'</span>)</span>
-<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Residual Plot'</span>)</span>
-<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="0f9b300e" class="cell" data-execution_count="37">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Residual plot to check for homoscedasticity</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>sns.residplot(x<span class="op">=</span>model.predict(X), y<span class="op">=</span>model.resid, lowess<span class="op">=</span><span class="va">True</span>, line_kws<span class="op">=</span>{<span class="st">'color'</span>: <span class="st">'red'</span>})</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Predicted Body Mass (g)'</span>)</span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Residuals'</span>)</span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Residual Plot'</span>)</span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="pyws02-1-data-analysis_files/figure-html/cell-38-output-1.png" width="679" height="523" class="figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 <p>We generate a residual plot using <code>sns.residplot()</code> to examine the homoscedasticity (constant variance) of residuals. The plot displays residuals against predicted values, and a red lowess line indicates any systematic patterns, which helps in diagnosing model assumptions.</p>
 <hr>
