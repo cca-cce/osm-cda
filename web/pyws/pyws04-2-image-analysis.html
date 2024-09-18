@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -259,9 +293,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#hf-image-classification" id="toc-hf-image-classification" class="nav-link active" data-scroll-target="#hf-image-classification">hf image classification</a></li>
-  <li><a href="#hf-object-recognition" id="toc-hf-object-recognition" class="nav-link" data-scroll-target="#hf-object-recognition">hf object recognition</a></li>
-  <li><a href="#image-video-to-text" id="toc-image-video-to-text" class="nav-link" data-scroll-target="#image-video-to-text">image, video to text</a></li>
+  <li><a href="#image-classification-with-transformers" id="toc-image-classification-with-transformers" class="nav-link active" data-scroll-target="#image-classification-with-transformers">image classification with transformers</a></li>
+  <li><a href="#object-recognition-with-transformers" id="toc-object-recognition-with-transformers" class="nav-link" data-scroll-target="#object-recognition-with-transformers">object recognition with transformers</a></li>
+  <li><a href="#image-video-to-text-description" id="toc-image-video-to-text-description" class="nav-link" data-scroll-target="#image-video-to-text-description">image, video to text description</a>
+  <ul class="collapse">
+  <li><a href="#extract-frames-from-the-video" id="toc-extract-frames-from-the-video" class="nav-link" data-scroll-target="#extract-frames-from-the-video">1. Extract Frames from the Video</a></li>
+  <li><a href="#use-an-image-captioning-model-to-generate-descriptions" id="toc-use-an-image-captioning-model-to-generate-descriptions" class="nav-link" data-scroll-target="#use-an-image-captioning-model-to-generate-descriptions">2. Use an Image Captioning Model to Generate Descriptions</a></li>
+  <li><a href="#combine-captions-into-a-coherent-summary" id="toc-combine-captions-into-a-coherent-summary" class="nav-link" data-scroll-target="#combine-captions-into-a-coherent-summary">3. Combine Captions into a Coherent Summary</a></li>
+  <li><a href="#complete-code-example" id="toc-complete-code-example" class="nav-link" data-scroll-target="#complete-code-example">Complete Code Example</a></li>
+  <li><a href="#additional-considerations" id="toc-additional-considerations" class="nav-link" data-scroll-target="#additional-considerations">Additional Considerations</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -288,19 +330,340 @@ ul.task-list li input[type="checkbox"] {
 
 
 <ul>
-<li>code examples <a href="https://huggingface.co/tasks">huggingface</a></li>
-<li>download <a href="pyws04-2-image-analysis.ipynb">jupyter notebook</a></li>
+<li>code examples <a href="https://huggingface.co/tasks" target="_blank">huggingface</a></li>
+<li>download <a href="pyws04-2-image-analysis.ipynb" target="_blank">jupyter notebook</a></li>
 </ul>
-<section id="hf-image-classification" class="level2">
-<h2 class="anchored" data-anchor-id="hf-image-classification">hf image classification</h2>
+<section id="image-classification-with-transformers" class="level2">
+<h2 class="anchored" data-anchor-id="image-classification-with-transformers">image classification with transformers</h2>
 </section>
-<section id="hf-object-recognition" class="level2">
-<h2 class="anchored" data-anchor-id="hf-object-recognition">hf object recognition</h2>
+<section id="object-recognition-with-transformers" class="level2">
+<h2 class="anchored" data-anchor-id="object-recognition-with-transformers">object recognition with transformers</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> transformers <span class="im">import</span> pipeline</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>captioner <span class="op">=</span> pipeline(<span class="st">"image-to-text"</span>, model<span class="op">=</span><span class="st">"Salesforce/blip-image-captioning-base"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>captioner(<span class="st">"https://huggingface.co/datasets/Narsil/image_dummy/resolve/main/parrots.png"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">## [{'generated_text': 'two birds are standing next to each other '}]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="image-video-to-text" class="level2">
-<h2 class="anchored" data-anchor-id="image-video-to-text">image, video to text</h2>
+<section id="image-video-to-text-description" class="level2">
+<h2 class="anchored" data-anchor-id="image-video-to-text-description">image, video to text description</h2>
+<p>To summarize and describe the visual content of a short video without audio using Python, you can follow these main steps:</p>
+<ol type="1">
+<li><strong>Extract frames from the video.</strong></li>
+<li><strong>Select key frames that represent the content effectively.</strong></li>
+<li><strong>Use an image captioning model to generate descriptions of the frames.</strong></li>
+<li><strong>Combine the frame descriptions into a coherent summary.</strong></li>
+</ol>
+<p>Below is a detailed explanation of each step along with the necessary code.</p>
+<hr>
+<section id="extract-frames-from-the-video" class="level3">
+<h3 class="anchored" data-anchor-id="extract-frames-from-the-video">1. Extract Frames from the Video</h3>
+<p><em>We use the <code>OpenCV</code> library to extract frames from the video file. Alternatively, <code>moviepy</code> can also be used for frame extraction.</em></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cv2</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the path to the video file</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>video_file <span class="op">=</span> <span class="st">'path_to_your_video.mp4'</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a directory to store the extracted frames</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>frames_dir <span class="op">=</span> <span class="st">'extracted_frames'</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>os.makedirs(frames_dir, exist_ok<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the video using OpenCV</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>cap <span class="op">=</span> cv2.VideoCapture(video_file)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>frame_count <span class="op">=</span> <span class="bu">int</span>(cap.get(cv2.CAP_PROP_FRAME_COUNT))</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>fps <span class="op">=</span> cap.get(cv2.CAP_PROP_FPS)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Decide on the interval between frames to extract (e.g., every 1 second)</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>frame_interval <span class="op">=</span> <span class="bu">int</span>(fps)  <span class="co"># Adjust this value as needed</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>frame_number <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>extracted_frames <span class="op">=</span> []</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> cap.isOpened():</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    ret, frame <span class="op">=</span> cap.read()</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> ret:</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> frame_number <span class="op">%</span> frame_interval <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>        frame_path <span class="op">=</span> os.path.join(frames_dir, <span class="ss">f'frame_</span><span class="sc">{</span>frame_number<span class="sc">}</span><span class="ss">.jpg'</span>)</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>        cv2.imwrite(frame_path, frame)</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>        extracted_frames.append(frame_path)</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>    frame_number <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>cap.release()</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>cv2.destroyAllWindows()</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Extracted </span><span class="sc">{</span><span class="bu">len</span>(extracted_frames)<span class="sc">}</span><span class="ss"> frames."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Notes:</strong></p>
+<ul>
+<li><strong>Frame Extraction Interval:</strong>
+<ul>
+<li>The <code>frame_interval</code> determines how frequently frames are extracted. For example, extracting one frame per second.</li>
+<li>Adjust <code>frame_interval</code> based on the video’s FPS and the level of detail you need.</li>
+</ul></li>
+<li><strong>Saving Frames:</strong>
+<ul>
+<li>Frames are saved as JPEG images in the <code>extracted_frames</code> directory.</li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="use-an-image-captioning-model-to-generate-descriptions" class="level3">
+<h3 class="anchored" data-anchor-id="use-an-image-captioning-model-to-generate-descriptions">2. Use an Image Captioning Model to Generate Descriptions</h3>
+<p><em>We use the <code>transformers</code> library from Hugging Face along with a pre-trained image captioning model to generate descriptions for each extracted frame.</em></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> transformers <span class="im">import</span> VisionEncoderDecoderModel, ViTImageProcessor, AutoTokenizer</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> PIL <span class="im">import</span> Image</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the pre-trained image captioning model and processor</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>model_name <span class="op">=</span> <span class="st">"nlpconnect/vit-gpt2-image-captioning"</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> VisionEncoderDecoderModel.from_pretrained(model_name)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>feature_extractor <span class="op">=</span> ViTImageProcessor.from_pretrained(model_name)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>tokenizer <span class="op">=</span> AutoTokenizer.from_pretrained(model_name)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the device to GPU if available</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>device <span class="op">=</span> torch.device(<span class="st">"cuda"</span> <span class="cf">if</span> torch.cuda.is_available() <span class="cf">else</span> <span class="st">"cpu"</span>)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>model.to(device)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to generate caption for an image</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> generate_caption(image_path):</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Load and preprocess the image</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    image <span class="op">=</span> Image.<span class="bu">open</span>(image_path).convert(<span class="st">"RGB"</span>)</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    pixel_values <span class="op">=</span> feature_extractor(images<span class="op">=</span>image, return_tensors<span class="op">=</span><span class="st">"pt"</span>).pixel_values</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    pixel_values <span class="op">=</span> pixel_values.to(device)</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Generate caption</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> torch.no_grad():</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>        output_ids <span class="op">=</span> model.generate(pixel_values, max_length<span class="op">=</span><span class="dv">50</span>, num_beams<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    caption <span class="op">=</span> tokenizer.decode(output_ids[<span class="dv">0</span>], skip_special_tokens<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> caption</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate captions for all extracted frames</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>frame_captions <span class="op">=</span> []</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> frame_path <span class="kw">in</span> extracted_frames:</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>    caption <span class="op">=</span> generate_caption(frame_path)</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>    frame_captions.append({<span class="st">'frame'</span>: frame_path, <span class="st">'caption'</span>: caption})</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>frame_path<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>caption<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Notes:</strong></p>
+<ul>
+<li><strong>Model Selection:</strong>
+<ul>
+<li>We use the <code>nlpconnect/vit-gpt2-image-captioning</code> model, which is a Vision Transformer (ViT) encoder and GPT-2 decoder.</li>
+<li>You can explore other models on Hugging Face Hub if needed.</li>
+</ul></li>
+<li><strong>Device Configuration:</strong>
+<ul>
+<li>The code checks for GPU availability and uses it if possible for faster processing.</li>
+</ul></li>
+<li><strong>Caption Generation:</strong>
+<ul>
+<li>The <code>generate_caption</code> function processes an image and generates a caption.</li>
+<li>Adjust parameters like <code>max_length</code> and <code>num_beams</code> for different results.</li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="combine-captions-into-a-coherent-summary" class="level3">
+<h3 class="anchored" data-anchor-id="combine-captions-into-a-coherent-summary">3. Combine Captions into a Coherent Summary</h3>
+<p><em>We combine the generated captions to form a coherent summary of the video’s visual content.</em></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine captions into a summary</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>summary_text <span class="op">=</span> <span class="st">' '</span>.join([item[<span class="st">'caption'</span>] <span class="cf">for</span> item <span class="kw">in</span> frame_captions])</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Video Summary:"</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(summary_text)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Notes:</strong></p>
+<ul>
+<li><strong>Simple Concatenation:</strong>
+<ul>
+<li>We concatenate the captions to create a rough summary.</li>
+<li>This method may result in repetitive or disjointed text.</li>
+</ul></li>
+<li><strong>Advanced Summarization (Optional):</strong>
+<ul>
+<li>For a more coherent summary, you can use a text summarization model to refine the combined captions.</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> transformers <span class="im">import</span> pipeline</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize the summarization pipeline</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>summarizer <span class="op">=</span> pipeline(<span class="st">'summarization'</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Summarize the combined captions</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>final_summary <span class="op">=</span> summarizer(summary_text, max_length<span class="op">=</span><span class="dv">130</span>, min_length<span class="op">=</span><span class="dv">30</span>, do_sample<span class="op">=</span><span class="va">False</span>)[<span class="dv">0</span>][<span class="st">'summary_text'</span>]</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Final Summary:"</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(final_summary)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Notes:</strong></p>
+<ul>
+<li><strong>Summarization Model:</strong>
+<ul>
+<li>The <code>summarization</code> pipeline uses a pre-trained model to condense the text.</li>
+</ul></li>
+<li><strong>Adjusting Parameters:</strong>
+<ul>
+<li>Modify <code>max_length</code> and <code>min_length</code> to control the length of the final summary.</li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="complete-code-example" class="level3">
+<h3 class="anchored" data-anchor-id="complete-code-example">Complete Code Example</h3>
+<p>Putting it all together, here’s the complete code:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cv2</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> PIL <span class="im">import</span> Image</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> transformers <span class="im">import</span> VisionEncoderDecoderModel, ViTImageProcessor, AutoTokenizer, pipeline</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1: Extract Frames from the Video</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>video_file <span class="op">=</span> <span class="st">'path_to_your_video.mp4'</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>frames_dir <span class="op">=</span> <span class="st">'extracted_frames'</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>os.makedirs(frames_dir, exist_ok<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>cap <span class="op">=</span> cv2.VideoCapture(video_file)</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>frame_count <span class="op">=</span> <span class="bu">int</span>(cap.get(cv2.CAP_PROP_FRAME_COUNT))</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>fps <span class="op">=</span> cap.get(cv2.CAP_PROP_FPS)</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>frame_interval <span class="op">=</span> <span class="bu">int</span>(fps)  <span class="co"># Extract one frame per second</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>frame_number <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>extracted_frames <span class="op">=</span> []</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> cap.isOpened():</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>    ret, frame <span class="op">=</span> cap.read()</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> ret:</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> frame_number <span class="op">%</span> frame_interval <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>        frame_path <span class="op">=</span> os.path.join(frames_dir, <span class="ss">f'frame_</span><span class="sc">{</span>frame_number<span class="sc">}</span><span class="ss">.jpg'</span>)</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>        cv2.imwrite(frame_path, frame)</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>        extracted_frames.append(frame_path)</span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>    frame_number <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>cap.release()</span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>cv2.destroyAllWindows()</span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Extracted </span><span class="sc">{</span><span class="bu">len</span>(extracted_frames)<span class="sc">}</span><span class="ss"> frames."</span>)</span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2: Generate Captions for Each Frame</span></span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>model_name <span class="op">=</span> <span class="st">"nlpconnect/vit-gpt2-image-captioning"</span></span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> VisionEncoderDecoderModel.from_pretrained(model_name)</span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a>feature_extractor <span class="op">=</span> ViTImageProcessor.from_pretrained(model_name)</span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a>tokenizer <span class="op">=</span> AutoTokenizer.from_pretrained(model_name)</span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a>device <span class="op">=</span> torch.device(<span class="st">"cuda"</span> <span class="cf">if</span> torch.cuda.is_available() <span class="cf">else</span> <span class="st">"cpu"</span>)</span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a>model.to(device)</span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> generate_caption(image_path):</span>
+<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a>    image <span class="op">=</span> Image.<span class="bu">open</span>(image_path).convert(<span class="st">"RGB"</span>)</span>
+<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a>    pixel_values <span class="op">=</span> feature_extractor(images<span class="op">=</span>image, return_tensors<span class="op">=</span><span class="st">"pt"</span>).pixel_values</span>
+<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a>    pixel_values <span class="op">=</span> pixel_values.to(device)</span>
+<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> torch.no_grad():</span>
+<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a>        output_ids <span class="op">=</span> model.generate(pixel_values, max_length<span class="op">=</span><span class="dv">50</span>, num_beams<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a>    caption <span class="op">=</span> tokenizer.decode(output_ids[<span class="dv">0</span>], skip_special_tokens<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> caption</span>
+<span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a>frame_captions <span class="op">=</span> []</span>
+<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-57"><a href="#cb6-57" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> frame_path <span class="kw">in</span> extracted_frames:</span>
+<span id="cb6-58"><a href="#cb6-58" aria-hidden="true" tabindex="-1"></a>    caption <span class="op">=</span> generate_caption(frame_path)</span>
+<span id="cb6-59"><a href="#cb6-59" aria-hidden="true" tabindex="-1"></a>    frame_captions.append({<span class="st">'frame'</span>: frame_path, <span class="st">'caption'</span>: caption})</span>
+<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>frame_path<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>caption<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb6-61"><a href="#cb6-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-62"><a href="#cb6-62" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 3: Combine Captions into a Summary</span></span>
+<span id="cb6-63"><a href="#cb6-63" aria-hidden="true" tabindex="-1"></a>summary_text <span class="op">=</span> <span class="st">' '</span>.join([item[<span class="st">'caption'</span>] <span class="cf">for</span> item <span class="kw">in</span> frame_captions])</span>
+<span id="cb6-64"><a href="#cb6-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-65"><a href="#cb6-65" aria-hidden="true" tabindex="-1"></a><span class="co"># Optional: Summarize the Combined Captions</span></span>
+<span id="cb6-66"><a href="#cb6-66" aria-hidden="true" tabindex="-1"></a>summarizer <span class="op">=</span> pipeline(<span class="st">'summarization'</span>)</span>
+<span id="cb6-67"><a href="#cb6-67" aria-hidden="true" tabindex="-1"></a>final_summary <span class="op">=</span> summarizer(summary_text, max_length<span class="op">=</span><span class="dv">130</span>, min_length<span class="op">=</span><span class="dv">30</span>, do_sample<span class="op">=</span><span class="va">False</span>)[<span class="dv">0</span>][<span class="st">'summary_text'</span>]</span>
+<span id="cb6-68"><a href="#cb6-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-69"><a href="#cb6-69" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Final Summary:"</span>)</span>
+<span id="cb6-70"><a href="#cb6-70" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(final_summary)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="additional-considerations" class="level3">
+<h3 class="anchored" data-anchor-id="additional-considerations">Additional Considerations</h3>
+<ul>
+<li><p><strong>Installing Dependencies:</strong></p>
+<p>Ensure that you have all the required libraries installed:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install opencv-python</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install transformers</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install torch  <span class="co"># For GPU support, install torch appropriate for your CUDA version</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install pillow</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Frame Selection:</strong></p>
+<ul>
+<li><strong>Dynamic Frame Selection:</strong>
+<ul>
+<li>Instead of extracting frames at fixed intervals, you can implement shot detection or scene change detection to extract frames when the content changes significantly.</li>
+<li>Libraries like <code>scenedetect</code> can help with this.</li>
+</ul></li>
+</ul></li>
+<li><p><strong>Processing Time:</strong></p>
+<ul>
+<li>Image captioning models can be computationally intensive.</li>
+<li>Processing time will increase with the number of frames and the complexity of the model.</li>
+<li>Using a GPU significantly speeds up the process.</li>
+</ul></li>
+<li><p><strong>Model Limitations:</strong></p>
+<ul>
+<li>The quality of the generated captions depends on the model’s capabilities.</li>
+<li>Pre-trained models may not accurately describe all types of content.</li>
+<li>For domain-specific videos, consider fine-tuning a model on relevant datasets.</li>
+</ul></li>
+<li><p><strong>Enhancing Summarization:</strong></p>
+<ul>
+<li><strong>Text Preprocessing:</strong>
+<ul>
+<li>Remove duplicate captions or captions with minimal information before summarization.</li>
+</ul></li>
+<li><strong>Semantic Understanding:</strong>
+<ul>
+<li>Use natural language understanding techniques to better combine captions.</li>
+</ul></li>
+</ul></li>
+<li><p><strong>Privacy and Compliance:</strong></p>
+<ul>
+<li>Be cautious when processing videos containing personal or sensitive information.</li>
+<li>Ensure compliance with data protection regulations.</li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="conclusion" class="level3">
+<h3 class="anchored" data-anchor-id="conclusion">Conclusion</h3>
+<p>By following these steps, you can extract frames from a video without audio, generate descriptions of the visual content using an image captioning model, and combine those descriptions into a textual summary. This approach leverages powerful pre-trained models available through the Hugging Face Transformers library and allows you to create summaries of visual content programmatically.</p>
+<p><strong>References:</strong></p>
+<ul>
+<li><strong>OpenCV Documentation:</strong> <a href="https://docs.opencv.org/">https://docs.opencv.org/</a></li>
+<li><strong>Hugging Face Transformers Documentation:</strong> <a href="https://huggingface.co/transformers/">https://huggingface.co/transformers/</a></li>
+<li><strong>Image Captioning Models:</strong> <a href="https://huggingface.co/models?pipeline_tag=image-to-text">https://huggingface.co/models?pipeline_tag=image-to-text</a></li>
+<li><strong>Scene Detection with PySceneDetect:</strong> <a href="https://pyscenedetect.readthedocs.io/">https://pyscenedetect.readthedocs.io/</a></li>
+</ul>
+<hr>
+<p><strong>Example Output:</strong></p>
+<p>Assuming we have a video and we run the code, the output might look like:</p>
+<pre><code>Extracted 10 frames.
+extracted_frames/frame_0.jpg: a group of people standing in a room.
+extracted_frames/frame_30.jpg: a man holding a microphone.
+extracted_frames/frame_60.jpg: a woman sitting at a desk with a laptop.
+...
+Final Summary:
+A group of people are standing in a room. A man is holding a microphone. A woman is sitting at a desk with a laptop. ...</code></pre>
+<hr>
+<p><strong>Note:</strong></p>
+<ul>
+<li>Replace <code>'path_to_your_video.mp4'</code> with the actual path to your video file.</li>
+<li>Adjust the <code>frame_interval</code> based on the video’s length and desired granularity.</li>
+<li>Ensure you have sufficient system resources to run the models, especially if processing longer videos or using higher-resolution frames.</li>
+</ul>
+<hr>
+<p>By automating the process of generating textual descriptions from video frames, you can create summaries of videos without audio, which is particularly useful for silent surveillance footage, visual-only content, or scenarios where audio data is unavailable or unusable.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
