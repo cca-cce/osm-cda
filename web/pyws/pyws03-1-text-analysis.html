@@ -344,17 +344,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <ul>
-<li>code examples <a href="https://www.nltk.org/howto.html">nltk</a></li>
-<li>code examples <a href="https://spacy.io/usage/spacy-101">spacy</a></li>
+<li>code examples <a href="https://www.nltk.org/howto.html" target="_blank">nltk</a></li>
+<li>code examples <a href="https://spacy.io/usage/spacy-101" target="_blank">spacy</a></li>
 <li>download <a href="pyws03-1-text-analysis.ipynb">jupyter notebook</a></li>
 </ul>
-<div id="850409ce" class="cell" data-execution_count="1">
+<div id="30f45f79" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># run inside google colab</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#!git clone https://github.com/cca-cce/osm-cca-nlp.git</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="recap-reading-data-files" class="level2">
 <h2 class="anchored" data-anchor-id="recap-reading-data-files">recap reading data files</h2>
-<div id="b5b8210c" class="cell" data-execution_count="2">
+<div id="78e6d318" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># comma separated</span></span>
@@ -389,7 +389,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="import-libraries-and-download-nltk-data" class="level3">
 <h3 class="anchored" data-anchor-id="import-libraries-and-download-nltk-data">Import Libraries and Download NLTK Data</h3>
 <p><em>In this step, we import the necessary libraries and download the required NLTK data packages. Specifically, we use NLTK’s <code>download</code> function to ensure the ‘gutenberg’ corpus and the ‘punkt’ tokenizer are available for use. The ‘punkt’ tokenizer is essential for splitting text into sentences and words.</em></p>
-<div id="3996d3a5" class="cell" data-execution_count="3">
+<div id="bd126f46" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> nltk</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
@@ -409,7 +409,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="load-the-gutenberg-corpus" class="level3">
 <h3 class="anchored" data-anchor-id="load-the-gutenberg-corpus">Load the Gutenberg Corpus</h3>
 <p><em>Here, we import the Gutenberg corpus from NLTK’s corpus module. The Gutenberg corpus is a collection of literary texts that we will analyze. We retrieve the list of file IDs available in the corpus using <code>gutenberg.fileids()</code>, which provides us with the filenames of the texts in the corpus.</em></p>
-<div id="512143db" class="cell" data-execution_count="4">
+<div id="48570963" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.corpus <span class="im">import</span> gutenberg</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Get list of file IDs from the Gutenberg corpus</span></span>
@@ -419,7 +419,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="analyze-each-text-in-the-corpus" class="level3">
 <h3 class="anchored" data-anchor-id="analyze-each-text-in-the-corpus">Analyze Each Text in the Corpus</h3>
 <p><em>In this section, we iterate over each text in the Gutenberg corpus to compute various linguistic statistics. We use NLTK’s <code>raw()</code> method to get the raw text, <code>word_tokenize()</code> to split the text into words, and <code>sent_tokenize()</code> to split the text into sentences. These NLTK tokenizers are essential for textual analysis.</em></p>
-<div id="283a07d8" class="cell" data-execution_count="5">
+<div id="9ca8b573" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize a list to store statistics</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>stats_list <span class="op">=</span> []</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -446,7 +446,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="create-and-display-the-dataframe" class="level3">
 <h3 class="anchored" data-anchor-id="create-and-display-the-dataframe">Create and Display the DataFrame</h3>
 <p><em>We create a pandas DataFrame from the collected statistics for easier analysis and display it within the notebook using <code>display()</code>. This allows us to view the computed statistics in a structured tabular format.</em></p>
-<div id="5062aaa9" class="cell" data-execution_count="6">
+<div id="c9baa75d" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a DataFrame to hold the statistics</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>stats_df <span class="op">=</span> pd.DataFrame(stats_list)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -641,7 +641,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="set-up-the-output-directory" class="level3">
 <h3 class="anchored" data-anchor-id="set-up-the-output-directory">Set Up the Output Directory</h3>
 <p><em>Here, we define the output path where we’ll save the text files and figures. We use <code>os.makedirs()</code> with <code>exist_ok=True</code> to create the directory if it doesn’t already exist, ensuring that our output files have a designated location.</em></p>
-<div id="fa97f8e8" class="cell" data-execution_count="7">
+<div id="1206ada2" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the output path for saving text files and figures</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>output_path <span class="op">=</span> <span class="st">"/home/sol-nhl/rnd/d/quarto/osm-cca-nlp/tmp"</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -658,7 +658,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><em>A scatter plot of vocabulary size versus the number of words.</em></li>
 </ul>
 <p><em>We utilize NLTK’s tokenization outputs to extract the necessary values for plotting.</em></p>
-<div id="09e8a58e" class="cell" data-execution_count="8">
+<div id="e1303e37" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up seaborn style</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>sns.<span class="bu">set</span>(style<span class="op">=</span><span class="st">'whitegrid'</span>)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -714,7 +714,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="save-texts-to-disk" class="level3">
 <h3 class="anchored" data-anchor-id="save-texts-to-disk">Save Texts to Disk</h3>
 <p><em>Finally, we save each text from the Gutenberg corpus as a plain text file to the specified output directory. We use NLTK’s <code>raw()</code> method again to retrieve the full text of each file and write it to disk using standard file I/O operations.</em></p>
-<div id="d9d3f263" class="cell" data-execution_count="9">
+<div id="beb4af77" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save each text as a plain text file to the output path</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> file_id <span class="kw">in</span> file_ids:</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    raw_text <span class="op">=</span> gutenberg.raw(file_id)</span>
@@ -726,7 +726,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="load-saved-texts-into-an-nltk-corpus" class="level3">
 <h3 class="anchored" data-anchor-id="load-saved-texts-into-an-nltk-corpus">Load Saved Texts into an NLTK Corpus</h3>
 <p><em>In this final step, we read the saved texts from the output directory back into an NLTK corpus using <code>PlaintextCorpusReader</code>. This allows us to treat the collection of saved texts as a corpus for further analysis. <code>PlaintextCorpusReader</code> is an NLTK class designed to read plain text files from a directory and create a corpus object.</em></p>
-<div id="892c5e2b" class="cell" data-execution_count="10">
+<div id="51f98542" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.corpus <span class="im">import</span> PlaintextCorpusReader</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the corpus root directory</span></span>
@@ -758,12 +758,12 @@ First 20 words in austen-emma.txt : ['[', 'Emma', 'by', 'Jane', 'Austen', '1816'
 <section id="text-to-pandas-dataframe" class="level2">
 <h2 class="anchored" data-anchor-id="text-to-pandas-dataframe">text to pandas dataframe</h2>
 <ul>
-<li>example <a href="https://www.lunduniversity.lu.se/about-university/university-glance/mission-vision-and-values/sustainability">sustainability communication</a></li>
+<li>example <a href="https://www.lunduniversity.lu.se/about-university/university-glance/mission-vision-and-values/sustainability" target="_blank">sustainability communication</a></li>
 </ul>
 <section id="import-libraries-and-define-text-cleaning-function" class="level3">
 <h3 class="anchored" data-anchor-id="import-libraries-and-define-text-cleaning-function">Import Libraries and Define Text Cleaning Function</h3>
 <p><em>In this step, we import the necessary libraries and define a function to clean text data. We use the <code>os</code> module for file and directory operations, <code>re</code> for regular expressions, <code>pandas</code> for data manipulation, and <code>spacy</code> for natural language processing tasks.</em></p>
-<div id="8a4176e3" class="cell" data-execution_count="11">
+<div id="63eb49d6" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -784,7 +784,7 @@ First 20 words in austen-emma.txt : ['[', 'Emma', 'by', 'Jane', 'Austen', '1816'
 <section id="set-directory-paths-and-initialize-data-structures" class="level3">
 <h3 class="anchored" data-anchor-id="set-directory-paths-and-initialize-data-structures">Set Directory Paths and Initialize Data Structures</h3>
 <p><em>Here, we specify the directory paths where the text files are located and initialize data structures for storing the text data. The <code>directory_path</code> variable holds the path to the directory containing the text files. We also initialize an empty list <code>data</code> to store the text information and a counter <code>unique_id</code> for assigning unique identifiers to each text.</em></p>
-<div id="8e68ae54" class="cell" data-execution_count="12">
+<div id="eb347649" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Directory containing text files</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>directory_path <span class="op">=</span> <span class="st">'/content/osm-cca-nlp/res'</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>directory_path <span class="op">=</span> <span class="st">'/home/sol-nhl/rnd/d/quarto/osm-cca-nlp/res'</span></span>
@@ -801,7 +801,7 @@ First 20 words in austen-emma.txt : ['[', 'Emma', 'by', 'Jane', 'Austen', '1816'
 <section id="read-and-clean-text-files" class="level3">
 <h3 class="anchored" data-anchor-id="read-and-clean-text-files">Read and Clean Text Files</h3>
 <p><em>In this section, we iterate over the text files in the specified directory, read their contents, clean the text using the <code>clean_text</code> function, and store the data in the <code>data</code> list. The <code>os.listdir</code> function lists all files in the directory, and <code>os.path.join</code> constructs the full file path.</em></p>
-<div id="6b0c40d2" class="cell" data-execution_count="13">
+<div id="97bbbd6d" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Iterate over the text files in the directory</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> filename <span class="kw">in</span> os.listdir(directory_path):</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Consider only plain text files</span></span>
@@ -832,7 +832,7 @@ First 20 words in austen-emma.txt : ['[', 'Emma', 'by', 'Jane', 'Austen', '1816'
 <section id="create-and-save-dataframe" class="level3">
 <h3 class="anchored" data-anchor-id="create-and-save-dataframe">Create and Save DataFrame</h3>
 <p><em>We convert the collected data into a Pandas DataFrame for easier manipulation and analysis. We then save this DataFrame as a TSV (Tab-Separated Values) file using the <code>to_csv</code> method with <code>sep='\t'</code>. The <code>index=False</code> parameter ensures that the DataFrame index is not included in the output file.</em></p>
-<div id="125a32fe" class="cell" data-execution_count="14">
+<div id="69e513ad" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a Pandas DataFrame</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>text_df <span class="op">=</span> pd.DataFrame(data)</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -865,7 +865,7 @@ First 20 words in austen-emma.txt : ['[', 'Emma', 'by', 'Jane', 'Austen', '1816'
 <section id="load-spacy-model" class="level3">
 <h3 class="anchored" data-anchor-id="load-spacy-model">Load spaCy Model</h3>
 <p><em>We load a spaCy language model to perform natural language processing tasks. The <code>spacy.load</code> function loads the specified model into memory. In this case, we use the small English model <code>en_core_web_sm</code>.</em></p>
-<div id="c79df955" class="cell" data-execution_count="15">
+<div id="d8496e7a" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the spaCy model (small English model is used here)</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>nlp <span class="op">=</span> spacy.load(<span class="st">"en_core_web_sm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -875,7 +875,7 @@ First 20 words in austen-emma.txt : ['[', 'Emma', 'by', 'Jane', 'Austen', '1816'
 <section id="compute-text-statistics" class="level3">
 <h3 class="anchored" data-anchor-id="compute-text-statistics">Compute Text Statistics</h3>
 <p><em>We calculate word counts, character counts, and sentence counts for each cleaned text in the DataFrame. Pandas’ <code>apply</code> function applies a lambda function to each row in the <code>cleaned_text</code> column. For sentence counting, we use spaCy’s sentence segmentation by processing the text with <code>nlp</code> and accessing the <code>.sents</code> attribute.</em></p>
-<div id="a28633b9" class="cell" data-execution_count="16">
+<div id="8d22fd76" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform word count and character count on each cleaned text in the DataFrame</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>text_df[<span class="st">'word_count'</span>] <span class="op">=</span> text_df[<span class="st">'cleaned_text'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: <span class="bu">len</span>(x.split()))</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>text_df[<span class="st">'character_count'</span>] <span class="op">=</span> text_df[<span class="st">'cleaned_text'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: <span class="bu">len</span>(x))</span>
@@ -889,7 +889,7 @@ First 20 words in austen-emma.txt : ['[', 'Emma', 'by', 'Jane', 'Austen', '1816'
 <section id="display-dataframe-with-selected-columns" class="level3">
 <h3 class="anchored" data-anchor-id="display-dataframe-with-selected-columns">Display DataFrame with Selected Columns</h3>
 <p><em>Finally, we display the DataFrame, excluding the ‘original_text’ and ‘cleaned_text’ columns for brevity. The <code>columns.difference</code> function identifies columns to exclude, and we use this to select the remaining columns for display.</em></p>
-<div id="83baf900" class="cell" data-execution_count="17">
+<div id="5562bc91" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select and print all columns except 'original_text' and 'cleaned_text'</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>columns_to_display <span class="op">=</span> text_df.columns.difference([<span class="st">'original_text'</span>, <span class="st">'cleaned_text'</span>])</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(text_df[columns_to_display])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
