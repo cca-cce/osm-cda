@@ -1,4 +1,607 @@
 ---
+execute:
+  eval: true
+  echo: true
+  output: true
 title: "object recognition"
 ---
 
+- code examples [huggingface](https://huggingface.co/tasks){target="_blank"}
+- download [jupyter notebook](pyws04-2-image-analysis.ipynb){target="_blank"}
+
+```{python}
+# get github repo.. run inside google colab
+#!git clone https://github.com/cca-cce/osm-cca-cv.git
+```
+
+```{python}
+# install dependencies
+#!pip install -q timm
+```
+
+## image classification 
+
+```{python}
+from transformers import pipeline
+clf = pipeline("image-classification")
+clf("/content/osm-cca-cv/res/img/image_prefix-000.png")
+
+#[{'label': 'tabby cat', 'score': 0.731},
+#...
+#]
+```
+
+## object recognition 
+
+```{python}
+from transformers import pipeline
+
+model = pipeline("object-detection")
+model("/content/osm-cca-cv/res/img/image_prefix-000.png")
+# [{'label': 'blanket',
+#  'mask': mask_string,
+#  'score': 0.917},
+#...]
+```
+
+```{python}
+import cv2
+import matplotlib.pyplot as plt
+
+# Original image path
+image_path = "/content/osm-cca-cv/res/img/image_prefix-000.png"
+
+# Read the image
+image = cv2.imread(image_path)
+
+# Check if the image was successfully loaded
+if image is None:
+    print("Error: Could not read image.")
+else:
+    # List of detections
+    detections = [
+        {
+            'score': 0.8914425373077393,
+            'label': 'dog',
+            'box': {'xmin': 265, 'ymin': 187, 'xmax': 282, 'ymax': 204}
+        },
+        {
+            'score': 0.999186098575592,
+            'label': 'person',
+            'box': {'xmin': 237, 'ymin': 136, 'xmax': 303, 'ymax': 218}
+        },
+        {
+            'score': 0.9989272952079773,
+            'label': 'person',
+            'box': {'xmin': 352, 'ymin': 126, 'xmax': 385, 'ymax': 184}
+        },
+        {
+            'score': 0.999570906162262,
+            'label': 'person',
+            'box': {'xmin': 481, 'ymin': 150, 'xmax': 589, 'ymax': 344}
+        }
+    ]
+
+    # Iterate over detections and draw bounding boxes
+    for detection in detections:
+        score = detection['score']
+        label = detection['label']
+        box = detection['box']
+        xmin = box['xmin']
+        ymin = box['ymin']
+        xmax = box['xmax']
+        ymax = box['ymax']
+
+        # Draw the bounding box
+        cv2.rectangle(image, (xmin, ymin), (xmax, ymax), color=(0, 255, 0), thickness=2)
+
+        # Prepare label with score
+        text = f"{label}: {score:.2f}"
+
+        # Calculate text size for background rectangle
+        (text_width, text_height), baseline = cv2.getTextSize(
+            text, cv2.FONT_HERSHEY_SIMPLEX, fontScale=0.5, thickness=1
+        )
+
+        # Position the text above the bounding box if possible
+        text_x = xmin
+        text_y = ymin - 10 if ymin - 10 > text_height else ymin + text_height + 10
+
+        # Draw background rectangle for text
+        cv2.rectangle(
+            image,
+            (text_x, text_y - text_height - baseline),
+            (text_x + text_width, text_y + baseline),
+            color=(0, 255, 0),
+            thickness=-1
+        )
+
+        # Put the text on the image
+        cv2.putText(
+            image,
+            text,
+            (text_x, text_y),
+            cv2.FONT_HERSHEY_SIMPLEX,
+            fontScale=0.5,
+            color=(0, 0, 0),
+            thickness=1
+        )
+
+    # Convert BGR to RGB for displaying with matplotlib
+    image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+
+    # Display the image using matplotlib
+    plt.figure(figsize=(12, 8))
+    plt.imshow(image_rgb)
+    plt.axis('off')
+    plt.show()
+
+    # Alternatively, save the image to a file
+    output_path = "/content/osm-cca-cv/res/img/image_with_detections.png"
+    cv2.imwrite(output_path, image)
+    print(f"Output image saved to {output_path}")
+```
+
+**Explanation:**
+
+- **Import Libraries:**
+  - `cv2` for image processing.
+  - `matplotlib.pyplot` for displaying the image inline if using a Jupyter notebook or Google Colab.
+
+- **Read the Original Image:**
+  - Use `cv2.imread()` to read the image from the specified path.
+  - Check if the image was loaded successfully.
+
+- **Define the Detections List:**
+  - This is the provided list containing detection results, each with a score, label, and bounding box coordinates.
+
+- **Iterate Over Detections and Draw Bounding Boxes:**
+  - Loop through each detection in the list.
+  - Extract the `score`, `label`, and `box` coordinates.
+  - Use `cv2.rectangle()` to draw the bounding box on the image.
+    - Parameters:
+      - Image to draw on.
+      - Starting point `(xmin, ymin)`.
+      - Ending point `(xmax, ymax)`.
+      - `color`: Set to green `(0, 255, 0)`.
+      - `thickness`: Set to `2`.
+  - Prepare the text to display the label and score.
+  - Calculate the size of the text using `cv2.getTextSize()` to create a background rectangle for better visibility.
+  - Draw a filled rectangle behind the text using `cv2.rectangle()`.
+  - Put the text on the image using `cv2.putText()`.
+
+- **Display or Save the Image:**
+  - Convert the image from BGR to RGB color space for correct color representation in Matplotlib.
+  - Use `plt.imshow()` to display the image inline.
+  - Alternatively, save the image with detections to a file using `cv2.imwrite()`.
+
+**Notes:**
+
+- **Color Spaces:**
+  - OpenCV uses BGR color order, while Matplotlib uses RGB. Conversion is necessary for correct color display.
+
+- **Text Positioning:**
+  - The code attempts to place the label above the bounding box if there's enough space; otherwise, it places it below.
+
+- **Font and Text Styling:**
+  - Font: `cv2.FONT_HERSHEY_SIMPLEX`.
+  - Font scale and thickness are set for readability.
+
+- **Saving the Image:**
+  - The output image is saved to the specified path.
+
+**Dependencies:**
+
+- Ensure you have OpenCV installed:
+
+  ```bash
+  pip install opencv-python
+  ```
+
+- If using Jupyter Notebook or Google Colab, Matplotlib is typically pre-installed.
+
+**Example Output:**
+
+- The resulting image will display the original image with green bounding boxes around detected objects.
+- Labels and scores are displayed near each bounding box for identification.
+
+**Adjustments:**
+
+- **Image Path:**
+  - Ensure that `image_path` correctly points to your image file.
+  - If the image is not found, you'll receive an error message.
+
+- **Output Path:**
+  - The `output_path` should be adjusted if you want to save the image to a different location.
+
+- **Display Method:**
+  - If you're running this code outside of a notebook environment, you might need to use `cv2.imshow()` instead of Matplotlib to display the image.
+
+**Display with OpenCV (Alternative):**
+
+```{python}
+# Display the image using OpenCV's imshow (only works in local environments)
+cv2.imshow('Image with Detections', image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+
+- Note that `cv2.imshow()` may not work in notebook environments like Google Colab.
+
+## image, video to text 
+
+```{python}
+from transformers import pipeline
+
+captioner = pipeline("image-to-text", model="Salesforce/blip-image-captioning-base")
+#captioner("https://huggingface.co/datasets/Narsil/image_dummy/resolve/main/parrots.png")
+captioner("https://raw.githubusercontent.com/cca-cce/osm-cca-cv/0a62207580cf63bc808ec825669af8d6f2eedf16/res/img/image_prefix-000.png")
+## [{'generated_text': 'two birds are standing next to each other '}]
+```
+
+## pixtral, cutting edge..
+
+[![huggingface account and gpu resources required](https://img.youtube.com/vi/7aGTKJJMb5w/0.jpg)](https://www.youtube.com/watch?v=7aGTKJJMb5w)
+
+```{python}
+# install dependencies
+#!pip install -q --upgrade vllm
+#!pip install -q --upgrade mistral_common
+```
+
+```{python}
+from vllm import LLM
+from vllm.sampling_params import SamplingParams
+
+model_name = "mistralai/Pixtral-12B-2409"
+
+sampling_params = SamplingParams(max_tokens=8192)
+
+llm = LLM(model=model_name, tokenizer_mode="mistral")
+
+prompt = "Describe this image in one sentence."
+image_url = "https://raw.githubusercontent.com/cca-cce/osm-cca-cv/0a62207580cf63bc808ec825669af8d6f2eedf16/res/img/image_prefix-000.png"
+
+messages = [
+    {
+        "role": "user",
+        "content": [{"type": "text", "text": prompt}, {"type": "image_url", "image_url": {"url": image_url}}]
+    },
+]
+
+outputs = llm.chat(messages, sampling_params=sampling_params)
+
+print(outputs[0].outputs[0].text)
+```
+
+## testing.. on your own risk :)
+
+To summarize and describe the visual content of a short video without audio using Python, you can follow these main steps:
+
+1. **Extract frames from the video.**
+2. **Select key frames that represent the content effectively.**
+3. **Use an image captioning model to generate descriptions of the frames.**
+4. **Combine the frame descriptions into a coherent summary.**
+
+Below is a detailed explanation of each step along with the necessary code.
+
+---
+
+### 1. Extract Frames from the Video
+
+*We use the `OpenCV` library to extract frames from the video file. Alternatively, `moviepy` can also be used for frame extraction.*
+
+```{python}
+import cv2
+import os
+
+# Define the path to the video file
+video_file = 'path_to_your_video.mp4'
+
+# Create a directory to store the extracted frames
+frames_dir = 'extracted_frames'
+os.makedirs(frames_dir, exist_ok=True)
+
+# Load the video using OpenCV
+cap = cv2.VideoCapture(video_file)
+
+frame_count = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+fps = cap.get(cv2.CAP_PROP_FPS)
+
+# Decide on the interval between frames to extract (e.g., every 1 second)
+frame_interval = int(fps)  # Adjust this value as needed
+
+frame_number = 0
+extracted_frames = []
+
+while cap.isOpened():
+    ret, frame = cap.read()
+    if not ret:
+        break
+
+    if frame_number % frame_interval == 0:
+        frame_path = os.path.join(frames_dir, f'frame_{frame_number}.jpg')
+        cv2.imwrite(frame_path, frame)
+        extracted_frames.append(frame_path)
+    
+    frame_number += 1
+
+cap.release()
+cv2.destroyAllWindows()
+
+print(f"Extracted {len(extracted_frames)} frames.")
+```
+
+**Notes:**
+
+- **Frame Extraction Interval:**
+  - The `frame_interval` determines how frequently frames are extracted. For example, extracting one frame per second.
+  - Adjust `frame_interval` based on the video's FPS and the level of detail you need.
+
+- **Saving Frames:**
+  - Frames are saved as JPEG images in the `extracted_frames` directory.
+
+---
+
+### 2. Use an Image Captioning Model to Generate Descriptions
+
+*We use the `transformers` library from Hugging Face along with a pre-trained image captioning model to generate descriptions for each extracted frame.*
+
+```{python}
+from transformers import VisionEncoderDecoderModel, ViTImageProcessor, AutoTokenizer
+import torch
+from PIL import Image
+
+# Load the pre-trained image captioning model and processor
+model_name = "nlpconnect/vit-gpt2-image-captioning"
+model = VisionEncoderDecoderModel.from_pretrained(model_name)
+feature_extractor = ViTImageProcessor.from_pretrained(model_name)
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+
+# Set the device to GPU if available
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+model.to(device)
+
+# Function to generate caption for an image
+def generate_caption(image_path):
+    # Load and preprocess the image
+    image = Image.open(image_path).convert("RGB")
+    pixel_values = feature_extractor(images=image, return_tensors="pt").pixel_values
+    pixel_values = pixel_values.to(device)
+
+    # Generate caption
+    with torch.no_grad():
+        output_ids = model.generate(pixel_values, max_length=50, num_beams=5)
+    caption = tokenizer.decode(output_ids[0], skip_special_tokens=True)
+    return caption
+
+# Generate captions for all extracted frames
+frame_captions = []
+
+for frame_path in extracted_frames:
+    caption = generate_caption(frame_path)
+    frame_captions.append({'frame': frame_path, 'caption': caption})
+    print(f"{frame_path}: {caption}")
+```
+
+**Notes:**
+
+- **Model Selection:**
+  - We use the `nlpconnect/vit-gpt2-image-captioning` model, which is a Vision Transformer (ViT) encoder and GPT-2 decoder.
+  - You can explore other models on Hugging Face Hub if needed.
+
+- **Device Configuration:**
+  - The code checks for GPU availability and uses it if possible for faster processing.
+
+- **Caption Generation:**
+  - The `generate_caption` function processes an image and generates a caption.
+  - Adjust parameters like `max_length` and `num_beams` for different results.
+
+---
+
+### 3. Combine Captions into a Coherent Summary
+
+*We combine the generated captions to form a coherent summary of the video's visual content.*
+
+```{python}
+# Combine captions into a summary
+summary_text = ' '.join([item['caption'] for item in frame_captions])
+
+print("\nVideo Summary:")
+print(summary_text)
+```
+
+**Notes:**
+
+- **Simple Concatenation:**
+  - We concatenate the captions to create a rough summary.
+  - This method may result in repetitive or disjointed text.
+
+- **Advanced Summarization (Optional):**
+  - For a more coherent summary, you can use a text summarization model to refine the combined captions.
+
+```{python}
+from transformers import pipeline
+
+# Initialize the summarization pipeline
+summarizer = pipeline('summarization')
+
+# Summarize the combined captions
+final_summary = summarizer(summary_text, max_length=130, min_length=30, do_sample=False)[0]['summary_text']
+
+print("\nFinal Summary:")
+print(final_summary)
+```
+
+**Notes:**
+
+- **Summarization Model:**
+  - The `summarization` pipeline uses a pre-trained model to condense the text.
+
+- **Adjusting Parameters:**
+  - Modify `max_length` and `min_length` to control the length of the final summary.
+
+---
+
+### Complete Code Example
+
+Putting it all together, here's the complete code:
+
+```{python}
+import cv2
+import os
+import torch
+from PIL import Image
+from transformers import VisionEncoderDecoderModel, ViTImageProcessor, AutoTokenizer, pipeline
+
+# Step 1: Extract Frames from the Video
+video_file = 'path_to_your_video.mp4'
+frames_dir = 'extracted_frames'
+os.makedirs(frames_dir, exist_ok=True)
+
+cap = cv2.VideoCapture(video_file)
+frame_count = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+fps = cap.get(cv2.CAP_PROP_FPS)
+frame_interval = int(fps)  # Extract one frame per second
+frame_number = 0
+extracted_frames = []
+
+while cap.isOpened():
+    ret, frame = cap.read()
+    if not ret:
+        break
+
+    if frame_number % frame_interval == 0:
+        frame_path = os.path.join(frames_dir, f'frame_{frame_number}.jpg')
+        cv2.imwrite(frame_path, frame)
+        extracted_frames.append(frame_path)
+    
+    frame_number += 1
+
+cap.release()
+cv2.destroyAllWindows()
+
+print(f"Extracted {len(extracted_frames)} frames.")
+
+# Step 2: Generate Captions for Each Frame
+model_name = "nlpconnect/vit-gpt2-image-captioning"
+model = VisionEncoderDecoderModel.from_pretrained(model_name)
+feature_extractor = ViTImageProcessor.from_pretrained(model_name)
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+model.to(device)
+
+def generate_caption(image_path):
+    image = Image.open(image_path).convert("RGB")
+    pixel_values = feature_extractor(images=image, return_tensors="pt").pixel_values
+    pixel_values = pixel_values.to(device)
+
+    with torch.no_grad():
+        output_ids = model.generate(pixel_values, max_length=50, num_beams=5)
+    caption = tokenizer.decode(output_ids[0], skip_special_tokens=True)
+    return caption
+
+frame_captions = []
+
+for frame_path in extracted_frames:
+    caption = generate_caption(frame_path)
+    frame_captions.append({'frame': frame_path, 'caption': caption})
+    print(f"{frame_path}: {caption}")
+
+# Step 3: Combine Captions into a Summary
+summary_text = ' '.join([item['caption'] for item in frame_captions])
+
+# Optional: Summarize the Combined Captions
+summarizer = pipeline('summarization')
+final_summary = summarizer(summary_text, max_length=130, min_length=30, do_sample=False)[0]['summary_text']
+
+print("\nFinal Summary:")
+print(final_summary)
+```
+
+---
+
+### Additional Considerations
+
+- **Installing Dependencies:**
+
+  Ensure that you have all the required libraries installed:
+
+  ```bash
+  pip install opencv-python
+  pip install transformers
+  pip install torch  # For GPU support, install torch appropriate for your CUDA version
+  pip install pillow
+  ```
+
+- **Frame Selection:**
+
+  - **Dynamic Frame Selection:**
+    - Instead of extracting frames at fixed intervals, you can implement shot detection or scene change detection to extract frames when the content changes significantly.
+    - Libraries like `scenedetect` can help with this.
+
+- **Processing Time:**
+
+  - Image captioning models can be computationally intensive.
+  - Processing time will increase with the number of frames and the complexity of the model.
+  - Using a GPU significantly speeds up the process.
+
+- **Model Limitations:**
+
+  - The quality of the generated captions depends on the model's capabilities.
+  - Pre-trained models may not accurately describe all types of content.
+  - For domain-specific videos, consider fine-tuning a model on relevant datasets.
+
+- **Enhancing Summarization:**
+
+  - **Text Preprocessing:**
+    - Remove duplicate captions or captions with minimal information before summarization.
+  - **Semantic Understanding:**
+    - Use natural language understanding techniques to better combine captions.
+
+- **Privacy and Compliance:**
+
+  - Be cautious when processing videos containing personal or sensitive information.
+  - Ensure compliance with data protection regulations.
+
+---
+
+### Conclusion
+
+By following these steps, you can extract frames from a video without audio, generate descriptions of the visual content using an image captioning model, and combine those descriptions into a textual summary. This approach leverages powerful pre-trained models available through the Hugging Face Transformers library and allows you to create summaries of visual content programmatically.
+
+**References:**
+
+- **OpenCV Documentation:** [https://docs.opencv.org/](https://docs.opencv.org/)
+- **Hugging Face Transformers Documentation:** [https://huggingface.co/transformers/](https://huggingface.co/transformers/)
+- **Image Captioning Models:** [https://huggingface.co/models?pipeline_tag=image-to-text](https://huggingface.co/models?pipeline_tag=image-to-text)
+- **Scene Detection with PySceneDetect:** [https://pyscenedetect.readthedocs.io/](https://pyscenedetect.readthedocs.io/)
+
+---
+
+**Example Output:**
+
+Assuming we have a video and we run the code, the output might look like:
+
+```
+Extracted 10 frames.
+extracted_frames/frame_0.jpg: a group of people standing in a room.
+extracted_frames/frame_30.jpg: a man holding a microphone.
+extracted_frames/frame_60.jpg: a woman sitting at a desk with a laptop.
+...
+Final Summary:
+A group of people are standing in a room. A man is holding a microphone. A woman is sitting at a desk with a laptop. ...
+```
+
+---
+
+**Note:**
+
+- Replace `'path_to_your_video.mp4'` with the actual path to your video file.
+- Adjust the `frame_interval` based on the video's length and desired granularity.
+- Ensure you have sufficient system resources to run the models, especially if processing longer videos or using higher-resolution frames.
+
+---
+
+By automating the process of generating textual descriptions from video frames, you can create summaries of videos without audio, which is particularly useful for silent surveillance footage, visual-only content, or scenarios where audio data is unavailable or unusable.

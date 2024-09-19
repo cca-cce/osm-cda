@@ -57,7 +57,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -100,9 +100,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <link rel="stylesheet" href="styles.css">
@@ -350,14 +347,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>code examples <a href="https://spacy.io/usage/spacy-101" target="_blank">spacy</a></li>
 <li>download <a href="pyws03-2-text-analysis.ipynb">jupyter notebook</a></li>
 </ul>
-<div id="de3e66ae" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># run inside google colab</span></span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># run inside google colab</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#!git clone https://github.com/cca-cce/osm-cca-nlp.git</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 <section id="natural-language-processing" class="level2">
 <h2 class="anchored" data-anchor-id="natural-language-processing">natural language processing</h2>
-<div id="5214a001" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> spacy</span>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> spacy</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spacy <span class="im">import</span> displacy</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the spaCy English model</span></span>
@@ -384,182 +378,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Render the named entity recognition visualization in Jupyter Notebook</span></span>
 <span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>displacy.render(doc, style<span class="op">=</span><span class="st">'ent'</span>, jupyter<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Parts of Speech:
-Apple: PROPN (NNP)
-is: AUX (VBZ)
-looking: VERB (VBG)
-at: ADP (IN)
-buying: VERB (VBG)
-U.K.: PROPN (NNP)
-startup: NOUN (NN)
-for: ADP (IN)
-$: SYM ($)
-1: NUM (CD)
-billion: NUM (CD)
-
-Named Entities:
-Apple: ORG
-U.K.: GPE
-$1 billion: MONEY</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<span class="tex2jax_ignore"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" lang="en" id="136f2ce6d0bd4c6d963c32dd16482005-0" class="displacy" width="1975" height="399.5" direction="ltr" style="max-width: none; height: 399.5px; color: #000000; background: #ffffff; font-family: Arial; direction: ltr">
-<text class="displacy-token" fill="currentColor" text-anchor="middle" y="309.5">
-    <tspan class="displacy-word" fill="currentColor" x="50">Apple</tspan>
-    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="50">PROPN</tspan>
-</text>
-
-<text class="displacy-token" fill="currentColor" text-anchor="middle" y="309.5">
-    <tspan class="displacy-word" fill="currentColor" x="225">is</tspan>
-    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="225">AUX</tspan>
-</text>
-
-<text class="displacy-token" fill="currentColor" text-anchor="middle" y="309.5">
-    <tspan class="displacy-word" fill="currentColor" x="400">looking</tspan>
-    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="400">VERB</tspan>
-</text>
-
-<text class="displacy-token" fill="currentColor" text-anchor="middle" y="309.5">
-    <tspan class="displacy-word" fill="currentColor" x="575">at</tspan>
-    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="575">ADP</tspan>
-</text>
-
-<text class="displacy-token" fill="currentColor" text-anchor="middle" y="309.5">
-    <tspan class="displacy-word" fill="currentColor" x="750">buying</tspan>
-    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="750">VERB</tspan>
-</text>
-
-<text class="displacy-token" fill="currentColor" text-anchor="middle" y="309.5">
-    <tspan class="displacy-word" fill="currentColor" x="925">U.K.</tspan>
-    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="925">PROPN</tspan>
-</text>
-
-<text class="displacy-token" fill="currentColor" text-anchor="middle" y="309.5">
-    <tspan class="displacy-word" fill="currentColor" x="1100">startup</tspan>
-    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="1100">NOUN</tspan>
-</text>
-
-<text class="displacy-token" fill="currentColor" text-anchor="middle" y="309.5">
-    <tspan class="displacy-word" fill="currentColor" x="1275">for</tspan>
-    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="1275">ADP</tspan>
-</text>
-
-<text class="displacy-token" fill="currentColor" text-anchor="middle" y="309.5">
-    <tspan class="displacy-word" fill="currentColor" x="1450">$</tspan>
-    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="1450">SYM</tspan>
-</text>
-
-<text class="displacy-token" fill="currentColor" text-anchor="middle" y="309.5">
-    <tspan class="displacy-word" fill="currentColor" x="1625">1</tspan>
-    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="1625">NUM</tspan>
-</text>
-
-<text class="displacy-token" fill="currentColor" text-anchor="middle" y="309.5">
-    <tspan class="displacy-word" fill="currentColor" x="1800">billion</tspan>
-    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="1800">NUM</tspan>
-</text>
-
-<g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-136f2ce6d0bd4c6d963c32dd16482005-0-0" stroke-width="2px" d="M70,264.5 C70,89.5 395.0,89.5 395.0,264.5" fill="none" stroke="currentColor"></path>
-    <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textpath href="#arrow-136f2ce6d0bd4c6d963c32dd16482005-0-0" class="displacy-label" startoffset="50%" side="left" fill="currentColor" text-anchor="middle">nsubj</textpath>
-    </text>
-    <path class="displacy-arrowhead" d="M70,266.5 L62,254.5 78,254.5" fill="currentColor"></path>
-</g>
-
-<g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-136f2ce6d0bd4c6d963c32dd16482005-0-1" stroke-width="2px" d="M245,264.5 C245,177.0 390.0,177.0 390.0,264.5" fill="none" stroke="currentColor"></path>
-    <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textpath href="#arrow-136f2ce6d0bd4c6d963c32dd16482005-0-1" class="displacy-label" startoffset="50%" side="left" fill="currentColor" text-anchor="middle">aux</textpath>
-    </text>
-    <path class="displacy-arrowhead" d="M245,266.5 L237,254.5 253,254.5" fill="currentColor"></path>
-</g>
-
-<g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-136f2ce6d0bd4c6d963c32dd16482005-0-2" stroke-width="2px" d="M420,264.5 C420,177.0 565.0,177.0 565.0,264.5" fill="none" stroke="currentColor"></path>
-    <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textpath href="#arrow-136f2ce6d0bd4c6d963c32dd16482005-0-2" class="displacy-label" startoffset="50%" side="left" fill="currentColor" text-anchor="middle">prep</textpath>
-    </text>
-    <path class="displacy-arrowhead" d="M565.0,266.5 L573.0,254.5 557.0,254.5" fill="currentColor"></path>
-</g>
-
-<g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-136f2ce6d0bd4c6d963c32dd16482005-0-3" stroke-width="2px" d="M595,264.5 C595,177.0 740.0,177.0 740.0,264.5" fill="none" stroke="currentColor"></path>
-    <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textpath href="#arrow-136f2ce6d0bd4c6d963c32dd16482005-0-3" class="displacy-label" startoffset="50%" side="left" fill="currentColor" text-anchor="middle">pcomp</textpath>
-    </text>
-    <path class="displacy-arrowhead" d="M740.0,266.5 L748.0,254.5 732.0,254.5" fill="currentColor"></path>
-</g>
-
-<g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-136f2ce6d0bd4c6d963c32dd16482005-0-4" stroke-width="2px" d="M770,264.5 C770,177.0 915.0,177.0 915.0,264.5" fill="none" stroke="currentColor"></path>
-    <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textpath href="#arrow-136f2ce6d0bd4c6d963c32dd16482005-0-4" class="displacy-label" startoffset="50%" side="left" fill="currentColor" text-anchor="middle">dobj</textpath>
-    </text>
-    <path class="displacy-arrowhead" d="M915.0,266.5 L923.0,254.5 907.0,254.5" fill="currentColor"></path>
-</g>
-
-<g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-136f2ce6d0bd4c6d963c32dd16482005-0-5" stroke-width="2px" d="M420,264.5 C420,89.5 1095.0,89.5 1095.0,264.5" fill="none" stroke="currentColor"></path>
-    <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textpath href="#arrow-136f2ce6d0bd4c6d963c32dd16482005-0-5" class="displacy-label" startoffset="50%" side="left" fill="currentColor" text-anchor="middle">dep</textpath>
-    </text>
-    <path class="displacy-arrowhead" d="M1095.0,266.5 L1103.0,254.5 1087.0,254.5" fill="currentColor"></path>
-</g>
-
-<g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-136f2ce6d0bd4c6d963c32dd16482005-0-6" stroke-width="2px" d="M1120,264.5 C1120,177.0 1265.0,177.0 1265.0,264.5" fill="none" stroke="currentColor"></path>
-    <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textpath href="#arrow-136f2ce6d0bd4c6d963c32dd16482005-0-6" class="displacy-label" startoffset="50%" side="left" fill="currentColor" text-anchor="middle">prep</textpath>
-    </text>
-    <path class="displacy-arrowhead" d="M1265.0,266.5 L1273.0,254.5 1257.0,254.5" fill="currentColor"></path>
-</g>
-
-<g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-136f2ce6d0bd4c6d963c32dd16482005-0-7" stroke-width="2px" d="M1470,264.5 C1470,89.5 1795.0,89.5 1795.0,264.5" fill="none" stroke="currentColor"></path>
-    <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textpath href="#arrow-136f2ce6d0bd4c6d963c32dd16482005-0-7" class="displacy-label" startoffset="50%" side="left" fill="currentColor" text-anchor="middle">quantmod</textpath>
-    </text>
-    <path class="displacy-arrowhead" d="M1470,266.5 L1462,254.5 1478,254.5" fill="currentColor"></path>
-</g>
-
-<g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-136f2ce6d0bd4c6d963c32dd16482005-0-8" stroke-width="2px" d="M1645,264.5 C1645,177.0 1790.0,177.0 1790.0,264.5" fill="none" stroke="currentColor"></path>
-    <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textpath href="#arrow-136f2ce6d0bd4c6d963c32dd16482005-0-8" class="displacy-label" startoffset="50%" side="left" fill="currentColor" text-anchor="middle">compound</textpath>
-    </text>
-    <path class="displacy-arrowhead" d="M1645,266.5 L1637,254.5 1653,254.5" fill="currentColor"></path>
-</g>
-
-<g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-136f2ce6d0bd4c6d963c32dd16482005-0-9" stroke-width="2px" d="M1295,264.5 C1295,2.0 1800.0,2.0 1800.0,264.5" fill="none" stroke="currentColor"></path>
-    <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textpath href="#arrow-136f2ce6d0bd4c6d963c32dd16482005-0-9" class="displacy-label" startoffset="50%" side="left" fill="currentColor" text-anchor="middle">pobj</textpath>
-    </text>
-    <path class="displacy-arrowhead" d="M1800.0,266.5 L1808.0,254.5 1792.0,254.5" fill="currentColor"></path>
-</g>
-</svg></span>
-</div>
-<div class="cell-output cell-output-display">
-<span class="tex2jax_ignore"><div class="entities" style="line-height: 2.5; direction: ltr">
-<mark class="entity" style="background: #7aecec; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    Apple
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">ORG</span>
-</mark>
- is looking at buying 
-<mark class="entity" style="background: #feca74; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    U.K.
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">GPE</span>
-</mark>
- startup for 
-<mark class="entity" style="background: #e4e7d2; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    $1 billion
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">MONEY</span>
-</mark>
-</div></span>
-</div>
-</div>
 <p><strong>Instructions:</strong></p>
 <ul>
 <li><strong>Imports:</strong>
@@ -594,111 +412,83 @@ $1 billion: MONEY</code></pre>
 <section id="import-libraries" class="level3">
 <h3 class="anchored" data-anchor-id="import-libraries">Import Libraries</h3>
 <p><em>In this step, we import the necessary libraries: pandas for data manipulation, spaCy for natural language processing tasks, and os for interacting with the operating system.</em></p>
-<div id="b7dc0f72" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> spacy</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>python <span class="op">-</span>m spacy download en_core_web_sm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: true</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| output: false</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> spacy</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>python <span class="op">-</span>m spacy download en_core_web_sm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <hr>
 </section>
 <section id="load-data-from-tsv-file" class="level3">
 <h3 class="anchored" data-anchor-id="load-data-from-tsv-file">Load Data from TSV File</h3>
 <p><em>We load the DataFrame <code>text_df</code> from a TSV (Tab-Separated Values) file using pandas’ <code>read_csv</code> function with the separator set to tab (<code>\t</code>). The <code>input_file_path</code> variable specifies the path to the input file. Note that two file paths are provided; the second one overwrites the first, so only the last path is used.</em></p>
-<div id="d7a82d1d" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load text_df from the TSV file</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>input_file_path <span class="op">=</span> <span class="st">'/content/osm-cca-nlp/csv/text_data.tsv'</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>input_file_path <span class="op">=</span> <span class="st">'/home/sol-nhl/rnd/d/quarto/osm-cca-nlp/csv/text_data.tsv'</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>text_df <span class="op">=</span> pd.read_csv(input_file_path, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load text_df from the TSV file</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>input_file_path <span class="op">=</span> <span class="st">'/content/osm-cca-nlp/csv/text_data.tsv'</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>input_file_path <span class="op">=</span> <span class="st">'/home/sol-nhl/rnd/d/quarto/osm-cca-nlp/csv/text_data.tsv'</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>text_df <span class="op">=</span> pd.read_csv(input_file_path, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><em>Here, pandas reads the TSV file into a DataFrame, which allows for efficient data manipulation and analysis.</em></p>
 <hr>
 </section>
 <section id="load-the-spacy-model" class="level3">
 <h3 class="anchored" data-anchor-id="load-the-spacy-model">Load the spaCy Model</h3>
 <p><em>We load the spaCy English language model using <code>spacy.load</code>. The model <code>en_core_web_sm</code> is a small English model that includes vocabulary, syntax, entities, and word vectors.</em></p>
-<div id="af5fa827" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the spaCy model (small English model is used here)</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>nlp <span class="op">=</span> spacy.load(<span class="st">"en_core_web_sm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the spaCy model (small English model is used here)</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>nlp <span class="op">=</span> spacy.load(<span class="st">"en_core_web_sm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><em>This model provides the necessary tools for tokenization, part-of-speech tagging, named entity recognition, and sentence segmentation, which are essential for processing and analyzing text data.</em></p>
 <hr>
 </section>
 <section id="initialize-list-to-store-sentence-data" class="level3">
 <h3 class="anchored" data-anchor-id="initialize-list-to-store-sentence-data">Initialize List to Store Sentence Data</h3>
 <p><em>We initialize an empty list <code>sentence_data</code> to store information about each sentence extracted from the texts. This list will be populated with dictionaries containing sentence-level data.</em></p>
-<div id="e5ab206a" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize an empty list to store sentence data</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>sentence_data <span class="op">=</span> []</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize an empty list to store sentence data</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>sentence_data <span class="op">=</span> []</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><em>By using a list, we can dynamically append sentence data as we process each text, which will later be converted into a pandas DataFrame for further analysis.</em></p>
 <hr>
 </section>
 <section id="extract-sentences-using-spacy" class="level3">
 <h3 class="anchored" data-anchor-id="extract-sentences-using-spacy">Extract Sentences Using spaCy</h3>
 <p><em>In this step, we iterate over each row in the <code>text_df</code> DataFrame using <code>iterrows()</code>. For each text, we process the ‘cleaned_text’ column with the spaCy NLP pipeline to obtain a <code>Doc</code> object. We then iterate over the sentences in the <code>Doc</code> using <code>doc.sents</code> and collect the original text ID, sentence number, and the sentence text. Each sentence’s data is appended to the <code>sentence_data</code> list as a dictionary.</em></p>
-<div id="d3fb7773" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Iterate over the cleaned text in the DataFrame</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index, row <span class="kw">in</span> text_df.iterrows():</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    doc <span class="op">=</span> nlp(row[<span class="st">'cleaned_text'</span>])  <span class="co"># Process the cleaned text with spaCy</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Iterate over the sentences in the document</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i, sentence <span class="kw">in</span> <span class="bu">enumerate</span>(doc.sents):</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>        sentence_data.append({</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>            <span class="st">'id'</span>: row[<span class="st">'id'</span>],           <span class="co"># Original text ID</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>            <span class="st">'sentence_number'</span>: i <span class="op">+</span> <span class="dv">1</span>,  <span class="co"># Sentence number (starting from 1)</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>            <span class="st">'sentence_text'</span>: sentence.text.strip()  <span class="co"># Sentence text</span></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>        })</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Iterate over the cleaned text in the DataFrame</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index, row <span class="kw">in</span> text_df.iterrows():</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    doc <span class="op">=</span> nlp(row[<span class="st">'cleaned_text'</span>])  <span class="co"># Process the cleaned text with spaCy</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Iterate over the sentences in the document</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i, sentence <span class="kw">in</span> <span class="bu">enumerate</span>(doc.sents):</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>        sentence_data.append({</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>            <span class="st">'id'</span>: row[<span class="st">'id'</span>],           <span class="co"># Original text ID</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>            <span class="st">'sentence_number'</span>: i <span class="op">+</span> <span class="dv">1</span>,  <span class="co"># Sentence number (starting from 1)</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>            <span class="st">'sentence_text'</span>: sentence.text.strip()  <span class="co"># Sentence text</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>        })</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><em>This process leverages spaCy’s sentence segmentation capabilities, which use linguistic rules and machine learning models to accurately split text into sentences.</em></p>
 <hr>
 </section>
 <section id="create-dataframe-with-sentence-data" class="level3">
 <h3 class="anchored" data-anchor-id="create-dataframe-with-sentence-data">Create DataFrame with Sentence Data</h3>
 <p><em>We create a new pandas DataFrame <code>sentence_df</code> from the <code>sentence_data</code> list. This DataFrame contains all the sentences extracted from the texts along with their corresponding IDs and sentence numbers.</em></p>
-<div id="22c9f294" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new DataFrame with the sentence data</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>sentence_df <span class="op">=</span> pd.DataFrame(sentence_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new DataFrame with the sentence data</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>sentence_df <span class="op">=</span> pd.DataFrame(sentence_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><em>Using pandas allows us to efficiently organize and manipulate the sentence-level data for analysis or storage.</em></p>
 <hr>
 </section>
 <section id="save-sentence-data-to-tsv-file" class="level3">
 <h3 class="anchored" data-anchor-id="save-sentence-data-to-tsv-file">Save Sentence Data to TSV File</h3>
 <p><em>We save the <code>sentence_df</code> DataFrame to a TSV file using the <code>to_csv</code> method, specifying the tab separator (<code>\t</code>) and setting <code>index=False</code> to exclude the DataFrame’s index from the output file. Again, two output file paths are provided, with the second one overwriting the first.</em></p>
-<div id="26031439" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the sentence_df DataFrame as a TSV file</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>output_file_path <span class="op">=</span> <span class="st">'/content/osm-cca-nlp/csv/sentence_data.tsv'</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>output_file_path <span class="op">=</span> <span class="st">'/home/sol-nhl/rnd/d/quarto/osm-cca-nlp/csv/sentence_data.tsv'</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>sentence_df.to_csv(output_file_path, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the sentence_df DataFrame as a TSV file</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>output_file_path <span class="op">=</span> <span class="st">'/content/osm-cca-nlp/csv/sentence_data.tsv'</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>output_file_path <span class="op">=</span> <span class="st">'/home/sol-nhl/rnd/d/quarto/osm-cca-nlp/csv/sentence_data.tsv'</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>sentence_df.to_csv(output_file_path, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><em>This step ensures that the extracted sentence data is saved in a structured format, which can be easily shared or used in subsequent analyses.</em></p>
 <hr>
 </section>
 <section id="display-the-sentence-dataframe" class="level3">
 <h3 class="anchored" data-anchor-id="display-the-sentence-dataframe">Display the Sentence DataFrame</h3>
 <p><em>Finally, we display the <code>sentence_df</code> DataFrame by printing it to the console. This allows us to verify the contents and ensure that the sentence extraction was successful.</em></p>
-<div id="be76e0bd" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the sentence DataFrame</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sentence_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>     id  sentence_number                                      sentence_text
-0     1                1  Page 1\n\nSTRATEGY  \n\n19 September 2019  \n\...
-1     1                2  The\nUniversity works ac-  \ntively to integra...
-2     1                3  1\. Background  \n\nIn a sustainable world, pe...
-3     1                4  This requires that society addresses a number ...
-4     1                5  Such a global vision for sustainable\ndevelopm...
-..   ..              ...                                                ...
-158   2               76  (/article/two-lund-\nresearchers-receive-prest...
-159   2               77  They will receive EUR 2.5 mill...\n\n[ More ne...
-160   2               78                                           [dot] lu
-161   2               79                      [dot] se | 12 Aug 2024 \n\n__
-162   2               80  Back to top\n\n  *[MOOCs]: Massive Open Online...
-
-[163 rows x 3 columns]</code></pre>
-</div>
-</div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the sentence DataFrame</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sentence_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><em>Viewing the DataFrame helps in quick validation of the data processing steps and provides an immediate look at the results of our sentence extraction.</em></p>
 <hr>
 <p><strong>Summary:</strong></p>
@@ -722,126 +512,81 @@ $1 billion: MONEY</code></pre>
 <section id="import-libraries-1" class="level3">
 <h3 class="anchored" data-anchor-id="import-libraries-1">Import Libraries</h3>
 <p><em>In this step, we import the necessary libraries: pandas for data manipulation, spaCy for natural language processing tasks, and os for interacting with the operating system.</em></p>
-<div id="cc9fe04e" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> spacy</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> spacy</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <hr>
 </section>
 <section id="load-sentence-data-from-tsv-file" class="level3">
 <h3 class="anchored" data-anchor-id="load-sentence-data-from-tsv-file">Load Sentence Data from TSV File</h3>
 <p><em>We load the <code>sentence_df</code> DataFrame from a TSV (Tab-Separated Values) file using pandas’ <code>read_csv</code> function with the separator set to tab (<code>\t</code>). The <code>input_file_path</code> variable specifies the path to the input file. Note that the second assignment of <code>input_file_path</code> overwrites the first, so only the last path is used.</em></p>
-<div id="dc6186ae" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load sentence_df from the TSV file</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>input_file_path <span class="op">=</span> <span class="st">'/content/osm-cca-nlp/csv/sentence_data.tsv'</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>input_file_path <span class="op">=</span> <span class="st">'/home/sol-nhl/rnd/d/quarto/osm-cca-nlp/csv/sentence_data.tsv'</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>sentence_df <span class="op">=</span> pd.read_csv(input_file_path, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load sentence_df from the TSV file</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>input_file_path <span class="op">=</span> <span class="st">'/content/osm-cca-nlp/csv/sentence_data.tsv'</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>input_file_path <span class="op">=</span> <span class="st">'/home/sol-nhl/rnd/d/quarto/osm-cca-nlp/csv/sentence_data.tsv'</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>sentence_df <span class="op">=</span> pd.read_csv(input_file_path, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><em>By using pandas, we efficiently read the TSV file into a DataFrame for further processing.</em></p>
 <hr>
 </section>
 <section id="load-the-spacy-model-1" class="level3">
 <h3 class="anchored" data-anchor-id="load-the-spacy-model-1">Load the spaCy Model</h3>
 <p><em>We load the spaCy English language model <code>en_core_web_sm</code> using <code>spacy.load()</code>. This model provides tools for tokenization, part-of-speech tagging, named entity recognition, and more.</em></p>
-<div id="36fa9dce" class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the spaCy model (small English model is used here)</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>nlp <span class="op">=</span> spacy.load(<span class="st">"en_core_web_sm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the spaCy model (small English model is used here)</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>nlp <span class="op">=</span> spacy.load(<span class="st">"en_core_web_sm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><em>The <code>nlp</code> object now contains the language model, which we’ll use to process text data.</em></p>
 <hr>
 </section>
 <section id="initialize-list-to-store-token-data" class="level3">
 <h3 class="anchored" data-anchor-id="initialize-list-to-store-token-data">Initialize List to Store Token Data</h3>
 <p><em>We initialize an empty list <code>token_data</code> to store information about each token extracted from the sentences. This list will accumulate dictionaries containing token-level data.</em></p>
-<div id="01a1466e" class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize an empty list to store token data</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>token_data <span class="op">=</span> []</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize an empty list to store token data</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>token_data <span class="op">=</span> []</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><em>This prepares us to collect detailed linguistic information from each sentence.</em></p>
 <hr>
 </section>
 <section id="extract-tokens-from-sentences-using-spacy" class="level3">
 <h3 class="anchored" data-anchor-id="extract-tokens-from-sentences-using-spacy">Extract Tokens from Sentences Using spaCy</h3>
 <p><em>We iterate over each sentence in <code>sentence_df</code> using <code>iterrows()</code>. For each sentence, we process it with spaCy to obtain a <code>Doc</code> object, which contains the tokens and their linguistic annotations. We then iterate over each token in the <code>Doc</code>, extracting attributes such as the token’s text, lemma, part-of-speech tag, and named entity type. This information is stored in the <code>token_data</code> list as dictionaries.</em></p>
-<div id="05f60d77" class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Iterate over the sentences in the sentence_df DataFrame</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index, row <span class="kw">in</span> sentence_df.iterrows():</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    doc <span class="op">=</span> nlp(row[<span class="st">'sentence_text'</span>])  <span class="co"># Process the sentence text with spaCy</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Iterate over the tokens in the sentence</span></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j, token <span class="kw">in</span> <span class="bu">enumerate</span>(doc):</span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>        token_data.append({</span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>            <span class="st">'id'</span>: row[<span class="st">'id'</span>],                            <span class="co"># Original text ID</span></span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>            <span class="st">'sentence_number'</span>: row[<span class="st">'sentence_number'</span>],  <span class="co"># Sentence number</span></span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>            <span class="st">'token_number'</span>: j <span class="op">+</span> <span class="dv">1</span>,                      <span class="co"># Token number (starting from 1)</span></span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>            <span class="st">'token_text'</span>: token.text,                   <span class="co"># Token text</span></span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>            <span class="st">'token_lemma'</span>: token.lemma_,                <span class="co"># Token lemma</span></span>
-<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>            <span class="st">'token_pos'</span>: token.pos_,                    <span class="co"># Token part of speech</span></span>
-<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>            <span class="st">'token_entity'</span>: token.ent_type_             <span class="co"># Token entity type (if any)</span></span>
-<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>        })</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Iterate over the sentences in the sentence_df DataFrame</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index, row <span class="kw">in</span> sentence_df.iterrows():</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    doc <span class="op">=</span> nlp(row[<span class="st">'sentence_text'</span>])  <span class="co"># Process the sentence text with spaCy</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Iterate over the tokens in the sentence</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j, token <span class="kw">in</span> <span class="bu">enumerate</span>(doc):</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>        token_data.append({</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>            <span class="st">'id'</span>: row[<span class="st">'id'</span>],                            <span class="co"># Original text ID</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>            <span class="st">'sentence_number'</span>: row[<span class="st">'sentence_number'</span>],  <span class="co"># Sentence number</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>            <span class="st">'token_number'</span>: j <span class="op">+</span> <span class="dv">1</span>,                      <span class="co"># Token number (starting from 1)</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>            <span class="st">'token_text'</span>: token.text,                   <span class="co"># Token text</span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>            <span class="st">'token_lemma'</span>: token.lemma_,                <span class="co"># Token lemma</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>            <span class="st">'token_pos'</span>: token.pos_,                    <span class="co"># Token part of speech</span></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>            <span class="st">'token_entity'</span>: token.ent_type_             <span class="co"># Token entity type (if any)</span></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>        })</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><em>This step leverages spaCy’s powerful NLP features to extract and annotate tokens, which is essential for detailed text analysis.</em></p>
 <hr>
 </section>
 <section id="create-a-dataframe-with-token-data" class="level3">
 <h3 class="anchored" data-anchor-id="create-a-dataframe-with-token-data">Create a DataFrame with Token Data</h3>
 <p><em>We convert the <code>token_data</code> list into a pandas DataFrame called <code>token_df</code>. This DataFrame organizes the token-level information in a tabular format, making it easier to analyze and manipulate.</em></p>
-<div id="9dc97ad3" class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new DataFrame with the token data</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>token_df <span class="op">=</span> pd.DataFrame(token_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new DataFrame with the token data</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>token_df <span class="op">=</span> pd.DataFrame(token_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><em>Using pandas allows us to handle large amounts of data efficiently and provides tools for data analysis.</em></p>
 <hr>
 </section>
 <section id="save-token-data-to-tsv-file" class="level3">
 <h3 class="anchored" data-anchor-id="save-token-data-to-tsv-file">Save Token Data to TSV File</h3>
 <p><em>We save the <code>token_df</code> DataFrame to a TSV file using pandas’ <code>to_csv()</code> method. We set the separator to tab (<code>\t</code>) and <code>index=False</code> to exclude the DataFrame’s index from the output file. Similar to before, the second assignment of <code>output_file_path</code> overwrites the first.</em></p>
-<div id="51ae38c4" class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the token_df DataFrame as a TSV file</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>output_file_path <span class="op">=</span> <span class="st">'/content/osm-cca-nlp/csv/token_data.tsv'</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>output_file_path <span class="op">=</span> <span class="st">'/home/sol-nhl/rnd/d/quarto/osm-cca-nlp/csv/token_data.tsv'</span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>token_df.to_csv(output_file_path, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the token_df DataFrame as a TSV file</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>output_file_path <span class="op">=</span> <span class="st">'/content/osm-cca-nlp/csv/token_data.tsv'</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>output_file_path <span class="op">=</span> <span class="st">'/home/sol-nhl/rnd/d/quarto/osm-cca-nlp/csv/token_data.tsv'</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>token_df.to_csv(output_file_path, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><em>This saves our token-level data in a structured format that can be shared or used in future analyses.</em></p>
 <hr>
 </section>
 <section id="display-the-token-dataframe" class="level3">
 <h3 class="anchored" data-anchor-id="display-the-token-dataframe">Display the Token DataFrame</h3>
 <p><em>Finally, we print the <code>token_df</code> DataFrame to display the collected token data. This allows us to verify that the token extraction and annotation processes were successful.</em></p>
-<div id="c7cd1e93" class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the token DataFrame</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(token_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>      id  sentence_number  token_number token_text token_lemma token_pos  \
-0      1                1             1       Page        page      NOUN   
-1      1                1             2          1           1       NUM   
-2      1                1             3       \n\n        \n\n     SPACE   
-3      1                1             4   STRATEGY    STRATEGY     PROPN   
-4      1                1             5       \n\n        \n\n     SPACE   
-...   ..              ...           ...        ...         ...       ...   
-4136   2               80             9          :           :     PUNCT   
-4137   2               80            10    Massive     massive       ADJ   
-4138   2               80            11       Open        Open     PROPN   
-4139   2               80            12     Online      Online     PROPN   
-4140   2               80            13    Courses      course      NOUN   
-
-     token_entity  
-0                  
-1        CARDINAL  
-2                  
-3                  
-4                  
-...           ...  
-4136               
-4137               
-4138               
-4139               
-4140               
-
-[4141 rows x 7 columns]</code></pre>
-</div>
-</div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the token DataFrame</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(token_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><em>Viewing the DataFrame provides immediate feedback on the results of our processing pipeline.</em></p>
 <hr>
 <p><strong>Summary:</strong></p>
@@ -857,177 +602,109 @@ $1 billion: MONEY</code></pre>
 </ul></li>
 </ul>
 <p>This modular approach ensures that each part of the code is focused on a specific task, making it easier to understand and maintain.</p>
-<div id="fd2a4bb8" class="cell" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Load token_df from the TSV file</span></span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>input_file_path <span class="op">=</span> <span class="st">'/content/osm-cca-nlp/csv/token_data.tsv'</span></span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>input_file_path <span class="op">=</span> <span class="st">'/home/sol-nhl/rnd/d/quarto/osm-cca-nlp/csv/token_data.tsv'</span></span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>token_df <span class="op">=</span> pd.read_csv(input_file_path, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>)</span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter the DataFrame to keep only rows where the part of speech is 'NOUN'</span></span>
-<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>noun_df <span class="op">=</span> token_df[token_df[<span class="st">'token_pos'</span>] <span class="op">==</span> <span class="st">'NOUN'</span>]</span>
-<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Group by the lemma and count the occurrences of each lemma</span></span>
-<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>lemma_counts <span class="op">=</span> noun_df[<span class="st">'token_lemma'</span>].value_counts().reset_index()</span>
-<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Rename the columns for clarity</span></span>
-<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>lemma_counts.columns <span class="op">=</span> [<span class="st">'lemma'</span>, <span class="st">'count'</span>]</span>
-<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the 20 most frequent lemmas</span></span>
-<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>top_lemmas <span class="op">=</span> lemma_counts.head(<span class="dv">20</span>)</span>
-<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the 20 most frequent nouns using Seaborn</span></span>
-<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">8</span>))</span>
-<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a>sns.barplot(x<span class="op">=</span><span class="st">'count'</span>, y<span class="op">=</span><span class="st">'lemma'</span>, data<span class="op">=</span>top_lemmas, palette<span class="op">=</span><span class="st">'viridis'</span>)</span>
-<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Top 20 Most Frequent Nouns'</span>)</span>
-<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Count'</span>)</span>
-<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Lemma'</span>)</span>
-<span id="cb22-29"><a href="#cb22-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-30"><a href="#cb22-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the figure to a PNG file</span></span>
-<span id="cb22-31"><a href="#cb22-31" aria-hidden="true" tabindex="-1"></a>output_file_path <span class="op">=</span> <span class="st">'/content/osm-cca-nlp/fig/token_noun.png'</span></span>
-<span id="cb22-32"><a href="#cb22-32" aria-hidden="true" tabindex="-1"></a>output_file_path <span class="op">=</span> <span class="st">'/home/sol-nhl/rnd/d/quarto/osm-cca-nlp/fig/token_noun.png'</span></span>
-<span id="cb22-33"><a href="#cb22-33" aria-hidden="true" tabindex="-1"></a>plt.savefig(output_file_path)</span>
-<span id="cb22-34"><a href="#cb22-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-35"><a href="#cb22-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the plot</span></span>
-<span id="cb22-36"><a href="#cb22-36" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="pyws03-2-text-analysis_files/figure-html/cell-20-output-1.png" width="879" height="671" class="figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Load token_df from the TSV file</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>input_file_path <span class="op">=</span> <span class="st">'/content/osm-cca-nlp/csv/token_data.tsv'</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>input_file_path <span class="op">=</span> <span class="st">'/home/sol-nhl/rnd/d/quarto/osm-cca-nlp/csv/token_data.tsv'</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>token_df <span class="op">=</span> pd.read_csv(input_file_path, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>)</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter the DataFrame to keep only rows where the part of speech is 'NOUN'</span></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>noun_df <span class="op">=</span> token_df[token_df[<span class="st">'token_pos'</span>] <span class="op">==</span> <span class="st">'NOUN'</span>]</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Group by the lemma and count the occurrences of each lemma</span></span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>lemma_counts <span class="op">=</span> noun_df[<span class="st">'token_lemma'</span>].value_counts().reset_index()</span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Rename the columns for clarity</span></span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>lemma_counts.columns <span class="op">=</span> [<span class="st">'lemma'</span>, <span class="st">'count'</span>]</span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the 20 most frequent lemmas</span></span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>top_lemmas <span class="op">=</span> lemma_counts.head(<span class="dv">20</span>)</span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the 20 most frequent nouns using Seaborn</span></span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">8</span>))</span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a>sns.barplot(x<span class="op">=</span><span class="st">'count'</span>, y<span class="op">=</span><span class="st">'lemma'</span>, data<span class="op">=</span>top_lemmas, palette<span class="op">=</span><span class="st">'viridis'</span>)</span>
+<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Top 20 Most Frequent Nouns'</span>)</span>
+<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Count'</span>)</span>
+<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Lemma'</span>)</span>
+<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the figure to a PNG file</span></span>
+<span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a>output_file_path <span class="op">=</span> <span class="st">'/content/osm-cca-nlp/fig/token_noun.png'</span></span>
+<span id="cb19-32"><a href="#cb19-32" aria-hidden="true" tabindex="-1"></a>output_file_path <span class="op">=</span> <span class="st">'/home/sol-nhl/rnd/d/quarto/osm-cca-nlp/fig/token_noun.png'</span></span>
+<span id="cb19-33"><a href="#cb19-33" aria-hidden="true" tabindex="-1"></a>plt.savefig(output_file_path)</span>
+<span id="cb19-34"><a href="#cb19-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-35"><a href="#cb19-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the plot</span></span>
+<span id="cb19-36"><a href="#cb19-36" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 <section id="text-vectorization" class="level2">
 <h2 class="anchored" data-anchor-id="text-vectorization">text vectorization</h2>
-<div id="78c7e33a" class="cell" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> spacy</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load spaCy model.. or en_core_web_sm if you don’t need word embeddings</span></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="co">#nlp = spacy.load("en_core_web_md")</span></span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>nlp <span class="op">=</span> spacy.load(<span class="st">"en_core_web_sm"</span>)</span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> preprocess_text(text):</span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>    doc <span class="op">=</span> nlp(text)</span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>    tokens <span class="op">=</span> []</span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> token <span class="kw">in</span> doc:</span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Remove stopwords, punctuation, and non-alphabetic tokens</span></span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">not</span> token.is_stop <span class="kw">and</span> <span class="kw">not</span> token.is_punct <span class="kw">and</span> token.is_alpha:</span>
-<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>            tokens.append(token.lemma_.lower())  <span class="co"># Append lemmatized form and lowercase</span></span>
-<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> tokens</span>
-<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate news headlines with some words occurring twice in the same headline</span></span>
-<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>headlines <span class="op">=</span> [</span>
-<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Apple launches new iPhone iPhone in September"</span>,</span>
-<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Google announces AI advancements with AI in health sector"</span>,</span>
-<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Tesla's electric cars revolutionize the electric car industry"</span>,</span>
-<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Amazon announces new grocery delivery for grocery stores"</span>,</span>
-<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Netflix announces new series based on new AI-based technology"</span>,</span>
-<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Microsoft launches cloud services and cloud infrastructure"</span>,</span>
-<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Facebook unveils privacy controls with enhanced privacy features"</span>,</span>
-<span id="cb23-25"><a href="#cb23-25" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Pfizer launches vaccine trials for new vaccine prevention"</span>,</span>
-<span id="cb23-26"><a href="#cb23-26" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Nike launches new eco-friendly shoe and shoe design"</span>,</span>
-<span id="cb23-27"><a href="#cb23-27" aria-hidden="true" tabindex="-1"></a>    <span class="st">"BMW announces electric car breakthrough in the electric vehicle market"</span></span>
-<span id="cb23-28"><a href="#cb23-28" aria-hidden="true" tabindex="-1"></a>]</span>
-<span id="cb23-29"><a href="#cb23-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-30"><a href="#cb23-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Preprocess the list of headlines</span></span>
-<span id="cb23-31"><a href="#cb23-31" aria-hidden="true" tabindex="-1"></a>preprocessed_headlines <span class="op">=</span> [<span class="st">" "</span>.join(preprocess_text(headline)) <span class="cf">for</span> headline <span class="kw">in</span> headlines]</span>
-<span id="cb23-32"><a href="#cb23-32" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(preprocessed_headlines)  <span class="co"># Output preprocessed headlines</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>['apple launch new iphone iphone september', 'google announce ai advancement ai health sector', 'tesla electric car revolutionize electric car industry', 'amazon announce new grocery delivery grocery store', 'netflix announce new series base new ai base technology', 'microsoft launch cloud service cloud infrastructure', 'facebook unveil privacy control enhance privacy feature', 'pfizer launch vaccine trial new vaccine prevention', 'nike launch new eco friendly shoe shoe design', 'bmw announce electric car breakthrough electric vehicle market']</code></pre>
-</div>
-</div>
-<div id="c464205c" class="cell" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> gensim <span class="im">import</span> corpora</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> gensim.models <span class="im">import</span> TfidfModel</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Tokenize preprocessed headlines</span></span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>tokenized_headlines <span class="op">=</span> [headline.split() <span class="cf">for</span> headline <span class="kw">in</span> preprocessed_headlines]</span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a dictionary of words</span></span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>dictionary <span class="op">=</span> corpora.Dictionary(tokenized_headlines)</span>
-<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a Bag of Words corpus</span></span>
-<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>bow_corpus <span class="op">=</span> [dictionary.doc2bow(text) <span class="cf">for</span> text <span class="kw">in</span> tokenized_headlines]</span>
-<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Or, alternatively, create a TF-IDF corpus</span></span>
-<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>tfidf <span class="op">=</span> TfidfModel(bow_corpus)</span>
-<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>tfidf_corpus <span class="op">=</span> tfidf[bow_corpus]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="aa7d6799" class="cell" data-execution_count="22">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> gensim <span class="im">import</span> corpora</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> gensim.models <span class="im">import</span> TfidfModel</span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Assuming bow_corpus is already defined and dictionary is available</span></span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="co"># dictionary = corpora.Dictionary(tokenized_headlines)</span></span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a list of terms (vocabulary) from the dictionary</span></span>
-<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>terms <span class="op">=</span> [dictionary[i] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(dictionary))]</span>
-<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a document-term matrix for the Bag of Words (BoW) corpus</span></span>
-<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>bow_doc_term_matrix <span class="op">=</span> pd.DataFrame([[<span class="bu">dict</span>(doc).get(i, <span class="dv">0</span>) <span class="cf">for</span> doc <span class="kw">in</span> bow_corpus] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(dictionary))], index<span class="op">=</span>terms)</span>
-<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the BoW document-term matrix</span></span>
-<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a><span class="co">#tools.display_dataframe_to_user(name="BoW Document-Term Matrix", dataframe=bow_doc_term_matrix)</span></span>
-<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(bow_doc_term_matrix)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>                0  1  2  3  4  5  6  7  8  9
-apple           1  0  0  0  0  0  0  0  0  0
-iphone          2  0  0  0  0  0  0  0  0  0
-launch          1  0  0  0  0  1  0  1  1  0
-new             1  0  0  1  2  0  0  1  1  0
-september       1  0  0  0  0  0  0  0  0  0
-advancement     0  1  0  0  0  0  0  0  0  0
-ai              0  2  0  0  1  0  0  0  0  0
-announce        0  1  0  1  1  0  0  0  0  1
-google          0  1  0  0  0  0  0  0  0  0
-health          0  1  0  0  0  0  0  0  0  0
-sector          0  1  0  0  0  0  0  0  0  0
-car             0  0  2  0  0  0  0  0  0  1
-electric        0  0  2  0  0  0  0  0  0  2
-industry        0  0  1  0  0  0  0  0  0  0
-revolutionize   0  0  1  0  0  0  0  0  0  0
-tesla           0  0  1  0  0  0  0  0  0  0
-amazon          0  0  0  1  0  0  0  0  0  0
-delivery        0  0  0  1  0  0  0  0  0  0
-grocery         0  0  0  2  0  0  0  0  0  0
-store           0  0  0  1  0  0  0  0  0  0
-base            0  0  0  0  2  0  0  0  0  0
-netflix         0  0  0  0  1  0  0  0  0  0
-series          0  0  0  0  1  0  0  0  0  0
-technology      0  0  0  0  1  0  0  0  0  0
-cloud           0  0  0  0  0  2  0  0  0  0
-infrastructure  0  0  0  0  0  1  0  0  0  0
-microsoft       0  0  0  0  0  1  0  0  0  0
-service         0  0  0  0  0  1  0  0  0  0
-control         0  0  0  0  0  0  1  0  0  0
-enhance         0  0  0  0  0  0  1  0  0  0
-facebook        0  0  0  0  0  0  1  0  0  0
-feature         0  0  0  0  0  0  1  0  0  0
-privacy         0  0  0  0  0  0  2  0  0  0
-unveil          0  0  0  0  0  0  1  0  0  0
-pfizer          0  0  0  0  0  0  0  1  0  0
-prevention      0  0  0  0  0  0  0  1  0  0
-trial           0  0  0  0  0  0  0  1  0  0
-vaccine         0  0  0  0  0  0  0  2  0  0
-design          0  0  0  0  0  0  0  0  1  0
-eco             0  0  0  0  0  0  0  0  1  0
-friendly        0  0  0  0  0  0  0  0  1  0
-nike            0  0  0  0  0  0  0  0  1  0
-shoe            0  0  0  0  0  0  0  0  2  0
-bmw             0  0  0  0  0  0  0  0  0  1
-breakthrough    0  0  0  0  0  0  0  0  0  1
-market          0  0  0  0  0  0  0  0  0  1
-vehicle         0  0  0  0  0  0  0  0  0  1</code></pre>
-</div>
-</div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> spacy</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load spaCy model.. or en_core_web_sm if you don’t need word embeddings</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co">#nlp = spacy.load("en_core_web_md")</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>nlp <span class="op">=</span> spacy.load(<span class="st">"en_core_web_sm"</span>)</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> preprocess_text(text):</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>    doc <span class="op">=</span> nlp(text)</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>    tokens <span class="op">=</span> []</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> token <span class="kw">in</span> doc:</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Remove stopwords, punctuation, and non-alphabetic tokens</span></span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">not</span> token.is_stop <span class="kw">and</span> <span class="kw">not</span> token.is_punct <span class="kw">and</span> token.is_alpha:</span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>            tokens.append(token.lemma_.lower())  <span class="co"># Append lemmatized form and lowercase</span></span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> tokens</span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate news headlines with some words occurring twice in the same headline</span></span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>headlines <span class="op">=</span> [</span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Apple launches new iPhone iPhone in September"</span>,</span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Google announces AI advancements with AI in health sector"</span>,</span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Tesla's electric cars revolutionize the electric car industry"</span>,</span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Amazon announces new grocery delivery for grocery stores"</span>,</span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Netflix announces new series based on new AI-based technology"</span>,</span>
+<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Microsoft launches cloud services and cloud infrastructure"</span>,</span>
+<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Facebook unveils privacy controls with enhanced privacy features"</span>,</span>
+<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Pfizer launches vaccine trials for new vaccine prevention"</span>,</span>
+<span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Nike launches new eco-friendly shoe and shoe design"</span>,</span>
+<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a>    <span class="st">"BMW announces electric car breakthrough in the electric vehicle market"</span></span>
+<span id="cb20-28"><a href="#cb20-28" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb20-29"><a href="#cb20-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-30"><a href="#cb20-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Preprocess the list of headlines</span></span>
+<span id="cb20-31"><a href="#cb20-31" aria-hidden="true" tabindex="-1"></a>preprocessed_headlines <span class="op">=</span> [<span class="st">" "</span>.join(preprocess_text(headline)) <span class="cf">for</span> headline <span class="kw">in</span> headlines]</span>
+<span id="cb20-32"><a href="#cb20-32" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(preprocessed_headlines)  <span class="co"># Output preprocessed headlines</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> gensim <span class="im">import</span> corpora</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> gensim.models <span class="im">import</span> TfidfModel</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Tokenize preprocessed headlines</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>tokenized_headlines <span class="op">=</span> [headline.split() <span class="cf">for</span> headline <span class="kw">in</span> preprocessed_headlines]</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a dictionary of words</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>dictionary <span class="op">=</span> corpora.Dictionary(tokenized_headlines)</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a Bag of Words corpus</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>bow_corpus <span class="op">=</span> [dictionary.doc2bow(text) <span class="cf">for</span> text <span class="kw">in</span> tokenized_headlines]</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Or, alternatively, create a TF-IDF corpus</span></span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>tfidf <span class="op">=</span> TfidfModel(bow_corpus)</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>tfidf_corpus <span class="op">=</span> tfidf[bow_corpus]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> gensim <span class="im">import</span> corpora</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> gensim.models <span class="im">import</span> TfidfModel</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Assuming bow_corpus is already defined and dictionary is available</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="co"># dictionary = corpora.Dictionary(tokenized_headlines)</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a list of terms (vocabulary) from the dictionary</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>terms <span class="op">=</span> [dictionary[i] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(dictionary))]</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a document-term matrix for the Bag of Words (BoW) corpus</span></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>bow_doc_term_matrix <span class="op">=</span> pd.DataFrame([[<span class="bu">dict</span>(doc).get(i, <span class="dv">0</span>) <span class="cf">for</span> doc <span class="kw">in</span> bow_corpus] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(dictionary))], index<span class="op">=</span>terms)</span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the BoW document-term matrix</span></span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a><span class="co">#tools.display_dataframe_to_user(name="BoW Document-Term Matrix", dataframe=bow_doc_term_matrix)</span></span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(bow_doc_term_matrix)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>

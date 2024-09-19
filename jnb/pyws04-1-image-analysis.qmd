@@ -1,4 +1,466 @@
 ---
+execute:
+  eval: true
+  echo: true
+  output: true
 title: "reading image content"
 ---
+
+- code examples [pil, pillow](https://pillow.readthedocs.io/en/stable/handbook/index.html){target="_blank"}
+- code examples [opencv](https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html){target="_blank"}
+- download [jupyter notebook](pyws04-1-image-analysis.ipynb){target="_blank"}
+
+```{python}
+# run inside google colab
+#!git clone https://github.com/cca-cce/osm-cca-cv.git
+```
+
+## create images
+
+![some alt](https://raw.githubusercontent.com/nils-holmberg/cca-cv/main/web/isk/rgb-pixel-image-01.jpg)
+
+### Import Libraries
+
+*We start by importing the necessary libraries for numerical computations, image processing, and plotting. `numpy` is used for handling numerical arrays, `cv2` from OpenCV is used for image processing, and `seaborn` and `matplotlib.pyplot` are used for data visualization and plotting images.*
+
+```{python}
+import numpy as np
+import cv2
+import seaborn as sns
+import matplotlib.pyplot as plt
+```
+
+---
+
+### Create an Empty (Black) Image
+
+*We create an empty image of size 256x256 pixels with 3 color channels (BGR). The image is initialized with zeros, resulting in a black image. The `dtype=np.uint8` ensures that the pixel values are in the 0-255 range, suitable for image data.*
+
+```{python}
+# Create an empty (black) 256x256 image
+empty_image = np.zeros((256, 256, 3), dtype=np.uint8)
+```
+
+---
+
+### Display the Empty Image
+
+*Using seaborn for styling and matplotlib for plotting, we display the empty (black) image. Since OpenCV uses BGR color format by default and matplotlib expects RGB, we convert the image using `cv2.cvtColor`. The axes are turned off for a cleaner display.*
+
+```{python}
+# Display the image using seaborn
+sns.set()  # For a nicer plot style
+plt.imshow(cv2.cvtColor(empty_image, cv2.COLOR_BGR2RGB))  # Convert BGR to RGB for correct color representation
+plt.axis('off')  # Hide axis
+plt.show()
+```
+
+---
+
+### Define a Function to Create Images with Specific RGB Values
+
+*We define a function `create_rgb_image` that generates a 256x256 image filled with specified red, green, and blue values. The function creates an empty image and assigns the provided color values to the respective channels.*
+
+```{python}
+# Function to create an image with specified RGB values
+def create_rgb_image(red, green, blue):
+    image = np.zeros((256, 256, 3), dtype=np.uint8)
+    image[:, :, 0] = red    # Red channel
+    image[:, :, 1] = green  # Green channel
+    image[:, :, 2] = blue   # Blue channel
+    return image
+```
+
+---
+
+### Create Images for Various Color Combinations
+
+*We define a list of RGB combinations representing common colors such as black, red, green, blue, yellow, magenta, cyan, and white. Using a list comprehension, we create images for each of these color combinations by calling the `create_rgb_image` function.*
+
+```{python}
+# Creating images for each combination
+combinations = [
+    (0, 0, 0),     # Black
+    (255, 0, 0),   # Red
+    (0, 255, 0),   # Green
+    (0, 0, 255),   # Blue
+    (255, 255, 0), # Yellow
+    (255, 0, 255), # Magenta
+    (0, 255, 255), # Cyan
+    (255, 255, 255)# White
+]
+
+images = [create_rgb_image(*combo) for combo in combinations]
+```
+
+---
+
+### Display the Color Images in a Grid
+
+*We set the seaborn style and create a figure for plotting. Using matplotlib's subplot functionality, we display each color image in a grid layout. The RGB values of each image are displayed as the title. The axes are hidden for clarity, and `plt.tight_layout()` adjusts the spacing between subplots.*
+
+```{python}
+# Plotting
+sns.set()  # For a nicer plot style
+plt.figure(figsize=(12, 6))
+
+for i, img in enumerate(images):
+    plt.subplot(2, 4, i + 1)
+    plt.imshow(img)
+    plt.axis('off')
+    plt.title(f'R:{combinations[i][0]} G:{combinations[i][1]} B:{combinations[i][2]}')
+
+plt.tight_layout()
+plt.show()
+```
+
+---
+
+**Summary:**
+
+- **First**, we imported necessary libraries for numerical operations, image processing, and plotting.
+- **Second**, we created and displayed an empty (black) image.
+- **Third**, we defined a function to create images with specific RGB values.
+- **Fourth**, we generated images for different color combinations.
+- **Finally**, we displayed all the generated images in a grid format with their RGB values.
+
+This code demonstrates how to manipulate image data at the pixel level using NumPy arrays and how to visualize the results using Matplotlib and Seaborn.
+
+## display images
+
+- example [sustainability communication](https://www.lunduniversity.lu.se/about-university/university-glance/mission-vision-and-values/sustainability){target="_blank"}
+
+### Import Libraries and Load Image Using OpenCV
+
+*In this step, we import the necessary libraries for image processing and display. We use OpenCV (`cv2`) for image operations and `cv2_imshow` from `google.colab.patches` to display images within Google Colab notebooks. We then attempt to load an image from a specified file path using `cv2.imread()`.*
+
+```{python}
+import cv2
+from google.colab.patches import cv2_imshow
+
+# Load an image from file
+image_path = '/content/osm-cca-cv/res/img/image_prefix-000.png'
+image = cv2.imread(image_path)
+```
+
+---
+
+### Check if the Image Was Successfully Loaded and Display It
+
+*Here, we check whether the image was successfully loaded by verifying that `image` is not `None`. If the image is loaded, we display it using `cv2_imshow()`, which is a function provided by Google Colab to display images in the notebook environment. If the image is not loaded, an error message is printed to inform the user.*
+
+```{python}
+# Check if the image was successfully loaded
+if image is not None:
+    # Display the image
+    cv2_imshow(image)
+else:
+    print("Error: Unable to load image.")
+```
+
+---
+
+### Import Additional Libraries for Plotting
+
+*We import additional libraries required for plotting and enhancing the image visualization. OpenCV (`cv2`) is re-imported for consistency, Matplotlib's `pyplot` module (`plt`) is used for plotting images, and Seaborn (`sns`) is used to improve the aesthetics of the plots.*
+
+```{python}
+import cv2
+import matplotlib.pyplot as plt
+import seaborn as sns
+```
+
+---
+
+### Read the Image and Convert Color Scheme from BGR to RGB
+
+*We read the image again using OpenCV's `cv2.imread()` function. OpenCV reads images in BGR (Blue, Green, Red) color format by default, which can cause colors to appear incorrectly when displayed using Matplotlib (which expects RGB format). To correct this, we convert the image from BGR to RGB using `cv2.cvtColor()`.*
+
+```{python}
+# Read the image using OpenCV
+image_path = '/content/osm-cca-cv/res/img/image_prefix-000.png'  # Replace with your image path
+image = cv2.imread(image_path)
+
+# Convert the color scheme from BGR to RGB
+image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+```
+
+---
+
+### Apply Seaborn Styles and Display the Image Using Matplotlib
+
+*We apply Seaborn's default styling using `sns.set()` to enhance the plot's aesthetics. Then, we display the image using Matplotlib's `plt.imshow()`, which renders the image data in the notebook. We hide the axes using `plt.axis('off')` for a cleaner look and finally call `plt.show()` to display the image.*
+
+```{python}
+# Use Seaborn to improve plot aesthetics
+sns.set()  # Apply Seaborn styles
+
+# Display the image
+plt.imshow(image_rgb)
+plt.axis('off')  # Hide the axis
+plt.show()
+```
+
+---
+
+**Summary:**
+
+- **First**, we imported the necessary libraries for image processing and display, and loaded an image using OpenCV.
+- **Second**, we checked if the image was successfully loaded and displayed it using `cv2_imshow()` in Google Colab.
+- **Third**, we imported additional libraries for plotting and visualization.
+- **Fourth**, we read the image again and converted its color space from BGR to RGB to ensure correct color representation in Matplotlib.
+- **Finally**, we applied Seaborn styles for better aesthetics and displayed the image using Matplotlib, hiding the axes for a cleaner presentation.
+
+This code demonstrates how to read and display images using OpenCV and Matplotlib in a Jupyter or Google Colab notebook, addressing color space differences between libraries and enhancing the visualization with Seaborn styles.
+
+## describe images
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 206}
+import os
+import cv2
+import pandas as pd
+
+# Path to the directory containing images
+directory = '/content/osm-cca-cv/res/img'  # Replace with your directory path
+
+# Initialize a list to store image data
+image_data = []
+
+# Iterate through each file in the directory
+for filename in os.listdir(directory):
+    if filename.lower().endswith(('.png', '.jpg', '.jpeg')):  # Add other image formats if needed
+        # Read the image
+        img_path = os.path.join(directory, filename)
+        img = cv2.imread(img_path)
+
+        # Extract image dimensions and channels
+        height, width, channels = img.shape
+
+        # Append the data to the list
+        image_data.append({'Filename': filename, 'Width': width, 'Height': height, 'Channels': channels})
+
+# Create a DataFrame from the image data
+image_df = pd.DataFrame(image_data)
+
+# Display the DataFrame
+image_df.head()
+```
+
+## manipulate images
+
+```{python}
+from PIL import Image
+import numpy as np
+import matplotlib.pyplot as plt
+import requests
+from io import BytesIO
+
+# Step 1: Load a sample RGB image
+# You can use any image URL or local image file. Here, we'll use an image from the web.
+image_url = 'https://raw.githubusercontent.com/cca-cce/osm-cca-cv/0a62207580cf63bc808ec825669af8d6f2eedf16/res/img/image_prefix-000.png'
+response = requests.get(image_url)
+image = Image.open(BytesIO(response.content))
+
+# Ensure the image is in RGB mode
+image = image.convert('RGB')
+
+# Optionally resize the image for easier processing
+image = image.resize((200, 200))
+
+# Step 2: Convert the image to a NumPy array
+image_np = np.array(image)
+
+# Step 3: Manipulate the bottom right quarter to increase green colors
+height, width, _ = image_np.shape
+start_x = width // 2
+start_y = height // 2
+
+# Increase the green channel by 100 (ensure values stay within 0-255)
+image_np[start_y:, start_x:, 1] = np.clip(image_np[start_y:, start_x:, 1] + 100, 0, 255)
+
+# Step 4: Convert the NumPy array back to a PIL Image
+modified_image = Image.fromarray(image_np.astype('uint8'), 'RGB')
+
+# Step 5: Display the image in a Google Colab notebook
+plt.imshow(modified_image)
+plt.axis('off')
+plt.show()
+```
+
+**Explanation:**
+
+- **Loading the Image:** We load a sample image from a URL using the `requests` library and `Image.open`. The image is converted to RGB mode to ensure it has three color channels.
+  
+- **Converting to NumPy Array:** The image is converted to a NumPy array to allow pixel-level manipulation.
+  
+- **Manipulating the Image:**
+  - We calculate the starting indices for the bottom right quarter.
+  - We increase the green color channel (`image_np[..., 1]`) by 100 in the bottom right quarter.
+  - `np.clip` ensures that the pixel values stay within the valid range of 0 to 255.
+  
+- **Displaying the Image:** The modified image is displayed using `matplotlib.pyplot` in the Google Colab notebook.
+
+**Note:** This code should be run in a Google Colab notebook to display the image inline. If you're not using Colab, ensure that your environment supports image display in notebooks.
+
+**Dependencies:**
+
+- Make sure to install the required libraries if they are not already installed:
+
+  ```bash
+  !pip install Pillow numpy matplotlib requests
+  ```
+
+**Sample Output:**
+
+The code will display the original image with the bottom right quarter appearing greener due to the increased green color channel.
+
+## image features
+
+### Import Libraries and Read the Image
+
+*In this step, we import the required libraries for image processing and visualization: OpenCV (`cv2`) for image operations, NumPy (`np`) for numerical computations, Matplotlib's `pyplot` module (`plt`) for plotting, and Seaborn (`sns`) for enhancing plot aesthetics. We then read the image from the specified path using `cv2.imread()`. The image is loaded into a NumPy array in BGR (Blue, Green, Red) format.*
+
+```{python}
+"""# image features"""
+
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Read the image
+image = cv2.imread('/content/osm-cca-cv/res/img/image_prefix-000.png')
+```
+
+---
+
+### Calculate and Normalize Color Histograms
+
+*Here, we calculate the color histograms for each of the three color channels (Blue, Green, Red) using OpenCV's `calcHist()` function. This function computes the frequency of each pixel intensity value (ranging from 0 to 255) for the specified channel. We then normalize each histogram by dividing it by its total sum to obtain a probability distribution, which allows for comparison between histograms regardless of the image size.*
+
+```{python}
+# Calculate color histograms for each channel
+hist_r = cv2.calcHist([image], [0], None, [256], [0, 256])
+hist_g = cv2.calcHist([image], [1], None, [256], [0, 256])
+hist_b = cv2.calcHist([image], [2], None, [256], [0, 256])
+
+# Normalize histograms
+hist_r /= hist_r.sum()
+hist_g /= hist_g.sum()
+hist_b /= hist_b.sum()
+```
+
+---
+
+### Plot the Original Image and Color Histograms
+
+*We set up a figure with two subplots using Matplotlib's `subplots()` function. The first subplot displays the original image, converting it from BGR to RGB color space using `cv2.cvtColor()` for correct color representation in Matplotlib. The second subplot displays the normalized color histograms for each channel using Seaborn's `lineplot()`. We customize the plot with titles, labels, and a legend, and finally display the plots using `plt.show()`.*
+
+```{python}
+# Create subplots for the original image and histograms
+fig, axes = plt.subplots(1, 2, figsize=(12, 4))
+
+# Plot the original image
+axes[0].imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
+axes[0].set_title('Original Image')
+axes[0].axis('off')
+
+# Plot the color histograms using Seaborn
+sns.lineplot(x=np.arange(256), y=hist_r.squeeze(), color='red', ax=axes[1], label='Red')
+sns.lineplot(x=np.arange(256), y=hist_g.squeeze(), color='green', ax=axes[1], label='Green')
+sns.lineplot(x=np.arange(256), y=hist_b.squeeze(), color='blue', ax=axes[1], label='Blue')
+axes[1].set_title('Color Histograms')
+axes[1].set_xlabel('Pixel Value')
+axes[1].set_ylabel('Frequency')
+axes[1].legend()
+
+# Show the plots
+plt.tight_layout()
+plt.show()
+```
+
+---
+
+### Import Libraries and Read the Image in Grayscale
+
+*We import the necessary libraries for edge detection: OpenCV (`cv2`) for image processing, NumPy (`np`) for numerical computations, and `cv2_imshow` from `google.colab.patches` to display images in Google Colab notebooks. We then read the image in grayscale mode using `cv2.imread()` with the `cv2.IMREAD_GRAYSCALE` flag, which simplifies the image data for edge detection algorithms.*
+
+```{python}
+import cv2
+import numpy as np
+from google.colab.patches import cv2_imshow
+
+# Read the image
+image = cv2.imread('/content/osm-cca-cv/res/img/image_prefix-000.png', cv2.IMREAD_GRAYSCALE)
+```
+
+---
+
+### Define and Apply Edge Detection Methods
+
+*We define a list called `edge_detection_settings` that contains tuples of edge detection method names and their corresponding results. We apply different edge detection algorithms provided by OpenCV: Canny, Sobel X, and Sobel Y. The Canny edge detector is applied with threshold values of 50 and 150. The Sobel operators are applied to detect edges in the X and Y directions, respectively.*
+
+```{python}
+# Define edge detection settings
+edge_detection_settings = [
+    ('Canny', cv2.Canny(image, 50, 150)),
+    # ('Laplacian', cv2.Laplacian(image, cv2.CV_64F)),
+    ('Sobel_X', cv2.Sobel(image, cv2.CV_64F, 1, 0, ksize=5)),
+    ('Sobel_Y', cv2.Sobel(image, cv2.CV_64F, 0, 1, ksize=5))
+]
+```
+
+---
+
+### Process and Display Edge Detection Results
+
+*We loop through each edge detection result in `edge_detection_settings`. For each method, we perform the following steps:*
+
+- *Convert the edge image to a binary image where edge pixels are set to 255 (white) and non-edge pixels to 0 (black) using NumPy's `where()` function.*
+- *Count the number of white edge pixels using OpenCV's `countNonZero()` function.*
+- *Concatenate the original grayscale image and the binary edge image horizontally using NumPy's `hstack()` function for side-by-side comparison.*
+- *Display the concatenated image using `cv2_imshow()` in Google Colab.*
+- *Print the name of the edge detection algorithm and the number of white edge pixels.*
+- *Save the concatenated image to a file with a filename that includes the edge detection method's name.*
+
+```{python}
+# Iterate through edge detection settings
+for setting_name, edges in edge_detection_settings:
+    # Convert the edges to binary (keeping them in 0-255 range)
+    edges_binary = np.where(edges > 0, 255, 0).astype(np.uint8)
+
+    # Count the number of white edge pixels
+    white_pixel_count = cv2.countNonZero(edges_binary)
+
+    # Concatenate the original image and binary edge image horizontally
+    concatenated_image = np.hstack((image, edges_binary))
+
+    # Display the concatenated image using cv2_imshow
+    print(f'Edge Detection Algorithm: {setting_name}')
+    cv2_imshow(concatenated_image)
+    print(f'Number of white edge pixels: {white_pixel_count}\n')
+
+    # Save the concatenated image with the specified filename prefix
+    filename = f'edges_{setting_name}.jpg'
+    cv2.imwrite(filename, concatenated_image)
+
+    print(f'Saved as {filename}\n')
+```
+
+---
+
+**Summary:**
+
+- **First**, we imported the necessary libraries and read the image for color histogram analysis.
+- **Second**, we calculated and normalized the color histograms for the red, green, and blue channels.
+- **Third**, we plotted the original image alongside its color histograms using Matplotlib and Seaborn.
+- **Fourth**, we imported additional libraries for edge detection and read the image in grayscale mode.
+- **Fifth**, we defined various edge detection methods and applied them to the image.
+- **Finally**, we processed each edge detection result by converting edges to binary images, counting edge pixels, displaying the results, and saving the concatenated images.
+
+This code demonstrates how to perform basic image analysis tasks, such as calculating color histograms and performing edge detection, using OpenCV. It also shows how to visualize the results effectively using Matplotlib and Seaborn, ensuring that all code is kept intact and executable without breaking any loops or structures.
+
+
+
 

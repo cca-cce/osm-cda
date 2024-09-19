@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -259,7 +293,34 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#open-computer-vision" id="toc-open-computer-vision" class="nav-link active" data-scroll-target="#open-computer-vision">open computer vision</a></li>
+  <li><a href="#create-images" id="toc-create-images" class="nav-link active" data-scroll-target="#create-images">create images</a>
+  <ul class="collapse">
+  <li><a href="#import-libraries" id="toc-import-libraries" class="nav-link" data-scroll-target="#import-libraries">Import Libraries</a></li>
+  <li><a href="#create-an-empty-black-image" id="toc-create-an-empty-black-image" class="nav-link" data-scroll-target="#create-an-empty-black-image">Create an Empty (Black) Image</a></li>
+  <li><a href="#display-the-empty-image" id="toc-display-the-empty-image" class="nav-link" data-scroll-target="#display-the-empty-image">Display the Empty Image</a></li>
+  <li><a href="#define-a-function-to-create-images-with-specific-rgb-values" id="toc-define-a-function-to-create-images-with-specific-rgb-values" class="nav-link" data-scroll-target="#define-a-function-to-create-images-with-specific-rgb-values">Define a Function to Create Images with Specific RGB Values</a></li>
+  <li><a href="#create-images-for-various-color-combinations" id="toc-create-images-for-various-color-combinations" class="nav-link" data-scroll-target="#create-images-for-various-color-combinations">Create Images for Various Color Combinations</a></li>
+  <li><a href="#display-the-color-images-in-a-grid" id="toc-display-the-color-images-in-a-grid" class="nav-link" data-scroll-target="#display-the-color-images-in-a-grid">Display the Color Images in a Grid</a></li>
+  </ul></li>
+  <li><a href="#display-images" id="toc-display-images" class="nav-link" data-scroll-target="#display-images">display images</a>
+  <ul class="collapse">
+  <li><a href="#import-libraries-and-load-image-using-opencv" id="toc-import-libraries-and-load-image-using-opencv" class="nav-link" data-scroll-target="#import-libraries-and-load-image-using-opencv">Import Libraries and Load Image Using OpenCV</a></li>
+  <li><a href="#check-if-the-image-was-successfully-loaded-and-display-it" id="toc-check-if-the-image-was-successfully-loaded-and-display-it" class="nav-link" data-scroll-target="#check-if-the-image-was-successfully-loaded-and-display-it">Check if the Image Was Successfully Loaded and Display It</a></li>
+  <li><a href="#import-additional-libraries-for-plotting" id="toc-import-additional-libraries-for-plotting" class="nav-link" data-scroll-target="#import-additional-libraries-for-plotting">Import Additional Libraries for Plotting</a></li>
+  <li><a href="#read-the-image-and-convert-color-scheme-from-bgr-to-rgb" id="toc-read-the-image-and-convert-color-scheme-from-bgr-to-rgb" class="nav-link" data-scroll-target="#read-the-image-and-convert-color-scheme-from-bgr-to-rgb">Read the Image and Convert Color Scheme from BGR to RGB</a></li>
+  <li><a href="#apply-seaborn-styles-and-display-the-image-using-matplotlib" id="toc-apply-seaborn-styles-and-display-the-image-using-matplotlib" class="nav-link" data-scroll-target="#apply-seaborn-styles-and-display-the-image-using-matplotlib">Apply Seaborn Styles and Display the Image Using Matplotlib</a></li>
+  </ul></li>
+  <li><a href="#describe-images" id="toc-describe-images" class="nav-link" data-scroll-target="#describe-images">describe images</a></li>
+  <li><a href="#manipulate-images" id="toc-manipulate-images" class="nav-link" data-scroll-target="#manipulate-images">manipulate images</a></li>
+  <li><a href="#image-features" id="toc-image-features" class="nav-link" data-scroll-target="#image-features">image features</a>
+  <ul class="collapse">
+  <li><a href="#import-libraries-and-read-the-image" id="toc-import-libraries-and-read-the-image" class="nav-link" data-scroll-target="#import-libraries-and-read-the-image">Import Libraries and Read the Image</a></li>
+  <li><a href="#calculate-and-normalize-color-histograms" id="toc-calculate-and-normalize-color-histograms" class="nav-link" data-scroll-target="#calculate-and-normalize-color-histograms">Calculate and Normalize Color Histograms</a></li>
+  <li><a href="#plot-the-original-image-and-color-histograms" id="toc-plot-the-original-image-and-color-histograms" class="nav-link" data-scroll-target="#plot-the-original-image-and-color-histograms">Plot the Original Image and Color Histograms</a></li>
+  <li><a href="#import-libraries-and-read-the-image-in-grayscale" id="toc-import-libraries-and-read-the-image-in-grayscale" class="nav-link" data-scroll-target="#import-libraries-and-read-the-image-in-grayscale">Import Libraries and Read the Image in Grayscale</a></li>
+  <li><a href="#define-and-apply-edge-detection-methods" id="toc-define-and-apply-edge-detection-methods" class="nav-link" data-scroll-target="#define-and-apply-edge-detection-methods">Define and Apply Edge Detection Methods</a></li>
+  <li><a href="#process-and-display-edge-detection-results" id="toc-process-and-display-edge-detection-results" class="nav-link" data-scroll-target="#process-and-display-edge-detection-results">Process and Display Edge Detection Results</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -290,10 +351,382 @@ ul.task-list li input[type="checkbox"] {
 <li>code examples <a href="https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html" target="_blank">opencv</a></li>
 <li>download <a href="pyws04-1-image-analysis.ipynb" target="_blank">jupyter notebook</a></li>
 </ul>
-<section id="open-computer-vision" class="level2">
-<h2 class="anchored" data-anchor-id="open-computer-vision">open computer vision</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># run inside google colab</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#!git clone https://github.com/cca-cce/osm-cca-cv.git</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="create-images" class="level2">
+<h2 class="anchored" data-anchor-id="create-images">create images</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://raw.githubusercontent.com/nils-holmberg/cca-cv/main/web/isk/rgb-pixel-image-01.jpg" class="img-fluid figure-img"></p>
+<figcaption>some alt</figcaption>
+</figure>
+</div>
+<section id="import-libraries" class="level3">
+<h3 class="anchored" data-anchor-id="import-libraries">Import Libraries</h3>
+<p><em>We start by importing the necessary libraries for numerical computations, image processing, and plotting. <code>numpy</code> is used for handling numerical arrays, <code>cv2</code> from OpenCV is used for image processing, and <code>seaborn</code> and <code>matplotlib.pyplot</code> are used for data visualization and plotting images.</em></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cv2</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="create-an-empty-black-image" class="level3">
+<h3 class="anchored" data-anchor-id="create-an-empty-black-image">Create an Empty (Black) Image</h3>
+<p><em>We create an empty image of size 256x256 pixels with 3 color channels (BGR). The image is initialized with zeros, resulting in a black image. The <code>dtype=np.uint8</code> ensures that the pixel values are in the 0-255 range, suitable for image data.</em></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an empty (black) 256x256 image</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>empty_image <span class="op">=</span> np.zeros((<span class="dv">256</span>, <span class="dv">256</span>, <span class="dv">3</span>), dtype<span class="op">=</span>np.uint8)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="display-the-empty-image" class="level3">
+<h3 class="anchored" data-anchor-id="display-the-empty-image">Display the Empty Image</h3>
+<p><em>Using seaborn for styling and matplotlib for plotting, we display the empty (black) image. Since OpenCV uses BGR color format by default and matplotlib expects RGB, we convert the image using <code>cv2.cvtColor</code>. The axes are turned off for a cleaner display.</em></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the image using seaborn</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>sns.<span class="bu">set</span>()  <span class="co"># For a nicer plot style</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>plt.imshow(cv2.cvtColor(empty_image, cv2.COLOR_BGR2RGB))  <span class="co"># Convert BGR to RGB for correct color representation</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">'off'</span>)  <span class="co"># Hide axis</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="define-a-function-to-create-images-with-specific-rgb-values" class="level3">
+<h3 class="anchored" data-anchor-id="define-a-function-to-create-images-with-specific-rgb-values">Define a Function to Create Images with Specific RGB Values</h3>
+<p><em>We define a function <code>create_rgb_image</code> that generates a 256x256 image filled with specified red, green, and blue values. The function creates an empty image and assigns the provided color values to the respective channels.</em></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to create an image with specified RGB values</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> create_rgb_image(red, green, blue):</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    image <span class="op">=</span> np.zeros((<span class="dv">256</span>, <span class="dv">256</span>, <span class="dv">3</span>), dtype<span class="op">=</span>np.uint8)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    image[:, :, <span class="dv">0</span>] <span class="op">=</span> red    <span class="co"># Red channel</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    image[:, :, <span class="dv">1</span>] <span class="op">=</span> green  <span class="co"># Green channel</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    image[:, :, <span class="dv">2</span>] <span class="op">=</span> blue   <span class="co"># Blue channel</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> image</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="create-images-for-various-color-combinations" class="level3">
+<h3 class="anchored" data-anchor-id="create-images-for-various-color-combinations">Create Images for Various Color Combinations</h3>
+<p><em>We define a list of RGB combinations representing common colors such as black, red, green, blue, yellow, magenta, cyan, and white. Using a list comprehension, we create images for each of these color combinations by calling the <code>create_rgb_image</code> function.</em></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating images for each combination</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>combinations <span class="op">=</span> [</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>),     <span class="co"># Black</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">255</span>, <span class="dv">0</span>, <span class="dv">0</span>),   <span class="co"># Red</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">0</span>, <span class="dv">255</span>, <span class="dv">0</span>),   <span class="co"># Green</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">255</span>),   <span class="co"># Blue</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">255</span>, <span class="dv">255</span>, <span class="dv">0</span>), <span class="co"># Yellow</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">255</span>, <span class="dv">0</span>, <span class="dv">255</span>), <span class="co"># Magenta</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">0</span>, <span class="dv">255</span>, <span class="dv">255</span>), <span class="co"># Cyan</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">255</span>, <span class="dv">255</span>, <span class="dv">255</span>)<span class="co"># White</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>images <span class="op">=</span> [create_rgb_image(<span class="op">*</span>combo) <span class="cf">for</span> combo <span class="kw">in</span> combinations]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="display-the-color-images-in-a-grid" class="level3">
+<h3 class="anchored" data-anchor-id="display-the-color-images-in-a-grid">Display the Color Images in a Grid</h3>
+<p><em>We set the seaborn style and create a figure for plotting. Using matplotlib’s subplot functionality, we display each color image in a grid layout. The RGB values of each image are displayed as the title. The axes are hidden for clarity, and <code>plt.tight_layout()</code> adjusts the spacing between subplots.</em></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>sns.<span class="bu">set</span>()  <span class="co"># For a nicer plot style</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">6</span>))</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, img <span class="kw">in</span> <span class="bu">enumerate</span>(images):</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    plt.subplot(<span class="dv">2</span>, <span class="dv">4</span>, i <span class="op">+</span> <span class="dv">1</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    plt.imshow(img)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    plt.axis(<span class="st">'off'</span>)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    plt.title(<span class="ss">f'R:</span><span class="sc">{</span>combinations[i][<span class="dv">0</span>]<span class="sc">}</span><span class="ss"> G:</span><span class="sc">{</span>combinations[i][<span class="dv">1</span>]<span class="sc">}</span><span class="ss"> B:</span><span class="sc">{</span>combinations[i][<span class="dv">2</span>]<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+<p><strong>Summary:</strong></p>
+<ul>
+<li><strong>First</strong>, we imported necessary libraries for numerical operations, image processing, and plotting.</li>
+<li><strong>Second</strong>, we created and displayed an empty (black) image.</li>
+<li><strong>Third</strong>, we defined a function to create images with specific RGB values.</li>
+<li><strong>Fourth</strong>, we generated images for different color combinations.</li>
+<li><strong>Finally</strong>, we displayed all the generated images in a grid format with their RGB values.</li>
+</ul>
+<p>This code demonstrates how to manipulate image data at the pixel level using NumPy arrays and how to visualize the results using Matplotlib and Seaborn.</p>
+</section>
+</section>
+<section id="display-images" class="level2">
+<h2 class="anchored" data-anchor-id="display-images">display images</h2>
+<ul>
+<li>example <a href="https://www.lunduniversity.lu.se/about-university/university-glance/mission-vision-and-values/sustainability" target="_blank">sustainability communication</a></li>
+</ul>
+<section id="import-libraries-and-load-image-using-opencv" class="level3">
+<h3 class="anchored" data-anchor-id="import-libraries-and-load-image-using-opencv">Import Libraries and Load Image Using OpenCV</h3>
+<p><em>In this step, we import the necessary libraries for image processing and display. We use OpenCV (<code>cv2</code>) for image operations and <code>cv2_imshow</code> from <code>google.colab.patches</code> to display images within Google Colab notebooks. We then attempt to load an image from a specified file path using <code>cv2.imread()</code>.</em></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cv2</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> google.colab.patches <span class="im">import</span> cv2_imshow</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Load an image from file</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>image_path <span class="op">=</span> <span class="st">'/content/osm-cca-cv/res/img/image_prefix-000.png'</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>image <span class="op">=</span> cv2.imread(image_path)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="check-if-the-image-was-successfully-loaded-and-display-it" class="level3">
+<h3 class="anchored" data-anchor-id="check-if-the-image-was-successfully-loaded-and-display-it">Check if the Image Was Successfully Loaded and Display It</h3>
+<p><em>Here, we check whether the image was successfully loaded by verifying that <code>image</code> is not <code>None</code>. If the image is loaded, we display it using <code>cv2_imshow()</code>, which is a function provided by Google Colab to display images in the notebook environment. If the image is not loaded, an error message is printed to inform the user.</em></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if the image was successfully loaded</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> image <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Display the image</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    cv2_imshow(image)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Error: Unable to load image."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="import-additional-libraries-for-plotting" class="level3">
+<h3 class="anchored" data-anchor-id="import-additional-libraries-for-plotting">Import Additional Libraries for Plotting</h3>
+<p><em>We import additional libraries required for plotting and enhancing the image visualization. OpenCV (<code>cv2</code>) is re-imported for consistency, Matplotlib’s <code>pyplot</code> module (<code>plt</code>) is used for plotting images, and Seaborn (<code>sns</code>) is used to improve the aesthetics of the plots.</em></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cv2</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="read-the-image-and-convert-color-scheme-from-bgr-to-rgb" class="level3">
+<h3 class="anchored" data-anchor-id="read-the-image-and-convert-color-scheme-from-bgr-to-rgb">Read the Image and Convert Color Scheme from BGR to RGB</h3>
+<p><em>We read the image again using OpenCV’s <code>cv2.imread()</code> function. OpenCV reads images in BGR (Blue, Green, Red) color format by default, which can cause colors to appear incorrectly when displayed using Matplotlib (which expects RGB format). To correct this, we convert the image from BGR to RGB using <code>cv2.cvtColor()</code>.</em></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the image using OpenCV</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>image_path <span class="op">=</span> <span class="st">'/content/osm-cca-cv/res/img/image_prefix-000.png'</span>  <span class="co"># Replace with your image path</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>image <span class="op">=</span> cv2.imread(image_path)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert the color scheme from BGR to RGB</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>image_rgb <span class="op">=</span> cv2.cvtColor(image, cv2.COLOR_BGR2RGB)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="apply-seaborn-styles-and-display-the-image-using-matplotlib" class="level3">
+<h3 class="anchored" data-anchor-id="apply-seaborn-styles-and-display-the-image-using-matplotlib">Apply Seaborn Styles and Display the Image Using Matplotlib</h3>
+<p><em>We apply Seaborn’s default styling using <code>sns.set()</code> to enhance the plot’s aesthetics. Then, we display the image using Matplotlib’s <code>plt.imshow()</code>, which renders the image data in the notebook. We hide the axes using <code>plt.axis('off')</code> for a cleaner look and finally call <code>plt.show()</code> to display the image.</em></p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use Seaborn to improve plot aesthetics</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>sns.<span class="bu">set</span>()  <span class="co"># Apply Seaborn styles</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the image</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>plt.imshow(image_rgb)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">'off'</span>)  <span class="co"># Hide the axis</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+<p><strong>Summary:</strong></p>
+<ul>
+<li><strong>First</strong>, we imported the necessary libraries for image processing and display, and loaded an image using OpenCV.</li>
+<li><strong>Second</strong>, we checked if the image was successfully loaded and displayed it using <code>cv2_imshow()</code> in Google Colab.</li>
+<li><strong>Third</strong>, we imported additional libraries for plotting and visualization.</li>
+<li><strong>Fourth</strong>, we read the image again and converted its color space from BGR to RGB to ensure correct color representation in Matplotlib.</li>
+<li><strong>Finally</strong>, we applied Seaborn styles for better aesthetics and displayed the image using Matplotlib, hiding the axes for a cleaner presentation.</li>
+</ul>
+<p>This code demonstrates how to read and display images using OpenCV and Matplotlib in a Jupyter or Google Colab notebook, addressing color space differences between libraries and enhancing the visualization with Seaborn styles.</p>
+</section>
+</section>
+<section id="describe-images" class="level2">
+<h2 class="anchored" data-anchor-id="describe-images">describe images</h2>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| colab: {base_uri: 'https://localhost:8080/', height: 206}</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cv2</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Path to the directory containing images</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>directory <span class="op">=</span> <span class="st">'/content/osm-cca-cv/res/img'</span>  <span class="co"># Replace with your directory path</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize a list to store image data</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>image_data <span class="op">=</span> []</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Iterate through each file in the directory</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> filename <span class="kw">in</span> os.listdir(directory):</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> filename.lower().endswith((<span class="st">'.png'</span>, <span class="st">'.jpg'</span>, <span class="st">'.jpeg'</span>)):  <span class="co"># Add other image formats if needed</span></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Read the image</span></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>        img_path <span class="op">=</span> os.path.join(directory, filename)</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>        img <span class="op">=</span> cv2.imread(img_path)</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Extract image dimensions and channels</span></span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>        height, width, channels <span class="op">=</span> img.shape</span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Append the data to the list</span></span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>        image_data.append({<span class="st">'Filename'</span>: filename, <span class="st">'Width'</span>: width, <span class="st">'Height'</span>: height, <span class="st">'Channels'</span>: channels})</span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a DataFrame from the image data</span></span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>image_df <span class="op">=</span> pd.DataFrame(image_data)</span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the DataFrame</span></span>
+<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a>image_df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="manipulate-images" class="level2">
+<h2 class="anchored" data-anchor-id="manipulate-images">manipulate images</h2>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> PIL <span class="im">import</span> Image</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> io <span class="im">import</span> BytesIO</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1: Load a sample RGB image</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co"># You can use any image URL or local image file. Here, we'll use an image from the web.</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>image_url <span class="op">=</span> <span class="st">'https://raw.githubusercontent.com/cca-cce/osm-cca-cv/0a62207580cf63bc808ec825669af8d6f2eedf16/res/img/image_prefix-000.png'</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> requests.get(image_url)</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>image <span class="op">=</span> Image.<span class="bu">open</span>(BytesIO(response.content))</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Ensure the image is in RGB mode</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>image <span class="op">=</span> image.convert(<span class="st">'RGB'</span>)</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Optionally resize the image for easier processing</span></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>image <span class="op">=</span> image.resize((<span class="dv">200</span>, <span class="dv">200</span>))</span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2: Convert the image to a NumPy array</span></span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>image_np <span class="op">=</span> np.array(image)</span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 3: Manipulate the bottom right quarter to increase green colors</span></span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>height, width, _ <span class="op">=</span> image_np.shape</span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>start_x <span class="op">=</span> width <span class="op">//</span> <span class="dv">2</span></span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>start_y <span class="op">=</span> height <span class="op">//</span> <span class="dv">2</span></span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Increase the green channel by 100 (ensure values stay within 0-255)</span></span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>image_np[start_y:, start_x:, <span class="dv">1</span>] <span class="op">=</span> np.clip(image_np[start_y:, start_x:, <span class="dv">1</span>] <span class="op">+</span> <span class="dv">100</span>, <span class="dv">0</span>, <span class="dv">255</span>)</span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 4: Convert the NumPy array back to a PIL Image</span></span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a>modified_image <span class="op">=</span> Image.fromarray(image_np.astype(<span class="st">'uint8'</span>), <span class="st">'RGB'</span>)</span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 5: Display the image in a Google Colab notebook</span></span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a>plt.imshow(modified_image)</span>
+<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">'off'</span>)</span>
+<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation:</strong></p>
+<ul>
+<li><p><strong>Loading the Image:</strong> We load a sample image from a URL using the <code>requests</code> library and <code>Image.open</code>. The image is converted to RGB mode to ensure it has three color channels.</p></li>
+<li><p><strong>Converting to NumPy Array:</strong> The image is converted to a NumPy array to allow pixel-level manipulation.</p></li>
+<li><p><strong>Manipulating the Image:</strong></p>
+<ul>
+<li>We calculate the starting indices for the bottom right quarter.</li>
+<li>We increase the green color channel (<code>image_np[..., 1]</code>) by 100 in the bottom right quarter.</li>
+<li><code>np.clip</code> ensures that the pixel values stay within the valid range of 0 to 255.</li>
+</ul></li>
+<li><p><strong>Displaying the Image:</strong> The modified image is displayed using <code>matplotlib.pyplot</code> in the Google Colab notebook.</p></li>
+</ul>
+<p><strong>Note:</strong> This code should be run in a Google Colab notebook to display the image inline. If you’re not using Colab, ensure that your environment supports image display in notebooks.</p>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li><p>Make sure to install the required libraries if they are not already installed:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">!pip</span> install Pillow numpy matplotlib requests</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+<p><strong>Sample Output:</strong></p>
+<p>The code will display the original image with the bottom right quarter appearing greener due to the increased green color channel.</p>
+</section>
+<section id="image-features" class="level2">
+<h2 class="anchored" data-anchor-id="image-features">image features</h2>
+<section id="import-libraries-and-read-the-image" class="level3">
+<h3 class="anchored" data-anchor-id="import-libraries-and-read-the-image">Import Libraries and Read the Image</h3>
+<p><em>In this step, we import the required libraries for image processing and visualization: OpenCV (<code>cv2</code>) for image operations, NumPy (<code>np</code>) for numerical computations, Matplotlib’s <code>pyplot</code> module (<code>plt</code>) for plotting, and Seaborn (<code>sns</code>) for enhancing plot aesthetics. We then read the image from the specified path using <code>cv2.imread()</code>. The image is loaded into a NumPy array in BGR (Blue, Green, Red) format.</em></p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">"""# image features"""</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cv2</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the image</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>image <span class="op">=</span> cv2.imread(<span class="st">'/content/osm-cca-cv/res/img/image_prefix-000.png'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="calculate-and-normalize-color-histograms" class="level3">
+<h3 class="anchored" data-anchor-id="calculate-and-normalize-color-histograms">Calculate and Normalize Color Histograms</h3>
+<p><em>Here, we calculate the color histograms for each of the three color channels (Blue, Green, Red) using OpenCV’s <code>calcHist()</code> function. This function computes the frequency of each pixel intensity value (ranging from 0 to 255) for the specified channel. We then normalize each histogram by dividing it by its total sum to obtain a probability distribution, which allows for comparison between histograms regardless of the image size.</em></p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate color histograms for each channel</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>hist_r <span class="op">=</span> cv2.calcHist([image], [<span class="dv">0</span>], <span class="va">None</span>, [<span class="dv">256</span>], [<span class="dv">0</span>, <span class="dv">256</span>])</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>hist_g <span class="op">=</span> cv2.calcHist([image], [<span class="dv">1</span>], <span class="va">None</span>, [<span class="dv">256</span>], [<span class="dv">0</span>, <span class="dv">256</span>])</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>hist_b <span class="op">=</span> cv2.calcHist([image], [<span class="dv">2</span>], <span class="va">None</span>, [<span class="dv">256</span>], [<span class="dv">0</span>, <span class="dv">256</span>])</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Normalize histograms</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>hist_r <span class="op">/=</span> hist_r.<span class="bu">sum</span>()</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>hist_g <span class="op">/=</span> hist_g.<span class="bu">sum</span>()</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>hist_b <span class="op">/=</span> hist_b.<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="plot-the-original-image-and-color-histograms" class="level3">
+<h3 class="anchored" data-anchor-id="plot-the-original-image-and-color-histograms">Plot the Original Image and Color Histograms</h3>
+<p><em>We set up a figure with two subplots using Matplotlib’s <code>subplots()</code> function. The first subplot displays the original image, converting it from BGR to RGB color space using <code>cv2.cvtColor()</code> for correct color representation in Matplotlib. The second subplot displays the normalized color histograms for each channel using Seaborn’s <code>lineplot()</code>. We customize the plot with titles, labels, and a legend, and finally display the plots using <code>plt.show()</code>.</em></p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create subplots for the original image and histograms</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">4</span>))</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the original image</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_title(<span class="st">'Original Image'</span>)</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].axis(<span class="st">'off'</span>)</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the color histograms using Seaborn</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>sns.lineplot(x<span class="op">=</span>np.arange(<span class="dv">256</span>), y<span class="op">=</span>hist_r.squeeze(), color<span class="op">=</span><span class="st">'red'</span>, ax<span class="op">=</span>axes[<span class="dv">1</span>], label<span class="op">=</span><span class="st">'Red'</span>)</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>sns.lineplot(x<span class="op">=</span>np.arange(<span class="dv">256</span>), y<span class="op">=</span>hist_g.squeeze(), color<span class="op">=</span><span class="st">'green'</span>, ax<span class="op">=</span>axes[<span class="dv">1</span>], label<span class="op">=</span><span class="st">'Green'</span>)</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>sns.lineplot(x<span class="op">=</span>np.arange(<span class="dv">256</span>), y<span class="op">=</span>hist_b.squeeze(), color<span class="op">=</span><span class="st">'blue'</span>, ax<span class="op">=</span>axes[<span class="dv">1</span>], label<span class="op">=</span><span class="st">'Blue'</span>)</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_title(<span class="st">'Color Histograms'</span>)</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_xlabel(<span class="st">'Pixel Value'</span>)</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_ylabel(<span class="st">'Frequency'</span>)</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].legend()</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the plots</span></span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="import-libraries-and-read-the-image-in-grayscale" class="level3">
+<h3 class="anchored" data-anchor-id="import-libraries-and-read-the-image-in-grayscale">Import Libraries and Read the Image in Grayscale</h3>
+<p><em>We import the necessary libraries for edge detection: OpenCV (<code>cv2</code>) for image processing, NumPy (<code>np</code>) for numerical computations, and <code>cv2_imshow</code> from <code>google.colab.patches</code> to display images in Google Colab notebooks. We then read the image in grayscale mode using <code>cv2.imread()</code> with the <code>cv2.IMREAD_GRAYSCALE</code> flag, which simplifies the image data for edge detection algorithms.</em></p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cv2</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> google.colab.patches <span class="im">import</span> cv2_imshow</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the image</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>image <span class="op">=</span> cv2.imread(<span class="st">'/content/osm-cca-cv/res/img/image_prefix-000.png'</span>, cv2.IMREAD_GRAYSCALE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="define-and-apply-edge-detection-methods" class="level3">
+<h3 class="anchored" data-anchor-id="define-and-apply-edge-detection-methods">Define and Apply Edge Detection Methods</h3>
+<p><em>We define a list called <code>edge_detection_settings</code> that contains tuples of edge detection method names and their corresponding results. We apply different edge detection algorithms provided by OpenCV: Canny, Sobel X, and Sobel Y. The Canny edge detector is applied with threshold values of 50 and 150. The Sobel operators are applied to detect edges in the X and Y directions, respectively.</em></p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define edge detection settings</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>edge_detection_settings <span class="op">=</span> [</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'Canny'</span>, cv2.Canny(image, <span class="dv">50</span>, <span class="dv">150</span>)),</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ('Laplacian', cv2.Laplacian(image, cv2.CV_64F)),</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'Sobel_X'</span>, cv2.Sobel(image, cv2.CV_64F, <span class="dv">1</span>, <span class="dv">0</span>, ksize<span class="op">=</span><span class="dv">5</span>)),</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'Sobel_Y'</span>, cv2.Sobel(image, cv2.CV_64F, <span class="dv">0</span>, <span class="dv">1</span>, ksize<span class="op">=</span><span class="dv">5</span>))</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="process-and-display-edge-detection-results" class="level3">
+<h3 class="anchored" data-anchor-id="process-and-display-edge-detection-results">Process and Display Edge Detection Results</h3>
+<p><em>We loop through each edge detection result in <code>edge_detection_settings</code>. For each method, we perform the following steps:</em></p>
+<ul>
+<li><em>Convert the edge image to a binary image where edge pixels are set to 255 (white) and non-edge pixels to 0 (black) using NumPy’s <code>where()</code> function.</em></li>
+<li><em>Count the number of white edge pixels using OpenCV’s <code>countNonZero()</code> function.</em></li>
+<li><em>Concatenate the original grayscale image and the binary edge image horizontally using NumPy’s <code>hstack()</code> function for side-by-side comparison.</em></li>
+<li><em>Display the concatenated image using <code>cv2_imshow()</code> in Google Colab.</em></li>
+<li><em>Print the name of the edge detection algorithm and the number of white edge pixels.</em></li>
+<li><em>Save the concatenated image to a file with a filename that includes the edge detection method’s name.</em></li>
+</ul>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Iterate through edge detection settings</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> setting_name, edges <span class="kw">in</span> edge_detection_settings:</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Convert the edges to binary (keeping them in 0-255 range)</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    edges_binary <span class="op">=</span> np.where(edges <span class="op">&gt;</span> <span class="dv">0</span>, <span class="dv">255</span>, <span class="dv">0</span>).astype(np.uint8)</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Count the number of white edge pixels</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    white_pixel_count <span class="op">=</span> cv2.countNonZero(edges_binary)</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Concatenate the original image and binary edge image horizontally</span></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>    concatenated_image <span class="op">=</span> np.hstack((image, edges_binary))</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Display the concatenated image using cv2_imshow</span></span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'Edge Detection Algorithm: </span><span class="sc">{</span>setting_name<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>    cv2_imshow(concatenated_image)</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'Number of white edge pixels: </span><span class="sc">{</span>white_pixel_count<span class="sc">}</span><span class="ch">\n</span><span class="ss">'</span>)</span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Save the concatenated image with the specified filename prefix</span></span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>    filename <span class="op">=</span> <span class="ss">f'edges_</span><span class="sc">{</span>setting_name<span class="sc">}</span><span class="ss">.jpg'</span></span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>    cv2.imwrite(filename, concatenated_image)</span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'Saved as </span><span class="sc">{</span>filename<span class="sc">}</span><span class="ch">\n</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+<p><strong>Summary:</strong></p>
+<ul>
+<li><strong>First</strong>, we imported the necessary libraries and read the image for color histogram analysis.</li>
+<li><strong>Second</strong>, we calculated and normalized the color histograms for the red, green, and blue channels.</li>
+<li><strong>Third</strong>, we plotted the original image alongside its color histograms using Matplotlib and Seaborn.</li>
+<li><strong>Fourth</strong>, we imported additional libraries for edge detection and read the image in grayscale mode.</li>
+<li><strong>Fifth</strong>, we defined various edge detection methods and applied them to the image.</li>
+<li><strong>Finally</strong>, we processed each edge detection result by converting edges to binary images, counting edge pixels, displaying the results, and saving the concatenated images.</li>
+</ul>
+<p>This code demonstrates how to perform basic image analysis tasks, such as calculating color histograms and performing edge detection, using OpenCV. It also shows how to visualize the results effectively using Matplotlib and Seaborn, ensuring that all code is kept intact and executable without breaking any loops or structures.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
