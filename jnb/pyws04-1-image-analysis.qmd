@@ -55,6 +55,14 @@ plt.axis('off')  # Hide axis
 plt.show()
 ```
 
+```{python}
+# Display the image using seaborn
+sns.set()  # For a nicer plot style
+plt.imshow(cv2.cvtColor(empty_image, cv2.COLOR_BGR2RGB))  # Convert BGR to RGB for correct color representation
+#plt.axis('off')  # Hide axis
+plt.show()
+```
+
 ---
 
 ### Define a Function to Create Images with Specific RGB Values
