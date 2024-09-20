@@ -1,0 +1,65 @@
+---
+execute:
+  eval: true
+  echo: true
+  output: true
+title: "web experiments"
+---
+
+- code examples [github](https://github.com/){target="_blank"}
+- code examples [streamlit](https://docs.streamlit.io/){target="_blank"}
+- download [jupyter notebook](pyws05-2-data-collection.ipynb){target="_blank"}
+
+```{python}
+# run inside google colab
+#!git clone https://github.com/cca-cce/osm-cdc.git
+```
+
+## online survey experiment
+
+- github [repo](https://github.com/cca-cce/osm-cdc/archive/refs/heads/main.zip)
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Page Redirect</title>
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+</head>
+<body>
+    <h1>Welcome to Random Page Redirect</h1>
+    <py-script>
+        import random
+        from js import document, window
+
+        def create_random_button():
+            button = document.createElement('button')
+            button.textContent = 'Go to a random page'
+            button.onclick = redirect_user
+            document.body.appendChild(button)
+
+        def redirect_user(event):
+            if random.random() < 0.5:
+                window.location.href = 'subpage_a.html'
+            else:
+                window.location.href = 'subpage_b.html'
+
+        create_random_button()
+    </py-script>
+</body>
+</html>
+```
+
+[![huggingface account and gpu resources required](https://img.youtube.com/vi/SmJ8x-lYl6s/0.jpg)](https://www.youtube.com/watch?v=SmJ8x-lYl6s)
+
+## scraping live web data
+
+## website user interaction
+
+
+
+
+

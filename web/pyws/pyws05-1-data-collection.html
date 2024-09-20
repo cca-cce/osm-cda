@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>pyws05-1-data-collection – osm-pyws</title>
+<title>web scraping – osm-pyws</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -245,7 +279,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./resources.qmd" class="sidebar-item-text sidebar-link">
+  <a href="./resources.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">resources</span></a>
   </div>
 </li>
@@ -254,17 +288,833 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#ethical-scraping-robots.txt" id="toc-ethical-scraping-robots.txt" class="nav-link active" data-scroll-target="#ethical-scraping-robots.txt">ethical scraping, robots.txt</a></li>
+  <li><a href="#beautifulsoup-google-colab" id="toc-beautifulsoup-google-colab" class="nav-link" data-scroll-target="#beautifulsoup-google-colab">beautifulsoup, google colab</a>
+  <ul class="collapse">
+  <li><a href="#explanation" id="toc-explanation" class="nav-link" data-scroll-target="#explanation"><strong>Explanation:</strong></a></li>
+  <li><a href="#additional-notes" id="toc-additional-notes" class="nav-link" data-scroll-target="#additional-notes"><strong>Additional Notes:</strong></a></li>
+  <li><a href="#example-usage" id="toc-example-usage" class="nav-link" data-scroll-target="#example-usage"><strong>Example Usage:</strong></a></li>
+  </ul></li>
+  <li><a href="#scrapy-github-codespaces" id="toc-scrapy-github-codespaces" class="nav-link" data-scroll-target="#scrapy-github-codespaces">scrapy, github codespaces</a>
+  <ul class="collapse">
+  <li><a href="#explanation-1" id="toc-explanation-1" class="nav-link" data-scroll-target="#explanation-1">Explanation:</a></li>
+  <li><a href="#how-to-use" id="toc-how-to-use" class="nav-link" data-scroll-target="#how-to-use">How to Use:</a></li>
+  <li><a href="#additional-notes-1" id="toc-additional-notes-1" class="nav-link" data-scroll-target="#additional-notes-1">Additional Notes:</a></li>
+  <li><a href="#important-considerations" id="toc-important-considerations" class="nav-link" data-scroll-target="#important-considerations">Important Considerations:</a></li>
+  </ul></li>
+  <li><a href="#web-browser-automation" id="toc-web-browser-automation" class="nav-link" data-scroll-target="#web-browser-automation">web browser automation</a>
+  <ul class="collapse">
+  <li><a href="#explanation-2" id="toc-explanation-2" class="nav-link" data-scroll-target="#explanation-2"><strong>Explanation</strong></a></li>
+  <li><a href="#step-by-step-guide" id="toc-step-by-step-guide" class="nav-link" data-scroll-target="#step-by-step-guide"><strong>Step-by-Step Guide</strong></a></li>
+  <li><a href="#additional-options" id="toc-additional-options" class="nav-link" data-scroll-target="#additional-options"><strong>Additional Options</strong></a></li>
+  <li><a href="#notes-and-best-practices" id="toc-notes-and-best-practices" class="nav-link" data-scroll-target="#notes-and-best-practices"><strong>Notes and Best Practices</strong></a></li>
+  <li><a href="#example-with-advanced-features" id="toc-example-with-advanced-features" class="nav-link" data-scroll-target="#example-with-advanced-features"><strong>Example with Advanced Features</strong></a></li>
+  <li><a href="#common-issues-and-troubleshooting" id="toc-common-issues-and-troubleshooting" class="nav-link" data-scroll-target="#common-issues-and-troubleshooting"><strong>Common Issues and Troubleshooting</strong></a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><strong>Conclusion</strong></a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./pyws01-0-getting-started.html">workshop</a></li><li class="breadcrumb-item"><a href="./pyws05-0-data-collection.html">part 5: data collection</a></li><li class="breadcrumb-item"><a href="./pyws05-1-data-collection.html">web scraping</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">web scraping</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
+</header>
+
+
+<ul>
+<li>code examples <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/" target="_blank">beatifulsoup</a></li>
+<li>code examples <a href="https://docs.scrapy.org/en/latest/intro/tutorial.html" target="_blank">scrapy</a></li>
+<li>code examples <a href="https://playwright.dev/python/docs/intro" target="_blank">playwright</a></li>
+<li>download <a href="pyws05-1-data-collection.ipynb" target="_blank">jupyter notebook</a></li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># run inside google colab</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#!git clone https://github.com/cca-cce/osm-cdc.git</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>example <a href="https://www.lunduniversity.lu.se/about-university/university-glance/mission-vision-and-values/sustainability" target="_blank">sustainability communication</a></li>
+</ul>
+<section id="ethical-scraping-robots.txt" class="level2">
+<h2 class="anchored" data-anchor-id="ethical-scraping-robots.txt">ethical scraping, robots.txt</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> urllib.parse <span class="im">import</span> urlparse, urljoin</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to fetch and parse robots.txt into a DataFrame</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parse_robots_txt(robots_url):</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    response <span class="op">=</span> requests.get(robots_url)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> response.status_code <span class="op">!=</span> <span class="dv">200</span>:</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Error fetching robots.txt from </span><span class="sc">{</span>robots_url<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">None</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    lines <span class="op">=</span> response.text.splitlines()</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> []</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    current_user_agent <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> line <span class="kw">in</span> lines:</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>        line <span class="op">=</span> line.strip()</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">not</span> line <span class="kw">or</span> line.startswith(<span class="st">'#'</span>):</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>            <span class="cf">continue</span>  <span class="co"># Skip empty lines and comments</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> line.lower().startswith(<span class="st">'user-agent:'</span>):</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>            current_user_agent <span class="op">=</span> line.split(<span class="st">':'</span>, <span class="dv">1</span>)[<span class="dv">1</span>].strip()</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> line.lower().startswith((<span class="st">'disallow:'</span>, <span class="st">'allow:'</span>)):</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>            directive, path <span class="op">=</span> line.split(<span class="st">':'</span>, <span class="dv">1</span>)</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>            directive <span class="op">=</span> directive.strip()</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>            path <span class="op">=</span> path.strip()</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>            data.append({</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>                <span class="st">'User-agent'</span>: current_user_agent,</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>                <span class="st">'Directive'</span>: directive.capitalize(),</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>                <span class="st">'Path'</span>: path</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>            })</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> df</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to check if a URL is allowed or disallowed</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> is_url_allowed(url, df, user_agent<span class="op">=</span><span class="st">'*'</span>):</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>    parsed_url <span class="op">=</span> urlparse(url)</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>    path <span class="op">=</span> parsed_url.path</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Filter rules for the specific user-agent or '*'</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>    user_agent_rules <span class="op">=</span> df[df[<span class="st">'User-agent'</span>].isin([user_agent, <span class="st">'*'</span>])]</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Initialize default permission</span></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>    permission <span class="op">=</span> <span class="st">'Allow'</span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Process rules in order</span></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _, row <span class="kw">in</span> user_agent_rules.iterrows():</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>        rule_path <span class="op">=</span> row[<span class="st">'Path'</span>]</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>        directive <span class="op">=</span> row[<span class="st">'Directive'</span>]</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Convert wildcard patterns to regular expressions</span></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>        rule_regex <span class="op">=</span> <span class="st">'^'</span> <span class="op">+</span> re.escape(rule_path).replace(<span class="vs">r'\*'</span>, <span class="st">'.*'</span>) <span class="op">+</span> <span class="st">'$'</span></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> re.match(rule_regex, path):</span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>            permission <span class="op">=</span> directive</span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> permission <span class="op">==</span> <span class="st">'Allow'</span></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a><span class="co"># Example usage</span></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Define the URL of the robots.txt file</span></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>    base_url <span class="op">=</span> <span class="st">'https://www.example.com'</span>  <span class="co"># Replace with the base URL</span></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>    base_url <span class="op">=</span> <span class="st">'https://www.lunduniversity.lu.se'</span>  <span class="co"># Replace with the base URL</span></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>    robots_url <span class="op">=</span> urljoin(base_url, <span class="st">'/robots.txt'</span>)</span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Parse the robots.txt file into a DataFrame</span></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>    robots_df <span class="op">=</span> parse_robots_txt(robots_url)</span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> robots_df <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Robots.txt rules:"</span>)</span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(robots_df)</span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>        <span class="co"># URL to check</span></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>        url_to_check <span class="op">=</span> <span class="st">'https://www.example.com/some/path'</span>  <span class="co"># Replace with the URL you want to check</span></span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>        url_to_check <span class="op">=</span> <span class="st">'https://www.lunduniversity.lu.se/about-university/university-glance/mission-vision-and-values/sustainability'</span>  <span class="co"># Replace with the URL you want to check</span></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Check if the URL is allowed</span></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>        is_allowed <span class="op">=</span> is_url_allowed(url_to_check, robots_df)</span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> is_allowed:</span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"The URL </span><span class="sc">{</span>url_to_check<span class="sc">}</span><span class="ss"> is allowed to be scraped."</span>)</span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"The URL </span><span class="sc">{</span>url_to_check<span class="sc">}</span><span class="ss"> is disallowed to be scraped according to robots.txt."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="beautifulsoup-google-colab" class="level2">
+<h2 class="anchored" data-anchor-id="beautifulsoup-google-colab">beautifulsoup, google colab</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> bs4 <span class="im">import</span> BeautifulSoup</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> urllib.parse <span class="im">import</span> urljoin</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1: Define the URL to scrape</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">'https://www.example.com'</span>  <span class="co"># Replace with the target URL</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2: Fetch the HTML content</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> requests.get(url)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> response.status_code <span class="op">!=</span> <span class="dv">200</span>:</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Failed to retrieve the page. Status code: </span><span class="sc">{</span>response<span class="sc">.</span>status_code<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    exit()</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>html_content <span class="op">=</span> response.text</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 3: Parse the HTML content with BeautifulSoup</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>soup <span class="op">=</span> BeautifulSoup(html_content, <span class="st">'html.parser'</span>)</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 4: Extract all link URLs to a DataFrame called links_df</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>links <span class="op">=</span> []</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> link <span class="kw">in</span> soup.find_all(<span class="st">'a'</span>, href<span class="op">=</span><span class="va">True</span>):</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>    href <span class="op">=</span> link[<span class="st">'href'</span>]</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    full_url <span class="op">=</span> urljoin(url, href)</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>    links.append(full_url)</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>links_df <span class="op">=</span> pd.DataFrame({<span class="st">'url'</span>: links})</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 5: Extract all image URLs to a DataFrame called images_df</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>images <span class="op">=</span> []</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> img <span class="kw">in</span> soup.find_all(<span class="st">'img'</span>, src<span class="op">=</span><span class="va">True</span>):</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>    src <span class="op">=</span> img[<span class="st">'src'</span>]</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>    full_url <span class="op">=</span> urljoin(url, src)</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>    images.append(full_url)</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>images_df <span class="op">=</span> pd.DataFrame({<span class="st">'image_url'</span>: images})</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 6: Extract the main text as markdown to texts_df</span></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a><span class="co"># We'll try to exclude navigation, footer, and other UI elements</span></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a><span class="co"># Attempt to find the main content</span></span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>main_content <span class="op">=</span> soup.find(<span class="st">'main'</span>)</span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">not</span> main_content:</span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>    <span class="co"># If there's no &lt;main&gt; tag, find the largest &lt;div&gt; or &lt;article&gt;</span></span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>    candidates <span class="op">=</span> soup.find_all([<span class="st">'div'</span>, <span class="st">'article'</span>], recursive<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>    main_content <span class="op">=</span> <span class="bu">max</span>(candidates, key<span class="op">=</span><span class="kw">lambda</span> el: <span class="bu">len</span>(el.get_text(strip<span class="op">=</span><span class="va">True</span>)), default<span class="op">=</span><span class="va">None</span>)</span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> main_content:</span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Remove script and style elements</span></span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> script_or_style <span class="kw">in</span> main_content([<span class="st">'script'</span>, <span class="st">'style'</span>]):</span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>        script_or_style.decompose()</span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Get text</span></span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>    text_content <span class="op">=</span> main_content.get_text(separator<span class="op">=</span><span class="st">'</span><span class="ch">\n</span><span class="st">'</span>, strip<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Optionally, clean up the text</span></span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>    text_content <span class="op">=</span> re.sub(<span class="st">'</span><span class="ch">\n</span><span class="st">+'</span>, <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>, text_content).strip()</span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>    text_content <span class="op">=</span> <span class="st">''</span></span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a>texts_df <span class="op">=</span> pd.DataFrame({<span class="st">'text'</span>: [text_content]})</span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 7: Save all DataFrames as TSV files</span></span>
+<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a>links_df.to_csv(<span class="st">'links.tsv'</span>, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>, index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a>images_df.to_csv(<span class="st">'images.tsv'</span>, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>, index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a>texts_df.to_csv(<span class="st">'texts.tsv'</span>, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>, index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"DataFrames have been saved as TSV files."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+<section id="explanation" class="level3">
+<h3 class="anchored" data-anchor-id="explanation"><strong>Explanation:</strong></h3>
+<p><strong>Step 1: Define the URL to Scrape</strong></p>
+<p>We start by specifying the URL of the page we want to scrape.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">'https://www.example.com'</span>  <span class="co"># Replace with the target URL</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Step 2: Fetch the HTML Content</strong></p>
+<p>We use the <code>requests</code> library to send an HTTP GET request to the URL. If the request is successful (status code 200), we proceed; otherwise, we exit the script.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> requests.get(url)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> response.status_code <span class="op">!=</span> <span class="dv">200</span>:</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Failed to retrieve the page. Status code: </span><span class="sc">{</span>response<span class="sc">.</span>status_code<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    exit()</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>html_content <span class="op">=</span> response.text</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Step 3: Parse the HTML Content with BeautifulSoup</strong></p>
+<p>We parse the HTML content using BeautifulSoup, which allows us to navigate and extract data from the HTML.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>soup <span class="op">=</span> BeautifulSoup(html_content, <span class="st">'html.parser'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Step 4: Extract All Link URLs to a DataFrame Called <code>links_df</code></strong></p>
+<p>We find all <code>&lt;a&gt;</code> tags with an <code>href</code> attribute, resolve relative URLs to absolute URLs using <code>urljoin</code>, and store them in a list. We then create a DataFrame from this list.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>links <span class="op">=</span> []</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> link <span class="kw">in</span> soup.find_all(<span class="st">'a'</span>, href<span class="op">=</span><span class="va">True</span>):</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    href <span class="op">=</span> link[<span class="st">'href'</span>]</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    full_url <span class="op">=</span> urljoin(url, href)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    links.append(full_url)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>links_df <span class="op">=</span> pd.DataFrame({<span class="st">'url'</span>: links})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Step 5: Extract All Image URLs to a DataFrame Called <code>images_df</code></strong></p>
+<p>Similarly, we find all <code>&lt;img&gt;</code> tags with a <code>src</code> attribute, resolve URLs, and store them in a DataFrame.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>images <span class="op">=</span> []</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> img <span class="kw">in</span> soup.find_all(<span class="st">'img'</span>, src<span class="op">=</span><span class="va">True</span>):</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    src <span class="op">=</span> img[<span class="st">'src'</span>]</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    full_url <span class="op">=</span> urljoin(url, src)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    images.append(full_url)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>images_df <span class="op">=</span> pd.DataFrame({<span class="st">'image_url'</span>: images})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Step 6: Extract the Main Text as Markdown to <code>texts_df</code></strong></p>
+<p>Extracting the main content while excluding navigation, footer, and other UI elements can be challenging. We attempt the following:</p>
+<ul>
+<li><strong>Check for a <code>&lt;main&gt;</code> Tag:</strong> Many modern websites use the <code>&lt;main&gt;</code> tag to wrap the main content.</li>
+<li><strong>Fallback to the Largest <code>&lt;div&gt;</code> or <code>&lt;article&gt;</code> Tag:</strong> If no <code>&lt;main&gt;</code> tag is found, we select the <code>&lt;div&gt;</code> or <code>&lt;article&gt;</code> with the most text content.</li>
+<li><strong>Clean the Text:</strong> We remove any <code>&lt;script&gt;</code> or <code>&lt;style&gt;</code> tags from the main content and extract the text.</li>
+</ul>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Attempt to find the main content</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>main_content <span class="op">=</span> soup.find(<span class="st">'main'</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">not</span> main_content:</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># If there's no &lt;main&gt; tag, find the largest &lt;div&gt; or &lt;article&gt;</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    candidates <span class="op">=</span> soup.find_all([<span class="st">'div'</span>, <span class="st">'article'</span>], recursive<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    main_content <span class="op">=</span> <span class="bu">max</span>(candidates, key<span class="op">=</span><span class="kw">lambda</span> el: <span class="bu">len</span>(el.get_text(strip<span class="op">=</span><span class="va">True</span>)), default<span class="op">=</span><span class="va">None</span>)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> main_content:</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Remove script and style elements</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> script_or_style <span class="kw">in</span> main_content([<span class="st">'script'</span>, <span class="st">'style'</span>]):</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>        script_or_style.decompose()</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Get text</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    text_content <span class="op">=</span> main_content.get_text(separator<span class="op">=</span><span class="st">'</span><span class="ch">\n</span><span class="st">'</span>, strip<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Optionally, clean up the text</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>    text_content <span class="op">=</span> re.sub(<span class="st">'</span><span class="ch">\n</span><span class="st">+'</span>, <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>, text_content).strip()</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>    text_content <span class="op">=</span> <span class="st">''</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>texts_df <span class="op">=</span> pd.DataFrame({<span class="st">'text'</span>: [text_content]})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Note:</strong> This method provides an approximation. For more accurate extraction, consider using libraries like <strong>Readability</strong> or <strong>Boilerpipe</strong> that are designed to extract the main content from web pages.</p>
+<p><strong>Step 7: Save All DataFrames as TSV Files</strong></p>
+<p>We save each DataFrame to a TSV (Tab-Separated Values) file using pandas’ <code>to_csv</code> method with <code>sep='\t'</code>.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>links_df.to_csv(<span class="st">'links.tsv'</span>, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>, index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>images_df.to_csv(<span class="st">'images.tsv'</span>, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>, index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>texts_df.to_csv(<span class="st">'texts.tsv'</span>, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>, index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"DataFrames have been saved as TSV files."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="additional-notes" class="level3">
+<h3 class="anchored" data-anchor-id="additional-notes"><strong>Additional Notes:</strong></h3>
+<ul>
+<li><strong>Dependencies:</strong>
+<ul>
+<li><p>Ensure you have the required libraries installed:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install requests beautifulsoup4 pandas</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul></li>
+<li><strong>URL Replacement:</strong>
+<ul>
+<li>Replace <code>'https://www.example.com'</code> with the actual URL you wish to scrape.</li>
+</ul></li>
+<li><strong>Handling Relative URLs:</strong>
+<ul>
+<li>The <code>urljoin</code> function from <code>urllib.parse</code> resolves relative URLs based on the base URL.</li>
+</ul></li>
+<li><strong>Data Cleaning:</strong>
+<ul>
+<li>The code removes extra newline characters in the extracted text.</li>
+<li>For more advanced text cleaning and markdown conversion, consider using additional libraries like <code>markdownify</code>.</li>
+</ul></li>
+<li><strong>Legal and Ethical Considerations:</strong>
+<ul>
+<li><strong>Respect Robots.txt:</strong> Ensure that you are allowed to scrape the website by checking its <code>robots.txt</code> file.</li>
+<li><strong>Terms of Service:</strong> Review the website’s terms of service to make sure scraping is permitted.</li>
+<li><strong>Rate Limiting:</strong> Be considerate and do not overwhelm the server with too many requests in a short period.</li>
+</ul></li>
+<li><strong>Error Handling:</strong>
+<ul>
+<li>The script checks if the page was successfully retrieved before proceeding.</li>
+<li>You can add more error handling as needed.</li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="example-usage" class="level3">
+<h3 class="anchored" data-anchor-id="example-usage"><strong>Example Usage:</strong></h3>
+<p>Suppose we set:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">'https://www.python.org/'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>After running the script, you would get:</p>
+<ul>
+<li><strong>links.tsv:</strong> A TSV file containing all the links found on the Python homepage.</li>
+<li><strong>images.tsv:</strong> A TSV file containing all the image URLs.</li>
+<li><strong>texts.tsv:</strong> A TSV file containing the main textual content of the page.</li>
+</ul>
+<hr>
+<p><strong>Feel free to customize the script further to suit your specific needs!</strong></p>
+</section>
+</section>
+<section id="scrapy-github-codespaces" class="level2">
+<h2 class="anchored" data-anchor-id="scrapy-github-codespaces">scrapy, github codespaces</h2>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># scrapy_spider.py</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scrapy</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scrapy.crawler <span class="im">import</span> CrawlerProcess</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> urllib.parse <span class="im">import</span> urljoin</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> MySpider(scrapy.Spider):</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    name <span class="op">=</span> <span class="st">"my_spider"</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Start URL</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>    start_urls <span class="op">=</span> [<span class="st">'https://www.example.com'</span>]  <span class="co"># Replace with your target URL</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Initialize data storage</span></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>    links <span class="op">=</span> []</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>    resources <span class="op">=</span> []</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>    texts <span class="op">=</span> []</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> parse(<span class="va">self</span>, response):</span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Extract all link URLs</span></span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>        link_urls <span class="op">=</span> response.css(<span class="st">'a::attr(href)'</span>).getall()</span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> href <span class="kw">in</span> link_urls:</span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>            full_url <span class="op">=</span> urljoin(response.url, href)</span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.links.append(full_url)</span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Extract all binary file URLs (images, .pdf, .docx)</span></span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Define patterns for binary files</span></span>
+<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a>        binary_patterns <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r'.*\.(jpg|jpeg|png|gif|bmp|tiff|pdf|docx|doc)$'</span>, re.IGNORECASE)</span>
+<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a>        resource_urls <span class="op">=</span> []</span>
+<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Extract image URLs</span></span>
+<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a>        img_urls <span class="op">=</span> response.css(<span class="st">'img::attr(src)'</span>).getall()</span>
+<span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a>        resource_urls.extend(img_urls)</span>
+<span id="cb13-35"><a href="#cb13-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-36"><a href="#cb13-36" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Include URLs from link tags that point to binary files</span></span>
+<span id="cb13-37"><a href="#cb13-37" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> href <span class="kw">in</span> link_urls:</span>
+<span id="cb13-38"><a href="#cb13-38" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> binary_patterns.match(href):</span>
+<span id="cb13-39"><a href="#cb13-39" aria-hidden="true" tabindex="-1"></a>                resource_urls.append(href)</span>
+<span id="cb13-40"><a href="#cb13-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-41"><a href="#cb13-41" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Resolve and store resource URLs</span></span>
+<span id="cb13-42"><a href="#cb13-42" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> res_url <span class="kw">in</span> resource_urls:</span>
+<span id="cb13-43"><a href="#cb13-43" aria-hidden="true" tabindex="-1"></a>            full_res_url <span class="op">=</span> urljoin(response.url, res_url)</span>
+<span id="cb13-44"><a href="#cb13-44" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> binary_patterns.match(full_res_url):</span>
+<span id="cb13-45"><a href="#cb13-45" aria-hidden="true" tabindex="-1"></a>                <span class="va">self</span>.resources.append(full_res_url)</span>
+<span id="cb13-46"><a href="#cb13-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-47"><a href="#cb13-47" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Extract main text</span></span>
+<span id="cb13-48"><a href="#cb13-48" aria-hidden="true" tabindex="-1"></a>        main_text <span class="op">=</span> <span class="va">self</span>.extract_main_text(response)</span>
+<span id="cb13-49"><a href="#cb13-49" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.texts.append(main_text)</span>
+<span id="cb13-50"><a href="#cb13-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-51"><a href="#cb13-51" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> extract_main_text(<span class="va">self</span>, response):</span>
+<span id="cb13-52"><a href="#cb13-52" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Try to find &lt;main&gt; tag content</span></span>
+<span id="cb13-53"><a href="#cb13-53" aria-hidden="true" tabindex="-1"></a>        main_content <span class="op">=</span> response.css(<span class="st">'main'</span>)</span>
+<span id="cb13-54"><a href="#cb13-54" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">not</span> main_content:</span>
+<span id="cb13-55"><a href="#cb13-55" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Fallback to the largest &lt;div&gt; or &lt;article&gt; tag</span></span>
+<span id="cb13-56"><a href="#cb13-56" aria-hidden="true" tabindex="-1"></a>            candidates <span class="op">=</span> response.css(<span class="st">'div, article'</span>)</span>
+<span id="cb13-57"><a href="#cb13-57" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> candidates:</span>
+<span id="cb13-58"><a href="#cb13-58" aria-hidden="true" tabindex="-1"></a>                main_content <span class="op">=</span> <span class="bu">max</span>(candidates, key<span class="op">=</span><span class="kw">lambda</span> el: <span class="bu">len</span>(el.get()), default<span class="op">=</span><span class="va">None</span>)</span>
+<span id="cb13-59"><a href="#cb13-59" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb13-60"><a href="#cb13-60" aria-hidden="true" tabindex="-1"></a>                main_content <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb13-61"><a href="#cb13-61" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb13-62"><a href="#cb13-62" aria-hidden="true" tabindex="-1"></a>            main_content <span class="op">=</span> main_content[<span class="dv">0</span>]</span>
+<span id="cb13-63"><a href="#cb13-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-64"><a href="#cb13-64" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> main_content:</span>
+<span id="cb13-65"><a href="#cb13-65" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Remove script and style tags</span></span>
+<span id="cb13-66"><a href="#cb13-66" aria-hidden="true" tabindex="-1"></a>            main_content <span class="op">=</span> main_content.xpath(<span class="st">'.//*[not(self::script or self::style)]'</span>)</span>
+<span id="cb13-67"><a href="#cb13-67" aria-hidden="true" tabindex="-1"></a>            text <span class="op">=</span> main_content.xpath(<span class="st">'.//text()'</span>).getall()</span>
+<span id="cb13-68"><a href="#cb13-68" aria-hidden="true" tabindex="-1"></a>            text <span class="op">=</span> [t.strip() <span class="cf">for</span> t <span class="kw">in</span> text <span class="cf">if</span> t.strip()]</span>
+<span id="cb13-69"><a href="#cb13-69" aria-hidden="true" tabindex="-1"></a>            text_content <span class="op">=</span> <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>.join(text)</span>
+<span id="cb13-70"><a href="#cb13-70" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb13-71"><a href="#cb13-71" aria-hidden="true" tabindex="-1"></a>            text_content <span class="op">=</span> <span class="st">''</span></span>
+<span id="cb13-72"><a href="#cb13-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-73"><a href="#cb13-73" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> text_content</span>
+<span id="cb13-74"><a href="#cb13-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-75"><a href="#cb13-75" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> closed(<span class="va">self</span>, reason):</span>
+<span id="cb13-76"><a href="#cb13-76" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Save data to dataframes</span></span>
+<span id="cb13-77"><a href="#cb13-77" aria-hidden="true" tabindex="-1"></a>        links_df <span class="op">=</span> pd.DataFrame({<span class="st">'url'</span>: <span class="va">self</span>.links})</span>
+<span id="cb13-78"><a href="#cb13-78" aria-hidden="true" tabindex="-1"></a>        resources_df <span class="op">=</span> pd.DataFrame({<span class="st">'resource_url'</span>: <span class="va">self</span>.resources})</span>
+<span id="cb13-79"><a href="#cb13-79" aria-hidden="true" tabindex="-1"></a>        texts_df <span class="op">=</span> pd.DataFrame({<span class="st">'text'</span>: <span class="va">self</span>.texts})</span>
+<span id="cb13-80"><a href="#cb13-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-81"><a href="#cb13-81" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Save dataframes to TSV files</span></span>
+<span id="cb13-82"><a href="#cb13-82" aria-hidden="true" tabindex="-1"></a>        links_df.to_csv(<span class="st">'links.tsv'</span>, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>, index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb13-83"><a href="#cb13-83" aria-hidden="true" tabindex="-1"></a>        resources_df.to_csv(<span class="st">'resources.tsv'</span>, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>, index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb13-84"><a href="#cb13-84" aria-hidden="true" tabindex="-1"></a>        texts_df.to_csv(<span class="st">'texts.tsv'</span>, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>, index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb13-85"><a href="#cb13-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-86"><a href="#cb13-86" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"DataFrames have been saved as TSV files."</span>)</span>
+<span id="cb13-87"><a href="#cb13-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-88"><a href="#cb13-88" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the spider</span></span>
+<span id="cb13-89"><a href="#cb13-89" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb13-90"><a href="#cb13-90" aria-hidden="true" tabindex="-1"></a>    process <span class="op">=</span> CrawlerProcess({</span>
+<span id="cb13-91"><a href="#cb13-91" aria-hidden="true" tabindex="-1"></a>        <span class="st">'ROBOTSTXT_OBEY'</span>: <span class="va">True</span>,</span>
+<span id="cb13-92"><a href="#cb13-92" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb13-93"><a href="#cb13-93" aria-hidden="true" tabindex="-1"></a>    process.crawl(MySpider)</span>
+<span id="cb13-94"><a href="#cb13-94" aria-hidden="true" tabindex="-1"></a>    process.start()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="explanation-1" class="level3">
+<h3 class="anchored" data-anchor-id="explanation-1">Explanation:</h3>
+<p><strong>Imports and Setup:</strong></p>
+<ul>
+<li><strong>scrapy</strong>: The main library for web scraping.</li>
+<li><strong>CrawlerProcess</strong>: To run the spider without using the command line.</li>
+<li><strong>urljoin</strong>: To resolve relative URLs.</li>
+<li><strong>pandas</strong>: To create and manipulate DataFrames.</li>
+<li><strong>re</strong>: For regular expressions.</li>
+</ul>
+<p><strong>Define the Spider Class:</strong></p>
+<ul>
+<li><strong>name</strong>: Name of the spider.</li>
+<li><strong>start_urls</strong>: List containing the starting URL(s) for the spider.</li>
+<li><strong>Data Storage</strong>: Initialize lists to store links, resources, and texts.</li>
+</ul>
+<p><strong>Parsing the Response:</strong></p>
+<ul>
+<li><p><strong>Extract All Link URLs:</strong></p>
+<ul>
+<li>Use CSS selectors to get all <code>&lt;a&gt;</code> tags with <code>href</code> attributes.</li>
+<li>Resolve relative URLs using <code>urljoin</code>.</li>
+<li>Store the full URLs in the <code>links</code> list.</li>
+</ul></li>
+<li><p><strong>Extract All Binary File URLs:</strong></p>
+<ul>
+<li>Define a regular expression pattern to match image files and documents.</li>
+<li>Extract <code>src</code> attributes from <code>&lt;img&gt;</code> tags.</li>
+<li>Include URLs from <code>&lt;a&gt;</code> tags that point directly to binary files.</li>
+<li>Resolve and store the full resource URLs in the <code>resources</code> list.</li>
+</ul></li>
+<li><p><strong>Extract Main Text:</strong></p>
+<ul>
+<li>Use the <code>extract_main_text</code> method.</li>
+<li>Attempt to extract content from the <code>&lt;main&gt;</code> tag.</li>
+<li>If <code>&lt;main&gt;</code> tag is not found, fallback to the largest <code>&lt;div&gt;</code> or <code>&lt;article&gt;</code> tag.</li>
+<li>Remove <code>&lt;script&gt;</code> and <code>&lt;style&gt;</code> tags.</li>
+<li>Extract text content.</li>
+<li>Store the text in the <code>texts</code> list.</li>
+</ul></li>
+</ul>
+<p><strong>Closing the Spider:</strong></p>
+<ul>
+<li>When the spider finishes, the <code>closed</code> method is called.</li>
+<li>Convert the lists to pandas DataFrames.</li>
+<li>Save each DataFrame to a TSV file.</li>
+</ul>
+<p><strong>Running the Spider:</strong></p>
+<ul>
+<li>Use <code>CrawlerProcess</code> to run the spider programmatically.</li>
+<li>Set <code>ROBOTSTXT_OBEY</code> to <code>True</code> to respect <code>robots.txt</code>.</li>
+<li>Call <code>process.start()</code> to begin crawling.</li>
+</ul>
+</section>
+<section id="how-to-use" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-use">How to Use:</h3>
+<ol type="1">
+<li><p><strong>Install Scrapy and Pandas:</strong></p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install scrapy pandas</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Save the Script:</strong></p>
+<ul>
+<li>Save the code above in a file named <code>scrapy_spider.py</code>.</li>
+</ul></li>
+<li><p><strong>Replace the URL:</strong></p>
+<ul>
+<li>In the <code>start_urls</code> list, replace <code>'https://www.example.com'</code> with the URL you wish to scrape.</li>
+</ul></li>
+<li><p><strong>Run the Script:</strong></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scrapy_spider.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Check the Output:</strong></p>
+<ul>
+<li>After the spider finishes, you will find three TSV files in the same directory:
+<ul>
+<li><code>links.tsv</code></li>
+<li><code>resources.tsv</code></li>
+<li><code>texts.tsv</code></li>
+</ul></li>
+</ul></li>
+</ol>
+</section>
+<section id="additional-notes-1" class="level3">
+<h3 class="anchored" data-anchor-id="additional-notes-1">Additional Notes:</h3>
+<ul>
+<li><p><strong>Legal and Ethical Considerations:</strong></p>
+<ul>
+<li><p><strong>Respect Robots.txt:</strong> The code sets <code>ROBOTSTXT_OBEY</code> to <code>True</code> to ensure compliance with the website’s <code>robots.txt</code> policies.</p></li>
+<li><p><strong>Terms of Service:</strong> Before scraping, check the website’s terms of service to ensure that scraping is permitted.</p></li>
+<li><p><strong>Rate Limiting:</strong> Be considerate and do not overload the server with too many requests. You can set a download delay:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>process <span class="op">=</span> CrawlerProcess({</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'ROBOTSTXT_OBEY'</span>: <span class="va">True</span>,</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'DOWNLOAD_DELAY'</span>: <span class="dv">1</span>,  <span class="co"># Delay of 1 second between requests</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul></li>
+<li><p><strong>Scrapy Settings:</strong></p>
+<ul>
+<li><p>You can customize the Scrapy settings by passing a dictionary to <code>CrawlerProcess</code>.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>process <span class="op">=</span> CrawlerProcess({</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'USER_AGENT'</span>: <span class="st">'my-scraper (https://www.mywebsite.com)'</span>,</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'ROBOTSTXT_OBEY'</span>: <span class="va">True</span>,</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'DOWNLOAD_DELAY'</span>: <span class="dv">1</span>,</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'LOG_LEVEL'</span>: <span class="st">'INFO'</span>,  <span class="co"># Set to 'DEBUG' for more details</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul></li>
+<li><p><strong>Handling JavaScript-rendered Content:</strong></p>
+<ul>
+<li>Scrapy does not execute JavaScript. If the page content is loaded via JavaScript, consider using tools like <strong>Scrapy Splash</strong> or <strong>Selenium</strong> with Scrapy.</li>
+</ul></li>
+<li><p><strong>Improving Text Extraction:</strong></p>
+<ul>
+<li><p>For better extraction of the main text, consider using libraries like <code>readability-lxml</code>.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> readability <span class="im">import</span> Document</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> extract_main_text(<span class="va">self</span>, response):</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    doc <span class="op">=</span> Document(response.text)</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    main_html <span class="op">=</span> doc.summary()</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    main_soup <span class="op">=</span> scrapy.Selector(text<span class="op">=</span>main_html)</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    text <span class="op">=</span> main_soup.xpath(<span class="st">'//text()'</span>).getall()</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>    text <span class="op">=</span> [t.strip() <span class="cf">for</span> t <span class="kw">in</span> text <span class="cf">if</span> t.strip()]</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>    text_content <span class="op">=</span> <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>.join(text)</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> text_content</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Note:</strong> You’ll need to install <code>readability-lxml</code>:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install readability-lxml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul></li>
+<li><p><strong>Single Page Crawl:</strong></p>
+<ul>
+<li><p>The spider as written only crawls the single page specified in <code>start_urls</code>. If you want to follow links and crawl multiple pages, you need to adjust the <code>parse</code> method to yield new requests.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> href <span class="kw">in</span> link_urls:</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    full_url <span class="op">=</span> urljoin(response.url, href)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">yield</span> scrapy.Request(full_url, callback<span class="op">=</span><span class="va">self</span>.parse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Be cautious with recursive crawling to avoid crawling the entire website unintentionally.</p></li>
+</ul></li>
+<li><p><strong>Avoid Duplicates:</strong></p>
+<ul>
+<li>Ensure that you’re not collecting duplicate URLs by checking if a URL is already in your list before adding it.</li>
+</ul></li>
+<li><p><strong>Data Cleaning:</strong></p>
+<ul>
+<li>You may need to clean the extracted data further, depending on your requirements.</li>
+</ul></li>
+</ul>
+</section>
+<section id="important-considerations" class="level3">
+<h3 class="anchored" data-anchor-id="important-considerations">Important Considerations:</h3>
+<ul>
+<li><p><strong>Ethical Scraping:</strong></p>
+<ul>
+<li>Always scrape responsibly by following the website’s <code>robots.txt</code> rules and terms of service.</li>
+<li>Use a meaningful <code>User-Agent</code> string to identify your scraper.</li>
+</ul></li>
+<li><p><strong>Robustness:</strong></p>
+<ul>
+<li>Add error handling to manage network issues or unexpected HTML structures.</li>
+</ul></li>
+<li><p><strong>Testing:</strong></p>
+<ul>
+<li>Test your scraper on a small scale before running it on larger sites.</li>
+</ul></li>
+</ul>
+<p><strong>Disclaimer:</strong></p>
+<ul>
+<li><strong>Use Responsibly:</strong> Ensure that you use this code responsibly and ethically, complying with all applicable laws and website policies.</li>
+</ul>
+<hr>
+<p><strong>Feel free to ask if you need further assistance or modifications to the code!</strong></p>
+</section>
+</section>
+<section id="web-browser-automation" class="level2">
+<h2 class="anchored" data-anchor-id="web-browser-automation">web browser automation</h2>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!pip install playwright</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co">#!playwright install</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># screenshot.py</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> playwright.sync_api <span class="im">import</span> sync_playwright</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> take_full_page_screenshot(url, output_path):</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> sync_playwright() <span class="im">as</span> p:</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Launch the browser (Chromium in headless mode)</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>        browser <span class="op">=</span> p.chromium.launch()</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>        page <span class="op">=</span> browser.new_page()</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Navigate to the specified URL</span></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>        page.goto(url)</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Wait until the page is fully loaded</span></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>        page.wait_for_load_state(<span class="st">'networkidle'</span>)</span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Take a full-page screenshot</span></span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>        page.screenshot(path<span class="op">=</span>output_path, full_page<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Close the browser</span></span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>        browser.close()</span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Usage example</span></span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>    url <span class="op">=</span> <span class="st">'https://www.example.com'</span>  <span class="co"># Replace with your target URL</span></span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a>    output_path <span class="op">=</span> <span class="st">'full_screenshot.png'</span>  <span class="co"># Output file path</span></span>
+<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a>    take_full_page_screenshot(url, output_path)</span>
+<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Screenshot saved to </span><span class="sc">{</span>output_path<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+<section id="explanation-2" class="level3">
+<h3 class="anchored" data-anchor-id="explanation-2"><strong>Explanation</strong></h3>
+<section id="imports-and-setup" class="level4">
+<h4 class="anchored" data-anchor-id="imports-and-setup"><strong>Imports and Setup</strong></h4>
+<ul>
+<li><p><strong>Import <code>sync_playwright</code></strong>: We import <code>sync_playwright</code> from <code>playwright.sync_api</code> to use Playwright in synchronous mode.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> playwright.sync_api <span class="im">import</span> sync_playwright</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</section>
+<section id="define-the-function" class="level4">
+<h4 class="anchored" data-anchor-id="define-the-function"><strong>Define the Function</strong></h4>
+<ul>
+<li><p><strong>Function <code>take_full_page_screenshot</code></strong>: This function takes a URL and an output file path as arguments and captures a full-page screenshot of the specified URL.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> take_full_page_screenshot(url, output_path):</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</section>
+<section id="start-playwright-and-launch-the-browser" class="level4">
+<h4 class="anchored" data-anchor-id="start-playwright-and-launch-the-browser"><strong>Start Playwright and Launch the Browser</strong></h4>
+<ul>
+<li><p><strong>Use <code>sync_playwright()</code> Context Manager</strong>: This ensures that Playwright starts and stops correctly.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> sync_playwright() <span class="im">as</span> p:</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Launch the Browser</strong>: We use Chromium in headless mode by default. You can choose <code>'chromium'</code>, <code>'firefox'</code>, or <code>'webkit'</code>.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>browser <span class="op">=</span> p.chromium.launch()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Create a New Page</strong>: Open a new browser page (tab).</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>page <span class="op">=</span> browser.new_page()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</section>
+<section id="navigate-to-the-url" class="level4">
+<h4 class="anchored" data-anchor-id="navigate-to-the-url"><strong>Navigate to the URL</strong></h4>
+<ul>
+<li><p><strong>Go to the Specified URL</strong>: Navigate the browser to the target URL.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>page.goto(url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Wait for the Page to Load</strong>: Ensure the page is fully loaded before taking the screenshot.</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>page.wait_for_load_state(<span class="st">'networkidle'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</section>
+<section id="take-the-full-page-screenshot" class="level4">
+<h4 class="anchored" data-anchor-id="take-the-full-page-screenshot"><strong>Take the Full-Page Screenshot</strong></h4>
+<ul>
+<li><p><strong>Capture the Screenshot</strong>: Use the <code>screenshot</code> method with <code>full_page=True</code> to capture the entire page.</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>page.screenshot(path<span class="op">=</span>output_path, full_page<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</section>
+<section id="close-the-browser" class="level4">
+<h4 class="anchored" data-anchor-id="close-the-browser"><strong>Close the Browser</strong></h4>
+<ul>
+<li><p><strong>Close the Browser</strong>: Clean up by closing the browser instance.</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>browser.close()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</section>
+<section id="usage-example" class="level4">
+<h4 class="anchored" data-anchor-id="usage-example"><strong>Usage Example</strong></h4>
+<ul>
+<li><p><strong>Provide an Example Usage</strong>: Demonstrate how to call the function with a specific URL and output path.</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    url <span class="op">=</span> <span class="st">'https://www.example.com'</span>  <span class="co"># Replace with your target URL</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    output_path <span class="op">=</span> <span class="st">'full_screenshot.png'</span>  <span class="co"># Output file path</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>    take_full_page_screenshot(url, output_path)</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Screenshot saved to </span><span class="sc">{</span>output_path<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="step-by-step-guide" class="level3">
+<h3 class="anchored" data-anchor-id="step-by-step-guide"><strong>Step-by-Step Guide</strong></h3>
+<section id="install-playwright" class="level4">
+<h4 class="anchored" data-anchor-id="install-playwright"><strong>1. Install Playwright</strong></h4>
+<p>First, you need to install Playwright and its dependencies.</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install playwright</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Then, install the browser binaries:</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="ex">playwright</span> install</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This command installs Chromium, Firefox, and WebKit browsers needed by Playwright.</p>
+</section>
+<section id="save-the-script" class="level4">
+<h4 class="anchored" data-anchor-id="save-the-script"><strong>2. Save the Script</strong></h4>
+<p>Save the code above in a file named <code>screenshot.py</code>.</p>
+</section>
+<section id="replace-the-url" class="level4">
+<h4 class="anchored" data-anchor-id="replace-the-url"><strong>3. Replace the URL</strong></h4>
+<p>In the script, replace <code>'https://www.example.com'</code> with the URL of the page you want to capture.</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">'https://www.your-target-website.com'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="run-the-script" class="level4">
+<h4 class="anchored" data-anchor-id="run-the-script"><strong>4. Run the Script</strong></h4>
+<p>Execute the script from the command line:</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> screenshot.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="check-the-output" class="level4">
+<h4 class="anchored" data-anchor-id="check-the-output"><strong>5. Check the Output</strong></h4>
+<p>After running the script, you should find a file named <code>full_screenshot.png</code> in the same directory. This image is the full-page screenshot of the specified URL.</p>
+<hr>
+</section>
+</section>
+<section id="additional-options" class="level3">
+<h3 class="anchored" data-anchor-id="additional-options"><strong>Additional Options</strong></h3>
+<section id="specify-browser-options" class="level4">
+<h4 class="anchored" data-anchor-id="specify-browser-options"><strong>Specify Browser Options</strong></h4>
+<p>You can customize the browser launch options, such as running in headless or headful mode.</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>browser <span class="op">=</span> p.chromium.launch(headless<span class="op">=</span><span class="va">False</span>)  <span class="co"># Set headless=False to see the browser</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="set-viewport-size" class="level4">
+<h4 class="anchored" data-anchor-id="set-viewport-size"><strong>Set Viewport Size</strong></h4>
+<p>If you need to set a specific viewport size:</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>page <span class="op">=</span> browser.new_page(viewport<span class="op">=</span>{<span class="st">'width'</span>: <span class="dv">1280</span>, <span class="st">'height'</span>: <span class="dv">720</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="authentication-and-headers" class="level4">
+<h4 class="anchored" data-anchor-id="authentication-and-headers"><strong>Authentication and Headers</strong></h4>
+<p>If the page requires authentication or specific headers:</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>page.goto(url, headers<span class="op">=</span>{<span class="st">'Authorization'</span>: <span class="st">'Bearer YOUR_TOKEN'</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="delay-for-dynamic-content" class="level4">
+<h4 class="anchored" data-anchor-id="delay-for-dynamic-content"><strong>Delay for Dynamic Content</strong></h4>
+<p>If the page loads content dynamically, you may need to wait before taking the screenshot.</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>page.goto(url)</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>page.wait_for_timeout(<span class="dv">5000</span>)  <span class="co"># Wait for 5 seconds</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Or wait for a specific element:</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>page.goto(url)</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>page.wait_for_selector(<span class="st">'#content'</span>)  <span class="co"># Wait for an element with id 'content'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+</section>
+<section id="notes-and-best-practices" class="level3">
+<h3 class="anchored" data-anchor-id="notes-and-best-practices"><strong>Notes and Best Practices</strong></h3>
+<ul>
+<li><p><strong>Error Handling</strong>: You can add try-except blocks to handle exceptions.</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Your code</span></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"An error occurred: </span><span class="sc">{</span>e<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Headless vs.&nbsp;Headful</strong>: Running in headless mode (<code>headless=True</code>) means the browser runs in the background without a GUI. Setting <code>headless=False</code> allows you to see the browser actions.</p></li>
+<li><p><strong>Resource Cleanup</strong>: Using the context manager ensures resources are properly cleaned up after execution.</p></li>
+<li><p><strong>Playwright Documentation</strong>: For more advanced usage, refer to the official Playwright Python documentation: <a href="https://playwright.dev/python/docs/intro">Playwright for Python</a></p></li>
+</ul>
+<hr>
+</section>
+<section id="example-with-advanced-features" class="level3">
+<h3 class="anchored" data-anchor-id="example-with-advanced-features"><strong>Example with Advanced Features</strong></h3>
+<div class="sourceCode" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> playwright.sync_api <span class="im">import</span> sync_playwright</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> take_full_page_screenshot(url, output_path):</span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> sync_playwright() <span class="im">as</span> p:</span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Launch the browser in headless mode</span></span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>        browser <span class="op">=</span> p.chromium.launch(headless<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Create a new browser context with a specific viewport size</span></span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>        context <span class="op">=</span> browser.new_context(</span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>            viewport<span class="op">=</span>{<span class="st">'width'</span>: <span class="dv">1920</span>, <span class="st">'height'</span>: <span class="dv">1080</span>}</span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a>        page <span class="op">=</span> context.new_page()</span>
+<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Navigate to the URL</span></span>
+<span id="cb43-13"><a href="#cb43-13" aria-hidden="true" tabindex="-1"></a>        page.goto(url)</span>
+<span id="cb43-14"><a href="#cb43-14" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Wait for network to be idle</span></span>
+<span id="cb43-15"><a href="#cb43-15" aria-hidden="true" tabindex="-1"></a>        page.wait_for_load_state(<span class="st">'networkidle'</span>)</span>
+<span id="cb43-16"><a href="#cb43-16" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Wait for any animations to finish</span></span>
+<span id="cb43-17"><a href="#cb43-17" aria-hidden="true" tabindex="-1"></a>        page.wait_for_timeout(<span class="dv">1000</span>)  <span class="co"># Wait for 1 second</span></span>
+<span id="cb43-18"><a href="#cb43-18" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Hide any unwanted elements (e.g., cookie banners)</span></span>
+<span id="cb43-19"><a href="#cb43-19" aria-hidden="true" tabindex="-1"></a>        page.evaluate(<span class="st">"() =&gt; { const banners = document.querySelectorAll('.cookie-banner'); banners.forEach(b =&gt; b.style.display = 'none'); }"</span>)</span>
+<span id="cb43-20"><a href="#cb43-20" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Take a full-page screenshot</span></span>
+<span id="cb43-21"><a href="#cb43-21" aria-hidden="true" tabindex="-1"></a>        page.screenshot(path<span class="op">=</span>output_path, full_page<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb43-22"><a href="#cb43-22" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Close the browser</span></span>
+<span id="cb43-23"><a href="#cb43-23" aria-hidden="true" tabindex="-1"></a>        browser.close()</span>
+<span id="cb43-24"><a href="#cb43-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-25"><a href="#cb43-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Usage example</span></span>
+<span id="cb43-26"><a href="#cb43-26" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb43-27"><a href="#cb43-27" aria-hidden="true" tabindex="-1"></a>    url <span class="op">=</span> <span class="st">'https://www.example.com'</span>  <span class="co"># Replace with your target URL</span></span>
+<span id="cb43-28"><a href="#cb43-28" aria-hidden="true" tabindex="-1"></a>    output_path <span class="op">=</span> <span class="st">'full_screenshot.png'</span>  <span class="co"># Output file path</span></span>
+<span id="cb43-29"><a href="#cb43-29" aria-hidden="true" tabindex="-1"></a>    take_full_page_screenshot(url, output_path)</span>
+<span id="cb43-30"><a href="#cb43-30" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Screenshot saved to </span><span class="sc">{</span>output_path<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation of Additional Features:</strong></p>
+<ul>
+<li><p><strong>Viewport Size</strong>: Setting the viewport to a larger size can capture more content.</p></li>
+<li><p><strong>Waiting for Animations</strong>: Adding a timeout after page load can ensure that any animations or dynamic content have completed.</p></li>
+<li><p><strong>Hiding Elements</strong>: Use <code>evaluate</code> to run JavaScript in the page context to hide unwanted elements like pop-ups or banners.</p></li>
+</ul>
+<hr>
+</section>
+<section id="common-issues-and-troubleshooting" class="level3">
+<h3 class="anchored" data-anchor-id="common-issues-and-troubleshooting"><strong>Common Issues and Troubleshooting</strong></h3>
+<ul>
+<li><p><strong>Timeout Errors</strong>: If the page takes too long to load, you might encounter timeout errors. Increase the timeout using:</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>page.goto(url, timeout<span class="op">=</span><span class="dv">60000</span>)  <span class="co"># Wait up to 60 seconds</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>SSL Certificate Errors</strong>: For pages with SSL issues, you can ignore HTTPS errors:</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>browser <span class="op">=</span> p.chromium.launch(args<span class="op">=</span>[<span class="st">'--ignore-certificate-errors'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Authentication Required</strong>: For pages behind authentication, provide credentials:</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>context <span class="op">=</span> browser.new_context(</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>    http_credentials<span class="op">=</span>{<span class="st">'username'</span>: <span class="st">'user'</span>, <span class="st">'password'</span>: <span class="st">'pass'</span>}</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+<hr>
+</section>
+<section id="conclusion" class="level3">
+<h3 class="anchored" data-anchor-id="conclusion"><strong>Conclusion</strong></h3>
+<p>This script provides a simple way to use Playwright for Python to visit a URL and take a full-page screenshot, saving it as a PNG file. Playwright is a powerful tool for browser automation and supports advanced features that can be leveraged for more complex tasks.</p>
+<hr>
+<p><strong>Remember to replace <code>'https://www.example.com'</code> with the actual URL you want to capture and ensure you comply with the website’s terms of service and robots.txt policies when automating interactions.</strong></p>
+
+
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
