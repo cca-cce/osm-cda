@@ -17,6 +17,7 @@ title: "web experiments"
 
 ## online survey experiment
 
+- live [experiment](https://cca-cce.github.io/osm-cdc/web/exp/){target="_blank"}
 - github [repo](https://github.com/cca-cce/osm-cdc/archive/refs/heads/main.zip)
 
 ```html
@@ -53,12 +54,468 @@ title: "web experiments"
 </html>
 ```
 
-[![huggingface account and gpu resources required](https://img.youtube.com/vi/SmJ8x-lYl6s/0.jpg)](https://www.youtube.com/watch?v=SmJ8x-lYl6s)
-
-## scraping live web data
+[![create an online survey experiment using github](https://img.youtube.com/vi/SmJ8x-lYl6s/0.jpg)](https://www.youtube.com/watch?v=SmJ8x-lYl6s){target="_blank"}
 
 ## website user interaction
 
+- live [experiment](https://automatic-lamp-976g56g54xrv37pg7-5000.app.github.dev/){target="_blank"}
+- github [repo](https://github.com/cca-cce/osm-cdc/archive/refs/heads/main.zip)
+
+```{python}
+# app.py
+
+from flask import Flask, redirect
+import random
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    # Randomly choose one of the two subpages
+    page = random.choice(['page1', 'page2'])
+    # Redirect to the selected subpage
+    return redirect(f'/{page}')
+
+@app.route('/page1')
+def page1():
+    return '<h1>This is Page 1</h1>'
+
+@app.route('/page2')
+def page2():
+    return '<h1>This is Page 2</h1>'
+
+if __name__ == '__main__':
+    app.run(debug=True)
+```
+
+---
+
+### Explanation:
+
+**Import Necessary Modules:**
+
+```{python}
+from flask import Flask, redirect
+import random
+```
+
+- **Flask:** The main class for creating a Flask web application.
+- **redirect:** A function to redirect the user to a different route.
+- **random:** A module to generate random choices, used here to select between the two subpages.
+
+---
+
+**Initialize the Flask Application:**
+
+```{python}
+app = Flask(__name__)
+```
+
+- Creates an instance of the Flask application.
+
+---
+
+**Define the Index Route:**
+
+```{python}
+@app.route('/')
+def index():
+    # Randomly choose one of the two subpages
+    page = random.choice(['page1', 'page2'])
+    # Redirect to the selected subpage
+    return redirect(f'/{page}')
+```
+
+- **`@app.route('/')`:** Specifies that this function handles requests to the root URL (`/`).
+- **Random Selection:**
+  - `random.choice(['page1', 'page2'])`: Randomly selects either `'page1'` or `'page2'` with equal probability.
+- **Redirection:**
+  - `redirect(f'/{page}')`: Redirects the user to the selected subpage.
+
+---
+
+**Define Subpage Routes:**
+
+```{python}
+@app.route('/page1')
+def page1():
+    return '<h1>This is Page 1</h1>'
+
+@app.route('/page2')
+def page2():
+    return '<h1>This is Page 2</h1>'
+```
+
+- **`@app.route('/page1')` and `@app.route('/page2')`:** Define routes for `/page1` and `/page2`.
+- **Return Statements:**
+  - Returns simple HTML content indicating which page the user is on.
+
+---
+
+**Run the Application:**
+
+```{python}
+if __name__ == '__main__':
+    app.run(debug=True)
+```
+
+- **`if __name__ == '__main__':`**: Ensures that the app runs only if the script is executed directly.
+- **`app.run(debug=True)`:** Starts the Flask development server with debugging enabled.
+
+---
+
+### How It Works:
+
+1. **User Visits the Root URL (`/`):**
+   - The `index` function is called.
+   - A random choice is made between `'page1'` and `'page2'`.
+   - The user is redirected to the chosen subpage.
+
+2. **User Is Redirected to Either `/page1` or `/page2`:**
+   - The corresponding function (`page1` or `page2`) is called.
+   - The user sees a simple message indicating which page they are on.
+
+---
+
+### Running the Application:
+
+1. **Install Flask:**
+
+   Make sure you have Flask installed. If not, install it using:
+
+   ```bash
+   pip install flask
+   ```
+
+2. **Save the Script:**
+
+   Save the code in a file named `app.py`.
+
+3. **Run the Application:**
+
+   In your terminal, navigate to the directory containing `app.py` and run:
+
+   ```bash
+   python app.py
+   ```
+
+4. **Access the App in a Browser:**
+
+   Open your web browser and go to `http://127.0.0.1:5000/`.
+
+   - Each time you refresh the page, there's a 50% chance of being redirected to `/page1` and a 50% chance of being redirected to `/page2`.
+
+---
+
+### Customization:
+
+- **Adjust the Subpages:**
+
+  You can modify the content of `page1` and `page2` functions to display different content or render templates.
+
+- **Add More Pages:**
+
+  If you want more than two pages, you can add them to the list in `random.choice` and define additional route functions.
+
+  ```{python}
+  @app.route('/')
+  def index():
+      page = random.choice(['page1', 'page2', 'page3'])
+      return redirect(f'/{page}')
+
+  @app.route('/page3')
+  def page3():
+      return '<h1>This is Page 3</h1>'
+  ```
+
+- **Use Templates:**
+
+  For more complex pages, consider using HTML templates with Flask's rendering functions.
+
+  ```{python}
+  from flask import render_template
+
+  @app.route('/page1')
+  def page1():
+      return render_template('page1.html')
+  ```
+
+  Make sure to create a `templates` directory and place your HTML files there.
+
+---
+
+### Important Notes:
+
+- **Debug Mode:**
+
+  - Running the app with `debug=True` enables the debugger and automatic reloading. This is convenient during development but should not be used in production.
+
+- **Randomness:**
+
+  - The `random.choice` function ensures that each subpage is equally likely to be selected.
+
+- **Redirection:**
+
+  - The `redirect` function sends an HTTP 302 response to the client, instructing the browser to navigate to the new URL.
+
+- **Thread Safety:**
+
+  - The `random` module is thread-safe in the context of Flask's built-in development server. If deploying to a production environment with multiple threads or processes, ensure that the random number generation is handled appropriately.
+
+---
+
+### Deployment Considerations:
+
+- **Production Server:**
+
+  - For deployment, use a production-ready server like Gunicorn or uWSGI instead of the development server.
+
+- **Environment Variables:**
+
+  - Use environment variables to manage configurations like debug mode and secret keys.
+
+- **Security:**
+
+  - Always be mindful of security best practices when deploying a web application.
+
+---
+
+### Example Output:
+
+When you run the app and visit `http://127.0.0.1:5000/`, you will be redirected to either:
+
+- `http://127.0.0.1:5000/page1` displaying:
+
+  ```
+  This is Page 1
+  ```
+
+- **OR**
+
+- `http://127.0.0.1:5000/page2` displaying:
+
+  ```
+  This is Page 2
+  ```
+
+---
+
+**Feel free to customize the code further to suit your specific needs!**
+
+### public access to website
+
+To make your Flask web app running on GitHub Codespaces reachable to any user without the need for them to be logged in, you need to:
+
+1. **Configure your Flask app to listen on all network interfaces.**
+2. **Set the port visibility to public in GitHub Codespaces.**
+
+Below are the detailed steps to achieve this:
+
+---
+
+### **Step 1: Update Your Flask App to Listen on All Interfaces**
+
+By default, Flask runs on `localhost` (`127.0.0.1`), which is only accessible from within the Codespace. To make it accessible externally, you need to set the host to `0.0.0.0`.
+
+**Modify your `app.py` (or main Flask file) as follows:**
+
+```{python}
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
+```
+
+- **`host='0.0.0.0'`** tells Flask to listen on all available network interfaces.
+- **`port=5000`** specifies the port number (you can choose a different port if needed).
+
+---
+
+### **Step 2: Set the Port Visibility to Public in GitHub Codespaces**
+
+GitHub Codespaces allows you to forward ports from the Codespace to your local machine or make them accessible over the internet.
+
+**Here's how to make your port public:**
+
+1. **Run your Flask App in the Codespace Terminal:**
+
+   ```bash
+   python app.py
+   ```
+
+   - Ensure that your Flask app is running so that Codespaces can detect the listening port.
+
+2. **Access the Ports Panel:**
+
+   - In the Codespace interface, look for the **Ports** tab. It is usually located in the bottom panel. If you don't see it, you can open it by clicking on **View > Ports**.
+
+3. **Identify the Listening Port:**
+
+   - In the **Ports** panel, you should see the port number your app is running on (e.g., `5000`).
+
+4. **Change Port Visibility:**
+
+   - **Private to Public:**
+
+     - Right-click on the port (e.g., `5000`) and select **Port Visibility > Public**.
+
+     ![Set Port to Public](https://i.imgur.com/YourImageLink.png) *(Replace with an actual screenshot if possible)*
+
+   - **Alternative Method:**
+
+     - Click on the lock icon or the visibility status next to the port number and select **Public** from the dropdown menu.
+
+5. **Copy the Public URL:**
+
+   - Once the port is set to public, Codespaces will provide a public URL.
+   - The URL typically looks like:
+
+     ```
+     https://5000-<github-username>-<hash>.<region>.apps.github.dev
+     ```
+
+     - For example:
+
+       ```
+       https://5000-johndoe-abc1234567890.us-west1.apps.github.dev
+       ```
+
+6. **Access the Flask App via the Public URL:**
+
+   - Share this URL with anyone who needs to access your app.
+   - They can open it in any web browser without needing to log in.
+
+---
+
+### **Security Considerations**
+
+- **Authentication and Authorization:**
+
+  - If your app handles sensitive data, implement proper authentication mechanisms.
+  - Consider adding user login functionality to restrict access.
+
+- **HTTPS Enforcement:**
+
+  - The URLs provided by Codespaces use HTTPS, ensuring that the data transmitted is encrypted.
+
+- **Monitor for Unauthorized Access:**
+
+  - Keep an eye on your app's logs to detect any suspicious activity.
+
+- **Cleanup After Use:**
+
+  - When you're done, stop your Flask app and set the port visibility back to private or shut down the Codespace.
+
+---
+
+### **Important Notes**
+
+- **Codespaces Limits:**
+
+  - **Idle Timeout:**
+
+    - Codespaces may shut down after a period of inactivity, which would make your app unavailable.
+
+  - **Session Duration:**
+
+    - There's a maximum session duration for Codespaces. Make sure to save your work frequently.
+
+- **Performance:**
+
+  - Codespaces are meant for development purposes. They might not handle high traffic well.
+
+- **Persistent Storage:**
+
+  - Any data stored in the Codespace may be lost if the environment is rebuilt. Use external databases or storage services if you need persistence.
+
+---
+
+### **Alternative Solutions**
+
+If you require a more stable or permanent hosting solution, consider deploying your Flask app to a dedicated hosting service:
+
+- **Heroku:**
+
+  - Free tier available.
+  - Easy to deploy Flask apps.
+
+- **PythonAnywhere:**
+
+  - Specifically designed for Python applications.
+  - Free tier suitable for small apps.
+
+- **AWS Elastic Beanstalk:**
+
+  - Supports Python applications.
+  - Scalable infrastructure.
+
+- **Google App Engine:**
+
+  - Supports Python with flexible environments.
+  - Pay-as-you-go pricing.
+
+- **DigitalOcean App Platform:**
+
+  - Simple deployment of apps from GitHub repositories.
+
+---
+
+### **Example: Deploying to Heroku**
+
+**Install the Heroku CLI:**
+
+```bash
+curl https://cli-assets.heroku.com/install.sh | sh
+```
+
+**Prepare Your Flask App for Deployment:**
+
+- **`Procfile`:**
+
+  Create a file named `Procfile` with the following content:
+
+  ```
+  web: gunicorn app:app
+  ```
+
+- **`requirements.txt`:**
+
+  Ensure all your dependencies are listed in `requirements.txt`:
+
+  ```bash
+  pip freeze > requirements.txt
+  ```
+
+**Deploy to Heroku:**
+
+```bash
+heroku login
+heroku create your-app-name
+git add .
+git commit -m "Prepare for deployment"
+git push heroku main
+```
+
+---
+
+### **Summary**
+
+- **Making Your Flask App Public in Codespaces:**
+
+  - Update your Flask app to listen on `0.0.0.0`.
+  - Set the port visibility to public in the Codespaces interface.
+  - Access your app via the provided public URL.
+
+- **Considerations:**
+
+  - Be mindful of security implications.
+  - Codespaces is suitable for development and testing, not for production deployment.
+
+- **Alternative Hosting:**
+
+  - For a more robust solution, deploy your app to a dedicated hosting service.
+
+---
+
+**Feel free to ask if you need further assistance with deploying your Flask app or if you have any other questions!**
 
 
 

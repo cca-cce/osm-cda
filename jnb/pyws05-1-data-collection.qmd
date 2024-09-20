@@ -333,6 +333,8 @@ After running the script, you would get:
 
 ## scrapy, github codespaces
 
+- code examples [github](https://github.com/){target="_blank"}
+
 ```{python}
 # scrapy_spider.py
 
