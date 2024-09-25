@@ -90,7 +90,7 @@ if __name__ == '__main__':
 
 ---
 
-### Explanation:
+### Explanation
 
 **Import Necessary Modules:**
 
@@ -164,7 +164,7 @@ if __name__ == '__main__':
 
 ---
 
-### How It Works:
+### How It Works
 
 1. **User Visits the Root URL (`/`):**
    - The `index` function is called.
@@ -177,7 +177,7 @@ if __name__ == '__main__':
 
 ---
 
-### Running the Application:
+### Running the Application
 
 1. **Install Flask:**
 
@@ -207,7 +207,7 @@ if __name__ == '__main__':
 
 ---
 
-### Customization:
+### Customization
 
 - **Adjust the Subpages:**
 
@@ -244,7 +244,7 @@ if __name__ == '__main__':
 
 ---
 
-### Important Notes:
+### Important Notes
 
 - **Debug Mode:**
 
@@ -264,7 +264,7 @@ if __name__ == '__main__':
 
 ---
 
-### Deployment Considerations:
+### Deployment Considerations
 
 - **Production Server:**
 
@@ -280,7 +280,7 @@ if __name__ == '__main__':
 
 ---
 
-### Example Output:
+### Example Output
 
 When you run the app and visit `http://127.0.0.1:5000/`, you will be redirected to either:
 
@@ -313,7 +313,7 @@ Below are the detailed steps to achieve this:
 
 ---
 
-### **Step 1: Update Your Flask App to Listen on All Interfaces**
+### Step 1: Update Your Flask App to Listen on All Interfaces
 
 By default, Flask runs on `localhost` (`127.0.0.1`), which is only accessible from within the Codespace. To make it accessible externally, you need to set the host to `0.0.0.0`.
 
@@ -329,7 +329,7 @@ if __name__ == '__main__':
 
 ---
 
-### **Step 2: Set the Port Visibility to Public in GitHub Codespaces**
+### Step 2: Set the Port Visibility to Public in GitHub Codespaces
 
 GitHub Codespaces allows you to forward ports from the Codespace to your local machine or make them accessible over the internet.
 
@@ -385,7 +385,7 @@ GitHub Codespaces allows you to forward ports from the Codespace to your local m
 
 ---
 
-### **Security Considerations**
+### Security Considerations
 
 - **Authentication and Authorization:**
 
@@ -406,7 +406,7 @@ GitHub Codespaces allows you to forward ports from the Codespace to your local m
 
 ---
 
-### **Important Notes**
+### Important Notes
 
 - **Codespaces Limits:**
 
@@ -428,7 +428,7 @@ GitHub Codespaces allows you to forward ports from the Codespace to your local m
 
 ---
 
-### **Alternative Solutions**
+### Alternative Solutions
 
 If you require a more stable or permanent hosting solution, consider deploying your Flask app to a dedicated hosting service:
 
@@ -458,7 +458,7 @@ If you require a more stable or permanent hosting solution, consider deploying y
 
 ---
 
-### **Example: Deploying to Heroku**
+### Example: Deploying to Heroku
 
 **Install the Heroku CLI:**
 
@@ -496,7 +496,7 @@ git push heroku main
 
 ---
 
-### **Summary**
+### Summary
 
 - **Making Your Flask App Public in Codespaces:**
 
