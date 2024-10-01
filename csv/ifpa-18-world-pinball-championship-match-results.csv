@@ -1,0 +1,1921 @@
+session,group,round,round_id,player_name,player_id,score,rank,game_name,game_id,game_category,game_category_id
+1,1,1,1,Michael Trepp,57,1,4,Little Joe,34,old,1
+1,1,1,1,Bob Matthews,12,7,1,Little Joe,34,old,1
+1,1,1,1,Mark Pearson,54,3,3,Little Joe,34,old,1
+1,1,1,1,Escher Lefkoff,28,5,2,Little Joe,34,old,1
+1,1,2,2,Michael Trepp,57,5,2,Jokerz,31,mid,2
+1,1,2,2,Bob Matthews,12,1,4,Jokerz,31,mid,2
+1,1,2,2,Mark Pearson,54,7,1,Jokerz,31,mid,2
+1,1,2,2,Escher Lefkoff,28,3,3,Jokerz,31,mid,2
+1,1,3,3,Michael Trepp,57,3,3,Indianapolis 500,29,new,3
+1,1,3,3,Bob Matthews,12,1,4,Indianapolis 500,29,new,3
+1,1,3,3,Mark Pearson,54,5,2,Indianapolis 500,29,new,3
+1,1,3,3,Escher Lefkoff,28,7,1,Indianapolis 500,29,new,3
+1,2,1,4,Jeff Teolis,37,5,2,Nip It,38,old,1
+1,2,1,4,Raymond Davidson,64,7,1,Nip It,38,old,1
+1,2,1,4,Andrej Rižner,2,3,3,Nip It,38,old,1
+1,2,1,4,Paul Jongma,62,1,4,Nip It,38,old,1
+1,2,2,5,Jeff Teolis,37,3,3,Medusa,35,mid,2
+1,2,2,5,Raymond Davidson,64,7,1,Medusa,35,mid,2
+1,2,2,5,Andrej Rižner,2,1,4,Medusa,35,mid,2
+1,2,2,5,Paul Jongma,62,5,2,Medusa,35,mid,2
+1,2,3,6,Jeff Teolis,37,3,3,The Walking Dead Pro,57,new,3
+1,2,3,6,Raymond Davidson,64,1,4,The Walking Dead Pro,57,new,3
+1,2,3,6,Andrej Rižner,2,5,2,The Walking Dead Pro,57,new,3
+1,2,3,6,Paul Jongma,62,7,1,The Walking Dead Pro,57,new,3
+1,3,1,7,Jason Zahler,36,7,1,Harlem Globetrotters,28,old,1
+1,3,1,7,Tyler Dipper,76,1,4,Harlem Globetrotters,28,old,1
+1,3,1,7,Keri Wing,48,3,3,Harlem Globetrotters,28,old,1
+1,3,1,7,Brian Shepherd,15,5,2,Harlem Globetrotters,28,old,1
+1,3,2,8,Jason Zahler,36,1,4,Scorpion,47,mid,2
+1,3,2,8,Tyler Dipper,76,5,2,Scorpion,47,mid,2
+1,3,2,8,Keri Wing,48,7,1,Scorpion,47,mid,2
+1,3,2,8,Brian Shepherd,15,3,3,Scorpion,47,mid,2
+1,3,3,9,Jason Zahler,36,7,1,Avengers Infinity Quest Pro,7,new,3
+1,3,3,9,Tyler Dipper,76,1,4,Avengers Infinity Quest Pro,7,new,3
+1,3,3,9,Keri Wing,48,5,2,Avengers Infinity Quest Pro,7,new,3
+1,3,3,9,Brian Shepherd,15,3,3,Avengers Infinity Quest Pro,7,new,3
+1,4,1,10,Emil ED Dreiborg,25,1,4,Stellar Airship,53,old,1
+1,4,1,10,Enrico Giorgio de Stefani,26,7,1,Stellar Airship,53,old,1
+1,4,1,10,Brian O’Neill NH,14,3,3,Stellar Airship,53,old,1
+1,4,1,10,Cayle George,17,5,2,Stellar Airship,53,old,1
+1,4,2,11,Emil ED Dreiborg,25,7,1,Centaur,11,mid,2
+1,4,2,11,Enrico Giorgio de Stefani,26,1,4,Centaur,11,mid,2
+1,4,2,11,Brian O’Neill NH,14,5,2,Centaur,11,mid,2
+1,4,2,11,Cayle George,17,3,3,Centaur,11,mid,2
+1,4,3,12,Emil ED Dreiborg,25,3,3,Rush Pro,46,new,3
+1,4,3,12,Enrico Giorgio de Stefani,26,7,1,Rush Pro,46,new,3
+1,4,3,12,Brian O’Neill NH,14,5,2,Rush Pro,46,new,3
+1,4,3,12,Cayle George,17,1,4,Rush Pro,46,new,3
+1,5,1,13,Thomas Mästerman,71,1,4,8 Ball,2,old,1
+1,5,1,13,Boldizsár Botka,13,5,2,8 Ball,2,old,1
+1,5,1,13,Jonas Valström,44,3,3,8 Ball,2,old,1
+1,5,1,13,Arvid Flygare,8,7,1,8 Ball,2,old,1
+1,5,2,14,Thomas Mästerman,71,3,3,Fire,22,mid,2
+1,5,2,14,Boldizsár Botka,13,7,1,Fire,22,mid,2
+1,5,2,14,Jonas Valström,44,1,4,Fire,22,mid,2
+1,5,2,14,Arvid Flygare,8,5,2,Fire,22,mid,2
+1,5,3,15,Thomas Mästerman,71,7,1,Jurassic Park LE,32,new,3
+1,5,3,15,Boldizsár Botka,13,3,3,Jurassic Park LE,32,new,3
+1,5,3,15,Jonas Valström,44,5,2,Jurassic Park LE,32,new,3
+1,5,3,15,Arvid Flygare,8,1,4,Jurassic Park LE,32,new,3
+1,6,1,16,Archibald Lefevre,5,1,4,Fireball (DE),23,old,1
+1,6,1,16,Tim Sexton,72,3,3,Fireball (DE),23,old,1
+1,6,1,16,Viggo Löwgren,78,7,1,Fireball (DE),23,old,1
+1,6,1,16,Jim Belsito,38,5,2,Fireball (DE),23,old,1
+1,6,2,17,Archibald Lefevre,5,3,3,Barracora,8,mid,2
+1,6,2,17,Tim Sexton,72,1,4,Barracora,8,mid,2
+1,6,2,17,Viggo Löwgren,78,5,2,Barracora,8,mid,2
+1,6,2,17,Jim Belsito,38,7,1,Barracora,8,mid,2
+1,6,3,18,Archibald Lefevre,5,7,1,Congo,13,new,3
+1,6,3,18,Tim Sexton,72,1,4,Congo,13,new,3
+1,6,3,18,Viggo Löwgren,78,5,2,Congo,13,new,3
+1,6,3,18,Jim Belsito,38,3,3,Congo,13,new,3
+1,7,1,19,Frank Nilsen,29,7,1,Power Play,43,old,1
+1,7,1,19,Neil Graf,58,3,3,Power Play,43,old,1
+1,7,1,19,Mads Kristensen,52,5,2,Power Play,43,old,1
+1,7,1,19,Marcus Hugosson,53,1,4,Power Play,43,old,1
+1,7,2,20,Frank Nilsen,29,5,2,Cyclone,15,mid,2
+1,7,2,20,Neil Graf,58,7,1,Cyclone,15,mid,2
+1,7,2,20,Mads Kristensen,52,3,3,Cyclone,15,mid,2
+1,7,2,20,Marcus Hugosson,53,1,4,Cyclone,15,mid,2
+1,7,3,21,Frank Nilsen,29,3,3,Avatar,6,new,3
+1,7,3,21,Neil Graf,58,1,4,Avatar,6,new,3
+1,7,3,21,Mads Kristensen,52,5,2,Avatar,6,new,3
+1,7,3,21,Marcus Hugosson,53,7,1,Avatar,6,new,3
+1,8,1,22,John van der Wulp,42,1,4,Silverball Mania,48,old,1
+1,8,1,22,Steven Bowden,70,5,2,Silverball Mania,48,old,1
+1,8,1,22,Arno Nöbl,6,3,3,Silverball Mania,48,old,1
+1,8,1,22,Andrei Massenkoff,1,7,1,Silverball Mania,48,old,1
+1,8,2,23,John van der Wulp,42,5,2,Lady Luck,33,mid,2
+1,8,2,23,Steven Bowden,70,7,1,Lady Luck,33,mid,2
+1,8,2,23,Arno Nöbl,6,3,3,Lady Luck,33,mid,2
+1,8,2,23,Andrei Massenkoff,1,1,4,Lady Luck,33,mid,2
+1,8,3,24,John van der Wulp,42,5,2,Godzilla Pro,26,new,3
+1,8,3,24,Steven Bowden,70,7,1,Godzilla Pro,26,new,3
+1,8,3,24,Arno Nöbl,6,3,3,Godzilla Pro,26,new,3
+1,8,3,24,Andrei Massenkoff,1,1,4,Godzilla Pro,26,new,3
+1,9,1,25,Carlos Delaserda,16,5,2,Dolly Parton,19,old,1
+1,9,1,25,Keith Elwin,47,7,1,Dolly Parton,19,old,1
+1,9,1,25,Vid Kuklec,77,1,4,Dolly Parton,19,old,1
+1,9,1,25,Johnny Modica,43,3,3,Dolly Parton,19,old,1
+1,9,2,26,Carlos Delaserda,16,7,1,Pool Sharks,42,mid,2
+1,9,2,26,Keith Elwin,47,5,2,Pool Sharks,42,mid,2
+1,9,2,26,Vid Kuklec,77,1,4,Pool Sharks,42,mid,2
+1,9,2,26,Johnny Modica,43,3,3,Pool Sharks,42,mid,2
+1,9,3,27,Carlos Delaserda,16,1,4,Tron Pro,58,new,3
+1,9,3,27,Keith Elwin,47,7,1,Tron Pro,58,new,3
+1,9,3,27,Vid Kuklec,77,3,3,Tron Pro,58,new,3
+1,9,3,27,Johnny Modica,43,5,2,Tron Pro,58,new,3
+1,10,1,28,Derek Price,23,5,2,Dark Rider,16,old,1
+1,10,1,28,Peter Andersen,63,7,1,Dark Rider,16,old,1
+1,10,1,28,David Dahl-Hansson,22,1,4,Dark Rider,16,old,1
+1,10,1,28,César Dubón Martínez,18,3,3,Dark Rider,16,old,1
+1,10,2,29,Derek Price,23,7,1,Grand Lizard,27,mid,2
+1,10,2,29,Peter Andersen,63,3,3,Grand Lizard,27,mid,2
+1,10,2,29,David Dahl-Hansson,22,1,4,Grand Lizard,27,mid,2
+1,10,2,29,César Dubón Martínez,18,5,2,Grand Lizard,27,mid,2
+1,10,3,30,Derek Price,23,1,4,The Shadow,56,new,3
+1,10,3,30,Peter Andersen,63,7,1,The Shadow,56,new,3
+1,10,3,30,David Dahl-Hansson,22,5,2,The Shadow,56,new,3
+1,10,3,30,César Dubón Martínez,18,3,3,The Shadow,56,new,3
+1,11,1,31,Stefan Herold,69,5,2,Alligator,5,old,1
+1,11,1,31,Bill Mason,11,1,4,Alligator,5,old,1
+1,11,1,31,Kurt Louwie,49,7,1,Alligator,5,old,1
+1,11,1,31,Colin MacAlpine,19,3,3,Alligator,5,old,1
+1,11,2,32,Stefan Herold,69,3,3,Sorcerer,50,mid,2
+1,11,2,32,Bill Mason,11,1,4,Sorcerer,50,mid,2
+1,11,2,32,Kurt Louwie,49,5,2,Sorcerer,50,mid,2
+1,11,2,32,Colin MacAlpine,19,7,1,Sorcerer,50,mid,2
+1,11,3,33,Stefan Herold,69,1,4,Deadpool Pro,17,new,3
+1,11,3,33,Bill Mason,11,3,3,Deadpool Pro,17,new,3
+1,11,3,33,Kurt Louwie,49,5,2,Deadpool Pro,17,new,3
+1,11,3,33,Colin MacAlpine,19,7,1,Deadpool Pro,17,new,3
+1,12,1,34,Tom Graf,73,1,4,Champ,12,old,1
+1,12,1,34,Hervé Pierru,31,5,2,Champ,12,old,1
+1,12,1,34,Eric Stone,27,7,1,Champ,12,old,1
+1,12,1,34,Jason Lambert,34,3,3,Champ,12,old,1
+1,12,2,35,Tom Graf,73,3,3,Pin Bot,40,mid,2
+1,12,2,35,Hervé Pierru,31,5,2,Pin Bot,40,mid,2
+1,12,2,35,Eric Stone,27,7,1,Pin Bot,40,mid,2
+1,12,2,35,Jason Lambert,34,1,4,Pin Bot,40,mid,2
+1,12,3,36,Tom Graf,73,3,3,Metallica Monsters,36,new,3
+1,12,3,36,Hervé Pierru,31,1,4,Metallica Monsters,36,new,3
+1,12,3,36,Eric Stone,27,5,2,Metallica Monsters,36,new,3
+1,12,3,36,Jason Lambert,34,7,1,Metallica Monsters,36,new,3
+1,13,1,37,Zach McCarthy,79,5,2,Mystic,37,old,1
+1,13,1,37,Didier Dujardin,24,3,3,Mystic,37,old,1
+1,13,1,37,Andy Bagwell,4,7,1,Mystic,37,old,1
+1,13,1,37,Ben Moser,10,1,4,Mystic,37,old,1
+1,13,2,38,Zach McCarthy,79,1,4,Road Kings,44,mid,2
+1,13,2,38,Didier Dujardin,24,3,3,Road Kings,44,mid,2
+1,13,2,38,Andy Bagwell,4,5,2,Road Kings,44,mid,2
+1,13,2,38,Ben Moser,10,7,1,Road Kings,44,mid,2
+1,13,3,39,Zach McCarthy,79,7,1,World Cup Soccer,59,new,3
+1,13,3,39,Didier Dujardin,24,1,4,World Cup Soccer,59,new,3
+1,13,3,39,Andy Bagwell,4,3,3,World Cup Soccer,59,new,3
+1,13,3,39,Ben Moser,10,5,2,World Cup Soccer,59,new,3
+1,14,1,40,Trent Augenstein,75,1,4,Alien Poker,4,old,1
+1,14,1,40,Julio Vicario Soriano,46,5,2,Alien Poker,4,old,1
+1,14,1,40,Johannes Ostermeier,39,7,1,Alien Poker,4,old,1
+1,14,1,40,Artur Natorski,7,3,3,Alien Poker,4,old,1
+1,14,2,41,Trent Augenstein,75,3,3,Firepower 2,25,mid,2
+1,14,2,41,Julio Vicario Soriano,46,7,1,Firepower 2,25,mid,2
+1,14,2,41,Johannes Ostermeier,39,5,2,Firepower 2,25,mid,2
+1,14,2,41,Artur Natorski,7,1,4,Firepower 2,25,mid,2
+1,14,3,42,Trent Augenstein,75,7,1,Corvette,14,new,3
+1,14,3,42,Julio Vicario Soriano,46,3,3,Corvette,14,new,3
+1,14,3,42,Johannes Ostermeier,39,5,2,Corvette,14,new,3
+1,14,3,42,Artur Natorski,7,1,4,Corvette,14,new,3
+1,15,1,43,Jakub Tkacz,33,1,4,Paragon,39,old,1
+1,15,1,43,Travis Murie,74,7,1,Paragon,39,old,1
+1,15,1,43,Robert Sutter,66,3,3,Paragon,39,old,1
+1,15,1,43,Bart Volman,9,5,2,Paragon,39,old,1
+1,15,2,44,Jakub Tkacz,33,7,1,Space Station,51,mid,2
+1,15,2,44,Travis Murie,74,5,2,Space Station,51,mid,2
+1,15,2,44,Robert Sutter,66,1,4,Space Station,51,mid,2
+1,15,2,44,Bart Volman,9,3,3,Space Station,51,mid,2
+1,15,3,45,Jakub Tkacz,33,1,4,X-Men Pro,60,new,3
+1,15,3,45,Travis Murie,74,5,2,X-Men Pro,60,new,3
+1,15,3,45,Robert Sutter,66,3,3,X-Men Pro,60,new,3
+1,15,3,45,Bart Volman,9,7,1,X-Men Pro,60,new,3
+1,16,1,46,Simon Peel,68,5,2,Strikes & Spares,54,old,1
+1,16,1,46,John Delzoppo,40,1,4,Strikes & Spares,54,old,1
+1,16,1,46,Gabor Solymosi,30,3,3,Strikes & Spares,54,old,1
+1,16,1,46,Jason Werdrick,35,7,1,Strikes & Spares,54,old,1
+1,16,2,47,Simon Peel,68,1,4,Sorcerer,50,mid,2
+1,16,2,47,John Delzoppo,40,7,1,Sorcerer,50,mid,2
+1,16,2,47,Gabor Solymosi,30,3,3,Sorcerer,50,mid,2
+1,16,2,47,Jason Werdrick,35,5,2,Sorcerer,50,mid,2
+1,16,3,48,Simon Peel,68,5,2,AC/DC Luci,3,new,3
+1,16,3,48,John Delzoppo,40,3,3,AC/DC Luci,3,new,3
+1,16,3,48,Gabor Solymosi,30,7,1,AC/DC Luci,3,new,3
+1,16,3,48,Jason Werdrick,35,1,4,AC/DC Luci,3,new,3
+1,17,1,49,Nico Wicke,59,7,1,Skateball,49,old,1
+1,17,1,49,Leslie Ruckman,50,3,3,Skateball,49,old,1
+1,17,1,49,Zach Sharpe,80,1,4,Skateball,49,old,1
+1,17,1,49,Paul Englert,61,5,2,Skateball,49,old,1
+1,17,2,50,Nico Wicke,59,1,4,Blackout,10,mid,2
+1,17,2,50,Leslie Ruckman,50,3,3,Blackout,10,mid,2
+1,17,2,50,Zach Sharpe,80,7,1,Blackout,10,mid,2
+1,17,2,50,Paul Englert,61,5,2,Blackout,10,mid,2
+1,17,3,51,Nico Wicke,59,7,1,Star Trek Premium,52,new,3
+1,17,3,51,Leslie Ruckman,50,1,4,Star Trek Premium,52,new,3
+1,17,3,51,Zach Sharpe,80,5,2,Star Trek Premium,52,new,3
+1,17,3,51,Paul Englert,61,3,3,Star Trek Premium,52,new,3
+1,18,1,52,John Kottmann,41,5,2,6 Million Dollar Man,1,old,1
+1,18,1,52,Josh Sharpe,45,3,3,6 Million Dollar Man,1,old,1
+1,18,1,52,Daniele Celestino Acciari,21,7,1,6 Million Dollar Man,1,old,1
+1,18,1,52,Craig Pullen,20,1,4,6 Million Dollar Man,1,old,1
+1,18,2,53,John Kottmann,41,1,4,F14 Tomcat,21,mid,2
+1,18,2,53,Josh Sharpe,45,3,3,F14 Tomcat,21,mid,2
+1,18,2,53,Daniele Celestino Acciari,21,7,1,F14 Tomcat,21,mid,2
+1,18,2,53,Craig Pullen,20,5,2,F14 Tomcat,21,mid,2
+1,18,3,54,John Kottmann,41,5,2,Beatles Gold,9,new,3
+1,18,3,54,Josh Sharpe,45,7,1,Beatles Gold,9,new,3
+1,18,3,54,Daniele Celestino Acciari,21,3,3,Beatles Gold,9,new,3
+1,18,3,54,Craig Pullen,20,1,4,Beatles Gold,9,new,3
+1,19,1,55,Markus Stix,55,3,3,Playboy,41,old,1
+1,19,1,55,Reidar Spets,65,5,2,Playboy,41,old,1
+1,19,1,55,Jack Tadman,32,7,1,Playboy,41,old,1
+1,19,1,55,Markus Virtanen,56,1,4,Playboy,41,old,1
+1,19,2,56,Markus Stix,55,3,3,Robocop,45,mid,2
+1,19,2,56,Reidar Spets,65,7,1,Robocop,45,mid,2
+1,19,2,56,Jack Tadman,32,5,2,Robocop,45,mid,2
+1,19,2,56,Markus Virtanen,56,1,4,Robocop,45,mid,2
+1,19,3,57,Markus Stix,55,5,2,Iron Maiden LE,30,new,3
+1,19,3,57,Reidar Spets,65,3,3,Iron Maiden LE,30,new,3
+1,19,3,57,Jack Tadman,32,7,1,Iron Maiden LE,30,new,3
+1,19,3,57,Markus Virtanen,56,1,4,Iron Maiden LE,30,new,3
+1,20,1,58,Olli-Mikko Ojamies,60,7,1,Firepower,24,mid,2
+1,20,1,58,Andrew Foster,3,1,4,Firepower,24,mid,2
+1,20,1,58,Roberto Pedroni,67,5,2,Firepower,24,mid,2
+1,20,1,58,Luke Nahorniak,51,3,3,Firepower,24,mid,2
+1,20,2,59,Olli-Mikko Ojamies,60,3,3,Playboy,41,old,1
+1,20,2,59,Andrew Foster,3,7,1,Playboy,41,old,1
+1,20,2,59,Roberto Pedroni,67,5,2,Playboy,41,old,1
+1,20,2,59,Luke Nahorniak,51,1,4,Playboy,41,old,1
+1,20,3,60,Olli-Mikko Ojamies,60,5,2,The Addams Family,55,new,3
+1,20,3,60,Andrew Foster,3,1,4,The Addams Family,55,new,3
+1,20,3,60,Roberto Pedroni,67,7,1,The Addams Family,55,new,3
+1,20,3,60,Luke Nahorniak,51,3,3,The Addams Family,55,new,3
+2,1,1,61,Keith Elwin,47,7,1,Strikes & Spares,54,old,1
+2,1,1,61,Paul Englert,61,5,2,Strikes & Spares,54,old,1
+2,1,1,61,John van der Wulp,42,1,4,Strikes & Spares,54,old,1
+2,1,1,61,Markus Virtanen,56,3,3,Strikes & Spares,54,old,1
+2,1,2,62,Keith Elwin,47,3,3,F14 Tomcat,21,mid,2
+2,1,2,62,Paul Englert,61,7,1,F14 Tomcat,21,mid,2
+2,1,2,62,John van der Wulp,42,1,4,F14 Tomcat,21,mid,2
+2,1,2,62,Markus Virtanen,56,5,2,F14 Tomcat,21,mid,2
+2,1,3,63,Keith Elwin,47,7,1,Metallica Monsters,36,new,3
+2,1,3,63,Paul Englert,61,5,2,Metallica Monsters,36,new,3
+2,1,3,63,John van der Wulp,42,1,4,Metallica Monsters,36,new,3
+2,1,3,63,Markus Virtanen,56,3,3,Metallica Monsters,36,new,3
+2,2,1,64,Eric Stone,27,7,1,Silverball Mania,48,old,1
+2,2,1,64,Mads Kristensen,52,1,4,Silverball Mania,48,old,1
+2,2,1,64,Emil ED Dreiborg,25,3,3,Silverball Mania,48,old,1
+2,2,1,64,Tim Sexton,72,5,2,Silverball Mania,48,old,1
+2,2,2,65,Eric Stone,27,1,4,Pool Sharks,42,mid,2
+2,2,2,65,Mads Kristensen,52,7,1,Pool Sharks,42,mid,2
+2,2,2,65,Emil ED Dreiborg,25,3,3,Pool Sharks,42,mid,2
+2,2,2,65,Tim Sexton,72,5,2,Pool Sharks,42,mid,2
+2,2,3,66,Eric Stone,27,7,1,Deadpool Pro,17,new,3
+2,2,3,66,Mads Kristensen,52,3,3,Deadpool Pro,17,new,3
+2,2,3,66,Emil ED Dreiborg,25,1,4,Deadpool Pro,17,new,3
+2,2,3,66,Tim Sexton,72,5,2,Deadpool Pro,17,new,3
+2,3,1,67,Jack Tadman,32,5,2,Champ,12,old,1
+2,3,1,67,Brian O’Neill NH,14,3,3,Champ,12,old,1
+2,3,1,67,Brian Shepherd,15,7,1,Champ,12,old,1
+2,3,1,67,Artur Natorski,7,1,4,Champ,12,old,1
+2,3,2,68,Jack Tadman,32,3,3,Sorcerer,50,mid,2
+2,3,2,68,Brian O’Neill NH,14,1,4,Sorcerer,50,mid,2
+2,3,2,68,Brian Shepherd,15,5,2,Sorcerer,50,mid,2
+2,3,2,68,Artur Natorski,7,7,1,Sorcerer,50,mid,2
+2,3,3,69,Jack Tadman,32,7,1,The Shadow,56,new,3
+2,3,3,69,Brian O’Neill NH,14,5,2,The Shadow,56,new,3
+2,3,3,69,Brian Shepherd,15,1,4,The Shadow,56,new,3
+2,3,3,69,Artur Natorski,7,3,3,The Shadow,56,new,3
+2,4,1,70,Steven Bowden,70,3,3,Power Play,43,old,1
+2,4,1,70,Josh Sharpe,45,7,1,Power Play,43,old,1
+2,4,1,70,Bill Mason,11,1,4,Power Play,43,old,1
+2,4,1,70,Jason Lambert,34,5,2,Power Play,43,old,1
+2,4,2,71,Steven Bowden,70,7,1,Space Station,51,mid,2
+2,4,2,71,Josh Sharpe,45,1,4,Space Station,51,mid,2
+2,4,2,71,Bill Mason,11,5,2,Space Station,51,mid,2
+2,4,2,71,Jason Lambert,34,3,3,Space Station,51,mid,2
+2,4,3,72,Steven Bowden,70,3,3,The Walking Dead Pro,57,new,3
+2,4,3,72,Josh Sharpe,45,1,4,The Walking Dead Pro,57,new,3
+2,4,3,72,Bill Mason,11,7,1,The Walking Dead Pro,57,new,3
+2,4,3,72,Jason Lambert,34,5,2,The Walking Dead Pro,57,new,3
+2,5,1,73,Travis Murie,74,7,1,Fireball (DE),23,old,1
+2,5,1,73,Gabor Solymosi,30,5,2,Fireball (DE),23,old,1
+2,5,1,73,Jeff Teolis,37,1,4,Fireball (DE),23,old,1
+2,5,1,73,Vid Kuklec,77,3,3,Fireball (DE),23,old,1
+2,5,2,74,Travis Murie,74,5,2,Firepower,24,mid,2
+2,5,2,74,Gabor Solymosi,30,7,1,Firepower,24,mid,2
+2,5,2,74,Jeff Teolis,37,3,3,Firepower,24,mid,2
+2,5,2,74,Vid Kuklec,77,1,4,Firepower,24,mid,2
+2,5,3,75,Travis Murie,74,1,4,Star Trek Premium,52,new,3
+2,5,3,75,Gabor Solymosi,30,7,1,Star Trek Premium,52,new,3
+2,5,3,75,Jeff Teolis,37,3,3,Star Trek Premium,52,new,3
+2,5,3,75,Vid Kuklec,77,5,2,Star Trek Premium,52,new,3
+2,6,1,76,Johannes Ostermeier,39,5,2,Skateball,49,old,1
+2,6,1,76,Jason Werdrick,35,1,4,Skateball,49,old,1
+2,6,1,76,Simon Peel,68,3,3,Skateball,49,old,1
+2,6,1,76,Robert Sutter,66,7,1,Skateball,49,old,1
+2,6,2,77,Johannes Ostermeier,39,7,1,Scorpion,47,mid,2
+2,6,2,77,Jason Werdrick,35,5,2,Scorpion,47,mid,2
+2,6,2,77,Simon Peel,68,1,4,Scorpion,47,mid,2
+2,6,2,77,Robert Sutter,66,3,3,Scorpion,47,mid,2
+2,6,3,78,Johannes Ostermeier,39,5,2,Rush Pro,46,new,3
+2,6,3,78,Jason Werdrick,35,3,3,Rush Pro,46,new,3
+2,6,3,78,Simon Peel,68,1,4,Rush Pro,46,new,3
+2,6,3,78,Robert Sutter,66,7,1,Rush Pro,46,new,3
+2,7,1,79,Colin MacAlpine,19,7,1,8 Ball,2,old,1
+2,7,1,79,Zach McCarthy,79,5,2,8 Ball,2,old,1
+2,7,1,79,John Kottmann,41,1,4,8 Ball,2,old,1
+2,7,1,79,Craig Pullen,20,3,3,8 Ball,2,old,1
+2,7,2,80,Colin MacAlpine,19,5,2,Grand Lizard,27,mid,2
+2,7,2,80,Zach McCarthy,79,1,4,Grand Lizard,27,mid,2
+2,7,2,80,John Kottmann,41,3,3,Grand Lizard,27,mid,2
+2,7,2,80,Craig Pullen,20,7,1,Grand Lizard,27,mid,2
+2,7,3,81,Colin MacAlpine,19,5,2,Corvette,14,new,3
+2,7,3,81,Zach McCarthy,79,7,1,Corvette,14,new,3
+2,7,3,81,John Kottmann,41,3,3,Corvette,14,new,3
+2,7,3,81,Craig Pullen,20,1,4,Corvette,14,new,3
+2,8,1,82,Kurt Louwie,49,3,3,Alien Poker,4,old,1
+2,8,1,82,Arvid Flygare,8,7,1,Alien Poker,4,old,1
+2,8,1,82,Archibald Lefevre,5,5,2,Alien Poker,4,old,1
+2,8,1,82,Tom Graf,73,1,4,Alien Poker,4,old,1
+2,8,2,83,Kurt Louwie,49,7,1,Robocop,45,mid,2
+2,8,2,83,Arvid Flygare,8,3,3,Robocop,45,mid,2
+2,8,2,83,Archibald Lefevre,5,1,4,Robocop,45,mid,2
+2,8,2,83,Tom Graf,73,5,2,Robocop,45,mid,2
+2,8,3,84,Kurt Louwie,49,5,2,The Addams Family,55,new,3
+2,8,3,84,Arvid Flygare,8,7,1,The Addams Family,55,new,3
+2,8,3,84,Archibald Lefevre,5,1,4,The Addams Family,55,new,3
+2,8,3,84,Tom Graf,73,3,3,The Addams Family,55,new,3
+2,9,1,85,Viggo Löwgren,78,3,3,Dark Rider,16,old,1
+2,9,1,85,Paul Jongma,62,7,1,Dark Rider,16,old,1
+2,9,1,85,Neil Graf,58,5,2,Dark Rider,16,old,1
+2,9,1,85,Didier Dujardin,24,1,4,Dark Rider,16,old,1
+2,9,2,86,Viggo Löwgren,78,7,1,Fire,22,mid,2
+2,9,2,86,Paul Jongma,62,5,2,Fire,22,mid,2
+2,9,2,86,Neil Graf,58,1,4,Fire,22,mid,2
+2,9,2,86,Didier Dujardin,24,3,3,Fire,22,mid,2
+2,9,3,87,Viggo Löwgren,78,5,2,Tron Pro,58,new,3
+2,9,3,87,Paul Jongma,62,7,1,Tron Pro,58,new,3
+2,9,3,87,Neil Graf,58,3,3,Tron Pro,58,new,3
+2,9,3,87,Didier Dujardin,24,1,4,Tron Pro,58,new,3
+2,10,1,88,Peter Andersen,63,5,2,Dolly Parton,19,old,1
+2,10,1,88,Ben Moser,10,3,3,Dolly Parton,19,old,1
+2,10,1,88,Markus Stix,55,7,1,Dolly Parton,19,old,1
+2,10,1,88,Leslie Ruckman,50,1,4,Dolly Parton,19,old,1
+2,10,2,89,Peter Andersen,63,5,2,Elektra,20,mid,2
+2,10,2,89,Ben Moser,10,1,4,Elektra,20,mid,2
+2,10,2,89,Markus Stix,55,3,3,Elektra,20,mid,2
+2,10,2,89,Leslie Ruckman,50,7,1,Elektra,20,mid,2
+2,10,3,90,Peter Andersen,63,5,2,Indianapolis 500,29,new,3
+2,10,3,90,Ben Moser,10,7,1,Indianapolis 500,29,new,3
+2,10,3,90,Markus Stix,55,3,3,Indianapolis 500,29,new,3
+2,10,3,90,Leslie Ruckman,50,1,4,Indianapolis 500,29,new,3
+2,11,1,91,Daniele Celestino Acciari,21,7,1,Playboy,41,old,1
+2,11,1,91,Derek Price,23,5,2,Playboy,41,old,1
+2,11,1,91,John Delzoppo,40,1,4,Playboy,41,old,1
+2,11,1,91,Tyler Dipper,76,3,3,Playboy,41,old,1
+2,11,2,92,Daniele Celestino Acciari,21,7,1,Lady Luck,33,mid,2
+2,11,2,92,Derek Price,23,3,3,Lady Luck,33,mid,2
+2,11,2,92,John Delzoppo,40,1,4,Lady Luck,33,mid,2
+2,11,2,92,Tyler Dipper,76,5,2,Lady Luck,33,mid,2
+2,11,3,93,Daniele Celestino Acciari,21,1,4,Jurassic Park LE,32,new,3
+2,11,3,93,Derek Price,23,5,2,Jurassic Park LE,32,new,3
+2,11,3,93,John Delzoppo,40,7,1,Jurassic Park LE,32,new,3
+2,11,3,93,Tyler Dipper,76,3,3,Jurassic Park LE,32,new,3
+2,12,1,94,Roberto Pedroni,67,1,4,Power Play,43,old,1
+2,12,1,94,Zach Sharpe,80,3,3,Power Play,43,old,1
+2,12,1,94,Johnny Modica,43,7,1,Power Play,43,old,1
+2,12,1,94,David Dahl-Hansson,22,5,2,Power Play,43,old,1
+2,12,2,95,Roberto Pedroni,67,5,2,Firepower 2,25,mid,2
+2,12,2,95,Zach Sharpe,80,7,1,Firepower 2,25,mid,2
+2,12,2,95,Johnny Modica,43,3,3,Firepower 2,25,mid,2
+2,12,2,95,David Dahl-Hansson,22,1,4,Firepower 2,25,mid,2
+2,12,3,96,Roberto Pedroni,67,7,1,World Cup Soccer,59,new,3
+2,12,3,96,Zach Sharpe,80,5,2,World Cup Soccer,59,new,3
+2,12,3,96,Johnny Modica,43,3,3,World Cup Soccer,59,new,3
+2,12,3,96,David Dahl-Hansson,22,1,4,World Cup Soccer,59,new,3
+2,13,1,97,Raymond Davidson,64,1,4,Silverball Mania,48,old,1
+2,13,1,97,Carlos Delaserda,16,5,2,Silverball Mania,48,old,1
+2,13,1,97,Thomas Mästerman,71,3,3,Silverball Mania,48,old,1
+2,13,1,97,Luke Nahorniak,51,7,1,Silverball Mania,48,old,1
+2,13,2,98,Raymond Davidson,64,3,3,Jokerz,31,mid,2
+2,13,2,98,Carlos Delaserda,16,7,1,Jokerz,31,mid,2
+2,13,2,98,Thomas Mästerman,71,1,4,Jokerz,31,mid,2
+2,13,2,98,Luke Nahorniak,51,5,2,Jokerz,31,mid,2
+2,13,3,99,Raymond Davidson,64,1,4,Avatar,6,new,3
+2,13,3,99,Carlos Delaserda,16,5,2,Avatar,6,new,3
+2,13,3,99,Thomas Mästerman,71,3,3,Avatar,6,new,3
+2,13,3,99,Luke Nahorniak,51,7,1,Avatar,6,new,3
+2,14,1,100,Julio Vicario Soriano,46,3,3,Little Joe,34,old,1
+2,14,1,100,Boldizsár Botka,13,7,1,Little Joe,34,old,1
+2,14,1,100,César Dubón Martínez,18,1,4,Little Joe,34,old,1
+2,14,1,100,Andrei Massenkoff,1,5,2,Little Joe,34,old,1
+2,14,2,101,Julio Vicario Soriano,46,3,3,Road Kings,44,mid,2
+2,14,2,101,Boldizsár Botka,13,5,2,Road Kings,44,mid,2
+2,14,2,101,César Dubón Martínez,18,1,4,Road Kings,44,mid,2
+2,14,2,101,Andrei Massenkoff,1,7,1,Road Kings,44,mid,2
+2,14,3,102,Julio Vicario Soriano,46,7,1,Congo,13,new,3
+2,14,3,102,Boldizsár Botka,13,5,2,Congo,13,new,3
+2,14,3,102,César Dubón Martínez,18,1,4,Congo,13,new,3
+2,14,3,102,Andrei Massenkoff,1,3,3,Congo,13,new,3
+2,15,1,103,Olli-Mikko Ojamies,60,7,1,6 Million Dollar Man,1,old,1
+2,15,1,103,Reidar Spets,65,3,3,6 Million Dollar Man,1,old,1
+2,15,1,103,Trent Augenstein,75,5,2,6 Million Dollar Man,1,old,1
+2,15,1,103,Michael Trepp,57,1,4,6 Million Dollar Man,1,old,1
+2,15,2,104,Olli-Mikko Ojamies,60,3,3,Medusa,35,mid,2
+2,15,2,104,Reidar Spets,65,7,1,Medusa,35,mid,2
+2,15,2,104,Trent Augenstein,75,5,2,Medusa,35,mid,2
+2,15,2,104,Michael Trepp,57,1,4,Medusa,35,mid,2
+2,15,3,105,Olli-Mikko Ojamies,60,1,4,X-Men Pro,60,new,3
+2,15,3,105,Reidar Spets,65,3,3,X-Men Pro,60,new,3
+2,15,3,105,Trent Augenstein,75,5,2,X-Men Pro,60,new,3
+2,15,3,105,Michael Trepp,57,7,1,X-Men Pro,60,new,3
+2,16,1,106,Bart Volman,9,7,1,Nip It,38,old,1
+2,16,1,106,Keri Wing,48,3,3,Nip It,38,old,1
+2,16,1,106,Hervé Pierru,31,1,4,Nip It,38,old,1
+2,16,1,106,Andrew Foster,3,5,2,Nip It,38,old,1
+2,16,2,107,Bart Volman,9,5,2,Cyclone,15,mid,2
+2,16,2,107,Keri Wing,48,7,1,Cyclone,15,mid,2
+2,16,2,107,Hervé Pierru,31,3,3,Cyclone,15,mid,2
+2,16,2,107,Andrew Foster,3,1,4,Cyclone,15,mid,2
+2,16,3,108,Bart Volman,9,3,3,Godzilla Pro,26,new,3
+2,16,3,108,Keri Wing,48,5,2,Godzilla Pro,26,new,3
+2,16,3,108,Hervé Pierru,31,7,1,Godzilla Pro,26,new,3
+2,16,3,108,Andrew Foster,3,1,4,Godzilla Pro,26,new,3
+2,17,1,109,Jim Belsito,38,7,1,Stellar Airship,53,old,1
+2,17,1,109,Escher Lefkoff,28,5,2,Stellar Airship,53,old,1
+2,17,1,109,Marcus Hugosson,53,1,4,Stellar Airship,53,old,1
+2,17,1,109,Bob Matthews,12,3,3,Stellar Airship,53,old,1
+2,17,2,110,Jim Belsito,38,1,4,Pin Bot,40,mid,2
+2,17,2,110,Escher Lefkoff,28,7,1,Pin Bot,40,mid,2
+2,17,2,110,Marcus Hugosson,53,3,3,Pin Bot,40,mid,2
+2,17,2,110,Bob Matthews,12,5,2,Pin Bot,40,mid,2
+2,17,3,111,Jim Belsito,38,1,4,AC/DC Luci,3,new,3
+2,17,3,111,Escher Lefkoff,28,7,1,AC/DC Luci,3,new,3
+2,17,3,111,Marcus Hugosson,53,5,2,AC/DC Luci,3,new,3
+2,17,3,111,Bob Matthews,12,3,3,AC/DC Luci,3,new,3
+2,18,1,112,Mark Pearson,54,5,2,Alligator,5,old,1
+2,18,1,112,Enrico Giorgio de Stefani,26,3,3,Alligator,5,old,1
+2,18,1,112,Jakub Tkacz,33,1,4,Alligator,5,old,1
+2,18,1,112,Cayle George,17,7,1,Alligator,5,old,1
+2,18,2,113,Mark Pearson,54,3,3,Blackout,10,mid,2
+2,18,2,113,Enrico Giorgio de Stefani,26,7,1,Blackout,10,mid,2
+2,18,2,113,Jakub Tkacz,33,5,2,Blackout,10,mid,2
+2,18,2,113,Cayle George,17,1,4,Blackout,10,mid,2
+2,18,3,114,Mark Pearson,54,3,3,Beatles Gold,9,new,3
+2,18,3,114,Enrico Giorgio de Stefani,26,1,4,Beatles Gold,9,new,3
+2,18,3,114,Jakub Tkacz,33,7,1,Beatles Gold,9,new,3
+2,18,3,114,Cayle George,17,5,2,Beatles Gold,9,new,3
+2,19,1,115,Andy Bagwell,4,7,1,Harlem Globetrotters,28,old,1
+2,19,1,115,Frank Nilsen,29,3,3,Harlem Globetrotters,28,old,1
+2,19,1,115,Arno Nöbl,6,5,2,Harlem Globetrotters,28,old,1
+2,19,1,115,Stefan Herold,69,1,4,Harlem Globetrotters,28,old,1
+2,19,2,116,Andy Bagwell,4,1,4,Barracora,8,mid,2
+2,19,2,116,Frank Nilsen,29,5,2,Barracora,8,mid,2
+2,19,2,116,Arno Nöbl,6,7,1,Barracora,8,mid,2
+2,19,2,116,Stefan Herold,69,3,3,Barracora,8,mid,2
+2,19,3,117,Andy Bagwell,4,7,1,Avengers Infinity Quest Pro,7,new,3
+2,19,3,117,Frank Nilsen,29,3,3,Avengers Infinity Quest Pro,7,new,3
+2,19,3,117,Arno Nöbl,6,5,2,Avengers Infinity Quest Pro,7,new,3
+2,19,3,117,Stefan Herold,69,1,4,Avengers Infinity Quest Pro,7,new,3
+2,20,1,118,Nico Wicke,59,7,1,Paragon,39,old,1
+2,20,1,118,Jason Zahler,36,1,4,Paragon,39,old,1
+2,20,1,118,Jonas Valström,44,5,2,Paragon,39,old,1
+2,20,1,118,Andrej Rižner,2,3,3,Paragon,39,old,1
+2,20,2,119,Nico Wicke,59,1,4,Centaur,11,mid,2
+2,20,2,119,Jason Zahler,36,5,2,Centaur,11,mid,2
+2,20,2,119,Jonas Valström,44,3,3,Centaur,11,mid,2
+2,20,2,119,Andrej Rižner,2,7,1,Centaur,11,mid,2
+2,20,3,120,Nico Wicke,59,5,2,Iron Maiden LE,30,new,3
+2,20,3,120,Jason Zahler,36,3,3,Iron Maiden LE,30,new,3
+2,20,3,120,Jonas Valström,44,7,1,Iron Maiden LE,30,new,3
+2,20,3,120,Andrej Rižner,2,1,4,Iron Maiden LE,30,new,3
+3,1,1,121,Keith Elwin,47,7,1,Harlem Globetrotters,28,old,1
+3,1,1,121,Roberto Pedroni,67,1,4,Harlem Globetrotters,28,old,1
+3,1,1,121,Arvid Flygare,8,3,3,Harlem Globetrotters,28,old,1
+3,1,1,121,Jonas Valström,44,5,2,Harlem Globetrotters,28,old,1
+3,1,2,122,Keith Elwin,47,5,2,Elektra,20,mid,2
+3,1,2,122,Roberto Pedroni,67,1,4,Elektra,20,mid,2
+3,1,2,122,Arvid Flygare,8,7,1,Elektra,20,mid,2
+3,1,2,122,Jonas Valström,44,3,3,Elektra,20,mid,2
+3,1,3,123,Keith Elwin,47,7,1,Beatles Gold,9,new,3
+3,1,3,123,Roberto Pedroni,67,5,2,Beatles Gold,9,new,3
+3,1,3,123,Arvid Flygare,8,1,4,Beatles Gold,9,new,3
+3,1,3,123,Jonas Valström,44,3,3,Beatles Gold,9,new,3
+3,2,1,124,Johannes Ostermeier,39,7,1,Dolly Parton,19,old,1
+3,2,1,124,Paul Englert,61,5,2,Dolly Parton,19,old,1
+3,2,1,124,Bart Volman,9,3,3,Dolly Parton,19,old,1
+3,2,1,124,Andrei Massenkoff,1,1,4,Dolly Parton,19,old,1
+3,2,2,125,Johannes Ostermeier,39,7,1,Sorcerer,50,mid,2
+3,2,2,125,Paul Englert,61,1,4,Sorcerer,50,mid,2
+3,2,2,125,Bart Volman,9,5,2,Sorcerer,50,mid,2
+3,2,2,125,Andrei Massenkoff,1,3,3,Sorcerer,50,mid,2
+3,2,3,126,Johannes Ostermeier,39,5,2,The Shadow,56,new,3
+3,2,3,126,Paul Englert,61,7,1,The Shadow,56,new,3
+3,2,3,126,Bart Volman,9,1,4,The Shadow,56,new,3
+3,2,3,126,Andrei Massenkoff,1,3,3,The Shadow,56,new,3
+3,3,1,127,Zach Sharpe,80,3,3,Alien Poker,4,old,1
+3,3,1,127,Carlos Delaserda,16,7,1,Alien Poker,4,old,1
+3,3,1,127,Johnny Modica,43,1,4,Alien Poker,4,old,1
+3,3,1,127,Colin MacAlpine,19,5,2,Alien Poker,4,old,1
+3,3,2,128,Zach Sharpe,80,1,4,Robocop,45,mid,2
+3,3,2,128,Carlos Delaserda,16,3,3,Robocop,45,mid,2
+3,3,2,128,Johnny Modica,43,5,2,Robocop,45,mid,2
+3,3,2,128,Colin MacAlpine,19,7,1,Robocop,45,mid,2
+3,3,3,129,Zach Sharpe,80,7,1,AC/DC Luci,3,new,3
+3,3,3,129,Carlos Delaserda,16,1,4,AC/DC Luci,3,new,3
+3,3,3,129,Johnny Modica,43,5,2,AC/DC Luci,3,new,3
+3,3,3,129,Colin MacAlpine,19,3,3,AC/DC Luci,3,new,3
+3,4,1,130,Eric Stone,27,5,2,Paragon,39,old,1
+3,4,1,130,Keri Wing,48,3,3,Paragon,39,old,1
+3,4,1,130,Julio Vicario Soriano,46,7,1,Paragon,39,old,1
+3,4,1,130,Jason Lambert,34,1,4,Paragon,39,old,1
+3,4,2,131,Eric Stone,27,3,3,Barracora,8,mid,2
+3,4,2,131,Keri Wing,48,1,4,Barracora,8,mid,2
+3,4,2,131,Julio Vicario Soriano,46,5,2,Barracora,8,mid,2
+3,4,2,131,Jason Lambert,34,7,1,Barracora,8,mid,2
+3,4,3,132,Eric Stone,27,7,1,Rush Pro,46,new,3
+3,4,3,132,Keri Wing,48,3,3,Rush Pro,46,new,3
+3,4,3,132,Julio Vicario Soriano,46,1,4,Rush Pro,46,new,3
+3,4,3,132,Jason Lambert,34,5,2,Rush Pro,46,new,3
+3,5,1,133,Jack Tadman,32,3,3,8 Ball,2,old,1
+3,5,1,133,Travis Murie,74,5,2,8 Ball,2,old,1
+3,5,1,133,Reidar Spets,65,7,1,8 Ball,2,old,1
+3,5,1,133,Jim Belsito,38,1,4,8 Ball,2,old,1
+3,5,2,134,Jack Tadman,32,5,2,Lady Luck,33,mid,2
+3,5,2,134,Travis Murie,74,3,3,Lady Luck,33,mid,2
+3,5,2,134,Reidar Spets,65,1,4,Lady Luck,33,mid,2
+3,5,2,134,Jim Belsito,38,7,1,Lady Luck,33,mid,2
+3,5,3,135,Jack Tadman,32,5,2,Avengers Infinity Quest Pro,7,new,3
+3,5,3,135,Travis Murie,74,3,3,Avengers Infinity Quest Pro,7,new,3
+3,5,3,135,Reidar Spets,65,7,1,Avengers Infinity Quest Pro,7,new,3
+3,5,3,135,Jim Belsito,38,1,4,Avengers Infinity Quest Pro,7,new,3
+3,6,1,136,Escher Lefkoff,28,5,2,6 Million Dollar Man,1,old,1
+3,6,1,136,Andy Bagwell,4,1,4,6 Million Dollar Man,1,old,1
+3,6,1,136,Nico Wicke,59,7,1,6 Million Dollar Man,1,old,1
+3,6,1,136,Derek Price,23,3,3,6 Million Dollar Man,1,old,1
+3,6,2,137,Escher Lefkoff,28,5,2,Medusa,35,mid,2
+3,6,2,137,Andy Bagwell,4,7,1,Medusa,35,mid,2
+3,6,2,137,Nico Wicke,59,1,4,Medusa,35,mid,2
+3,6,2,137,Derek Price,23,3,3,Medusa,35,mid,2
+3,6,3,138,Escher Lefkoff,28,5,2,Avatar,6,new,3
+3,6,3,138,Andy Bagwell,4,3,3,Avatar,6,new,3
+3,6,3,138,Nico Wicke,59,1,4,Avatar,6,new,3
+3,6,3,138,Derek Price,23,7,1,Avatar,6,new,3
+3,7,1,139,Paul Jongma,62,3,3,Dodge City,18,old,1
+3,7,1,139,Steven Bowden,70,5,2,Dodge City,18,old,1
+3,7,1,139,Enrico Giorgio de Stefani,26,1,4,Dodge City,18,old,1
+3,7,1,139,Luke Nahorniak,51,7,1,Dodge City,18,old,1
+3,7,2,140,Paul Jongma,62,3,3,Cyclone,15,mid,2
+3,7,2,140,Steven Bowden,70,1,4,Cyclone,15,mid,2
+3,7,2,140,Enrico Giorgio de Stefani,26,5,2,Cyclone,15,mid,2
+3,7,2,140,Luke Nahorniak,51,7,1,Cyclone,15,mid,2
+3,7,3,141,Paul Jongma,62,5,2,Congo,13,new,3
+3,7,3,141,Steven Bowden,70,7,1,Congo,13,new,3
+3,7,3,141,Enrico Giorgio de Stefani,26,3,3,Congo,13,new,3
+3,7,3,141,Luke Nahorniak,51,1,4,Congo,13,new,3
+3,8,1,142,Viggo Löwgren,78,3,3,Power Play,43,old,1
+3,8,1,142,Kurt Louwie,49,1,4,Power Play,43,old,1
+3,8,1,142,Mark Pearson,54,7,1,Power Play,43,old,1
+3,8,1,142,Olli-Mikko Ojamies,60,5,2,Power Play,43,old,1
+3,8,2,143,Viggo Löwgren,78,7,1,F14 Tomcat,21,mid,2
+3,8,2,143,Kurt Louwie,49,1,4,F14 Tomcat,21,mid,2
+3,8,2,143,Mark Pearson,54,5,2,F14 Tomcat,21,mid,2
+3,8,2,143,Olli-Mikko Ojamies,60,3,3,F14 Tomcat,21,mid,2
+3,8,3,144,Viggo Löwgren,78,1,4,Iron Maiden LE,30,new,3
+3,8,3,144,Kurt Louwie,49,7,1,Iron Maiden LE,30,new,3
+3,8,3,144,Mark Pearson,54,5,2,Iron Maiden LE,30,new,3
+3,8,3,144,Olli-Mikko Ojamies,60,3,3,Iron Maiden LE,30,new,3
+3,9,1,145,Peter Andersen,63,5,2,Silverball Mania,48,old,1
+3,9,1,145,Boldizsár Botka,13,3,3,Silverball Mania,48,old,1
+3,9,1,145,Zach McCarthy,79,7,1,Silverball Mania,48,old,1
+3,9,1,145,Arno Nöbl,6,1,4,Silverball Mania,48,old,1
+3,9,2,146,Peter Andersen,63,1,4,Blackout,10,mid,2
+3,9,2,146,Boldizsár Botka,13,3,3,Blackout,10,mid,2
+3,9,2,146,Zach McCarthy,79,5,2,Blackout,10,mid,2
+3,9,2,146,Arno Nöbl,6,7,1,Blackout,10,mid,2
+3,9,3,147,Peter Andersen,63,1,4,The Addams Family,55,new,3
+3,9,3,147,Boldizsár Botka,13,5,2,The Addams Family,55,new,3
+3,9,3,147,Zach McCarthy,79,7,1,The Addams Family,55,new,3
+3,9,3,147,Arno Nöbl,6,3,3,The Addams Family,55,new,3
+3,10,1,148,Daniele Celestino Acciari,21,7,1,Alligator,5,old,1
+3,10,1,148,Gabor Solymosi,30,5,2,Alligator,5,old,1
+3,10,1,148,Trent Augenstein,75,1,4,Alligator,5,old,1
+3,10,1,148,Frank Nilsen,29,3,3,Alligator,5,old,1
+3,10,2,149,Daniele Celestino Acciari,21,7,1,Space Station,51,mid,2
+3,10,2,149,Gabor Solymosi,30,3,3,Space Station,51,mid,2
+3,10,2,149,Trent Augenstein,75,5,2,Space Station,51,mid,2
+3,10,2,149,Frank Nilsen,29,1,4,Space Station,51,mid,2
+3,10,3,150,Daniele Celestino Acciari,21,7,1,Star Trek Premium,52,new,3
+3,10,3,150,Gabor Solymosi,30,5,2,Star Trek Premium,52,new,3
+3,10,3,150,Trent Augenstein,75,1,4,Star Trek Premium,52,new,3
+3,10,3,150,Frank Nilsen,29,3,3,Star Trek Premium,52,new,3
+3,11,1,151,Markus Stix,55,1,4,Skateball,49,old,1
+3,11,1,151,Tyler Dipper,76,3,3,Skateball,49,old,1
+3,11,1,151,Marcus Hugosson,53,7,1,Skateball,49,old,1
+3,11,1,151,Didier Dujardin,24,5,2,Skateball,49,old,1
+3,11,2,152,Markus Stix,55,7,1,Grand Lizard,27,mid,2
+3,11,2,152,Tyler Dipper,76,5,2,Grand Lizard,27,mid,2
+3,11,2,152,Marcus Hugosson,53,1,4,Grand Lizard,27,mid,2
+3,11,2,152,Didier Dujardin,24,3,3,Grand Lizard,27,mid,2
+3,11,3,153,Markus Stix,55,1,4,The Walking Dead Pro,57,new,3
+3,11,3,153,Tyler Dipper,76,5,2,The Walking Dead Pro,57,new,3
+3,11,3,153,Marcus Hugosson,53,7,1,The Walking Dead Pro,57,new,3
+3,11,3,153,Didier Dujardin,24,3,3,The Walking Dead Pro,57,new,3
+3,12,1,154,Mads Kristensen,52,5,2,Stellar Airship,53,old,1
+3,12,1,154,Emil ED Dreiborg,25,1,4,Stellar Airship,53,old,1
+3,12,1,154,Archibald Lefevre,5,3,3,Stellar Airship,53,old,1
+3,12,1,154,John van der Wulp,42,7,1,Stellar Airship,53,old,1
+3,12,2,155,Mads Kristensen,52,5,2,Jokerz,31,mid,2
+3,12,2,155,Emil ED Dreiborg,25,7,1,Jokerz,31,mid,2
+3,12,2,155,Archibald Lefevre,5,1,4,Jokerz,31,mid,2
+3,12,2,155,John van der Wulp,42,3,3,Jokerz,31,mid,2
+3,12,3,156,Mads Kristensen,52,7,1,World Cup Soccer,59,new,3
+3,12,3,156,Emil ED Dreiborg,25,5,2,World Cup Soccer,59,new,3
+3,12,3,156,Archibald Lefevre,5,3,3,World Cup Soccer,59,new,3
+3,12,3,156,John van der Wulp,42,1,4,World Cup Soccer,59,new,3
+3,13,1,157,Robert Sutter,66,5,2,Champ,12,old,1
+3,13,1,157,John Delzoppo,40,7,1,Champ,12,old,1
+3,13,1,157,Jeff Teolis,37,1,4,Champ,12,old,1
+3,13,1,157,Vid Kuklec,77,3,3,Champ,12,old,1
+3,13,2,158,Robert Sutter,66,5,2,Centaur,11,mid,2
+3,13,2,158,John Delzoppo,40,7,1,Centaur,11,mid,2
+3,13,2,158,Jeff Teolis,37,1,4,Centaur,11,mid,2
+3,13,2,158,Vid Kuklec,77,3,3,Centaur,11,mid,2
+3,13,3,159,Robert Sutter,66,7,1,Metallica Monsters,36,new,3
+3,13,3,159,John Delzoppo,40,5,2,Metallica Monsters,36,new,3
+3,13,3,159,Jeff Teolis,37,3,3,Metallica Monsters,36,new,3
+3,13,3,159,Vid Kuklec,77,1,4,Metallica Monsters,36,new,3
+3,14,1,160,Brian Shepherd,15,3,3,Dark Rider,16,old,1
+3,14,1,160,Andrej Rižner,2,7,1,Dark Rider,16,old,1
+3,14,1,160,Michael Trepp,57,1,4,Dark Rider,16,old,1
+3,14,1,160,Stefan Herold,69,5,2,Dark Rider,16,old,1
+3,14,2,161,Brian Shepherd,15,3,3,Road Kings,44,mid,2
+3,14,2,161,Andrej Rižner,2,1,4,Road Kings,44,mid,2
+3,14,2,161,Michael Trepp,57,7,1,Road Kings,44,mid,2
+3,14,2,161,Stefan Herold,69,5,2,Road Kings,44,mid,2
+3,14,3,162,Brian Shepherd,15,7,1,Tron Pro,58,new,3
+3,14,3,162,Andrej Rižner,2,3,3,Tron Pro,58,new,3
+3,14,3,162,Michael Trepp,57,5,2,Tron Pro,58,new,3
+3,14,3,162,Stefan Herold,69,1,4,Tron Pro,58,new,3
+3,15,1,163,Ben Moser,10,5,2,Stellar Airship,53,old,1
+3,15,1,163,Neil Graf,58,1,4,Stellar Airship,53,old,1
+3,15,1,163,Bill Mason,11,3,3,Stellar Airship,53,old,1
+3,15,1,163,César Dubón Martínez,18,7,1,Stellar Airship,53,old,1
+3,15,2,164,Ben Moser,10,7,1,Pool Sharks,42,mid,2
+3,15,2,164,Neil Graf,58,1,4,Pool Sharks,42,mid,2
+3,15,2,164,Bill Mason,11,3,3,Pool Sharks,42,mid,2
+3,15,2,164,César Dubón Martínez,18,5,2,Pool Sharks,42,mid,2
+3,15,3,165,Ben Moser,10,3,3,Godzilla Pro,26,new,3
+3,15,3,165,Neil Graf,58,5,2,Godzilla Pro,26,new,3
+3,15,3,165,Bill Mason,11,7,1,Godzilla Pro,26,new,3
+3,15,3,165,César Dubón Martínez,18,1,4,Godzilla Pro,26,new,3
+3,16,1,166,Jason Zahler,36,3,3,Alien Poker,4,old,1
+3,16,1,166,Tim Sexton,72,7,1,Alien Poker,4,old,1
+3,16,1,166,Thomas Mästerman,71,5,2,Alien Poker,4,old,1
+3,16,1,166,David Dahl-Hansson,22,1,4,Alien Poker,4,old,1
+3,16,2,167,Jason Zahler,36,7,1,Pin Bot,40,mid,2
+3,16,2,167,Tim Sexton,72,5,2,Pin Bot,40,mid,2
+3,16,2,167,Thomas Mästerman,71,3,3,Pin Bot,40,mid,2
+3,16,2,167,David Dahl-Hansson,22,1,4,Pin Bot,40,mid,2
+3,16,3,168,Jason Zahler,36,7,1,X-Men Pro,60,new,3
+3,16,3,168,Tim Sexton,72,3,3,X-Men Pro,60,new,3
+3,16,3,168,Thomas Mästerman,71,1,4,X-Men Pro,60,new,3
+3,16,3,168,David Dahl-Hansson,22,5,2,X-Men Pro,60,new,3
+3,17,1,169,Hervé Pierru,31,5,2,Fireball (DE),23,old,1
+3,17,1,169,Raymond Davidson,64,3,3,Fireball (DE),23,old,1
+3,17,1,169,Craig Pullen,20,7,1,Fireball (DE),23,old,1
+3,17,1,169,Markus Virtanen,56,1,4,Fireball (DE),23,old,1
+3,17,2,170,Hervé Pierru,31,5,2,Firepower,24,mid,2
+3,17,2,170,Raymond Davidson,64,1,4,Firepower,24,mid,2
+3,17,2,170,Craig Pullen,20,3,3,Firepower,24,mid,2
+3,17,2,170,Markus Virtanen,56,7,1,Firepower,24,mid,2
+3,17,3,171,Hervé Pierru,31,1,4,Corvette,14,new,3
+3,17,3,171,Raymond Davidson,64,3,3,Corvette,14,new,3
+3,17,3,171,Craig Pullen,20,7,1,Corvette,14,new,3
+3,17,3,171,Markus Virtanen,56,5,2,Corvette,14,new,3
+3,18,1,172,Brian O’Neill NH,14,1,4,Strikes & Spares,54,old,1
+3,18,1,172,Bob Matthews,12,7,1,Strikes & Spares,54,old,1
+3,18,1,172,John Kottmann,41,3,3,Strikes & Spares,54,old,1
+3,18,1,172,Tom Graf,73,5,2,Strikes & Spares,54,old,1
+3,18,2,173,Brian O’Neill NH,14,5,2,Firepower 2,25,mid,2
+3,18,2,173,Bob Matthews,12,1,4,Firepower 2,25,mid,2
+3,18,2,173,John Kottmann,41,7,1,Firepower 2,25,mid,2
+3,18,2,173,Tom Graf,73,3,3,Firepower 2,25,mid,2
+3,18,3,174,Brian O’Neill NH,14,5,2,Jurassic Park LE,32,new,3
+3,18,3,174,Bob Matthews,12,3,3,Jurassic Park LE,32,new,3
+3,18,3,174,John Kottmann,41,7,1,Jurassic Park LE,32,new,3
+3,18,3,174,Tom Graf,73,1,4,Jurassic Park LE,32,new,3
+3,19,1,175,Jason Werdrick,35,5,2,Playboy,41,old,1
+3,19,1,175,Cayle George,17,3,3,Playboy,41,old,1
+3,19,1,175,Artur Natorski,7,1,4,Playboy,41,old,1
+3,19,1,175,Leslie Ruckman,50,7,1,Playboy,41,old,1
+3,19,2,176,Jason Werdrick,35,5,2,Scorpion,47,mid,2
+3,19,2,176,Cayle George,17,7,1,Scorpion,47,mid,2
+3,19,2,176,Artur Natorski,7,3,3,Scorpion,47,mid,2
+3,19,2,176,Leslie Ruckman,50,1,4,Scorpion,47,mid,2
+3,19,3,177,Jason Werdrick,35,1,4,Deadpool Pro,17,new,3
+3,19,3,177,Cayle George,17,7,1,Deadpool Pro,17,new,3
+3,19,3,177,Artur Natorski,7,3,3,Deadpool Pro,17,new,3
+3,19,3,177,Leslie Ruckman,50,5,2,Deadpool Pro,17,new,3
+3,20,1,178,Jakub Tkacz,33,1,4,Little Joe,34,old,1
+3,20,1,178,Josh Sharpe,45,5,2,Little Joe,34,old,1
+3,20,1,178,Simon Peel,68,7,1,Little Joe,34,old,1
+3,20,1,178,Andrew Foster,3,3,3,Little Joe,34,old,1
+3,20,2,179,Jakub Tkacz,33,5,2,Fire,22,mid,2
+3,20,2,179,Josh Sharpe,45,7,1,Fire,22,mid,2
+3,20,2,179,Simon Peel,68,1,4,Fire,22,mid,2
+3,20,2,179,Andrew Foster,3,3,3,Fire,22,mid,2
+3,20,3,180,Jakub Tkacz,33,3,3,Indianapolis 500,29,new,3
+3,20,3,180,Josh Sharpe,45,5,2,Indianapolis 500,29,new,3
+3,20,3,180,Simon Peel,68,7,1,Indianapolis 500,29,new,3
+3,20,3,180,Andrew Foster,3,1,4,Indianapolis 500,29,new,3
+4,1,1,181,Keith Elwin,47,3,3,Dodge City,18,old,1
+4,1,1,181,Jason Zahler,36,5,2,Dodge City,18,old,1
+4,1,1,181,Arvid Flygare,8,1,4,Dodge City,18,old,1
+4,1,1,181,Nico Wicke,59,7,1,Dodge City,18,old,1
+4,1,2,182,Keith Elwin,47,3,3,Cyclone,15,mid,2
+4,1,2,182,Jason Zahler,36,5,2,Cyclone,15,mid,2
+4,1,2,182,Arvid Flygare,8,7,1,Cyclone,15,mid,2
+4,1,2,182,Nico Wicke,59,1,4,Cyclone,15,mid,2
+4,1,3,183,Keith Elwin,47,1,4,Corvette,14,new,3
+4,1,3,183,Jason Zahler,36,7,1,Corvette,14,new,3
+4,1,3,183,Arvid Flygare,8,5,2,Corvette,14,new,3
+4,1,3,183,Nico Wicke,59,3,3,Corvette,14,new,3
+4,2,1,184,Johannes Ostermeier,39,7,1,Dark Rider,16,old,1
+4,2,1,184,Andy Bagwell,4,3,3,Dark Rider,16,old,1
+4,2,1,184,Julio Vicario Soriano,46,1,4,Dark Rider,16,old,1
+4,2,1,184,Keri Wing,48,5,2,Dark Rider,16,old,1
+4,2,2,185,Johannes Ostermeier,39,7,1,Robocop,45,mid,2
+4,2,2,185,Andy Bagwell,4,3,3,Robocop,45,mid,2
+4,2,2,185,Julio Vicario Soriano,46,1,4,Robocop,45,mid,2
+4,2,2,185,Keri Wing,48,5,2,Robocop,45,mid,2
+4,2,3,186,Johannes Ostermeier,39,7,1,Tron Pro,58,new,3
+4,2,3,186,Andy Bagwell,4,5,2,Tron Pro,58,new,3
+4,2,3,186,Julio Vicario Soriano,46,1,4,Tron Pro,58,new,3
+4,2,3,186,Keri Wing,48,3,3,Tron Pro,58,new,3
+4,3,1,187,Daniele Celestino Acciari,21,7,1,Alien Poker,4,old,1
+4,3,1,187,Kurt Louwie,49,1,4,Alien Poker,4,old,1
+4,3,1,187,Luke Nahorniak,51,3,3,Alien Poker,4,old,1
+4,3,1,187,Brian Shepherd,15,5,2,Alien Poker,4,old,1
+4,3,2,188,Daniele Celestino Acciari,21,7,1,Grand Lizard,27,mid,2
+4,3,2,188,Kurt Louwie,49,5,2,Grand Lizard,27,mid,2
+4,3,2,188,Luke Nahorniak,51,3,3,Grand Lizard,27,mid,2
+4,3,2,188,Brian Shepherd,15,1,4,Grand Lizard,27,mid,2
+4,3,3,189,Daniele Celestino Acciari,21,5,2,Indianapolis 500,29,new,3
+4,3,3,189,Kurt Louwie,49,1,4,Indianapolis 500,29,new,3
+4,3,3,189,Luke Nahorniak,51,7,1,Indianapolis 500,29,new,3
+4,3,3,189,Brian Shepherd,15,3,3,Indianapolis 500,29,new,3
+4,4,1,190,Escher Lefkoff,28,5,2,Silverball Mania,48,old,1
+4,4,1,190,Travis Murie,74,3,3,Silverball Mania,48,old,1
+4,4,1,190,Robert Sutter,66,7,1,Silverball Mania,48,old,1
+4,4,1,190,Roberto Pedroni,67,1,4,Silverball Mania,48,old,1
+4,4,2,191,Escher Lefkoff,28,3,3,Jokerz,31,mid,2
+4,4,2,191,Travis Murie,74,7,1,Jokerz,31,mid,2
+4,4,2,191,Robert Sutter,66,1,4,Jokerz,31,mid,2
+4,4,2,191,Roberto Pedroni,67,5,2,Jokerz,31,mid,2
+4,4,3,192,Escher Lefkoff,28,7,1,Rush Pro,46,new,3
+4,4,3,192,Travis Murie,74,5,2,Rush Pro,46,new,3
+4,4,3,192,Robert Sutter,66,3,3,Rush Pro,46,new,3
+4,4,3,192,Roberto Pedroni,67,1,4,Rush Pro,46,new,3
+4,5,1,193,Colin MacAlpine,19,7,1,Fireball (DE),23,old,1
+4,5,1,193,Paul Englert,61,1,4,Fireball (DE),23,old,1
+4,5,1,193,Carlos Delaserda,16,3,3,Fireball (DE),23,old,1
+4,5,1,193,Arno Nöbl,6,5,2,Fireball (DE),23,old,1
+4,5,2,194,Colin MacAlpine,19,7,1,Elektra,20,mid,2
+4,5,2,194,Paul Englert,61,5,2,Elektra,20,mid,2
+4,5,2,194,Carlos Delaserda,16,1,4,Elektra,20,mid,2
+4,5,2,194,Arno Nöbl,6,3,3,Elektra,20,mid,2
+4,5,3,195,Colin MacAlpine,19,1,4,Star Trek Premium,52,new,3
+4,5,3,195,Paul Englert,61,7,1,Star Trek Premium,52,new,3
+4,5,3,195,Carlos Delaserda,16,5,2,Star Trek Premium,52,new,3
+4,5,3,195,Arno Nöbl,6,3,3,Star Trek Premium,52,new,3
+4,6,1,196,Eric Stone,27,3,3,Nip It,38,old,1
+4,6,1,196,Reidar Spets,65,1,4,Nip It,38,old,1
+4,6,1,196,Mads Kristensen,52,7,1,Nip It,38,old,1
+4,6,1,196,Jason Lambert,34,5,2,Nip It,38,old,1
+4,6,2,197,Eric Stone,27,7,1,Centaur,11,mid,2
+4,6,2,197,Reidar Spets,65,3,3,Centaur,11,mid,2
+4,6,2,197,Mads Kristensen,52,5,2,Centaur,11,mid,2
+4,6,2,197,Jason Lambert,34,1,4,Centaur,11,mid,2
+4,6,3,198,Eric Stone,27,1,4,Avatar,6,new,3
+4,6,3,198,Reidar Spets,65,7,1,Avatar,6,new,3
+4,6,3,198,Mads Kristensen,52,3,3,Avatar,6,new,3
+4,6,3,198,Jason Lambert,34,5,2,Avatar,6,new,3
+4,7,1,199,Jack Tadman,32,3,3,Strikes & Spares,54,old,1
+4,7,1,199,Paul Jongma,62,5,2,Strikes & Spares,54,old,1
+4,7,1,199,Derek Price,23,7,1,Strikes & Spares,54,old,1
+4,7,1,199,Bart Volman,9,1,4,Strikes & Spares,54,old,1
+4,7,2,200,Jack Tadman,32,5,2,Road Kings,44,mid,2
+4,7,2,200,Paul Jongma,62,1,4,Road Kings,44,mid,2
+4,7,2,200,Derek Price,23,3,3,Road Kings,44,mid,2
+4,7,2,200,Bart Volman,9,7,1,Road Kings,44,mid,2
+4,7,3,201,Jack Tadman,32,7,1,World Cup Soccer,59,new,3
+4,7,3,201,Paul Jongma,62,3,3,World Cup Soccer,59,new,3
+4,7,3,201,Derek Price,23,1,4,World Cup Soccer,59,new,3
+4,7,3,201,Bart Volman,9,5,2,World Cup Soccer,59,new,3
+4,8,1,202,Steven Bowden,70,3,3,Little Joe,34,old,1
+4,8,1,202,Viggo Löwgren,78,1,4,Little Joe,34,old,1
+4,8,1,202,Peter Andersen,63,5,2,Little Joe,34,old,1
+4,8,1,202,Cayle George,17,7,1,Little Joe,34,old,1
+4,8,2,203,Steven Bowden,70,3,3,Pin Bot,40,mid,2
+4,8,2,203,Viggo Löwgren,78,7,1,Pin Bot,40,mid,2
+4,8,2,203,Peter Andersen,63,1,4,Pin Bot,40,mid,2
+4,8,2,203,Cayle George,17,5,2,Pin Bot,40,mid,2
+4,8,3,204,Steven Bowden,70,7,1,Avengers Infinity Quest Pro,7,new,3
+4,8,3,204,Viggo Löwgren,78,5,2,Avengers Infinity Quest Pro,7,new,3
+4,8,3,204,Peter Andersen,63,3,3,Avengers Infinity Quest Pro,7,new,3
+4,8,3,204,Cayle George,17,1,4,Avengers Infinity Quest Pro,7,new,3
+4,9,1,205,Gabor Solymosi,30,3,3,Stellar Airship,53,old,1
+4,9,1,205,Mark Pearson,54,5,2,Stellar Airship,53,old,1
+4,9,1,205,Zach Sharpe,80,1,4,Stellar Airship,53,old,1
+4,9,1,205,Josh Sharpe,45,7,1,Stellar Airship,53,old,1
+4,9,2,206,Gabor Solymosi,30,1,4,Scorpion,47,mid,2
+4,9,2,206,Mark Pearson,54,7,1,Scorpion,47,mid,2
+4,9,2,206,Zach Sharpe,80,3,3,Scorpion,47,mid,2
+4,9,2,206,Josh Sharpe,45,5,2,Scorpion,47,mid,2
+4,9,3,207,Gabor Solymosi,30,7,1,Jurassic Park LE,32,new,3
+4,9,3,207,Mark Pearson,54,3,3,Jurassic Park LE,32,new,3
+4,9,3,207,Zach Sharpe,80,5,2,Jurassic Park LE,32,new,3
+4,9,3,207,Josh Sharpe,45,1,4,Jurassic Park LE,32,new,3
+4,10,1,208,Zach McCarthy,79,1,4,Power Play,43,old,1
+4,10,1,208,Boldizsár Botka,13,5,2,Power Play,43,old,1
+4,10,1,208,John Delzoppo,40,3,3,Power Play,43,old,1
+4,10,1,208,Ben Moser,10,7,1,Power Play,43,old,1
+4,10,2,209,Zach McCarthy,79,5,2,Blackout,10,mid,2
+4,10,2,209,Boldizsár Botka,13,1,4,Blackout,10,mid,2
+4,10,2,209,John Delzoppo,40,3,3,Blackout,10,mid,2
+4,10,2,209,Ben Moser,10,7,1,Blackout,10,mid,2
+4,10,3,210,Zach McCarthy,79,3,3,The Shadow,56,new,3
+4,10,3,210,Boldizsár Botka,13,1,4,The Shadow,56,new,3
+4,10,3,210,John Delzoppo,40,5,2,The Shadow,56,new,3
+4,10,3,210,Ben Moser,10,7,1,The Shadow,56,new,3
+4,11,1,211,Olli-Mikko Ojamies,60,1,4,Alligator,5,old,1
+4,11,1,211,Andrej Rižner,2,7,1,Alligator,5,old,1
+4,11,1,211,Tyler Dipper,76,3,3,Alligator,5,old,1
+4,11,1,211,Vid Kuklec,77,5,2,Alligator,5,old,1
+4,11,2,212,Olli-Mikko Ojamies,60,5,2,Fire,22,mid,2
+4,11,2,212,Andrej Rižner,2,1,4,Fire,22,mid,2
+4,11,2,212,Tyler Dipper,76,7,1,Fire,22,mid,2
+4,11,2,212,Vid Kuklec,77,3,3,Fire,22,mid,2
+4,11,3,213,Olli-Mikko Ojamies,60,7,1,AC/DC Luci,3,new,3
+4,11,3,213,Andrej Rižner,2,3,3,AC/DC Luci,3,new,3
+4,11,3,213,Tyler Dipper,76,5,2,AC/DC Luci,3,new,3
+4,11,3,213,Vid Kuklec,77,1,4,AC/DC Luci,3,new,3
+4,12,1,214,Tim Sexton,72,1,4,Dolly Parton,19,old,1
+4,12,1,214,Simon Peel,68,5,2,Dolly Parton,19,old,1
+4,12,1,214,Andrei Massenkoff,1,7,1,Dolly Parton,19,old,1
+4,12,1,214,David Dahl-Hansson,22,3,3,Dolly Parton,19,old,1
+4,12,2,215,Tim Sexton,72,3,3,Space Station,51,mid,2
+4,12,2,215,Simon Peel,68,7,1,Space Station,51,mid,2
+4,12,2,215,Andrei Massenkoff,1,1,4,Space Station,51,mid,2
+4,12,2,215,David Dahl-Hansson,22,5,2,Space Station,51,mid,2
+4,12,3,216,Tim Sexton,72,1,4,Iron Maiden LE,30,new,3
+4,12,3,216,Simon Peel,68,7,1,Iron Maiden LE,30,new,3
+4,12,3,216,Andrei Massenkoff,1,3,3,Iron Maiden LE,30,new,3
+4,12,3,216,David Dahl-Hansson,22,5,2,Iron Maiden LE,30,new,3
+4,13,1,217,Craig Pullen,20,1,4,Champ,12,old,1
+4,13,1,217,Bob Matthews,12,5,2,Champ,12,old,1
+4,13,1,217,Michael Trepp,57,7,1,Champ,12,old,1
+4,13,1,217,Artur Natorski,7,3,3,Champ,12,old,1
+4,13,2,218,Craig Pullen,20,7,1,Pool Sharks,42,mid,2
+4,13,2,218,Bob Matthews,12,3,3,Pool Sharks,42,mid,2
+4,13,2,218,Michael Trepp,57,1,4,Pool Sharks,42,mid,2
+4,13,2,218,Artur Natorski,7,5,2,Pool Sharks,42,mid,2
+4,13,3,219,Craig Pullen,20,3,3,Congo,13,new,3
+4,13,3,219,Bob Matthews,12,7,1,Congo,13,new,3
+4,13,3,219,Michael Trepp,57,5,2,Congo,13,new,3
+4,13,3,219,Artur Natorski,7,1,4,Congo,13,new,3
+4,14,1,220,John Kottmann,41,1,4,Harlem Globetrotters,28,old,1
+4,14,1,220,Emil ED Dreiborg,25,5,2,Harlem Globetrotters,28,old,1
+4,14,1,220,Bill Mason,11,7,1,Harlem Globetrotters,28,old,1
+4,14,1,220,Jeff Teolis,37,3,3,Harlem Globetrotters,28,old,1
+4,14,2,221,John Kottmann,41,3,3,Lady Luck,33,mid,2
+4,14,2,221,Emil ED Dreiborg,25,7,1,Lady Luck,33,mid,2
+4,14,2,221,Bill Mason,11,1,4,Lady Luck,33,mid,2
+4,14,2,221,Jeff Teolis,37,5,2,Lady Luck,33,mid,2
+4,14,3,222,John Kottmann,41,3,3,X-Men Pro,60,new,3
+4,14,3,222,Emil ED Dreiborg,25,1,4,X-Men Pro,60,new,3
+4,14,3,222,Bill Mason,11,5,2,X-Men Pro,60,new,3
+4,14,3,222,Jeff Teolis,37,7,1,X-Men Pro,60,new,3
+4,15,1,223,Johnny Modica,43,7,1,Fireball (DE),23,old,1
+4,15,1,223,Jakub Tkacz,33,1,4,Fireball (DE),23,old,1
+4,15,1,223,Leslie Ruckman,50,5,2,Fireball (DE),23,old,1
+4,15,1,223,Didier Dujardin,24,3,3,Fireball (DE),23,old,1
+4,15,2,224,Johnny Modica,43,7,1,Sorcerer,50,mid,2
+4,15,2,224,Jakub Tkacz,33,5,2,Sorcerer,50,mid,2
+4,15,2,224,Leslie Ruckman,50,3,3,Sorcerer,50,mid,2
+4,15,2,224,Didier Dujardin,24,1,4,Sorcerer,50,mid,2
+4,15,3,225,Johnny Modica,43,7,1,Metallica Monsters,36,new,3
+4,15,3,225,Jakub Tkacz,33,5,2,Metallica Monsters,36,new,3
+4,15,3,225,Leslie Ruckman,50,1,4,Metallica Monsters,36,new,3
+4,15,3,225,Didier Dujardin,24,3,3,Metallica Monsters,36,new,3
+4,16,1,226,Enrico Giorgio de Stefani,26,3,3,6 Million Dollar Man,1,old,1
+4,16,1,226,Jim Belsito,38,5,2,6 Million Dollar Man,1,old,1
+4,16,1,226,Neil Graf,58,7,1,6 Million Dollar Man,1,old,1
+4,16,1,226,Andrew Foster,3,1,4,6 Million Dollar Man,1,old,1
+4,16,2,227,Enrico Giorgio de Stefani,26,5,2,Firepower 2,25,mid,2
+4,16,2,227,Jim Belsito,38,3,3,Firepower 2,25,mid,2
+4,16,2,227,Neil Graf,58,1,4,Firepower 2,25,mid,2
+4,16,2,227,Andrew Foster,3,7,1,Firepower 2,25,mid,2
+4,16,3,228,Enrico Giorgio de Stefani,26,1,4,The Walking Dead Pro,57,new,3
+4,16,3,228,Jim Belsito,38,7,1,The Walking Dead Pro,57,new,3
+4,16,3,228,Neil Graf,58,3,3,The Walking Dead Pro,57,new,3
+4,16,3,228,Andrew Foster,3,5,2,The Walking Dead Pro,57,new,3
+4,17,1,229,Jonas Valström,44,1,4,Skateball,49,old,1
+4,17,1,229,Hervé Pierru,31,3,3,Skateball,49,old,1
+4,17,1,229,Thomas Mästerman,71,7,1,Skateball,49,old,1
+4,17,1,229,Stefan Herold,69,5,2,Skateball,49,old,1
+4,17,2,230,Jonas Valström,44,3,3,F14 Tomcat,21,mid,2
+4,17,2,230,Hervé Pierru,31,1,4,F14 Tomcat,21,mid,2
+4,17,2,230,Thomas Mästerman,71,7,1,F14 Tomcat,21,mid,2
+4,17,2,230,Stefan Herold,69,5,2,F14 Tomcat,21,mid,2
+4,17,3,231,Jonas Valström,44,1,4,Deadpool Pro,17,new,3
+4,17,3,231,Hervé Pierru,31,5,2,Deadpool Pro,17,new,3
+4,17,3,231,Thomas Mästerman,71,3,3,Deadpool Pro,17,new,3
+4,17,3,231,Stefan Herold,69,7,1,Deadpool Pro,17,new,3
+4,18,1,232,Trent Augenstein,75,3,3,Playboy,41,old,1
+4,18,1,232,Brian O’Neill NH,14,7,1,Playboy,41,old,1
+4,18,1,232,César Dubón Martínez,18,5,2,Playboy,41,old,1
+4,18,1,232,John van der Wulp,42,1,4,Playboy,41,old,1
+4,18,2,233,Trent Augenstein,75,3,3,Barracora,8,mid,2
+4,18,2,233,Brian O’Neill NH,14,7,1,Barracora,8,mid,2
+4,18,2,233,César Dubón Martínez,18,1,4,Barracora,8,mid,2
+4,18,2,233,John van der Wulp,42,5,2,Barracora,8,mid,2
+4,18,3,234,Trent Augenstein,75,7,1,The Addams Family,55,new,3
+4,18,3,234,Brian O’Neill NH,14,3,3,The Addams Family,55,new,3
+4,18,3,234,César Dubón Martínez,18,5,2,The Addams Family,55,new,3
+4,18,3,234,John van der Wulp,42,1,4,The Addams Family,55,new,3
+4,19,1,235,Jason Werdrick,35,7,1,8 Ball,2,old,1
+4,19,1,235,Frank Nilsen,29,5,2,8 Ball,2,old,1
+4,19,1,235,Raymond Davidson,64,1,4,8 Ball,2,old,1
+4,19,1,235,Tom Graf,73,3,3,8 Ball,2,old,1
+4,19,2,236,Jason Werdrick,35,1,4,Firepower,24,mid,2
+4,19,2,236,Frank Nilsen,29,3,3,Firepower,24,mid,2
+4,19,2,236,Raymond Davidson,64,5,2,Firepower,24,mid,2
+4,19,2,236,Tom Graf,73,7,1,Firepower,24,mid,2
+4,19,3,237,Jason Werdrick,35,1,4,Beatles Gold,9,new,3
+4,19,3,237,Frank Nilsen,29,7,1,Beatles Gold,9,new,3
+4,19,3,237,Raymond Davidson,64,5,2,Beatles Gold,9,new,3
+4,19,3,237,Tom Graf,73,3,3,Beatles Gold,9,new,3
+4,20,1,238,Marcus Hugosson,53,5,2,Paragon,39,old,1
+4,20,1,238,Markus Stix,55,3,3,Paragon,39,old,1
+4,20,1,238,Markus Virtanen,56,7,1,Paragon,39,old,1
+4,20,1,238,Archibald Lefevre,5,1,4,Paragon,39,old,1
+4,20,2,239,Marcus Hugosson,53,7,1,Medusa,35,mid,2
+4,20,2,239,Markus Stix,55,3,3,Medusa,35,mid,2
+4,20,2,239,Markus Virtanen,56,1,4,Medusa,35,mid,2
+4,20,2,239,Archibald Lefevre,5,5,2,Medusa,35,mid,2
+4,20,3,240,Marcus Hugosson,53,1,4,Godzilla Pro,26,new,3
+4,20,3,240,Markus Stix,55,7,1,Godzilla Pro,26,new,3
+4,20,3,240,Markus Virtanen,56,5,2,Godzilla Pro,26,new,3
+4,20,3,240,Archibald Lefevre,5,3,3,Godzilla Pro,26,new,3
+5,1,1,241,Johannes Ostermeier,39,7,1,Playboy,41,old,1
+5,1,1,241,Mark Pearson,54,3,3,Playboy,41,old,1
+5,1,1,241,Jason Zahler,36,5,2,Playboy,41,old,1
+5,1,1,241,Luke Nahorniak,51,1,4,Playboy,41,old,1
+5,1,2,242,Johannes Ostermeier,39,1,4,Lady Luck,33,mid,2
+5,1,2,242,Mark Pearson,54,7,1,Lady Luck,33,mid,2
+5,1,2,242,Jason Zahler,36,5,2,Lady Luck,33,mid,2
+5,1,2,242,Luke Nahorniak,51,3,3,Lady Luck,33,mid,2
+5,1,3,243,Johannes Ostermeier,39,3,3,AC/DC Luci,3,new,3
+5,1,3,243,Mark Pearson,54,1,4,AC/DC Luci,3,new,3
+5,1,3,243,Jason Zahler,36,5,2,AC/DC Luci,3,new,3
+5,1,3,243,Luke Nahorniak,51,7,1,AC/DC Luci,3,new,3
+5,2,1,244,Daniele Celestino Acciari,21,5,2,Dark Rider,16,old,1
+5,2,1,244,Steven Bowden,70,7,1,Dark Rider,16,old,1
+5,2,1,244,Johnny Modica,43,3,3,Dark Rider,16,old,1
+5,2,1,244,Zach McCarthy,79,1,4,Dark Rider,16,old,1
+5,2,2,245,Daniele Celestino Acciari,21,5,2,Fire,22,mid,2
+5,2,2,245,Steven Bowden,70,1,4,Fire,22,mid,2
+5,2,2,245,Johnny Modica,43,3,3,Fire,22,mid,2
+5,2,2,245,Zach McCarthy,79,7,1,Fire,22,mid,2
+5,2,3,246,Daniele Celestino Acciari,21,1,4,Jurassic Park LE,32,new,3
+5,2,3,246,Steven Bowden,70,5,2,Jurassic Park LE,32,new,3
+5,2,3,246,Johnny Modica,43,3,3,Jurassic Park LE,32,new,3
+5,2,3,246,Zach McCarthy,79,7,1,Jurassic Park LE,32,new,3
+5,3,1,247,Escher Lefkoff,28,7,1,Alien Poker,4,old,1
+5,3,1,247,Ben Moser,10,1,4,Alien Poker,4,old,1
+5,3,1,247,Travis Murie,74,5,2,Alien Poker,4,old,1
+5,3,1,247,Reidar Spets,65,3,3,Alien Poker,4,old,1
+5,3,2,248,Escher Lefkoff,28,7,1,Grand Lizard,27,mid,2
+5,3,2,248,Ben Moser,10,1,4,Grand Lizard,27,mid,2
+5,3,2,248,Travis Murie,74,5,2,Grand Lizard,27,mid,2
+5,3,2,248,Reidar Spets,65,3,3,Grand Lizard,27,mid,2
+5,3,3,249,Escher Lefkoff,28,7,1,Congo,13,new,3
+5,3,3,249,Ben Moser,10,3,3,Congo,13,new,3
+5,3,3,249,Travis Murie,74,1,4,Congo,13,new,3
+5,3,3,249,Reidar Spets,65,5,2,Congo,13,new,3
+5,4,1,250,Colin MacAlpine,19,5,2,Power Play,43,old,1
+5,4,1,250,Eric Stone,27,1,4,Power Play,43,old,1
+5,4,1,250,Paul Englert,61,7,1,Power Play,43,old,1
+5,4,1,250,Gabor Solymosi,30,3,3,Power Play,43,old,1
+5,4,2,251,Colin MacAlpine,19,1,4,Centaur,11,mid,2
+5,4,2,251,Eric Stone,27,5,2,Centaur,11,mid,2
+5,4,2,251,Paul Englert,61,7,1,Centaur,11,mid,2
+5,4,2,251,Gabor Solymosi,30,3,3,Centaur,11,mid,2
+5,4,3,252,Colin MacAlpine,19,3,3,Deadpool Pro,17,new,3
+5,4,3,252,Eric Stone,27,7,1,Deadpool Pro,17,new,3
+5,4,3,252,Paul Englert,61,1,4,Deadpool Pro,17,new,3
+5,4,3,252,Gabor Solymosi,30,5,2,Deadpool Pro,17,new,3
+5,5,1,253,Keith Elwin,47,7,1,Paragon,39,old,1
+5,5,1,253,Jack Tadman,32,3,3,Paragon,39,old,1
+5,5,1,253,Mads Kristensen,52,1,4,Paragon,39,old,1
+5,5,1,253,Viggo Löwgren,78,5,2,Paragon,39,old,1
+5,5,2,254,Keith Elwin,47,3,3,Blackout,10,mid,2
+5,5,2,254,Jack Tadman,32,7,1,Blackout,10,mid,2
+5,5,2,254,Mads Kristensen,52,5,2,Blackout,10,mid,2
+5,5,2,254,Viggo Löwgren,78,1,4,Blackout,10,mid,2
+5,5,3,255,Keith Elwin,47,3,3,Corvette,14,new,3
+5,5,3,255,Jack Tadman,32,7,1,Corvette,14,new,3
+5,5,3,255,Mads Kristensen,52,1,4,Corvette,14,new,3
+5,5,3,255,Viggo Löwgren,78,5,2,Corvette,14,new,3
+5,6,1,256,Arvid Flygare,8,3,3,Playboy,41,old,1
+5,6,1,256,Boldizsár Botka,13,1,4,Playboy,41,old,1
+5,6,1,256,Carlos Delaserda,16,7,1,Playboy,41,old,1
+5,6,1,256,Arno Nöbl,6,5,2,Playboy,41,old,1
+5,6,2,257,Arvid Flygare,8,1,4,Firepower,24,mid,2
+5,6,2,257,Boldizsár Botka,13,7,1,Firepower,24,mid,2
+5,6,2,257,Carlos Delaserda,16,3,3,Firepower,24,mid,2
+5,6,2,257,Arno Nöbl,6,5,2,Firepower,24,mid,2
+5,6,3,258,Arvid Flygare,8,5,2,Godzilla Pro,26,new,3
+5,6,3,258,Boldizsár Botka,13,1,4,Godzilla Pro,26,new,3
+5,6,3,258,Carlos Delaserda,16,7,1,Godzilla Pro,26,new,3
+5,6,3,258,Arno Nöbl,6,3,3,Godzilla Pro,26,new,3
+5,7,1,259,Cayle George,17,1,4,Dolly Parton,19,old,1
+5,7,1,259,John Delzoppo,40,3,3,Dolly Parton,19,old,1
+5,7,1,259,Keri Wing,48,5,2,Dolly Parton,19,old,1
+5,7,1,259,Jason Lambert,34,7,1,Dolly Parton,19,old,1
+5,7,2,260,Cayle George,17,7,1,Elektra,20,mid,2
+5,7,2,260,John Delzoppo,40,1,4,Elektra,20,mid,2
+5,7,2,260,Keri Wing,48,5,2,Elektra,20,mid,2
+5,7,2,260,Jason Lambert,34,3,3,Elektra,20,mid,2
+5,7,3,261,Cayle George,17,7,1,Indianapolis 500,29,new,3
+5,7,3,261,John Delzoppo,40,3,3,Indianapolis 500,29,new,3
+5,7,3,261,Keri Wing,48,5,2,Indianapolis 500,29,new,3
+5,7,3,261,Jason Lambert,34,1,4,Indianapolis 500,29,new,3
+5,8,1,262,Bart Volman,9,3,3,Silverball Mania,48,old,1
+5,8,1,262,Simon Peel,68,5,2,Silverball Mania,48,old,1
+5,8,1,262,Brian O’Neill NH,14,7,1,Silverball Mania,48,old,1
+5,8,1,262,Frank Nilsen,29,1,4,Silverball Mania,48,old,1
+5,8,2,263,Bart Volman,9,1,4,Robocop,45,mid,2
+5,8,2,263,Simon Peel,68,5,2,Robocop,45,mid,2
+5,8,2,263,Brian O’Neill NH,14,7,1,Robocop,45,mid,2
+5,8,2,263,Frank Nilsen,29,3,3,Robocop,45,mid,2
+5,8,3,264,Bart Volman,9,5,2,Star Trek Premium,52,new,3
+5,8,3,264,Simon Peel,68,3,3,Star Trek Premium,52,new,3
+5,8,3,264,Brian O’Neill NH,14,1,4,Star Trek Premium,52,new,3
+5,8,3,264,Frank Nilsen,29,7,1,Star Trek Premium,52,new,3
+5,9,1,265,Andy Bagwell,4,3,3,Skateball,49,old,1
+5,9,1,265,Robert Sutter,66,7,1,Skateball,49,old,1
+5,9,1,265,Derek Price,23,5,2,Skateball,49,old,1
+5,9,1,265,Jim Belsito,38,1,4,Skateball,49,old,1
+5,9,2,266,Andy Bagwell,4,1,4,Pool Sharks,42,mid,2
+5,9,2,266,Robert Sutter,66,5,2,Pool Sharks,42,mid,2
+5,9,2,266,Derek Price,23,7,1,Pool Sharks,42,mid,2
+5,9,2,266,Jim Belsito,38,3,3,Pool Sharks,42,mid,2
+5,9,3,267,Andy Bagwell,4,3,3,The Walking Dead Pro,57,new,3
+5,9,3,267,Robert Sutter,66,7,1,The Walking Dead Pro,57,new,3
+5,9,3,267,Derek Price,23,1,4,The Walking Dead Pro,57,new,3
+5,9,3,267,Jim Belsito,38,5,2,The Walking Dead Pro,57,new,3
+5,10,1,268,Paul Jongma,62,1,4,Nip It,38,old,1
+5,10,1,268,Josh Sharpe,45,5,2,Nip It,38,old,1
+5,10,1,268,Olli-Mikko Ojamies,60,7,1,Nip It,38,old,1
+5,10,1,268,Nico Wicke,59,3,3,Nip It,38,old,1
+5,10,2,269,Paul Jongma,62,7,1,Blackout,10,mid,2
+5,10,2,269,Josh Sharpe,45,5,2,Blackout,10,mid,2
+5,10,2,269,Olli-Mikko Ojamies,60,1,4,Blackout,10,mid,2
+5,10,2,269,Nico Wicke,59,3,3,Blackout,10,mid,2
+5,10,3,270,Paul Jongma,62,7,1,Deadpool Pro,17,new,3
+5,10,3,270,Josh Sharpe,45,5,2,Deadpool Pro,17,new,3
+5,10,3,270,Olli-Mikko Ojamies,60,1,4,Deadpool Pro,17,new,3
+5,10,3,270,Nico Wicke,59,3,3,Deadpool Pro,17,new,3
+5,11,1,271,Peter Andersen,63,1,4,Stellar Airship,53,old,1
+5,11,1,271,Brian Shepherd,15,7,1,Stellar Airship,53,old,1
+5,11,1,271,Julio Vicario Soriano,46,3,3,Stellar Airship,53,old,1
+5,11,1,271,Andrei Massenkoff,1,5,2,Stellar Airship,53,old,1
+5,11,2,272,Peter Andersen,63,1,4,Medusa,35,mid,2
+5,11,2,272,Brian Shepherd,15,3,3,Medusa,35,mid,2
+5,11,2,272,Julio Vicario Soriano,46,7,1,Medusa,35,mid,2
+5,11,2,272,Andrei Massenkoff,1,5,2,Medusa,35,mid,2
+5,11,3,273,Peter Andersen,63,5,2,Beatles Gold,9,new,3
+5,11,3,273,Brian Shepherd,15,3,3,Beatles Gold,9,new,3
+5,11,3,273,Julio Vicario Soriano,46,1,4,Beatles Gold,9,new,3
+5,11,3,273,Andrei Massenkoff,1,7,1,Beatles Gold,9,new,3
+5,12,1,274,Zach Sharpe,80,7,1,Little Joe,34,old,1
+5,12,1,274,Tyler Dipper,76,3,3,Little Joe,34,old,1
+5,12,1,274,Emil ED Dreiborg,25,1,4,Little Joe,34,old,1
+5,12,1,274,Andrej Rižner,2,5,2,Little Joe,34,old,1
+5,12,2,275,Zach Sharpe,80,7,1,Road Kings,44,mid,2
+5,12,2,275,Tyler Dipper,76,5,2,Road Kings,44,mid,2
+5,12,2,275,Emil ED Dreiborg,25,1,4,Road Kings,44,mid,2
+5,12,2,275,Andrej Rižner,2,3,3,Road Kings,44,mid,2
+5,12,3,276,Zach Sharpe,80,3,3,Metallica Monsters,36,new,3
+5,12,3,276,Tyler Dipper,76,1,4,Metallica Monsters,36,new,3
+5,12,3,276,Emil ED Dreiborg,25,7,1,Metallica Monsters,36,new,3
+5,12,3,276,Andrej Rižner,2,5,2,Metallica Monsters,36,new,3
+5,13,1,277,Kurt Louwie,49,5,2,8 Ball,2,old,1
+5,13,1,277,Bob Matthews,12,3,3,8 Ball,2,old,1
+5,13,1,277,Michael Trepp,57,1,4,8 Ball,2,old,1
+5,13,1,277,Stefan Herold,69,7,1,8 Ball,2,old,1
+5,13,2,278,Kurt Louwie,49,1,4,Scorpion,47,mid,2
+5,13,2,278,Bob Matthews,12,3,3,Scorpion,47,mid,2
+5,13,2,278,Michael Trepp,57,7,1,Scorpion,47,mid,2
+5,13,2,278,Stefan Herold,69,5,2,Scorpion,47,mid,2
+5,13,3,279,Kurt Louwie,49,3,3,The Shadow,56,new,3
+5,13,3,279,Bob Matthews,12,5,2,The Shadow,56,new,3
+5,13,3,279,Michael Trepp,57,7,1,The Shadow,56,new,3
+5,13,3,279,Stefan Herold,69,1,4,The Shadow,56,new,3
+5,14,1,280,Markus Stix,55,7,1,Fireball (DE),23,old,1
+5,14,1,280,Trent Augenstein,75,5,2,Fireball (DE),23,old,1
+5,14,1,280,Thomas Mästerman,71,3,3,Fireball (DE),23,old,1
+5,14,1,280,Enrico Giorgio de Stefani,26,1,4,Fireball (DE),23,old,1
+5,14,2,281,Markus Stix,55,7,1,Sorcerer,50,mid,2
+5,14,2,281,Trent Augenstein,75,5,2,Sorcerer,50,mid,2
+5,14,2,281,Thomas Mästerman,71,3,3,Sorcerer,50,mid,2
+5,14,2,281,Enrico Giorgio de Stefani,26,1,4,Sorcerer,50,mid,2
+5,14,3,282,Markus Stix,55,7,1,Avengers Infinity Quest Pro,7,new,3
+5,14,3,282,Trent Augenstein,75,3,3,Avengers Infinity Quest Pro,7,new,3
+5,14,3,282,Thomas Mästerman,71,1,4,Avengers Infinity Quest Pro,7,new,3
+5,14,3,282,Enrico Giorgio de Stefani,26,5,2,Avengers Infinity Quest Pro,7,new,3
+5,15,1,283,Craig Pullen,20,3,3,Mystic,37,old,1
+5,15,1,283,Marcus Hugosson,53,7,1,Mystic,37,old,1
+5,15,1,283,Roberto Pedroni,67,5,2,Mystic,37,old,1
+5,15,1,283,Bill Mason,11,1,4,Mystic,37,old,1
+5,15,2,284,Craig Pullen,20,7,1,Jokerz,31,mid,2
+5,15,2,284,Marcus Hugosson,53,5,2,Jokerz,31,mid,2
+5,15,2,284,Roberto Pedroni,67,3,3,Jokerz,31,mid,2
+5,15,2,284,Bill Mason,11,1,4,Jokerz,31,mid,2
+5,15,3,285,Craig Pullen,20,3,3,Iron Maiden LE,30,new,3
+5,15,3,285,Marcus Hugosson,53,1,4,Iron Maiden LE,30,new,3
+5,15,3,285,Roberto Pedroni,67,5,2,Iron Maiden LE,30,new,3
+5,15,3,285,Bill Mason,11,7,1,Iron Maiden LE,30,new,3
+5,16,1,286,Jakub Tkacz,33,5,2,Dodge City,18,old,1
+5,16,1,286,Jeff Teolis,37,7,1,Dodge City,18,old,1
+5,16,1,286,Tom Graf,73,3,3,Dodge City,18,old,1
+5,16,1,286,Didier Dujardin,24,1,4,Dodge City,18,old,1
+5,16,2,287,Jakub Tkacz,33,7,1,Barracora,8,mid,2
+5,16,2,287,Jeff Teolis,37,5,2,Barracora,8,mid,2
+5,16,2,287,Tom Graf,73,3,3,Barracora,8,mid,2
+5,16,2,287,Didier Dujardin,24,1,4,Barracora,8,mid,2
+5,16,3,288,Jakub Tkacz,33,3,3,Rush Pro,46,new,3
+5,16,3,288,Jeff Teolis,37,7,1,Rush Pro,46,new,3
+5,16,3,288,Tom Graf,73,5,2,Rush Pro,46,new,3
+5,16,3,288,Didier Dujardin,24,1,4,Rush Pro,46,new,3
+5,17,1,289,Hervé Pierru,31,5,2,6 Million Dollar Man,1,old,1
+5,17,1,289,Leslie Ruckman,50,7,1,6 Million Dollar Man,1,old,1
+5,17,1,289,César Dubón Martínez,18,3,3,6 Million Dollar Man,1,old,1
+5,17,1,289,Vid Kuklec,77,1,4,6 Million Dollar Man,1,old,1
+5,17,2,290,Hervé Pierru,31,5,2,F14 Tomcat,21,mid,2
+5,17,2,290,Leslie Ruckman,50,3,3,F14 Tomcat,21,mid,2
+5,17,2,290,César Dubón Martínez,18,7,1,F14 Tomcat,21,mid,2
+5,17,2,290,Vid Kuklec,77,1,4,F14 Tomcat,21,mid,2
+5,17,3,291,Hervé Pierru,31,5,2,World Cup Soccer,59,new,3
+5,17,3,291,Leslie Ruckman,50,7,1,World Cup Soccer,59,new,3
+5,17,3,291,César Dubón Martínez,18,3,3,World Cup Soccer,59,new,3
+5,17,3,291,Vid Kuklec,77,1,4,World Cup Soccer,59,new,3
+5,18,1,292,John Kottmann,41,3,3,Harlem Globetrotters,28,old,1
+5,18,1,292,Raymond Davidson,64,7,1,Harlem Globetrotters,28,old,1
+5,18,1,292,Neil Graf,58,5,2,Harlem Globetrotters,28,old,1
+5,18,1,292,Artur Natorski,7,1,4,Harlem Globetrotters,28,old,1
+5,18,2,293,John Kottmann,41,1,4,Space Station,51,mid,2
+5,18,2,293,Raymond Davidson,64,5,2,Space Station,51,mid,2
+5,18,2,293,Neil Graf,58,7,1,Space Station,51,mid,2
+5,18,2,293,Artur Natorski,7,3,3,Space Station,51,mid,2
+5,18,3,294,John Kottmann,41,1,4,The Addams Family,55,new,3
+5,18,3,294,Raymond Davidson,64,7,1,The Addams Family,55,new,3
+5,18,3,294,Neil Graf,58,5,2,The Addams Family,55,new,3
+5,18,3,294,Artur Natorski,7,3,3,The Addams Family,55,new,3
+5,19,1,295,Jason Werdrick,35,3,3,Strikes & Spares,54,old,1
+5,19,1,295,Jonas Valström,44,7,1,Strikes & Spares,54,old,1
+5,19,1,295,Andrew Foster,3,1,4,Strikes & Spares,54,old,1
+5,19,1,295,John van der Wulp,42,5,2,Strikes & Spares,54,old,1
+5,19,2,296,Jason Werdrick,35,3,3,Pin Bot,40,mid,2
+5,19,2,296,Jonas Valström,44,1,4,Pin Bot,40,mid,2
+5,19,2,296,Andrew Foster,3,7,1,Pin Bot,40,mid,2
+5,19,2,296,John van der Wulp,42,5,2,Pin Bot,40,mid,2
+5,19,3,297,Jason Werdrick,35,3,3,X-Men Pro,60,new,3
+5,19,3,297,Jonas Valström,44,1,4,X-Men Pro,60,new,3
+5,19,3,297,Andrew Foster,3,7,1,X-Men Pro,60,new,3
+5,19,3,297,John van der Wulp,42,5,2,X-Men Pro,60,new,3
+5,20,1,298,Tim Sexton,72,7,1,Alligator,5,old,1
+5,20,1,298,Markus Virtanen,56,3,3,Alligator,5,old,1
+5,20,1,298,Archibald Lefevre,5,5,2,Alligator,5,old,1
+5,20,1,298,David Dahl-Hansson,22,1,4,Alligator,5,old,1
+5,20,2,299,Tim Sexton,72,3,3,Cyclone,15,mid,2
+5,20,2,299,Markus Virtanen,56,5,2,Cyclone,15,mid,2
+5,20,2,299,Archibald Lefevre,5,7,1,Cyclone,15,mid,2
+5,20,2,299,David Dahl-Hansson,22,1,4,Cyclone,15,mid,2
+5,20,3,300,Tim Sexton,72,5,2,Tron Pro,58,new,3
+5,20,3,300,Markus Virtanen,56,1,4,Tron Pro,58,new,3
+5,20,3,300,Archibald Lefevre,5,3,3,Tron Pro,58,new,3
+5,20,3,300,David Dahl-Hansson,22,7,1,Tron Pro,58,new,3
+6,1,1,301,Escher Lefkoff,28,7,1,Harlem Globetrotters,28,old,1
+6,1,1,301,Colin MacAlpine,19,1,4,Harlem Globetrotters,28,old,1
+6,1,1,301,Paul Englert,61,5,2,Harlem Globetrotters,28,old,1
+6,1,1,301,Paul Jongma,62,3,3,Harlem Globetrotters,28,old,1
+6,1,2,302,Escher Lefkoff,28,7,1,Pool Sharks,42,mid,2
+6,1,2,302,Colin MacAlpine,19,5,2,Pool Sharks,42,mid,2
+6,1,2,302,Paul Englert,61,1,4,Pool Sharks,42,mid,2
+6,1,2,302,Paul Jongma,62,3,3,Pool Sharks,42,mid,2
+6,1,3,303,Escher Lefkoff,28,7,1,Godzilla Pro,26,new,3
+6,1,3,303,Colin MacAlpine,19,1,4,Godzilla Pro,26,new,3
+6,1,3,303,Paul Englert,61,5,2,Godzilla Pro,26,new,3
+6,1,3,303,Paul Jongma,62,3,3,Godzilla Pro,26,new,3
+6,2,1,304,Johannes Ostermeier,39,7,1,Dark Rider,16,old,1
+6,2,1,304,Jason Zahler,36,3,3,Dark Rider,16,old,1
+6,2,1,304,Robert Sutter,66,1,4,Dark Rider,16,old,1
+6,2,1,304,Travis Murie,74,5,2,Dark Rider,16,old,1
+6,2,2,305,Johannes Ostermeier,39,7,1,Fire,22,mid,2
+6,2,2,305,Jason Zahler,36,3,3,Fire,22,mid,2
+6,2,2,305,Robert Sutter,66,1,4,Fire,22,mid,2
+6,2,2,305,Travis Murie,74,5,2,Fire,22,mid,2
+6,2,3,306,Johannes Ostermeier,39,7,1,Deadpool Pro,17,new,3
+6,2,3,306,Jason Zahler,36,5,2,Deadpool Pro,17,new,3
+6,2,3,306,Robert Sutter,66,3,3,Deadpool Pro,17,new,3
+6,2,3,306,Travis Murie,74,1,4,Deadpool Pro,17,new,3
+6,3,1,307,Josh Sharpe,45,3,3,Dolly Parton,19,old,1
+6,3,1,307,Steven Bowden,70,7,1,Dolly Parton,19,old,1
+6,3,1,307,Eric Stone,27,5,2,Dolly Parton,19,old,1
+6,3,1,307,Daniele Celestino Acciari,21,1,4,Dolly Parton,19,old,1
+6,3,2,308,Josh Sharpe,45,5,2,Elektra,20,mid,2
+6,3,2,308,Steven Bowden,70,1,4,Elektra,20,mid,2
+6,3,2,308,Eric Stone,27,3,3,Elektra,20,mid,2
+6,3,2,308,Daniele Celestino Acciari,21,7,1,Elektra,20,mid,2
+6,3,3,309,Josh Sharpe,45,7,1,Indianapolis 500,29,new,3
+6,3,3,309,Steven Bowden,70,1,4,Indianapolis 500,29,new,3
+6,3,3,309,Eric Stone,27,3,3,Indianapolis 500,29,new,3
+6,3,3,309,Daniele Celestino Acciari,21,5,2,Indianapolis 500,29,new,3
+6,4,1,310,Jack Tadman,32,1,4,Silverball Mania,48,old,1
+6,4,1,310,Keith Elwin,47,3,3,Silverball Mania,48,old,1
+6,4,1,310,Mark Pearson,54,7,1,Silverball Mania,48,old,1
+6,4,1,310,Zach McCarthy,79,5,2,Silverball Mania,48,old,1
+6,4,2,311,Jack Tadman,32,3,3,Medusa,35,mid,2
+6,4,2,311,Keith Elwin,47,5,2,Medusa,35,mid,2
+6,4,2,311,Mark Pearson,54,1,4,Medusa,35,mid,2
+6,4,2,311,Zach McCarthy,79,7,1,Medusa,35,mid,2
+6,4,3,312,Jack Tadman,32,1,4,Star Trek Premium,52,new,3
+6,4,3,312,Keith Elwin,47,7,1,Star Trek Premium,52,new,3
+6,4,3,312,Mark Pearson,54,5,2,Star Trek Premium,52,new,3
+6,4,3,312,Zach McCarthy,79,3,3,Star Trek Premium,52,new,3
+6,5,1,313,Viggo Löwgren,78,5,2,Alien Poker,4,old,1
+6,5,1,313,Ben Moser,10,7,1,Alien Poker,4,old,1
+6,5,1,313,Luke Nahorniak,51,3,3,Alien Poker,4,old,1
+6,5,1,313,Simon Peel,68,1,4,Alien Poker,4,old,1
+6,5,2,314,Viggo Löwgren,78,7,1,Firepower,24,mid,2
+6,5,2,314,Ben Moser,10,1,4,Firepower,24,mid,2
+6,5,2,314,Luke Nahorniak,51,3,3,Firepower,24,mid,2
+6,5,2,314,Simon Peel,68,5,2,Firepower,24,mid,2
+6,5,3,315,Viggo Löwgren,78,7,1,Beatles Gold,9,new,3
+6,5,3,315,Ben Moser,10,5,2,Beatles Gold,9,new,3
+6,5,3,315,Luke Nahorniak,51,3,3,Beatles Gold,9,new,3
+6,5,3,315,Simon Peel,68,1,4,Beatles Gold,9,new,3
+6,6,1,316,Markus Stix,55,3,3,8 Ball,2,old,1
+6,6,1,316,Keri Wing,48,5,2,8 Ball,2,old,1
+6,6,1,316,Brian O’Neill NH,14,1,4,8 Ball,2,old,1
+6,6,1,316,Mads Kristensen,52,7,1,8 Ball,2,old,1
+6,6,2,317,Markus Stix,55,5,2,Jokerz,31,mid,2
+6,6,2,317,Keri Wing,48,1,4,Jokerz,31,mid,2
+6,6,2,317,Brian O’Neill NH,14,7,1,Jokerz,31,mid,2
+6,6,2,317,Mads Kristensen,52,3,3,Jokerz,31,mid,2
+6,6,3,318,Markus Stix,55,5,2,Congo,13,new,3
+6,6,3,318,Keri Wing,48,7,1,Congo,13,new,3
+6,6,3,318,Brian O’Neill NH,14,3,3,Congo,13,new,3
+6,6,3,318,Mads Kristensen,52,1,4,Congo,13,new,3
+6,7,1,319,Gabor Solymosi,30,3,3,Paragon,39,old,1
+6,7,1,319,Johnny Modica,43,1,4,Paragon,39,old,1
+6,7,1,319,Zach Sharpe,80,7,1,Paragon,39,old,1
+6,7,1,319,Arvid Flygare,8,5,2,Paragon,39,old,1
+6,7,2,320,Gabor Solymosi,30,1,4,Sorcerer,50,mid,2
+6,7,2,320,Johnny Modica,43,3,3,Sorcerer,50,mid,2
+6,7,2,320,Zach Sharpe,80,7,1,Sorcerer,50,mid,2
+6,7,2,320,Arvid Flygare,8,5,2,Sorcerer,50,mid,2
+6,7,3,321,Gabor Solymosi,30,1,4,The Shadow,56,new,3
+6,7,3,321,Johnny Modica,43,3,3,The Shadow,56,new,3
+6,7,3,321,Zach Sharpe,80,7,1,The Shadow,56,new,3
+6,7,3,321,Arvid Flygare,8,5,2,The Shadow,56,new,3
+6,8,1,322,Carlos Delaserda,16,1,4,Dodge City,18,old,1
+6,8,1,322,Cayle George,17,5,2,Dodge City,18,old,1
+6,8,1,322,Reidar Spets,65,3,3,Dodge City,18,old,1
+6,8,1,322,Derek Price,23,7,1,Dodge City,18,old,1
+6,8,2,323,Carlos Delaserda,16,3,3,Cyclone,15,mid,2
+6,8,2,323,Cayle George,17,7,1,Cyclone,15,mid,2
+6,8,2,323,Reidar Spets,65,1,4,Cyclone,15,mid,2
+6,8,2,323,Derek Price,23,5,2,Cyclone,15,mid,2
+6,8,3,324,Carlos Delaserda,16,1,4,Indianapolis 500,29,new,3
+6,8,3,324,Cayle George,17,5,2,Indianapolis 500,29,new,3
+6,8,3,324,Reidar Spets,65,7,1,Indianapolis 500,29,new,3
+6,8,3,324,Derek Price,23,3,3,Indianapolis 500,29,new,3
+6,9,1,325,Arno Nöbl,6,5,2,Stellar Airship,53,old,1
+6,9,1,325,Frank Nilsen,29,1,4,Stellar Airship,53,old,1
+6,9,1,325,Boldizsár Botka,13,3,3,Stellar Airship,53,old,1
+6,9,1,325,Raymond Davidson,64,7,1,Stellar Airship,53,old,1
+6,9,2,326,Arno Nöbl,6,3,3,Sorcerer,50,mid,2
+6,9,2,326,Frank Nilsen,29,5,2,Sorcerer,50,mid,2
+6,9,2,326,Boldizsár Botka,13,7,1,Sorcerer,50,mid,2
+6,9,2,326,Raymond Davidson,64,1,4,Sorcerer,50,mid,2
+6,9,3,327,Arno Nöbl,6,5,2,X-Men Pro,60,new,3
+6,9,3,327,Frank Nilsen,29,1,4,X-Men Pro,60,new,3
+6,9,3,327,Boldizsár Botka,13,3,3,X-Men Pro,60,new,3
+6,9,3,327,Raymond Davidson,64,7,1,X-Men Pro,60,new,3
+6,10,1,328,Bart Volman,9,1,4,Little Joe,34,old,1
+6,10,1,328,Craig Pullen,20,5,2,Little Joe,34,old,1
+6,10,1,328,Jason Lambert,34,3,3,Little Joe,34,old,1
+6,10,1,328,Jim Belsito,38,7,1,Little Joe,34,old,1
+6,10,2,329,Bart Volman,9,3,3,Scorpion,47,mid,2
+6,10,2,329,Craig Pullen,20,1,4,Scorpion,47,mid,2
+6,10,2,329,Jason Lambert,34,7,1,Scorpion,47,mid,2
+6,10,2,329,Jim Belsito,38,5,2,Scorpion,47,mid,2
+6,10,3,330,Bart Volman,9,5,2,Rush Pro,46,new,3
+6,10,3,330,Craig Pullen,20,7,1,Rush Pro,46,new,3
+6,10,3,330,Jason Lambert,34,3,3,Rush Pro,46,new,3
+6,10,3,330,Jim Belsito,38,1,4,Rush Pro,46,new,3
+6,11,1,331,Andy Bagwell,4,1,4,Strikes & Spares,54,old,1
+6,11,1,331,Trent Augenstein,75,7,1,Strikes & Spares,54,old,1
+6,11,1,331,Marcus Hugosson,53,3,3,Strikes & Spares,54,old,1
+6,11,1,331,Nico Wicke,59,5,2,Strikes & Spares,54,old,1
+6,11,2,332,Andy Bagwell,4,3,3,Road Kings,44,mid,2
+6,11,2,332,Trent Augenstein,75,5,2,Road Kings,44,mid,2
+6,11,2,332,Marcus Hugosson,53,1,4,Road Kings,44,mid,2
+6,11,2,332,Nico Wicke,59,7,1,Road Kings,44,mid,2
+6,11,3,333,Andy Bagwell,4,5,2,Tron Pro,58,new,3
+6,11,3,333,Trent Augenstein,75,3,3,Tron Pro,58,new,3
+6,11,3,333,Marcus Hugosson,53,1,4,Tron Pro,58,new,3
+6,11,3,333,Nico Wicke,59,7,1,Tron Pro,58,new,3
+6,12,1,334,Brian Shepherd,15,5,2,Power Play,43,old,1
+6,12,1,334,Olli-Mikko Ojamies,60,3,3,Power Play,43,old,1
+6,12,1,334,Michael Trepp,57,1,4,Power Play,43,old,1
+6,12,1,334,Andrei Massenkoff,1,7,1,Power Play,43,old,1
+6,12,2,335,Brian Shepherd,15,7,1,Centaur,11,mid,2
+6,12,2,335,Olli-Mikko Ojamies,60,1,4,Centaur,11,mid,2
+6,12,2,335,Michael Trepp,57,5,2,Centaur,11,mid,2
+6,12,2,335,Andrei Massenkoff,1,3,3,Centaur,11,mid,2
+6,12,3,336,Brian Shepherd,15,1,4,Jurassic Park LE,32,new,3
+6,12,3,336,Olli-Mikko Ojamies,60,3,3,Jurassic Park LE,32,new,3
+6,12,3,336,Michael Trepp,57,5,2,Jurassic Park LE,32,new,3
+6,12,3,336,Andrei Massenkoff,1,7,1,Jurassic Park LE,32,new,3
+6,13,1,337,John Delzoppo,40,1,4,6 Million Dollar Man,1,old,1
+6,13,1,337,Tyler Dipper,76,3,3,6 Million Dollar Man,1,old,1
+6,13,1,337,Stefan Herold,69,7,1,6 Million Dollar Man,1,old,1
+6,13,1,337,Emil ED Dreiborg,25,5,2,6 Million Dollar Man,1,old,1
+6,13,2,338,John Delzoppo,40,1,4,Space Station,51,mid,2
+6,13,2,338,Tyler Dipper,76,5,2,Space Station,51,mid,2
+6,13,2,338,Stefan Herold,69,3,3,Space Station,51,mid,2
+6,13,2,338,Emil ED Dreiborg,25,7,1,Space Station,51,mid,2
+6,13,3,339,John Delzoppo,40,5,2,World Cup Soccer,59,new,3
+6,13,3,339,Tyler Dipper,76,7,1,World Cup Soccer,59,new,3
+6,13,3,339,Stefan Herold,69,1,4,World Cup Soccer,59,new,3
+6,13,3,339,Emil ED Dreiborg,25,3,3,World Cup Soccer,59,new,3
+6,14,1,340,Bob Matthews,12,7,1,Alligator,5,old,1
+6,14,1,340,Hervé Pierru,31,3,3,Alligator,5,old,1
+6,14,1,340,Julio Vicario Soriano,46,5,2,Alligator,5,old,1
+6,14,1,340,Peter Andersen,63,1,4,Alligator,5,old,1
+6,14,2,341,Bob Matthews,12,3,3,Grand Lizard,27,mid,2
+6,14,2,341,Hervé Pierru,31,1,4,Grand Lizard,27,mid,2
+6,14,2,341,Julio Vicario Soriano,46,5,2,Grand Lizard,27,mid,2
+6,14,2,341,Peter Andersen,63,7,1,Grand Lizard,27,mid,2
+6,14,3,342,Bob Matthews,12,1,4,The Addams Family,55,new,3
+6,14,3,342,Hervé Pierru,31,5,2,The Addams Family,55,new,3
+6,14,3,342,Julio Vicario Soriano,46,7,1,The Addams Family,55,new,3
+6,14,3,342,Peter Andersen,63,3,3,The Addams Family,55,new,3
+6,15,1,343,Jakub Tkacz,33,7,1,Stellar Airship,53,old,1
+6,15,1,343,Jeff Teolis,37,5,2,Stellar Airship,53,old,1
+6,15,1,343,Leslie Ruckman,50,1,4,Stellar Airship,53,old,1
+6,15,1,343,Neil Graf,58,3,3,Stellar Airship,53,old,1
+6,15,2,344,Jakub Tkacz,33,3,3,Lady Luck,33,mid,2
+6,15,2,344,Jeff Teolis,37,1,4,Lady Luck,33,mid,2
+6,15,2,344,Leslie Ruckman,50,7,1,Lady Luck,33,mid,2
+6,15,2,344,Neil Graf,58,5,2,Lady Luck,33,mid,2
+6,15,3,345,Jakub Tkacz,33,5,2,Iron Maiden LE,30,new,3
+6,15,3,345,Jeff Teolis,37,7,1,Iron Maiden LE,30,new,3
+6,15,3,345,Leslie Ruckman,50,3,3,Iron Maiden LE,30,new,3
+6,15,3,345,Neil Graf,58,1,4,Iron Maiden LE,30,new,3
+6,16,1,346,Roberto Pedroni,67,3,3,Mystic,37,old,1
+6,16,1,346,Kurt Louwie,49,1,4,Mystic,37,old,1
+6,16,1,346,Andrej Rižner,2,5,2,Mystic,37,old,1
+6,16,1,346,Tim Sexton,72,7,1,Mystic,37,old,1
+6,16,2,347,Roberto Pedroni,67,5,2,Blackout,10,mid,2
+6,16,2,347,Kurt Louwie,49,7,1,Blackout,10,mid,2
+6,16,2,347,Andrej Rižner,2,1,4,Blackout,10,mid,2
+6,16,2,347,Tim Sexton,72,3,3,Blackout,10,mid,2
+6,16,3,348,Roberto Pedroni,67,5,2,The Walking Dead Pro,57,new,3
+6,16,3,348,Kurt Louwie,49,3,3,The Walking Dead Pro,57,new,3
+6,16,3,348,Andrej Rižner,2,7,1,The Walking Dead Pro,57,new,3
+6,16,3,348,Tim Sexton,72,1,4,The Walking Dead Pro,57,new,3
+6,17,1,349,Bill Mason,11,5,2,Playboy,41,old,1
+6,17,1,349,Archibald Lefevre,5,7,1,Playboy,41,old,1
+6,17,1,349,Jonas Valström,44,3,3,Playboy,41,old,1
+6,17,1,349,Didier Dujardin,24,1,4,Playboy,41,old,1
+6,17,2,350,Bill Mason,11,5,2,Firepower 2,25,mid,2
+6,17,2,350,Archibald Lefevre,5,3,3,Firepower 2,25,mid,2
+6,17,2,350,Jonas Valström,44,7,1,Firepower 2,25,mid,2
+6,17,2,350,Didier Dujardin,24,1,4,Firepower 2,25,mid,2
+6,17,3,351,Bill Mason,11,3,3,AC/DC Luci,3,new,3
+6,17,3,351,Archibald Lefevre,5,7,1,AC/DC Luci,3,new,3
+6,17,3,351,Jonas Valström,44,5,2,AC/DC Luci,3,new,3
+6,17,3,351,Didier Dujardin,24,1,4,AC/DC Luci,3,new,3
+6,18,1,352,Jason Werdrick,35,7,1,Nip It,38,old,1
+6,18,1,352,Markus Virtanen,56,1,4,Nip It,38,old,1
+6,18,1,352,Tom Graf,73,3,3,Nip It,38,old,1
+6,18,1,352,Vid Kuklec,77,5,2,Nip It,38,old,1
+6,18,2,353,Jason Werdrick,35,7,1,Robocop,45,mid,2
+6,18,2,353,Markus Virtanen,56,5,2,Robocop,45,mid,2
+6,18,2,353,Tom Graf,73,3,3,Robocop,45,mid,2
+6,18,2,353,Vid Kuklec,77,1,4,Robocop,45,mid,2
+6,18,3,354,Jason Werdrick,35,3,3,Avengers Infinity Quest Pro,7,new,3
+6,18,3,354,Markus Virtanen,56,7,1,Avengers Infinity Quest Pro,7,new,3
+6,18,3,354,Tom Graf,73,5,2,Avengers Infinity Quest Pro,7,new,3
+6,18,3,354,Vid Kuklec,77,1,4,Avengers Infinity Quest Pro,7,new,3
+6,19,1,355,Enrico Giorgio de Stefani,26,1,4,Skateball,49,old,1
+6,19,1,355,César Dubón Martínez,18,7,1,Skateball,49,old,1
+6,19,1,355,John van der Wulp,42,5,2,Skateball,49,old,1
+6,19,1,355,Artur Natorski,7,3,3,Skateball,49,old,1
+6,19,2,356,Enrico Giorgio de Stefani,26,3,3,Pin Bot,40,mid,2
+6,19,2,356,César Dubón Martínez,18,7,1,Pin Bot,40,mid,2
+6,19,2,356,John van der Wulp,42,5,2,Pin Bot,40,mid,2
+6,19,2,356,Artur Natorski,7,1,4,Pin Bot,40,mid,2
+6,19,3,357,Enrico Giorgio de Stefani,26,3,3,Metallica Monsters,36,new,3
+6,19,3,357,César Dubón Martínez,18,5,2,Metallica Monsters,36,new,3
+6,19,3,357,John van der Wulp,42,7,1,Metallica Monsters,36,new,3
+6,19,3,357,Artur Natorski,7,1,4,Metallica Monsters,36,new,3
+6,20,1,358,Andrew Foster,3,1,4,Fireball (DE),23,old,1
+6,20,1,358,Thomas Mästerman,71,3,3,Fireball (DE),23,old,1
+6,20,1,358,John Kottmann,41,7,1,Fireball (DE),23,old,1
+6,20,1,358,David Dahl-Hansson,22,5,2,Fireball (DE),23,old,1
+6,20,2,359,Andrew Foster,3,1,4,Barracora,8,mid,2
+6,20,2,359,Thomas Mästerman,71,5,2,Barracora,8,mid,2
+6,20,2,359,John Kottmann,41,7,1,Barracora,8,mid,2
+6,20,2,359,David Dahl-Hansson,22,3,3,Barracora,8,mid,2
+6,20,3,360,Andrew Foster,3,1,4,Corvette,14,new,3
+6,20,3,360,Thomas Mästerman,71,7,1,Corvette,14,new,3
+6,20,3,360,John Kottmann,41,5,2,Corvette,14,new,3
+6,20,3,360,David Dahl-Hansson,22,3,3,Corvette,14,new,3
+7,1,1,361,Escher Lefkoff,28,3,3,Mystic,37,old,1
+7,1,1,361,Keith Elwin,47,1,4,Mystic,37,old,1
+7,1,1,361,Zach Sharpe,80,7,1,Mystic,37,old,1
+7,1,1,361,Jason Zahler,36,5,2,Mystic,37,old,1
+7,1,2,362,Escher Lefkoff,28,5,2,Lady Luck,33,mid,2
+7,1,2,362,Keith Elwin,47,7,1,Lady Luck,33,mid,2
+7,1,2,362,Zach Sharpe,80,3,3,Lady Luck,33,mid,2
+7,1,2,362,Jason Zahler,36,1,4,Lady Luck,33,mid,2
+7,1,3,363,Escher Lefkoff,28,7,1,Avatar,6,new,3
+7,1,3,363,Keith Elwin,47,3,3,Avatar,6,new,3
+7,1,3,363,Zach Sharpe,80,1,4,Avatar,6,new,3
+7,1,3,363,Jason Zahler,36,5,2,Avatar,6,new,3
+7,2,1,364,Johannes Ostermeier,39,5,2,Dodge City,18,old,1
+7,2,1,364,Daniele Celestino Acciari,21,3,3,Dodge City,18,old,1
+7,2,1,364,Viggo Löwgren,78,7,1,Dodge City,18,old,1
+7,2,1,364,Eric Stone,27,1,4,Dodge City,18,old,1
+7,2,2,365,Johannes Ostermeier,39,7,1,Medusa,35,mid,2
+7,2,2,365,Daniele Celestino Acciari,21,3,3,Medusa,35,mid,2
+7,2,2,365,Viggo Löwgren,78,5,2,Medusa,35,mid,2
+7,2,2,365,Eric Stone,27,1,4,Medusa,35,mid,2
+7,2,3,366,Johannes Ostermeier,39,5,2,The Walking Dead Pro,57,new,3
+7,2,3,366,Daniele Celestino Acciari,21,3,3,The Walking Dead Pro,57,new,3
+7,2,3,366,Viggo Löwgren,78,1,4,The Walking Dead Pro,57,new,3
+7,2,3,366,Eric Stone,27,7,1,The Walking Dead Pro,57,new,3
+7,3,1,367,Cayle George,17,3,3,Silverball Mania,48,old,1
+7,3,1,367,Mark Pearson,54,5,2,Silverball Mania,48,old,1
+7,3,1,367,Josh Sharpe,45,1,4,Silverball Mania,48,old,1
+7,3,1,367,Markus Stix,55,7,1,Silverball Mania,48,old,1
+7,3,2,368,Cayle George,17,1,4,Pool Sharks,42,mid,2
+7,3,2,368,Mark Pearson,54,5,2,Pool Sharks,42,mid,2
+7,3,2,368,Josh Sharpe,45,3,3,Pool Sharks,42,mid,2
+7,3,2,368,Markus Stix,55,7,1,Pool Sharks,42,mid,2
+7,3,3,369,Cayle George,17,1,4,World Cup Soccer,59,new,3
+7,3,3,369,Mark Pearson,54,5,2,World Cup Soccer,59,new,3
+7,3,3,369,Josh Sharpe,45,3,3,World Cup Soccer,59,new,3
+7,3,3,369,Markus Stix,55,7,1,World Cup Soccer,59,new,3
+7,4,1,370,Zach McCarthy,79,3,3,Little Joe,34,old,1
+7,4,1,370,Jack Tadman,32,1,4,Little Joe,34,old,1
+7,4,1,370,Paul Englert,61,5,2,Little Joe,34,old,1
+7,4,1,370,Colin MacAlpine,19,7,1,Little Joe,34,old,1
+7,4,2,371,Zach McCarthy,79,7,1,Space Station,51,mid,2
+7,4,2,371,Jack Tadman,32,1,4,Space Station,51,mid,2
+7,4,2,371,Paul Englert,61,3,3,Space Station,51,mid,2
+7,4,2,371,Colin MacAlpine,19,5,2,Space Station,51,mid,2
+7,4,3,372,Zach McCarthy,79,7,1,X-Men Pro,60,new,3
+7,4,3,372,Jack Tadman,32,5,2,X-Men Pro,60,new,3
+7,4,3,372,Paul Englert,61,3,3,X-Men Pro,60,new,3
+7,4,3,372,Colin MacAlpine,19,1,4,X-Men Pro,60,new,3
+7,5,1,373,Steven Bowden,70,5,2,Dolly Parton,19,old,1
+7,5,1,373,Keri Wing,48,7,1,Dolly Parton,19,old,1
+7,5,1,373,Travis Murie,74,3,3,Dolly Parton,19,old,1
+7,5,1,373,Nico Wicke,59,1,4,Dolly Parton,19,old,1
+7,5,2,374,Steven Bowden,70,5,2,Sorcerer,50,mid,2
+7,5,2,374,Keri Wing,48,7,1,Sorcerer,50,mid,2
+7,5,2,374,Travis Murie,74,3,3,Sorcerer,50,mid,2
+7,5,2,374,Nico Wicke,59,1,4,Sorcerer,50,mid,2
+7,5,3,375,Steven Bowden,70,5,2,AC/DC Luci,3,new,3
+7,5,3,375,Keri Wing,48,1,4,AC/DC Luci,3,new,3
+7,5,3,375,Travis Murie,74,7,1,AC/DC Luci,3,new,3
+7,5,3,375,Nico Wicke,59,3,3,AC/DC Luci,3,new,3
+7,6,1,376,Ben Moser,10,3,3,Alligator,5,old,1
+7,6,1,376,Derek Price,23,7,1,Alligator,5,old,1
+7,6,1,376,Arvid Flygare,8,1,4,Alligator,5,old,1
+7,6,1,376,Paul Jongma,62,5,2,Alligator,5,old,1
+7,6,2,377,Ben Moser,10,1,4,F14 Tomcat,21,mid,2
+7,6,2,377,Derek Price,23,7,1,F14 Tomcat,21,mid,2
+7,6,2,377,Arvid Flygare,8,3,3,F14 Tomcat,21,mid,2
+7,6,2,377,Paul Jongma,62,5,2,F14 Tomcat,21,mid,2
+7,6,3,378,Ben Moser,10,5,2,Tron Pro,58,new,3
+7,6,3,378,Derek Price,23,3,3,Tron Pro,58,new,3
+7,6,3,378,Arvid Flygare,8,7,1,Tron Pro,58,new,3
+7,6,3,378,Paul Jongma,62,1,4,Tron Pro,58,new,3
+7,7,1,379,Reidar Spets,65,1,4,Dark Rider,16,old,1
+7,7,1,379,Brian O’Neill NH,14,3,3,Dark Rider,16,old,1
+7,7,1,379,Arno Nöbl,6,7,1,Dark Rider,16,old,1
+7,7,1,379,Trent Augenstein,75,5,2,Dark Rider,16,old,1
+7,7,2,380,Reidar Spets,65,3,3,Jokerz,31,mid,2
+7,7,2,380,Brian O’Neill NH,14,5,2,Jokerz,31,mid,2
+7,7,2,380,Arno Nöbl,6,7,1,Jokerz,31,mid,2
+7,7,2,380,Trent Augenstein,75,1,4,Jokerz,31,mid,2
+7,7,3,381,Reidar Spets,65,1,4,Beatles Gold,9,new,3
+7,7,3,381,Brian O’Neill NH,14,7,1,Beatles Gold,9,new,3
+7,7,3,381,Arno Nöbl,6,3,3,Beatles Gold,9,new,3
+7,7,3,381,Trent Augenstein,75,5,2,Beatles Gold,9,new,3
+7,8,1,382,Mads Kristensen,52,3,3,Harlem Globetrotters,28,old,1
+7,8,1,382,Robert Sutter,66,5,2,Harlem Globetrotters,28,old,1
+7,8,1,382,Andrei Massenkoff,1,7,1,Harlem Globetrotters,28,old,1
+7,8,1,382,Luke Nahorniak,51,1,4,Harlem Globetrotters,28,old,1
+7,8,2,383,Mads Kristensen,52,1,4,Grand Lizard,27,mid,2
+7,8,2,383,Robert Sutter,66,7,1,Grand Lizard,27,mid,2
+7,8,2,383,Andrei Massenkoff,1,3,3,Grand Lizard,27,mid,2
+7,8,2,383,Luke Nahorniak,51,5,2,Grand Lizard,27,mid,2
+7,8,3,384,Mads Kristensen,52,7,1,Avengers Infinity Quest Pro,7,new,3
+7,8,3,384,Robert Sutter,66,5,2,Avengers Infinity Quest Pro,7,new,3
+7,8,3,384,Andrei Massenkoff,1,3,3,Avengers Infinity Quest Pro,7,new,3
+7,8,3,384,Luke Nahorniak,51,1,4,Avengers Infinity Quest Pro,7,new,3
+7,9,1,385,Raymond Davidson,64,7,1,8 Ball,2,old,1
+7,9,1,385,Jakub Tkacz,33,3,3,8 Ball,2,old,1
+7,9,1,385,Julio Vicario Soriano,46,1,4,8 Ball,2,old,1
+7,9,1,385,Gabor Solymosi,30,5,2,8 Ball,2,old,1
+7,9,2,386,Raymond Davidson,64,5,2,Barracora,8,mid,2
+7,9,2,386,Jakub Tkacz,33,7,1,Barracora,8,mid,2
+7,9,2,386,Julio Vicario Soriano,46,3,3,Barracora,8,mid,2
+7,9,2,386,Gabor Solymosi,30,1,4,Barracora,8,mid,2
+7,9,3,387,Raymond Davidson,64,7,1,The Addams Family,55,new,3
+7,9,3,387,Jakub Tkacz,33,1,4,The Addams Family,55,new,3
+7,9,3,387,Julio Vicario Soriano,46,5,2,The Addams Family,55,new,3
+7,9,3,387,Gabor Solymosi,30,3,3,The Addams Family,55,new,3
+7,10,1,388,Jason Lambert,34,3,3,Fireball (DE),23,old,1
+7,10,1,388,Brian Shepherd,15,7,1,Fireball (DE),23,old,1
+7,10,1,388,Johnny Modica,43,1,4,Fireball (DE),23,old,1
+7,10,1,388,Craig Pullen,20,5,2,Fireball (DE),23,old,1
+7,10,2,389,Jason Lambert,34,7,1,Cyclone,15,mid,2
+7,10,2,389,Brian Shepherd,15,3,3,Cyclone,15,mid,2
+7,10,2,389,Johnny Modica,43,5,2,Cyclone,15,mid,2
+7,10,2,389,Craig Pullen,20,1,4,Cyclone,15,mid,2
+7,10,3,390,Jason Lambert,34,5,2,Godzilla Pro,26,new,3
+7,10,3,390,Brian Shepherd,15,3,3,Godzilla Pro,26,new,3
+7,10,3,390,Johnny Modica,43,1,4,Godzilla Pro,26,new,3
+7,10,3,390,Craig Pullen,20,7,1,Godzilla Pro,26,new,3
+7,11,1,391,Boldizsár Botka,13,5,2,Skateball,49,old,1
+7,11,1,391,Michael Trepp,57,3,3,Skateball,49,old,1
+7,11,1,391,César Dubón Martínez,18,1,4,Skateball,49,old,1
+7,11,1,391,Jeff Teolis,37,7,1,Skateball,49,old,1
+7,11,2,392,Boldizsár Botka,13,3,3,Firepower 2,25,mid,2
+7,11,2,392,Michael Trepp,57,7,1,Firepower 2,25,mid,2
+7,11,2,392,César Dubón Martínez,18,5,2,Firepower 2,25,mid,2
+7,11,2,392,Jeff Teolis,37,1,4,Firepower 2,25,mid,2
+7,11,3,393,Boldizsár Botka,13,5,2,Star Trek Premium,52,new,3
+7,11,3,393,Michael Trepp,57,1,4,Star Trek Premium,52,new,3
+7,11,3,393,César Dubón Martínez,18,7,1,Star Trek Premium,52,new,3
+7,11,3,393,Jeff Teolis,37,3,3,Star Trek Premium,52,new,3
+7,12,1,394,Carlos Delaserda,16,7,1,Playboy,41,old,1
+7,12,1,394,Bart Volman,9,5,2,Playboy,41,old,1
+7,12,1,394,Simon Peel,68,3,3,Playboy,41,old,1
+7,12,1,394,Jim Belsito,38,1,4,Playboy,41,old,1
+7,12,2,395,Carlos Delaserda,16,5,2,Blackout,10,mid,2
+7,12,2,395,Bart Volman,9,3,3,Blackout,10,mid,2
+7,12,2,395,Simon Peel,68,1,4,Blackout,10,mid,2
+7,12,2,395,Jim Belsito,38,7,1,Blackout,10,mid,2
+7,12,3,396,Carlos Delaserda,16,7,1,Deadpool Pro,17,new,3
+7,12,3,396,Bart Volman,9,5,2,Deadpool Pro,17,new,3
+7,12,3,396,Simon Peel,68,1,4,Deadpool Pro,17,new,3
+7,12,3,396,Jim Belsito,38,3,3,Deadpool Pro,17,new,3
+7,13,1,397,Tyler Dipper,76,7,1,Power Play,43,old,1
+7,13,1,397,Kurt Louwie,49,3,3,Power Play,43,old,1
+7,13,1,397,Bob Matthews,12,1,4,Power Play,43,old,1
+7,13,1,397,Emil ED Dreiborg,25,5,2,Power Play,43,old,1
+7,13,2,398,Tyler Dipper,76,3,3,Pin Bot,40,mid,2
+7,13,2,398,Kurt Louwie,49,1,4,Pin Bot,40,mid,2
+7,13,2,398,Bob Matthews,12,5,2,Pin Bot,40,mid,2
+7,13,2,398,Emil ED Dreiborg,25,7,1,Pin Bot,40,mid,2
+7,13,3,399,Tyler Dipper,76,3,3,Corvette,14,new,3
+7,13,3,399,Kurt Louwie,49,5,2,Corvette,14,new,3
+7,13,3,399,Bob Matthews,12,1,4,Corvette,14,new,3
+7,13,3,399,Emil ED Dreiborg,25,7,1,Corvette,14,new,3
+7,14,1,400,Roberto Pedroni,67,7,1,Champ,12,old,1
+7,14,1,400,Andy Bagwell,4,3,3,Champ,12,old,1
+7,14,1,400,Jason Werdrick,35,5,2,Champ,12,old,1
+7,14,1,400,Andrej Rižner,2,1,4,Champ,12,old,1
+7,14,2,401,Roberto Pedroni,67,7,1,Firepower,24,mid,2
+7,14,2,401,Andy Bagwell,4,3,3,Firepower,24,mid,2
+7,14,2,401,Jason Werdrick,35,5,2,Firepower,24,mid,2
+7,14,2,401,Andrej Rižner,2,1,4,Firepower,24,mid,2
+7,14,3,402,Roberto Pedroni,67,3,3,Jurassic Park LE,32,new,3
+7,14,3,402,Andy Bagwell,4,1,4,Jurassic Park LE,32,new,3
+7,14,3,402,Jason Werdrick,35,5,2,Jurassic Park LE,32,new,3
+7,14,3,402,Andrej Rižner,2,7,1,Jurassic Park LE,32,new,3
+7,15,1,403,Thomas Mästerman,71,7,1,6 Million Dollar Man,1,old,1
+7,15,1,403,Leslie Ruckman,50,1,4,6 Million Dollar Man,1,old,1
+7,15,1,403,Frank Nilsen,29,3,3,6 Million Dollar Man,1,old,1
+7,15,1,403,Peter Andersen,63,5,2,6 Million Dollar Man,1,old,1
+7,15,2,404,Thomas Mästerman,71,7,1,Centaur,11,mid,2
+7,15,2,404,Leslie Ruckman,50,1,4,Centaur,11,mid,2
+7,15,2,404,Frank Nilsen,29,3,3,Centaur,11,mid,2
+7,15,2,404,Peter Andersen,63,5,2,Centaur,11,mid,2
+7,15,3,405,Thomas Mästerman,71,3,3,Rush Pro,46,new,3
+7,15,3,405,Leslie Ruckman,50,1,4,Rush Pro,46,new,3
+7,15,3,405,Frank Nilsen,29,7,1,Rush Pro,46,new,3
+7,15,3,405,Peter Andersen,63,5,2,Rush Pro,46,new,3
+7,16,1,406,Archibald Lefevre,5,3,3,Strikes & Spares,54,old,1
+7,16,1,406,Olli-Mikko Ojamies,60,5,2,Strikes & Spares,54,old,1
+7,16,1,406,Stefan Herold,69,7,1,Strikes & Spares,54,old,1
+7,16,1,406,Bill Mason,11,1,4,Strikes & Spares,54,old,1
+7,16,2,407,Archibald Lefevre,5,5,2,Fire,22,mid,2
+7,16,2,407,Olli-Mikko Ojamies,60,7,1,Fire,22,mid,2
+7,16,2,407,Stefan Herold,69,3,3,Fire,22,mid,2
+7,16,2,407,Bill Mason,11,1,4,Fire,22,mid,2
+7,16,3,408,Archibald Lefevre,5,5,2,The Shadow,56,new,3
+7,16,3,408,Olli-Mikko Ojamies,60,7,1,The Shadow,56,new,3
+7,16,3,408,Stefan Herold,69,3,3,The Shadow,56,new,3
+7,16,3,408,Bill Mason,11,1,4,The Shadow,56,new,3
+7,17,1,409,Hervé Pierru,31,5,2,Alien Poker,4,old,1
+7,17,1,409,Neil Graf,58,1,4,Alien Poker,4,old,1
+7,17,1,409,John van der Wulp,42,7,1,Alien Poker,4,old,1
+7,17,1,409,Jonas Valström,44,3,3,Alien Poker,4,old,1
+7,17,2,410,Hervé Pierru,31,1,4,Scorpion,47,mid,2
+7,17,2,410,Neil Graf,58,5,2,Scorpion,47,mid,2
+7,17,2,410,John van der Wulp,42,3,3,Scorpion,47,mid,2
+7,17,2,410,Jonas Valström,44,7,1,Scorpion,47,mid,2
+7,17,3,411,Hervé Pierru,31,1,4,The Walking Dead Pro,57,new,3
+7,17,3,411,Neil Graf,58,5,2,The Walking Dead Pro,57,new,3
+7,17,3,411,John van der Wulp,42,3,3,The Walking Dead Pro,57,new,3
+7,17,3,411,Jonas Valström,44,7,1,The Walking Dead Pro,57,new,3
+7,18,1,412,Tim Sexton,72,5,2,Nip It,38,old,1
+7,18,1,412,John Kottmann,41,3,3,Nip It,38,old,1
+7,18,1,412,Marcus Hugosson,53,1,4,Nip It,38,old,1
+7,18,1,412,John Delzoppo,40,7,1,Nip It,38,old,1
+7,18,2,413,Tim Sexton,72,7,1,Robocop,45,mid,2
+7,18,2,413,John Kottmann,41,1,4,Robocop,45,mid,2
+7,18,2,413,Marcus Hugosson,53,3,3,Robocop,45,mid,2
+7,18,2,413,John Delzoppo,40,5,2,Robocop,45,mid,2
+7,18,3,414,Tim Sexton,72,3,3,Metallica Monsters,36,new,3
+7,18,3,414,John Kottmann,41,7,1,Metallica Monsters,36,new,3
+7,18,3,414,Marcus Hugosson,53,5,2,Metallica Monsters,36,new,3
+7,18,3,414,John Delzoppo,40,1,4,Metallica Monsters,36,new,3
+7,19,1,415,Markus Virtanen,56,7,1,Stellar Airship,53,old,1
+7,19,1,415,David Dahl-Hansson,22,5,2,Stellar Airship,53,old,1
+7,19,1,415,Andrew Foster,3,3,3,Stellar Airship,53,old,1
+7,19,1,415,Didier Dujardin,24,1,4,Stellar Airship,53,old,1
+7,19,2,416,Markus Virtanen,56,3,3,Road Kings,44,mid,2
+7,19,2,416,David Dahl-Hansson,22,5,2,Road Kings,44,mid,2
+7,19,2,416,Andrew Foster,3,7,1,Road Kings,44,mid,2
+7,19,2,416,Didier Dujardin,24,1,4,Road Kings,44,mid,2
+7,19,3,417,Markus Virtanen,56,7,1,Indianapolis 500,29,new,3
+7,19,3,417,David Dahl-Hansson,22,3,3,Indianapolis 500,29,new,3
+7,19,3,417,Andrew Foster,3,1,4,Indianapolis 500,29,new,3
+7,19,3,417,Didier Dujardin,24,5,2,Indianapolis 500,29,new,3
+7,20,1,418,Tom Graf,73,1,4,Paragon,39,old,1
+7,20,1,418,Enrico Giorgio de Stefani,26,7,1,Paragon,39,old,1
+7,20,1,418,Artur Natorski,7,3,3,Paragon,39,old,1
+7,20,1,418,Vid Kuklec,77,5,2,Paragon,39,old,1
+7,20,2,419,Tom Graf,73,5,2,Elektra,20,mid,2
+7,20,2,419,Enrico Giorgio de Stefani,26,7,1,Elektra,20,mid,2
+7,20,2,419,Artur Natorski,7,3,3,Elektra,20,mid,2
+7,20,2,419,Vid Kuklec,77,1,4,Elektra,20,mid,2
+7,20,3,420,Tom Graf,73,7,1,Iron Maiden LE,30,new,3
+7,20,3,420,Enrico Giorgio de Stefani,26,5,2,Iron Maiden LE,30,new,3
+7,20,3,420,Artur Natorski,7,1,4,Iron Maiden LE,30,new,3
+7,20,3,420,Vid Kuklec,77,3,3,Iron Maiden LE,30,new,3
+8,1,1,421,Johannes Ostermeier,39,5,2,Little Joe,34,old,1
+8,1,1,421,Escher Lefkoff,28,1,4,Little Joe,34,old,1
+8,1,1,421,Daniele Celestino Acciari,21,3,3,Little Joe,34,old,1
+8,1,1,421,Keith Elwin,47,7,1,Little Joe,34,old,1
+8,1,2,422,Johannes Ostermeier,39,7,1,Pin Bot,40,mid,2
+8,1,2,422,Escher Lefkoff,28,3,3,Pin Bot,40,mid,2
+8,1,2,422,Daniele Celestino Acciari,21,5,2,Pin Bot,40,mid,2
+8,1,2,422,Keith Elwin,47,1,4,Pin Bot,40,mid,2
+8,1,3,423,Johannes Ostermeier,39,3,3,The Shadow,56,new,3
+8,1,3,423,Escher Lefkoff,28,5,2,The Shadow,56,new,3
+8,1,3,423,Daniele Celestino Acciari,21,1,4,The Shadow,56,new,3
+8,1,3,423,Keith Elwin,47,7,1,The Shadow,56,new,3
+8,2,1,424,Markus Stix,55,3,3,Champ,12,old,1
+8,2,1,424,Zach McCarthy,79,1,4,Champ,12,old,1
+8,2,1,424,Viggo Löwgren,78,5,2,Champ,12,old,1
+8,2,1,424,Mark Pearson,54,7,1,Champ,12,old,1
+8,2,2,425,Markus Stix,55,3,3,Firepower 2,25,mid,2
+8,2,2,425,Zach McCarthy,79,1,4,Firepower 2,25,mid,2
+8,2,2,425,Viggo Löwgren,78,7,1,Firepower 2,25,mid,2
+8,2,2,425,Mark Pearson,54,5,2,Firepower 2,25,mid,2
+8,2,3,426,Markus Stix,55,1,4,Deadpool Pro,17,new,3
+8,2,3,426,Zach McCarthy,79,3,3,Deadpool Pro,17,new,3
+8,2,3,426,Viggo Löwgren,78,7,1,Deadpool Pro,17,new,3
+8,2,3,426,Mark Pearson,54,5,2,Deadpool Pro,17,new,3
+8,3,1,427,Zach Sharpe,80,7,1,Fireball (DE),23,old,1
+8,3,1,427,Derek Price,23,3,3,Fireball (DE),23,old,1
+8,3,1,427,Jason Zahler,36,1,4,Fireball (DE),23,old,1
+8,3,1,427,Steven Bowden,70,5,2,Fireball (DE),23,old,1
+8,3,2,428,Zach Sharpe,80,7,1,Robocop,45,mid,2
+8,3,2,428,Derek Price,23,5,2,Robocop,45,mid,2
+8,3,2,428,Jason Zahler,36,3,3,Robocop,45,mid,2
+8,3,2,428,Steven Bowden,70,1,4,Robocop,45,mid,2
+8,3,3,429,Zach Sharpe,80,5,2,Jurassic Park LE,32,new,3
+8,3,3,429,Derek Price,23,1,4,Jurassic Park LE,32,new,3
+8,3,3,429,Jason Zahler,36,7,1,Jurassic Park LE,32,new,3
+8,3,3,429,Steven Bowden,70,3,3,Jurassic Park LE,32,new,3
+8,4,1,430,Paul Englert,61,1,4,8 Ball,2,old,1
+8,4,1,430,Robert Sutter,66,5,2,8 Ball,2,old,1
+8,4,1,430,Eric Stone,27,7,1,8 Ball,2,old,1
+8,4,1,430,Keri Wing,48,3,3,8 Ball,2,old,1
+8,4,2,431,Paul Englert,61,1,4,Firepower,24,mid,2
+8,4,2,431,Robert Sutter,66,5,2,Firepower,24,mid,2
+8,4,2,431,Eric Stone,27,3,3,Firepower,24,mid,2
+8,4,2,431,Keri Wing,48,7,1,Firepower,24,mid,2
+8,4,3,432,Paul Englert,61,7,1,Beatles Gold,9,new,3
+8,4,3,432,Robert Sutter,66,3,3,Beatles Gold,9,new,3
+8,4,3,432,Eric Stone,27,1,4,Beatles Gold,9,new,3
+8,4,3,432,Keri Wing,48,5,2,Beatles Gold,9,new,3
+8,5,1,433,Colin MacAlpine,19,7,1,Stellar Airship,53,old,1
+8,5,1,433,Jack Tadman,32,1,4,Stellar Airship,53,old,1
+8,5,1,433,Raymond Davidson,64,5,2,Stellar Airship,53,old,1
+8,5,1,433,Carlos Delaserda,16,3,3,Stellar Airship,53,old,1
+8,5,2,434,Colin MacAlpine,19,3,3,Centaur,11,mid,2
+8,5,2,434,Jack Tadman,32,1,4,Centaur,11,mid,2
+8,5,2,434,Raymond Davidson,64,7,1,Centaur,11,mid,2
+8,5,2,434,Carlos Delaserda,16,5,2,Centaur,11,mid,2
+8,5,3,435,Colin MacAlpine,19,3,3,Iron Maiden LE,30,new,3
+8,5,3,435,Jack Tadman,32,1,4,Iron Maiden LE,30,new,3
+8,5,3,435,Raymond Davidson,64,5,2,Iron Maiden LE,30,new,3
+8,5,3,435,Carlos Delaserda,16,7,1,Iron Maiden LE,30,new,3
+8,6,1,436,Brian O’Neill NH,14,3,3,Harlem Globetrotters,28,old,1
+8,6,1,436,Travis Murie,74,5,2,Harlem Globetrotters,28,old,1
+8,6,1,436,Arno Nöbl,6,1,4,Harlem Globetrotters,28,old,1
+8,6,1,436,Josh Sharpe,45,7,1,Harlem Globetrotters,28,old,1
+8,6,2,437,Brian O’Neill NH,14,3,3,Road Kings,44,mid,2
+8,6,2,437,Travis Murie,74,5,2,Road Kings,44,mid,2
+8,6,2,437,Arno Nöbl,6,1,4,Road Kings,44,mid,2
+8,6,2,437,Josh Sharpe,45,7,1,Road Kings,44,mid,2
+8,6,3,438,Brian O’Neill NH,14,5,2,Tron Pro,58,new,3
+8,6,3,438,Travis Murie,74,1,4,Tron Pro,58,new,3
+8,6,3,438,Arno Nöbl,6,3,3,Tron Pro,58,new,3
+8,6,3,438,Josh Sharpe,45,7,1,Tron Pro,58,new,3
+8,7,1,439,Cayle George,17,5,2,Little Joe,34,old,1
+8,7,1,439,Arvid Flygare,8,3,3,Little Joe,34,old,1
+8,7,1,439,Andrei Massenkoff,1,1,4,Little Joe,34,old,1
+8,7,1,439,Roberto Pedroni,67,7,1,Little Joe,34,old,1
+8,7,2,440,Cayle George,17,1,4,Scorpion,47,mid,2
+8,7,2,440,Arvid Flygare,8,5,2,Scorpion,47,mid,2
+8,7,2,440,Andrei Massenkoff,1,3,3,Scorpion,47,mid,2
+8,7,2,440,Roberto Pedroni,67,7,1,Scorpion,47,mid,2
+8,7,3,441,Cayle George,17,7,1,Star Trek Premium,52,new,3
+8,7,3,441,Arvid Flygare,8,5,2,Star Trek Premium,52,new,3
+8,7,3,441,Andrei Massenkoff,1,1,4,Star Trek Premium,52,new,3
+8,7,3,441,Roberto Pedroni,67,3,3,Star Trek Premium,52,new,3
+8,8,1,442,Emil ED Dreiborg,25,7,1,Playboy,41,old,1
+8,8,1,442,Ben Moser,10,5,2,Playboy,41,old,1
+8,8,1,442,Jason Lambert,34,1,4,Playboy,41,old,1
+8,8,1,442,Paul Jongma,62,3,3,Playboy,41,old,1
+8,8,2,443,Emil ED Dreiborg,25,5,2,Sorcerer,50,mid,2
+8,8,2,443,Ben Moser,10,1,4,Sorcerer,50,mid,2
+8,8,2,443,Jason Lambert,34,3,3,Sorcerer,50,mid,2
+8,8,2,443,Paul Jongma,62,7,1,Sorcerer,50,mid,2
+8,8,3,444,Emil ED Dreiborg,25,1,4,Avengers Infinity Quest Pro,7,new,3
+8,8,3,444,Ben Moser,10,7,1,Avengers Infinity Quest Pro,7,new,3
+8,8,3,444,Jason Lambert,34,5,2,Avengers Infinity Quest Pro,7,new,3
+8,8,3,444,Paul Jongma,62,3,3,Avengers Infinity Quest Pro,7,new,3
+8,9,1,445,Olli-Mikko Ojamies,60,7,1,6 Million Dollar Man,1,old,1
+8,9,1,445,Boldizsár Botka,13,3,3,6 Million Dollar Man,1,old,1
+8,9,1,445,Brian Shepherd,15,5,2,6 Million Dollar Man,1,old,1
+8,9,1,445,Mads Kristensen,52,1,4,6 Million Dollar Man,1,old,1
+8,9,2,446,Olli-Mikko Ojamies,60,1,4,Barracora,8,mid,2
+8,9,2,446,Boldizsár Botka,13,3,3,Barracora,8,mid,2
+8,9,2,446,Brian Shepherd,15,7,1,Barracora,8,mid,2
+8,9,2,446,Mads Kristensen,52,5,2,Barracora,8,mid,2
+8,9,3,447,Olli-Mikko Ojamies,60,1,4,The Walking Dead Pro,57,new,3
+8,9,3,447,Boldizsár Botka,13,5,2,The Walking Dead Pro,57,new,3
+8,9,3,447,Brian Shepherd,15,7,1,The Walking Dead Pro,57,new,3
+8,9,3,447,Mads Kristensen,52,3,3,The Walking Dead Pro,57,new,3
+8,10,1,448,Trent Augenstein,75,7,1,Paragon,39,old,1
+8,10,1,448,Craig Pullen,20,5,2,Paragon,39,old,1
+8,10,1,448,Jason Werdrick,35,1,4,Paragon,39,old,1
+8,10,1,448,César Dubón Martínez,18,3,3,Paragon,39,old,1
+8,10,2,449,Trent Augenstein,75,1,4,Medusa,35,mid,2
+8,10,2,449,Craig Pullen,20,3,3,Medusa,35,mid,2
+8,10,2,449,Jason Werdrick,35,7,1,Medusa,35,mid,2
+8,10,2,449,César Dubón Martínez,18,5,2,Medusa,35,mid,2
+8,10,3,450,Trent Augenstein,75,3,3,AC/DC Luci,3,new,3
+8,10,3,450,Craig Pullen,20,7,1,AC/DC Luci,3,new,3
+8,10,3,450,Jason Werdrick,35,1,4,AC/DC Luci,3,new,3
+8,10,3,450,César Dubón Martínez,18,5,2,AC/DC Luci,3,new,3
+8,11,1,451,Thomas Mästerman,71,5,2,Dark Rider,16,old,1
+8,11,1,451,Jakub Tkacz,33,1,4,Dark Rider,16,old,1
+8,11,1,451,Bart Volman,9,3,3,Dark Rider,16,old,1
+8,11,1,451,Tyler Dipper,76,7,1,Dark Rider,16,old,1
+8,11,2,452,Thomas Mästerman,71,3,3,Cyclone,15,mid,2
+8,11,2,452,Jakub Tkacz,33,5,2,Cyclone,15,mid,2
+8,11,2,452,Bart Volman,9,1,4,Cyclone,15,mid,2
+8,11,2,452,Tyler Dipper,76,7,1,Cyclone,15,mid,2
+8,11,3,453,Thomas Mästerman,71,1,4,Avatar,6,new,3
+8,11,3,453,Jakub Tkacz,33,3,3,Avatar,6,new,3
+8,11,3,453,Bart Volman,9,7,1,Avatar,6,new,3
+8,11,3,453,Tyler Dipper,76,5,2,Avatar,6,new,3
+8,12,1,454,Luke Nahorniak,51,7,1,Power Play,43,old,1
+8,12,1,454,Julio Vicario Soriano,46,5,2,Power Play,43,old,1
+8,12,1,454,Tim Sexton,72,1,4,Power Play,43,old,1
+8,12,1,454,Peter Andersen,63,3,3,Power Play,43,old,1
+8,12,2,455,Luke Nahorniak,51,3,3,Fire,22,mid,2
+8,12,2,455,Julio Vicario Soriano,46,5,2,Fire,22,mid,2
+8,12,2,455,Tim Sexton,72,1,4,Fire,22,mid,2
+8,12,2,455,Peter Andersen,63,7,1,Fire,22,mid,2
+8,12,3,456,Luke Nahorniak,51,7,1,World Cup Soccer,59,new,3
+8,12,3,456,Julio Vicario Soriano,46,5,2,World Cup Soccer,59,new,3
+8,12,3,456,Tim Sexton,72,1,4,World Cup Soccer,59,new,3
+8,12,3,456,Peter Andersen,63,3,3,World Cup Soccer,59,new,3
+8,13,1,457,Reidar Spets,65,1,4,Alligator,5,old,1
+8,13,1,457,Jim Belsito,38,5,2,Alligator,5,old,1
+8,13,1,457,Jeff Teolis,37,3,3,Alligator,5,old,1
+8,13,1,457,Nico Wicke,59,7,1,Alligator,5,old,1
+8,13,2,458,Reidar Spets,65,5,2,Grand Lizard,27,mid,2
+8,13,2,458,Jim Belsito,38,7,1,Grand Lizard,27,mid,2
+8,13,2,458,Jeff Teolis,37,1,4,Grand Lizard,27,mid,2
+8,13,2,458,Nico Wicke,59,3,3,Grand Lizard,27,mid,2
+8,13,3,459,Reidar Spets,65,1,4,X-Men Pro,60,new,3
+8,13,3,459,Jim Belsito,38,3,3,X-Men Pro,60,new,3
+8,13,3,459,Jeff Teolis,37,7,1,X-Men Pro,60,new,3
+8,13,3,459,Nico Wicke,59,5,2,X-Men Pro,60,new,3
+8,14,1,460,Michael Trepp,57,5,2,Silverball Mania,48,old,1
+8,14,1,460,Gabor Solymosi,30,7,1,Silverball Mania,48,old,1
+8,14,1,460,Jonas Valström,44,1,4,Silverball Mania,48,old,1
+8,14,1,460,Archibald Lefevre,5,3,3,Silverball Mania,48,old,1
+8,14,2,461,Michael Trepp,57,3,3,F14 Tomcat,21,mid,2
+8,14,2,461,Gabor Solymosi,30,1,4,F14 Tomcat,21,mid,2
+8,14,2,461,Jonas Valström,44,5,2,F14 Tomcat,21,mid,2
+8,14,2,461,Archibald Lefevre,5,7,1,F14 Tomcat,21,mid,2
+8,14,3,462,Michael Trepp,57,1,4,Rush Pro,46,new,3
+8,14,3,462,Gabor Solymosi,30,5,2,Rush Pro,46,new,3
+8,14,3,462,Jonas Valström,44,3,3,Rush Pro,46,new,3
+8,14,3,462,Archibald Lefevre,5,7,1,Rush Pro,46,new,3
+8,15,1,463,Markus Virtanen,56,7,1,Nip It,38,old,1
+8,15,1,463,Stefan Herold,69,3,3,Nip It,38,old,1
+8,15,1,463,Frank Nilsen,29,5,2,Nip It,38,old,1
+8,15,1,463,Johnny Modica,43,1,4,Nip It,38,old,1
+8,15,2,464,Markus Virtanen,56,7,1,Jokerz,31,mid,2
+8,15,2,464,Stefan Herold,69,3,3,Jokerz,31,mid,2
+8,15,2,464,Frank Nilsen,29,1,4,Jokerz,31,mid,2
+8,15,2,464,Johnny Modica,43,5,2,Jokerz,31,mid,2
+8,15,3,465,Markus Virtanen,56,7,1,The Addams Family,55,new,3
+8,15,3,465,Stefan Herold,69,1,4,The Addams Family,55,new,3
+8,15,3,465,Frank Nilsen,29,3,3,The Addams Family,55,new,3
+8,15,3,465,Johnny Modica,43,5,2,The Addams Family,55,new,3
+8,16,1,466,John van der Wulp,42,3,3,Alien Poker,4,old,1
+8,16,1,466,Enrico Giorgio de Stefani,26,1,4,Alien Poker,4,old,1
+8,16,1,466,John Kottmann,41,7,1,Alien Poker,4,old,1
+8,16,1,466,Andrej Rižner,2,5,2,Alien Poker,4,old,1
+8,16,2,467,John van der Wulp,42,1,4,Pool Sharks,42,mid,2
+8,16,2,467,Enrico Giorgio de Stefani,26,5,2,Pool Sharks,42,mid,2
+8,16,2,467,John Kottmann,41,7,1,Pool Sharks,42,mid,2
+8,16,2,467,Andrej Rižner,2,3,3,Pool Sharks,42,mid,2
+8,16,3,468,John van der Wulp,42,7,1,Indianapolis 500,29,new,3
+8,16,3,468,Enrico Giorgio de Stefani,26,3,3,Indianapolis 500,29,new,3
+8,16,3,468,John Kottmann,41,1,4,Indianapolis 500,29,new,3
+8,16,3,468,Andrej Rižner,2,5,2,Indianapolis 500,29,new,3
+8,17,1,469,John Delzoppo,40,7,1,Mystic,37,old,1
+8,17,1,469,Kurt Louwie,49,3,3,Mystic,37,old,1
+8,17,1,469,Simon Peel,68,1,4,Mystic,37,old,1
+8,17,1,469,Andy Bagwell,4,5,2,Mystic,37,old,1
+8,17,2,470,John Delzoppo,40,5,2,Blackout,10,mid,2
+8,17,2,470,Kurt Louwie,49,7,1,Blackout,10,mid,2
+8,17,2,470,Simon Peel,68,1,4,Blackout,10,mid,2
+8,17,2,470,Andy Bagwell,4,3,3,Blackout,10,mid,2
+8,17,3,471,John Delzoppo,40,7,1,Godzilla Pro,26,new,3
+8,17,3,471,Kurt Louwie,49,3,3,Godzilla Pro,26,new,3
+8,17,3,471,Simon Peel,68,1,4,Godzilla Pro,26,new,3
+8,17,3,471,Andy Bagwell,4,5,2,Godzilla Pro,26,new,3
+8,18,1,472,Neil Graf,58,3,3,Dolly Parton,19,old,1
+8,18,1,472,Bob Matthews,12,5,2,Dolly Parton,19,old,1
+8,18,1,472,Tom Graf,73,1,4,Dolly Parton,19,old,1
+8,18,1,472,Marcus Hugosson,53,7,1,Dolly Parton,19,old,1
+8,18,2,473,Neil Graf,58,3,3,Lady Luck,33,mid,2
+8,18,2,473,Bob Matthews,12,5,2,Lady Luck,33,mid,2
+8,18,2,473,Tom Graf,73,7,1,Lady Luck,33,mid,2
+8,18,2,473,Marcus Hugosson,53,1,4,Lady Luck,33,mid,2
+8,18,3,474,Neil Graf,58,3,3,Metallica Monsters,36,new,3
+8,18,3,474,Bob Matthews,12,1,4,Metallica Monsters,36,new,3
+8,18,3,474,Tom Graf,73,5,2,Metallica Monsters,36,new,3
+8,18,3,474,Marcus Hugosson,53,7,1,Metallica Monsters,36,new,3
+8,19,1,475,Hervé Pierru,31,1,4,Skateball,49,old,1
+8,19,1,475,Leslie Ruckman,50,7,1,Skateball,49,old,1
+8,19,1,475,Bill Mason,11,3,3,Skateball,49,old,1
+8,19,1,475,David Dahl-Hansson,22,5,2,Skateball,49,old,1
+8,19,2,476,Hervé Pierru,31,7,1,Elektra,20,mid,2
+8,19,2,476,Leslie Ruckman,50,1,4,Elektra,20,mid,2
+8,19,2,476,Bill Mason,11,3,3,Elektra,20,mid,2
+8,19,2,476,David Dahl-Hansson,22,5,2,Elektra,20,mid,2
+8,19,3,477,Hervé Pierru,31,3,3,Indianapolis 500,29,new,3
+8,19,3,477,Leslie Ruckman,50,7,1,Indianapolis 500,29,new,3
+8,19,3,477,Bill Mason,11,1,4,Indianapolis 500,29,new,3
+8,19,3,477,David Dahl-Hansson,22,5,2,Indianapolis 500,29,new,3
+8,20,1,478,Andrew Foster,3,3,3,Dodge City,18,old,1
+8,20,1,478,Artur Natorski,7,5,2,Dodge City,18,old,1
+8,20,1,478,Vid Kuklec,77,1,4,Dodge City,18,old,1
+8,20,1,478,Didier Dujardin,24,7,1,Dodge City,18,old,1
+8,20,2,479,Andrew Foster,3,5,2,Space Station,51,mid,2
+8,20,2,479,Artur Natorski,7,1,4,Space Station,51,mid,2
+8,20,2,479,Vid Kuklec,77,7,1,Space Station,51,mid,2
+8,20,2,479,Didier Dujardin,24,3,3,Space Station,51,mid,2
+8,20,3,480,Andrew Foster,3,7,1,Corvette,14,new,3
+8,20,3,480,Artur Natorski,7,5,2,Corvette,14,new,3
+8,20,3,480,Vid Kuklec,77,1,4,Corvette,14,new,3
+8,20,3,480,Didier Dujardin,24,3,3,Corvette,14,new,3
