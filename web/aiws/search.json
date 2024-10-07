@@ -7,10 +7,38 @@
     "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
+    "objectID": "about.html#nils",
+    "href": "about.html#nils",
     "title": "About",
+    "section": "Nils",
+    "text": "Nils"
+  },
+  {
+    "objectID": "aiws-241022.html",
+    "href": "aiws-241022.html",
+    "title": "Workshop 241022",
     "section": "",
-    "text": "About this site"
+    "text": "Vi är ekonomer och HR-personal och de flesta kan väldigt lite om AI och använder det inte. I bästa fall använder några ibland chatgpt eller copilot men inget systematiskt. Jag skulle gärna vilja att ni inspirerar oss 😊 och skapar nyfikenhet så att vi kan börja hitta områden där vi kan ta hjälp av AI."
+  },
+  {
+    "objectID": "aiws-241022.html#overview-ai-for-hr",
+    "href": "aiws-241022.html#overview-ai-for-hr",
+    "title": "Workshop 241022",
+    "section": "overview, ai for hr",
+    "text": "overview, ai for hr\n\nchat with your spreadsheets\nchat with your text documents\nuse low-code programming"
+  },
+  {
+    "objectID": "aiws-241022.html#heading-1",
+    "href": "aiws-241022.html#heading-1",
+    "title": "Workshop 241022",
+    "section": "heading 1",
+    "text": "heading 1\n\n\n\nOpen In Colab"
+  },
+  {
+    "objectID": "aiws-241022.html#ai-vs.-automation",
+    "href": "aiws-241022.html#ai-vs.-automation",
+    "title": "Workshop 241022",
+    "section": "ai vs. automation",
+    "text": "ai vs. automation\n\nimport pandas as pd\n\n# Replace 'job_performance.xlsx' with the actual file name\ndf = pd.read_excel(\"https://github.com/cca-cce/osm-cda/raw/refs/heads/main/csv/product-sales.xlsx\", sheet_name=2)\n\n# Display the first few rows of the new DataFrame\ndf.head()\n\n\n\n\n\n\n\n\nYear\nCategory\nProduct\nSales\nRating\n\n\n\n\n0\n2017\nComponents\nChains\n20000\n0.75\n\n\n1\n2015\nClothing\nSocks\n3700\n0.22\n\n\n2\n2017\nClothing\nBib-Shorts\n4000\n0.22\n\n\n3\n2015\nClothing\nShorts\n13300\n0.56\n\n\n4\n2017\nClothing\nTights\n36000\n1.00"
   }
 ]

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>osm-aiws</title>
+<title>Workshop 241022 – osm-aiws</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,10 +20,44 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -66,6 +100,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <link rel="stylesheet" href="styles.css">
@@ -89,7 +126,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -97,7 +134,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./aiws-241022.html"> 
+    <a class="nav-link active" href="./aiws-241022.html" aria-current="page"> 
 <span class="menu-text">Workshop 241022</span></a>
   </li>  
 </ul>
@@ -111,15 +148,23 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#overview-ai-for-hr" id="toc-overview-ai-for-hr" class="nav-link active" data-scroll-target="#overview-ai-for-hr">overview, ai for hr</a></li>
+  <li><a href="#heading-1" id="toc-heading-1" class="nav-link" data-scroll-target="#heading-1">heading 1</a></li>
+  <li><a href="#ai-vs.-automation" id="toc-ai-vs.-automation" class="nav-link" data-scroll-target="#ai-vs.-automation">ai vs.&nbsp;automation</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">osm-aiws</h1>
+<h1 class="title">Workshop 241022</h1>
 </div>
 
 
@@ -136,10 +181,123 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This is a Quarto website.</p>
-<p>To learn more about Quarto websites visit <a href="https://quarto.org/docs/websites" class="uri">https://quarto.org/docs/websites</a>.</p>
+<p>Vi är <strong>ekonomer och HR-personal</strong> och de flesta kan väldigt lite om AI och använder det inte. I bästa fall använder några ibland <strong>chatgpt</strong> eller <strong>copilot</strong> men inget systematiskt. Jag skulle gärna vilja att ni <strong>inspirerar</strong> oss 😊 och <strong>skapar nyfikenhet</strong> så att vi kan börja hitta <strong>områden där vi kan ta hjälp av AI</strong>.</p>
+<ul>
+<li><strong>Ekonomer</strong> jobbar med tex.
+<ul>
+<li>budget,</li>
+<li>uppföljning,</li>
+<li>prognoser,</li>
+<li>bokslut,</li>
+<li>forskningsbudget och redovisningar.</li>
+</ul></li>
+<li><strong>HR</strong> tex:
+<ul>
+<li>rekryteringar (tex många ansökningar som ska gås igenom),</li>
+<li>anställningar,</li>
+<li>introduktion,</li>
+<li>arbetsmiljö.</li>
+</ul></li>
+<li><strong>Administratörer</strong> tex:
+<ul>
+<li>reseräkningar och utlägg,</li>
+<li>ombokningar,</li>
+<li>anläggningsregister.</li>
+</ul></li>
+<li><strong>Alla</strong> jobbar med att <strong>söka info hos finansiärer, medarbetarwebben</strong> mm.</li>
+</ul>
+<section id="overview-ai-for-hr" class="level2">
+<h2 class="anchored" data-anchor-id="overview-ai-for-hr">overview, ai for hr</h2>
+<ul>
+<li>chat with your <a href="https://support.microsoft.com/en-us/office/analyze-data-in-excel-3223aab8-f543-4fda-85ed-76bb0295ffc4">spreadsheets</a></li>
+<li>chat with your <a href="https://notebooklm.google.com/">text documents</a></li>
+<li>use low-code <a href="aiws-241022.ipynb">programming</a></li>
+</ul>
+</section>
+<section id="heading-1" class="level2">
+<h2 class="anchored" data-anchor-id="heading-1">heading 1</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://colab.research.google.com/github/cca-cce/osm-cda/blob/main/web/aiws/aiws-241022.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid figure-img" alt="Open In Colab"></a></p>
+<figcaption>Open In Colab</figcaption>
+</figure>
+</div>
+</section>
+<section id="ai-vs.-automation" class="level2">
+<h2 class="anchored" data-anchor-id="ai-vs.-automation">ai vs.&nbsp;automation</h2>
+<div id="9f7c8d0d" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Replace 'job_performance.xlsx' with the actual file name</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_excel(<span class="st">"https://github.com/cca-cce/osm-cda/raw/refs/heads/main/csv/product-sales.xlsx"</span>, sheet_name<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the first few rows of the new DataFrame</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<div>
 
 
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Year</th>
+<th data-quarto-table-cell-role="th">Category</th>
+<th data-quarto-table-cell-role="th">Product</th>
+<th data-quarto-table-cell-role="th">Sales</th>
+<th data-quarto-table-cell-role="th">Rating</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>2017</td>
+<td>Components</td>
+<td>Chains</td>
+<td>20000</td>
+<td>0.75</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2015</td>
+<td>Clothing</td>
+<td>Socks</td>
+<td>3700</td>
+<td>0.22</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>2017</td>
+<td>Clothing</td>
+<td>Bib-Shorts</td>
+<td>4000</td>
+<td>0.22</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>2015</td>
+<td>Clothing</td>
+<td>Shorts</td>
+<td>13300</td>
+<td>0.56</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>2017</td>
+<td>Clothing</td>
+<td>Tights</td>
+<td>36000</td>
+<td>1.00</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
