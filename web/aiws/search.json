@@ -1,17 +1,52 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "osm-aiws",
+    "objectID": "resources.html",
+    "href": "resources.html",
+    "title": "Resources",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "Tunstall, Von Werra, and Wolf (2022)\n\n\n\n\n\n\n\nLakshmanan, Görner, and Gillard (2021)\n\n\n\n\n\n\n\nVasilev (2019)"
   },
   {
-    "objectID": "about.html#nils-holmberg",
-    "href": "about.html#nils-holmberg",
-    "title": "About",
-    "section": "Nils Holmberg",
-    "text": "Nils Holmberg\n\nlucris"
+    "objectID": "resources.html#computational-content-analysis-computer-vision",
+    "href": "resources.html#computational-content-analysis-computer-vision",
+    "title": "Resources",
+    "section": "",
+    "text": "Tunstall, Von Werra, and Wolf (2022)\n\n\n\n\n\n\n\nLakshmanan, Görner, and Gillard (2021)\n\n\n\n\n\n\n\nVasilev (2019)"
+  },
+  {
+    "objectID": "resources.html#computational-content-analysis-natural-language-processing",
+    "href": "resources.html#computational-content-analysis-natural-language-processing",
+    "title": "Resources",
+    "section": "computational content analysis, natural language processing",
+    "text": "computational content analysis, natural language processing\n\n\n\n\n\n\n\n\n\nTunstall, Von Werra, and Wolf (2022)\n\n\n\n\n\n\n\nVasiliev (2020)\n\n\n\n\n\n\n\nSzeliski (2010)"
+  },
+  {
+    "objectID": "resources.html#computational-data-analysis",
+    "href": "resources.html#computational-data-analysis",
+    "title": "Resources",
+    "section": "computational data analysis",
+    "text": "computational data analysis\n\n\n\n\n\n\n\n\n\nMcKinney (2022)\n\n\n\n\n\n\n\n(some-test?)\n\n\n\n\n\n\n\n(some-test?)"
+  },
+  {
+    "objectID": "resources.html#course-literature",
+    "href": "resources.html#course-literature",
+    "title": "Resources",
+    "section": "course literature",
+    "text": "course literature\n\n\n\n\n\n\n\n\n\nNeuendorf (2017)\n\n\n\n\n\n\n\nKedia and Rasu (2020)\n\n\n\n\n\n\n\nSzeliski (2010)"
+  },
+  {
+    "objectID": "resources.html#websites-and-apps",
+    "href": "resources.html#websites-and-apps",
+    "title": "Resources",
+    "section": "websites and apps",
+    "text": "websites and apps\n\nhttps://www.python.org/downloads/\nhttps://wiki.python.org/moin/BeginnersGuide\nhttps://www.anaconda.com/products/individual\nhttps://code.visualstudio.com/download\nhttps://github.com/jupyterlab/jupyterlab_app#download\nhttps://trinket.io/home"
+  },
+  {
+    "objectID": "resources.html#online-articles",
+    "href": "resources.html#online-articles",
+    "title": "Resources",
+    "section": "online articles",
+    "text": "online articles\n\nsome text here Kedia and Rasu (2020)"
   },
   {
     "objectID": "aiws-241022.html",
@@ -32,7 +67,7 @@
     "href": "aiws-241022.html#lecture",
     "title": "Workshop 241022",
     "section": "lecture",
-    "text": "lecture\n\noct 22 at 15-16\nilkin and nils\nprojector presentation"
+    "text": "lecture\n\noct 22 at 15-16\nnils 15.00-15.30, analytical ai\nilkin 15.30-16.00, generative ai\nprojector presentation"
   },
   {
     "objectID": "aiws-241022.html#workshop",
@@ -47,5 +82,19 @@
     "title": "Workshop 241022",
     "section": "ai vs. automation",
     "text": "ai vs. automation\n\nimport pandas as pd\n\n# Replace 'job_performance.xlsx' with the actual file name\ndf = pd.read_excel(\"https://github.com/cca-cce/osm-cda/raw/refs/heads/main/csv/product-sales.xlsx\", sheet_name=2)\n\n# Display the first few rows of the new DataFrame\ndf.head()\n\n\n\n\n\n\n\n\nYear\nCategory\nProduct\nSales\nRating\n\n\n\n\n0\n2017\nComponents\nChains\n20000\n0.75\n\n\n1\n2015\nClothing\nSocks\n3700\n0.22\n\n\n2\n2017\nClothing\nBib-Shorts\n4000\n0.22\n\n\n3\n2015\nClothing\nShorts\n13300\n0.56\n\n\n4\n2017\nClothing\nTights\n36000\n1.00"
+  },
+  {
+    "objectID": "about.html#nils-holmberg",
+    "href": "about.html#nils-holmberg",
+    "title": "About",
+    "section": "Nils Holmberg",
+    "text": "Nils Holmberg\n\nlucris"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "osm-aiws",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
   }
 ]
