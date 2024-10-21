@@ -256,14 +256,14 @@
     "href": "aiws-241022.html#lecture",
     "title": "Workshop 241022",
     "section": "lecture",
-    "text": "lecture\n\noct 22 at 15-16\nnils 15.00-15.30, analytical ai\nilkin 15.30-16.00, generative ai\nprojector presentation"
+    "text": "lecture\n\noct 22 at 15-16\nnils 15.00-15.30, analytical ai\nilkin 15.30-16.00, generative ai\npresentation slides\nzoom projector presentation"
   },
   {
     "objectID": "aiws-241022.html#workshop",
     "href": "aiws-241022.html#workshop",
     "title": "Workshop 241022",
     "section": "workshop",
-    "text": "workshop\n\noct 22 at 16-17\nilkin and nils\njoint zoom meeting"
+    "text": "workshop\n\noct 22 at 16-17\njoint zoom meeting\n\n\nanalytical ai (nils)\n\nimport pandas as pd\n\n# try to replace 'aiws-241022.xlsx' with your own file name and sheet number\ndf = pd.read_excel(\"https://github.com/cca-cce/osm-cda/raw/refs/heads/main/csv/aiws-241022.xlsx\", sheet_name=0)\n\n# Display the first few rows of the new DataFrame\ndf.head()\n\n\n\n\n\n\n\n\nJob_Satisfaction\nOrganizational_Support\nJob_Performance\nJob_Satisfaction_Binary\nOrganizational_Support_Binary\nJob_Satisfaction_Binary_Num\nOrganizational_Support_Binary_Num\nInteraction\nJob_Satisfaction_Normalized\nOrganizational_Support_Normalized\nJob_Performance_Normalized\n\n\n\n\n0\n5.993428\n1.584629\n9.628835\nHigh\nLow\n1\n0\n0\n3.787516\n1.434065\n2.437043\n\n\n1\n4.723471\n2.579355\n10.569730\nLow\nLow\n0\n0\n0\n3.219560\n2.291783\n2.604778\n\n\n2\n6.295377\n2.657285\n13.719371\nHigh\nLow\n1\n0\n0\n3.922555\n2.358980\n3.166269\n\n\n3\n8.046060\n2.197723\n14.809352\nHigh\nLow\n1\n0\n0\n4.705504\n1.962715\n3.360582\n\n\n4\n4.531693\n2.838714\n8.885464\nLow\nLow\n0\n0\n0\n3.133792\n2.515420\n2.304521\n\n\n\n\n\n\n\n\n\ngenerative ai (ilkin)"
   },
   {
     "objectID": "aiws-241022.html#overview-ai-for-hr",
@@ -277,7 +277,7 @@
     "href": "aiws-241022.html#ai-vs.-automation",
     "title": "Workshop 241022",
     "section": "ai vs. automation",
-    "text": "ai vs. automation\n\nimport pandas as pd\n\n# Replace 'job_performance.xlsx' with the actual file name\ndf = pd.read_excel(\"https://github.com/cca-cce/osm-cda/raw/refs/heads/main/csv/product-sales.xlsx\", sheet_name=2)\n\n# Display the first few rows of the new DataFrame\ndf.head()\n\n\n\n\n\n\n\n\nYear\nCategory\nProduct\nSales\nRating\n\n\n\n\n0\n2017\nComponents\nChains\n20000\n0.75\n\n\n1\n2015\nClothing\nSocks\n3700\n0.22\n\n\n2\n2017\nClothing\nBib-Shorts\n4000\n0.22\n\n\n3\n2015\nClothing\nShorts\n13300\n0.56\n\n\n4\n2017\nClothing\nTights\n36000\n1.00"
+    "text": "ai vs. automation"
   },
   {
     "objectID": "about.html#nils-holmberg",

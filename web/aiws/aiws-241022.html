@@ -165,7 +165,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#ai-for-admins" id="toc-ai-for-admins" class="nav-link active" data-scroll-target="#ai-for-admins">ai for admins</a></li>
   <li><a href="#lecture" id="toc-lecture" class="nav-link" data-scroll-target="#lecture">lecture</a></li>
-  <li><a href="#workshop" id="toc-workshop" class="nav-link" data-scroll-target="#workshop">workshop</a></li>
+  <li><a href="#workshop" id="toc-workshop" class="nav-link" data-scroll-target="#workshop">workshop</a>
+  <ul class="collapse">
+  <li><a href="#analytical-ai-nils" id="toc-analytical-ai-nils" class="nav-link" data-scroll-target="#analytical-ai-nils">analytical ai (nils)</a></li>
+  <li><a href="#generative-ai-ilkin" id="toc-generative-ai-ilkin" class="nav-link" data-scroll-target="#generative-ai-ilkin">generative ai (ilkin)</a></li>
+  </ul></li>
   <li><a href="#overview-ai-for-hr" id="toc-overview-ai-for-hr" class="nav-link" data-scroll-target="#overview-ai-for-hr">overview, ai for hr</a></li>
   <li><a href="#ai-vs.-automation" id="toc-ai-vs.-automation" class="nav-link" data-scroll-target="#ai-vs.-automation">ai vs.&nbsp;automation</a></li>
   </ul>
@@ -243,27 +247,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>oct 22 at 15-16</li>
 <li>nils 15.00-15.30, analytical ai</li>
 <li>ilkin 15.30-16.00, generative ai</li>
-<li>projector presentation</li>
+<li>presentation slides</li>
+<li>zoom projector presentation</li>
 </ul>
 </section>
 <section id="workshop" class="level2">
 <h2 class="anchored" data-anchor-id="workshop">workshop</h2>
 <ul>
 <li>oct 22 at 16-17</li>
-<li>ilkin and nils</li>
 <li>joint zoom meeting</li>
 </ul>
-</section>
-<section id="overview-ai-for-hr" class="level2">
-<h2 class="anchored" data-anchor-id="overview-ai-for-hr">overview, ai for hr</h2>
-</section>
-<section id="ai-vs.-automation" class="level2">
-<h2 class="anchored" data-anchor-id="ai-vs.-automation">ai vs.&nbsp;automation</h2>
-<div id="1b3a6c45" class="cell" data-execution_count="1">
+<section id="analytical-ai-nils" class="level3">
+<h3 class="anchored" data-anchor-id="analytical-ai-nils">analytical ai (nils)</h3>
+<div id="df72615c" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Replace 'job_performance.xlsx' with the actual file name</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_excel(<span class="st">"https://github.com/cca-cce/osm-cda/raw/refs/heads/main/csv/product-sales.xlsx"</span>, sheet_name<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># try to replace 'aiws-241022.xlsx' with your own file name and sheet number</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_excel(<span class="st">"https://github.com/cca-cce/osm-cda/raw/refs/heads/main/csv/aiws-241022.xlsx"</span>, sheet_name<span class="op">=</span><span class="dv">0</span>)</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the first few rows of the new DataFrame</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -275,53 +275,89 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Year</th>
-<th data-quarto-table-cell-role="th">Category</th>
-<th data-quarto-table-cell-role="th">Product</th>
-<th data-quarto-table-cell-role="th">Sales</th>
-<th data-quarto-table-cell-role="th">Rating</th>
+<th data-quarto-table-cell-role="th">Job_Satisfaction</th>
+<th data-quarto-table-cell-role="th">Organizational_Support</th>
+<th data-quarto-table-cell-role="th">Job_Performance</th>
+<th data-quarto-table-cell-role="th">Job_Satisfaction_Binary</th>
+<th data-quarto-table-cell-role="th">Organizational_Support_Binary</th>
+<th data-quarto-table-cell-role="th">Job_Satisfaction_Binary_Num</th>
+<th data-quarto-table-cell-role="th">Organizational_Support_Binary_Num</th>
+<th data-quarto-table-cell-role="th">Interaction</th>
+<th data-quarto-table-cell-role="th">Job_Satisfaction_Normalized</th>
+<th data-quarto-table-cell-role="th">Organizational_Support_Normalized</th>
+<th data-quarto-table-cell-role="th">Job_Performance_Normalized</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
-<td>2017</td>
-<td>Components</td>
-<td>Chains</td>
-<td>20000</td>
-<td>0.75</td>
+<td>5.993428</td>
+<td>1.584629</td>
+<td>9.628835</td>
+<td>High</td>
+<td>Low</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>3.787516</td>
+<td>1.434065</td>
+<td>2.437043</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
-<td>2015</td>
-<td>Clothing</td>
-<td>Socks</td>
-<td>3700</td>
-<td>0.22</td>
+<td>4.723471</td>
+<td>2.579355</td>
+<td>10.569730</td>
+<td>Low</td>
+<td>Low</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>3.219560</td>
+<td>2.291783</td>
+<td>2.604778</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
-<td>2017</td>
-<td>Clothing</td>
-<td>Bib-Shorts</td>
-<td>4000</td>
-<td>0.22</td>
+<td>6.295377</td>
+<td>2.657285</td>
+<td>13.719371</td>
+<td>High</td>
+<td>Low</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>3.922555</td>
+<td>2.358980</td>
+<td>3.166269</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
-<td>2015</td>
-<td>Clothing</td>
-<td>Shorts</td>
-<td>13300</td>
-<td>0.56</td>
+<td>8.046060</td>
+<td>2.197723</td>
+<td>14.809352</td>
+<td>High</td>
+<td>Low</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>4.705504</td>
+<td>1.962715</td>
+<td>3.360582</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
-<td>2017</td>
-<td>Clothing</td>
-<td>Tights</td>
-<td>36000</td>
-<td>1.00</td>
+<td>4.531693</td>
+<td>2.838714</td>
+<td>8.885464</td>
+<td>Low</td>
+<td>Low</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>3.133792</td>
+<td>2.515420</td>
+<td>2.304521</td>
 </tr>
 </tbody>
 </table>
@@ -329,6 +365,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+</section>
+<section id="generative-ai-ilkin" class="level3">
+<h3 class="anchored" data-anchor-id="generative-ai-ilkin">generative ai (ilkin)</h3>
+</section>
+</section>
+<section id="overview-ai-for-hr" class="level2">
+<h2 class="anchored" data-anchor-id="overview-ai-for-hr">overview, ai for hr</h2>
+</section>
+<section id="ai-vs.-automation" class="level2">
+<h2 class="anchored" data-anchor-id="ai-vs.-automation">ai vs.&nbsp;automation</h2>
 
 
 </section>
