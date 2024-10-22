@@ -253,12 +253,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="analytical-ai-nils">analytical ai (nils)</h3>
 <ul>
 <li><a href="https://github.com/cca-cce/osm-cda/raw/refs/heads/main/csv/aiws-241022.xlsx">workshop spreadsheet</a></li>
+<li>log in to personal <a href="https://www.google.com/">google account</a></li>
 <li><a href="https://colab.research.google.com/github/cca-cce/osm-cda/blob/main/web/aiws/aiws-241022.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" style="width:30.0%" alt="Open In Colab"></a></li>
 </ul>
 <section id="prompt" class="level4">
 <h4 class="anchored" data-anchor-id="prompt">prompt:</h4>
 <p>läs data från denna webb adress “https://github.com/cca-cce/osm-cda/raw/refs/heads/main/csv/aiws-241022.xlsx”; använd det tredje kalkylbladet för att skapa objektet df; visa sedan dom 15 första raderna i df</p>
-<div id="974c9909" class="cell" data-execution_count="1">
+<div id="0299c4cd" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Läs in det tredje kalkylbladet (sheet_name=2) från den angivna adressen</span></span>
@@ -412,15 +413,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="prompt-1" class="level4">
 <h4 class="anchored" data-anchor-id="prompt-1">prompt:</h4>
 <p>skapa en ny variabel “Year_Categorical” där värdet av “Year” representeras som en sträng och sortera raderna i stigande ordning efter denna variabel</p>
-<div id="df65e85b" class="cell" data-execution_count="2">
+<div id="26d1a21e" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert 'Year' to string and sort the DataFrame</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Year_Categorical'</span>] <span class="op">=</span> df[<span class="st">'Year'</span>].astype(<span class="bu">str</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>df_sorted <span class="op">=</span> df.sort_values(<span class="st">'Year_Categorical'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="prompt-skapa-ett-nytt-data-objekt-kallat-mean_sales_by_year-med-medelvärde-av-sales-för-varje-värde-av-year_categorical-skapa-sedan-ett-stapeldiagram-som-visar-sambandet-mellan-medelvärde-av-sales-och-year_categorical" class="level4">
-<h4 class="anchored" data-anchor-id="prompt-skapa-ett-nytt-data-objekt-kallat-mean_sales_by_year-med-medelvärde-av-sales-för-varje-värde-av-year_categorical-skapa-sedan-ett-stapeldiagram-som-visar-sambandet-mellan-medelvärde-av-sales-och-year_categorical">prompt: skapa ett nytt data objekt kallat “mean_sales_by_year” med medelvärde av “Sales” för varje värde av “Year_Categorical”; skapa sedan ett stapeldiagram som visar sambandet mellan medelvärde av “Sales” och “Year_Categorical”</h4>
-<div id="bf9220a0" class="cell" data-execution_count="3">
+<section id="prompt-2" class="level4">
+<h4 class="anchored" data-anchor-id="prompt-2">prompt:</h4>
+<p>skapa ett nytt data objekt kallat “mean_sales_by_year” med medelvärde av “Sales” för varje värde av “Year_Categorical”; skapa sedan ett stapeldiagram som visar sambandet mellan medelvärde av “Sales” och “Year_Categorical”</p>
+<div id="39c23912" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the mean sales for each year</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>mean_sales_by_year <span class="op">=</span> df_sorted.groupby(<span class="st">'Year_Categorical'</span>)[<span class="st">'Sales'</span>].mean()</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -442,10 +444,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="prompt-2" class="level4">
-<h4 class="anchored" data-anchor-id="prompt-2">prompt:</h4>
+<section id="prompt-3" class="level4">
+<h4 class="anchored" data-anchor-id="prompt-3">prompt:</h4>
 <p>undersök om det finns ett statistiskt säkerställt samband mellan medelvärde av “Sales” och “Year” representerat som numerisk variabel; förklara styrkan och riktningen på sambandet</p>
-<div id="681a1bdb" class="cell" data-execution_count="4">
+<div id="5c19db9f" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.formula.api <span class="im">as</span> sm</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -482,10 +484,10 @@ Sambandet är måttligt.</code></pre>
 </div>
 </div>
 </section>
-<section id="prompt-3" class="level4">
-<h4 class="anchored" data-anchor-id="prompt-3">prompt:</h4>
+<section id="prompt-4" class="level4">
+<h4 class="anchored" data-anchor-id="prompt-4">prompt:</h4>
 <p>visualisera sambandet mellan “Sales” och “Year” representerat som numerisk variabel med hjälp av ett punkt diagram med röd trendlinje</p>
-<div id="fba10d8b" class="cell" data-execution_count="5">
+<div id="65b72b48" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -514,10 +516,10 @@ Sambandet är måttligt.</code></pre>
 </div>
 </div>
 </section>
-<section id="prompt-4" class="level4">
-<h4 class="anchored" data-anchor-id="prompt-4">prompt:</h4>
+<section id="prompt-5" class="level4">
+<h4 class="anchored" data-anchor-id="prompt-5">prompt:</h4>
 <p>spara det nya objektet “mean_sales_by_year” till en datafil av typen xlsx</p>
-<div id="3bdd7f31" class="cell" data-execution_count="6">
+<div id="bf106a9b" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Spara mean_sales_by_year till en xlsx-fil</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#mean_sales_by_year.to_excel('mean_sales_by_year.xlsx')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
