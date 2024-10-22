@@ -259,49 +259,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="prompt-1" class="level4">
 <h4 class="anchored" data-anchor-id="prompt-1">prompt 1:</h4>
 <p>läs in data från denna webb adress “https://github.com/cca-cce/osm-cda/raw/refs/heads/main/csv/aiws-241022.xlsx”; använd det tredje kalkylbladet för att skapa objektet df; visa sedan dom 15 första raderna i df</p>
-<div id="198907cb" class="cell" data-execution_count="1">
+<div id="9e00b694" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># radera denna rad; klicka sedan på "generate with AI" och använd prompten ovan..</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="prompt-2" class="level4">
 <h4 class="anchored" data-anchor-id="prompt-2">prompt 2:</h4>
 <p>skapa en ny variabel “Year_Categorical” där värdet av “Year” representeras som en sträng och sortera raderna i stigande ordning efter denna variabel</p>
-<div id="f07e7982" class="cell" data-execution_count="2">
+<div id="7a1fd6d7" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># radera denna rad; klicka sedan på "generate with AI" och använd prompten ovan..</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="prompt-3" class="level4">
 <h4 class="anchored" data-anchor-id="prompt-3">prompt 3:</h4>
 <p>skapa ett nytt data objekt kallat “mean_sales_by_year” med medelvärde av “Sales” för varje värde av “Year_Categorical”; skapa sedan ett stapeldiagram som visar sambandet mellan medelvärde av “Sales” och “Year_Categorical”</p>
-<div id="2ffb70dd" class="cell" data-execution_count="3">
+<div id="b6d60eff" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># radera denna rad; klicka sedan på "generate with AI" och använd prompten ovan..</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="prompt-4" class="level4">
 <h4 class="anchored" data-anchor-id="prompt-4">prompt 4:</h4>
 <p>undersök om det finns ett statistiskt säkerställt samband mellan medelvärde av “Sales” och “Year” representerat som numerisk variabel; förklara styrkan och riktningen på sambandet</p>
-<div id="967536d5" class="cell" data-execution_count="4">
+<div id="6de94d0a" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># radera denna rad; klicka sedan på "generate with AI" och använd prompten ovan..</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="prompt-5" class="level4">
 <h4 class="anchored" data-anchor-id="prompt-5">prompt 5:</h4>
 <p>visualisera sambandet mellan “Sales” och “Year” representerat som numerisk variabel med hjälp av ett punkt diagram med röd trendlinje</p>
-<div id="18b0d000" class="cell" data-execution_count="5">
+<div id="244ee61e" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># radera denna rad; klicka sedan på "generate with AI" och använd prompten ovan..</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="prompt-6" class="level4">
 <h4 class="anchored" data-anchor-id="prompt-6">prompt 6:</h4>
 <p>spara det nya objektet “mean_sales_by_year” till en datafil av typen xlsx</p>
-<div id="377f1b18" class="cell" data-execution_count="6">
+<div id="78da29da" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># radera denna rad; klicka sedan på "generate with AI" och använd prompten ovan..</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
 </section>
 <section id="read-data" class="level4">
 <h4 class="anchored" data-anchor-id="read-data">read data</h4>
-<div id="19e7e444" class="cell" data-execution_count="7">
+<div id="e4e9cce8" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Läs in det tredje kalkylbladet (sheet_name=2) från den angivna adressen</span></span>
@@ -454,7 +454,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="manipulate-data" class="level4">
 <h4 class="anchored" data-anchor-id="manipulate-data">manipulate data</h4>
-<div id="b3eda1bf" class="cell" data-execution_count="8">
+<div id="6d296794" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert 'Year' to string and sort the DataFrame</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Year_Categorical'</span>] <span class="op">=</span> df[<span class="st">'Year'</span>].astype(<span class="bu">str</span>)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>df_sorted <span class="op">=</span> df.sort_values(<span class="st">'Year_Categorical'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -462,7 +462,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="visualize-data" class="level4">
 <h4 class="anchored" data-anchor-id="visualize-data">visualize data</h4>
-<div id="50cbf395" class="cell" data-execution_count="9">
+<div id="a2fe8191" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the mean sales for each year</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>mean_sales_by_year <span class="op">=</span> df_sorted.groupby(<span class="st">'Year_Categorical'</span>)[<span class="st">'Sales'</span>].mean()</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -486,7 +486,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="model-data" class="level4">
 <h4 class="anchored" data-anchor-id="model-data">model data</h4>
-<div id="b2a2e856" class="cell" data-execution_count="10">
+<div id="86b41c1e" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.formula.api <span class="im">as</span> sm</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -525,7 +525,7 @@ Sambandet är måttligt.</code></pre>
 </section>
 <section id="model-visualize-data" class="level4">
 <h4 class="anchored" data-anchor-id="model-visualize-data">model, visualize data</h4>
-<div id="2cb5cf85" class="cell" data-execution_count="11">
+<div id="1ffdcb2a" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -556,7 +556,7 @@ Sambandet är måttligt.</code></pre>
 </section>
 <section id="save-data-file" class="level4">
 <h4 class="anchored" data-anchor-id="save-data-file">save data file</h4>
-<div id="30c029c3" class="cell" data-execution_count="12">
+<div id="ca1173dd" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Spara mean_sales_by_year till en xlsx-fil</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co">#mean_sales_by_year.to_excel('mean_sales_by_year.xlsx')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
