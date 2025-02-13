@@ -1,0 +1,54 @@
+---
+title: "cod subset"
+date: 2016-08-25
+output: 
+  html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE)
+```
+
+```{r}
+# Load required packages
+library(dplyr)
+library(ggplot2)
+```
+
+```{r}
+# 1. Read the TSV file
+# (Replace "path/to/file.tsv" with your actual file path.)
+df <- read.table(
+  file = "path/to/file.tsv",
+  header = TRUE,
+  sep = "\t",
+  quote = "\"",   # Encloses text fields in double quotes
+  stringsAsFactors = FALSE
+)
+```
+
+```{r}
+# 2. Compute mean of info_vision by Role
+df_summary <- df %>%
+  group_by(Role) %>%
+  summarize(mean_info_vision = mean(info_vision, na.rm = TRUE))
+
+# 3. Display the pivot-table
+print(df_summary)
+```
+
+```{r}
+# 4. Create a bar plot of mean info_vision by Role
+ggplot(df_summary, aes(x = factor(Role), y = mean_info_vision)) +
+  geom_bar(stat = "identity", fill = "steelblue") +
+  theme_minimal() +
+  labs(
+    title = "Mean info_vision by Role",
+    x = "Role",
+    y = "Mean info_vision"
+  )
+```
+
+
+
+
